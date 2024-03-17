@@ -8,8 +8,8 @@ private:
 	System::String^ _tipus;
 
 public:
-	PassarelaUsuari(){}
-	PassarelaUsuari(System::String^nom, System::String^ ceU, System::String^ cU, System::String^ t);
+	PassarelaUsuari() {}
+	PassarelaUsuari(System::String^ nom, System::String^ ceU, System::String^ cU, System::String^ t);
 	void insereix();
 };
 
