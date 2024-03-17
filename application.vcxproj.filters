@@ -29,6 +29,7 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+
     <ClInclude Include="FormRegistreCiutada.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,6 +40,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaUsuari.h">
+
+    <ClInclude Include="AltaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxAltaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h">
+
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,6 +68,7 @@
     <ClCompile Include="Form1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+
     <ClCompile Include="FormRegistreCiutada.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -65,6 +79,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaUsuari.cpp">
+
+    <ClCompile Include="TxAltaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEntitat.cpp">
+
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
