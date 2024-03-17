@@ -9,6 +9,7 @@ namespace application {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Resumen de AltaEntitat
@@ -199,11 +200,11 @@ namespace application {
 			TxAltaEntitat txAE(nom, descripcio, tipus, correuElectronic, contrasenya);
 			try {
 				txAE.executar();
+				this->Close();
 			}
-			catch(String^& missatgeError){
-				MessageBox::Show(missatgeError);
-			}	
-			this->Close();
+			catch (MySqlException^ ex) {
+				MessageBox::Show(ex->Message);
+			}
 	}
 };
 }

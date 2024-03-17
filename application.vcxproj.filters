@@ -35,6 +35,12 @@
     <ClInclude Include="TxAltaEntitat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PassarelaUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -50,6 +56,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TxAltaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEntitat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
