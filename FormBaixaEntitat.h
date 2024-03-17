@@ -1,4 +1,5 @@
 #pragma once
+#include "TxBaixaEntitat.h"
 
 namespace application {
 
@@ -8,6 +9,7 @@ namespace application {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Resumen de FormBaixaEntitat
@@ -127,7 +129,15 @@ namespace application {
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		System::String^ contrasenya = this->textBox1->Text;
+		TxBaixaEntitat txBE(contrasenya);
+		try {
+			txBE.executar();
+			this->Close();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 	}
 };
 }
