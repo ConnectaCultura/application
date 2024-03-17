@@ -141,17 +141,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarelaCiutada.h" />
-    <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
-
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaUsuari.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Resource.h" />
     <ClInclude Include="TxAltaEntitat.h" />
-
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
