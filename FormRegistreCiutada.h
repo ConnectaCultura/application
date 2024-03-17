@@ -102,7 +102,7 @@ namespace application {
 			});
 			this->scrollAjuntaments->Location = System::Drawing::Point(15, 37);
 			this->scrollAjuntaments->Name = L"scrollAjuntaments";
-			this->scrollAjuntaments->Size = System::Drawing::Size(121, 26);
+			this->scrollAjuntaments->Size = System::Drawing::Size(291, 26);
 			this->scrollAjuntaments->TabIndex = 1;
 			this->scrollAjuntaments->SelectedIndexChanged += gcnew System::EventHandler(this, &FormRegistreCiutada::comboBox1_SelectedIndexChanged);
 			// 
@@ -124,7 +124,7 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(15, 101);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(124, 26);
+			this->textBox1->Size = System::Drawing::Size(291, 26);
 			this->textBox1->TabIndex = 3;
 			// 
 			// label3
@@ -244,7 +244,7 @@ namespace application {
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ ajuntament = this->scrollAjuntaments->SelectedText;
+	System::String^ ajuntament = this->scrollAjuntaments->SelectedItem->ToString();
 	System::String^ nom = this->textBox1->Text;
 	System::String^ correuElectronic = this->textBox2->Text;
 	System::String^ contrasenya = this->textBox3->Text;

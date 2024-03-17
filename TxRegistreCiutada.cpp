@@ -13,5 +13,5 @@ void TxRegistreCiutada::executar() {
 
 	u.insereix();
 	PassarelaCiutada c(_correuElectronic, _ajuntament);
-	e.insereix();
+	c.insereix();
 }

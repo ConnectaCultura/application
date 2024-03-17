@@ -1,5 +1,6 @@
 #pragma once
 
+#include "FormRegistreCiutada.h"
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -34,6 +35,21 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ RegistreCiutada;
+	protected:
+
+	protected:
+
+
+
+
+
+
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -48,12 +64,36 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->RegistreCiutada = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// RegistreCiutada
+			// 
+			this->RegistreCiutada->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->RegistreCiutada->Location = System::Drawing::Point(13, 13);
+			this->RegistreCiutada->Name = L"RegistreCiutada";
+			this->RegistreCiutada->Size = System::Drawing::Size(169, 34);
+			this->RegistreCiutada->TabIndex = 0;
+			this->RegistreCiutada->Text = L"Registre Ciutadà";
+			this->RegistreCiutada->UseVisualStyleBackColor = true;
+			this->RegistreCiutada->Click += gcnew System::EventHandler(this, &Form1::RegistreCiutada_Click);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->RegistreCiutada);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void RegistreCiutada_Click(System::Object^ sender, System::EventArgs^ e) {
+		application::FormRegistreCiutada^ registre_ciutada = gcnew application::FormRegistreCiutada();
+		registre_ciutada->Show();
+	}
 	};
 }
