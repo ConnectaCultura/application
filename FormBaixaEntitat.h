@@ -1,5 +1,6 @@
 #pragma once
 #include "TxBaixaEntitat.h"
+#include <stdexcept>
 
 namespace application {
 
@@ -135,8 +136,12 @@ namespace application {
 			txBE.executar();
 			this->Close();
 		}
+		catch (std::runtime_error e) {
+			MessageBox::Show("Contrasenya incorrecta");
+		}
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
+			this->Close();
 		}
 	}
 };

@@ -136,8 +136,11 @@
     <ClInclude Include="FormBaixaEntitat.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h" />
+    <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="TxBaixaEntitat.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -145,12 +148,15 @@
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="FormBaixaEntitat.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="PassarelaEntitat.cpp" />
+    <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TxBaixaEntitat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
