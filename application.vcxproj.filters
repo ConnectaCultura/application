@@ -29,6 +29,15 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FormRegistreCiutada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxRegistreCiutada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaCiutada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -41,6 +50,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Form1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormRegistreCiutada.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxRegistreCiutada.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaCiutada.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
