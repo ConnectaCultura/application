@@ -39,8 +39,6 @@
     <ClInclude Include="PassarelaCiutada.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PassarelaUsuari.h">
-
     <ClInclude Include="AltaEntitat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -51,7 +49,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaEntitat.h">
-
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -78,8 +75,6 @@
     <ClCompile Include="PassarelaCiutada.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PassarelaUsuari.cpp">
-
     <ClCompile Include="TxAltaEntitat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -87,7 +82,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaEntitat.cpp">
-
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
