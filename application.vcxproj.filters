@@ -29,6 +29,9 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FormBaixaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -42,6 +45,12 @@
     </ClCompile>
     <ClCompile Include="Form1.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormBaixaEntitat.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

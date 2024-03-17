@@ -1,5 +1,7 @@
 #pragma once
 
+#include "FormBaixaEntitat.h"
+
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -34,6 +36,8 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,12 +52,34 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(12, 34);
+			this->button1->Name = L"EsborrarEntitat";
+			this->button1->Size = System::Drawing::Size(154, 21);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Esborrar entitat";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::EsborrarEntitat_Click);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->button1);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void EsborrarEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
+		application::FormBaixaEntitat^ baixa_entitat = gcnew application::FormBaixaEntitat();
+		baixa_entitat->Show();
+	}
 	};
 }
