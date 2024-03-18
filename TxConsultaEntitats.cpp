@@ -10,33 +10,12 @@ TxConsultaEntitats::TxConsultaEntitats()
 
 void TxConsultaEntitats::executar()
 {
-	//codi del ChatGPT, no fer cas
-	System::String^ connectionString = ConfigurationManager.ConnectionStrings["MySQLConnectionString"].ConnectionString;
-	using (MySqlConnection connection = new MySqlConnection(connectionString))
-	{
-		string query = "SELECT nom, descripcio, tipus FROM Entitat";
-
-		using (MySqlCommand command = new MySqlCommand(query, connection))
-		{
-			connection.Open();
-			using (MySqlDataReader reader = command.ExecuteReader())
-			{
-				while (reader.Read())
-				{
-					Entitat entitat = new Entitat
-					{
-						Nom = reader["nom"].ToString(),
-						Descripcio = reader["descripcio"].ToString(),
-						Tipus = reader["tipus"].ToString()
-					};
-					llistaEntitats.Add(entitat);
-				}
-			}
-		}
-	}
+	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
+	_llistaEntitats = cerEnt.ObteTots();
+	//aqui no tinc que fer ni try ni catch no?
 }
 
-array TxConsultaEntitats::ObteResultat()
+List<PassarelaEntitat^>^ TxConsultaEntitats::ObteResultat()
 {
 	return _llistaEntitats;
 }

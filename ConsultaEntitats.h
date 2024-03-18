@@ -21,6 +21,7 @@ namespace application {
 			//
 			//TODO: Add the constructor code here
 			//
+			dataGridViewEntitats = gcnew System::Windows::Forms::DataGridView();
 		}
 
 	protected:
@@ -194,13 +195,12 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void ConsultaEntitats_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultaEntitats ent();
+		TxConsultaEntitats ent;
 
 		ent.executar();
 
-		llistaEntitats = ent.ObteResultat();
-
-		dataGridViewEntitats.DataSource = llistaEntitats;
+		dataGridViewEntitats.DataSource = ent.ObteResultat();
+		//em dona error ahahahahhahah
 		
 		//si li puc posar un DataSource que sigui la Taula de entitats 
 		//a lo millor no ens faria falta casi res de codi

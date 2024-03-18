@@ -1,17 +1,21 @@
 #pragma once
 #include<string>
 #include<iostream>
+#include <list> // List
+#include <Windows.h> // MessageBox
+#include "CercadoraEntitat.h"
+
 using namespace std;
+using namespace System;
+using namespace System::Collections::Generic;
 ref class TxConsultaEntitats
 {
+	private:
+		System::String^ _ajuntamentPrincipal;
+		List<PassarelaEntitat^>^ _llistaEntitats;
 	public:
 		TxConsultaEntitats();
 		void executar();
-		array ObteResultat();
-	private:
-		System::String^ _ajuntamentPrincipal;
-		//List o vector o
-		//array<PassarellaEntitat, 100> _llistaEntitats;
-	
+		List<PassarelaEntitat^>^ ObteResultat();
 };
 
