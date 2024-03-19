@@ -1,5 +1,4 @@
 #pragma once
-#include "ConsultaEntitats.h"
 
 namespace CppCLRWinFormsProject {
 
@@ -81,8 +80,6 @@ namespace CppCLRWinFormsProject {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		application::ConsultaEntitats^ consulta_entitats = gcnew application::ConsultaEntitats();
-		consulta_entitats->Show();
 	}
 	};
 }

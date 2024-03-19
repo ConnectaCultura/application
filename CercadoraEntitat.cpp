@@ -42,8 +42,7 @@ PassarelaEntitat^ CercadoraEntitat::CercaEntitat(System::String^ cE)
 
 List<PassarelaEntitat^>^ CercadoraEntitat::ObteTots()
 {
-	System::String^ connectionString =
-		"datasource=b99cavshzhle8qpp4gyr-mysql.services.clever-cloud.com; username = udn12yk88ro4ih7a; password = \"s3ANuNU2Igs1LndsQN4U\"; database = b99cavshzhle8qpp4gyr; ";
+	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	System::String^ sql = "SELECT * FROM Entitat";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
