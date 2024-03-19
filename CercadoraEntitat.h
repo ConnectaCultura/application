@@ -11,6 +11,7 @@ ref class CercadoraEntitat
 		CercadoraEntitat() {}
 		PassarelaEntitat^ CercaEntitat(System::String^ cE);
 		List<PassarelaEntitat^>^ ObteTots();
+		List<PassarelaEntitat^>^ ObteTipus(System::String^ t);
 
 };
 

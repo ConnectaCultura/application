@@ -1,5 +1,5 @@
 #pragma once
-
+#include "ConsultaEntitats.h"
 namespace CppCLRWinFormsProject {
 
 	using namespace System;

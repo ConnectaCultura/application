@@ -1,5 +1,7 @@
 #pragma once
 #include "TxConsultaEntitats.h"
+#include <stdexcept>
+
 namespace application {
 
 	using namespace System;
@@ -8,6 +10,7 @@ namespace application {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for ConsultaEntitats
@@ -21,7 +24,6 @@ namespace application {
 			//
 			//TODO: Add the constructor code here
 			//
-			dataGridViewEntitats = gcnew System::Windows::Forms::DataGridView();
 		}
 
 	protected:
@@ -102,6 +104,7 @@ namespace application {
 			this->label1->Size = System::Drawing::Size(91, 29);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Entitats";
+			this->label1->Click += gcnew System::EventHandler(this, &ConsultaEntitats::label1_Click);
 			// 
 			// Back
 			// 
@@ -181,6 +184,11 @@ namespace application {
 		dataGridViewEntitats->DataSource = ent.ObteResultat();
 		///falta comprovar si genera be les columnes
 
+		//posar funcio per agafar categoria de la base de dades
+		System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
+		MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+		//Tipus->DataSource = ;
+
 		//si li puc posar un DataSource que sigui la Taula de entitats 
 		//a lo millor no ens faria falta casi res de codi
 
@@ -215,13 +223,17 @@ private: System::Void PantallaPrincipal_Click(System::Object^ sender, System::Ev
 	//Torna a la pantalla principal
 }
 private: System::Void Tipus_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	////Use Data Bound Items	
+	TxConsultaEntitats ent;
+	ent.executar();
+	dataGridViewEntitats->DataSource = ent.ObteResultat();
 	//DataSource => Tipus     (Un Enum al MySQL)
 	//Selected Value => None or " " (buit)
 }
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
