@@ -43,10 +43,16 @@ namespace application {
 	private: System::Windows::Forms::Button^ Back;
 	private: System::Windows::Forms::Button^ Menu;
 	private: System::Windows::Forms::Button^ PantallaPrincipal;
-	private: System::Windows::Forms::ComboBox^ Ajuntament;
+
 	private: System::Windows::Forms::ComboBox^ Tipus;
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Label^ label3;
+
+
+
+
+
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -72,9 +78,7 @@ namespace application {
 			this->Back = (gcnew System::Windows::Forms::Button());
 			this->Menu = (gcnew System::Windows::Forms::Button());
 			this->PantallaPrincipal = (gcnew System::Windows::Forms::Button());
-			this->Ajuntament = (gcnew System::Windows::Forms::ComboBox());
 			this->Tipus = (gcnew System::Windows::Forms::ComboBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->BeginInit();
 			this->SuspendLayout();
@@ -129,15 +133,6 @@ namespace application {
 			this->PantallaPrincipal->UseVisualStyleBackColor = true;
 			this->PantallaPrincipal->Click += gcnew System::EventHandler(this, &ConsultaEntitats::PantallaPrincipal_Click);
 			// 
-			// Ajuntament
-			// 
-			this->Ajuntament->FormattingEnabled = true;
-			this->Ajuntament->Location = System::Drawing::Point(485, 20);
-			this->Ajuntament->Name = L"Ajuntament";
-			this->Ajuntament->Size = System::Drawing::Size(121, 21);
-			this->Ajuntament->TabIndex = 5;
-			this->Ajuntament->SelectedIndexChanged += gcnew System::EventHandler(this, &ConsultaEntitats::Ajuntament_SelectedIndexChanged);
-			// 
 			// Tipus
 			// 
 			this->Tipus->FormattingEnabled = true;
@@ -146,18 +141,6 @@ namespace application {
 			this->Tipus->Size = System::Drawing::Size(121, 21);
 			this->Tipus->TabIndex = 6;
 			this->Tipus->SelectedIndexChanged += gcnew System::EventHandler(this, &ConsultaEntitats::Tipus_SelectedIndexChanged);
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(403, 23);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(76, 16);
-			this->label2->TabIndex = 7;
-			this->label2->Text = L"Ajuntament:";
-			this->label2->Click += gcnew System::EventHandler(this, &ConsultaEntitats::label2_Click);
 			// 
 			// label3
 			// 
@@ -177,9 +160,7 @@ namespace application {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(824, 423);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->Tipus);
-			this->Controls->Add(this->Ajuntament);
 			this->Controls->Add(this->PantallaPrincipal);
 			this->Controls->Add(this->Menu);
 			this->Controls->Add(this->Back);
@@ -196,12 +177,10 @@ namespace application {
 #pragma endregion
 	private: System::Void ConsultaEntitats_Load(System::Object^ sender, System::EventArgs^ e) {
 		TxConsultaEntitats ent;
-
 		ent.executar();
+		dataGridViewEntitats->DataSource = ent.ObteResultat();
+		///falta comprovar si genera be les columnes
 
-		dataGridViewEntitats.DataSource = ent.ObteResultat();
-		//em dona error ahahahahhahah
-		
 		//si li puc posar un DataSource que sigui la Taula de entitats 
 		//a lo millor no ens faria falta casi res de codi
 
@@ -235,22 +214,6 @@ private: System::Void Menu_Click(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void PantallaPrincipal_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Torna a la pantalla principal
 }
-private: System::Void Ajuntament_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	//Use Data Bound Items	
-	//DataSource => Ajuntaments
-	//Selected Value => Client.AjuntamentPrincipal
-	//Codi
-	/*
-		O fas una nova crida al MySQL i nomes sel·lecciones els que tinguin el Ajuntament Tal
-		O per exemple Tenint la llista del MySQL, fas un bucle per només mostrar les d'aquell Ajuntament
-
-		while(i< length(LlistaEntitat)){
-			LlistaEntitatA =
-		}
-
-		Crec que Sera més facil amb MySQL si sender es el nom del seleccionat. O si el puc obtenir d'alguna forma.
-	*/
-}
 private: System::Void Tipus_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	////Use Data Bound Items	
 	//DataSource => Tipus     (Un Enum al MySQL)
@@ -259,8 +222,6 @@ private: System::Void Tipus_SelectedIndexChanged(System::Object^ sender, System:
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void toolTip1_Popup(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
 }
 };
 }

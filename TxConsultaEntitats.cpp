@@ -3,9 +3,9 @@
 
 TxConsultaEntitats::TxConsultaEntitats() 
 {
-	Sessio& se = Sessio::getInstance();
-	PassarellaUsuari u = Sessio.ObteUsuari();
-	_ajuntamentPrincipal = u.AjuntamentPrincipal;
+	//Sessio& se = Sessio::getInstance();
+	//PassarellaUsuari u = Sessio.ObteUsuari();
+	//_ajuntamentPrincipal = u.AjuntamentPrincipal;
 }
 
 void TxConsultaEntitats::executar()
