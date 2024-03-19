@@ -16,3 +16,4 @@ void TxAltaEntitat::executar() {
 	PassarelaEntitat e(_correuElectronic, _descripcio, _tipus);
 	e.insereix();
 }
+

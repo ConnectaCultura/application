@@ -78,91 +78,102 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(38, 25);
+			this->label1->Location = System::Drawing::Point(25, 16);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(40, 20);
+			this->label1->Size = System::Drawing::Size(27, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"nom";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(170, 25);
+			this->textBox1->Location = System::Drawing::Point(113, 16);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(263, 26);
+			this->textBox1->Size = System::Drawing::Size(177, 20);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(38, 70);
+			this->label2->Location = System::Drawing::Point(25, 46);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(80, 20);
+			this->label2->Size = System::Drawing::Size(55, 13);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"descripció";
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(170, 70);
+			this->richTextBox1->Location = System::Drawing::Point(113, 46);
+			this->richTextBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(263, 84);
+			this->richTextBox1->Size = System::Drawing::Size(177, 56);
 			this->richTextBox1->TabIndex = 3;
 			this->richTextBox1->Text = L"";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(38, 179);
+			this->label3->Location = System::Drawing::Point(25, 116);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(43, 20);
+			this->label3->Size = System::Drawing::Size(29, 13);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"tipus";
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(170, 173);
+			this->textBox2->Location = System::Drawing::Point(113, 112);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(263, 26);
+			this->textBox2->Size = System::Drawing::Size(177, 20);
 			this->textBox2->TabIndex = 5;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(38, 222);
+			this->label4->Location = System::Drawing::Point(25, 144);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(126, 20);
+			this->label4->Size = System::Drawing::Size(86, 13);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"correu electronic";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(38, 268);
+			this->label5->Location = System::Drawing::Point(25, 174);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(96, 20);
+			this->label5->Size = System::Drawing::Size(65, 13);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"contrasenya";
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(170, 219);
+			this->textBox3->Location = System::Drawing::Point(113, 142);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(263, 26);
+			this->textBox3->Size = System::Drawing::Size(177, 20);
 			this->textBox3->TabIndex = 8;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(170, 265);
+			this->textBox4->Location = System::Drawing::Point(113, 172);
+			this->textBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(263, 26);
+			this->textBox4->Size = System::Drawing::Size(177, 20);
 			this->textBox4->TabIndex = 9;
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::OrangeRed;
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(330, 321);
+			this->button1->Location = System::Drawing::Point(221, 224);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(103, 32);
+			this->button1->Size = System::Drawing::Size(69, 21);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"confirmar";
 			this->button1->UseVisualStyleBackColor = false;
@@ -170,9 +181,9 @@ namespace application {
 			// 
 			// AltaEntitat
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(452, 369);
+			this->ClientSize = System::Drawing::Size(367, 256);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
@@ -184,6 +195,7 @@ namespace application {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"AltaEntitat";
 			this->Text = L"AltaEntitat";
 			this->ResumeLayout(false);
@@ -208,3 +220,5 @@ namespace application {
 	}
 };
 }
+
+

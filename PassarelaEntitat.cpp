@@ -20,3 +20,4 @@ void PassarelaEntitat::insereix() {
 	dataReader = cmd->ExecuteReader();
 	conn->Close();
 }
+

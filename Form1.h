@@ -86,5 +86,6 @@ namespace CppCLRWinFormsProject {
 		application::AltaEntitat^ alta_entitat = gcnew application::AltaEntitat();
 		alta_entitat->Show();
 	}
+
 	};
 }

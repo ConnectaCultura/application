@@ -25,3 +25,4 @@ void PassarelaUsuari::insereix() {
 			// si tot va bé es tanca la connexió
 			conn->Close();
 }
+
