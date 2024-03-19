@@ -8,6 +8,9 @@ PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, Syst
 	_tipus = t;
 }
 
+
+
+
 void PassarelaEntitat::insereix() {
 	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
