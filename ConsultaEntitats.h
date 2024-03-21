@@ -183,7 +183,9 @@ namespace application {
 		ent.executar();
 		dataGridViewEntitats->DataSource = ent.ObteResultat();
 		///falta comprovar si genera be les columnes
-
+		
+		
+		//probes pel filtre tipus pero es fara en un nou Tx
 		//posar funcio per agafar categoria de la base de dades
 		System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 		MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
