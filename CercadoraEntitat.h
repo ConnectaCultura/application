@@ -1,6 +1,5 @@
 #pragma once
 #include <list> // List
-#include <Windows.h> // MessageBox
 #include "PassarelaEntitat.h"
 
 using namespace System;

@@ -2,7 +2,6 @@
 #include<string>
 #include<iostream>
 #include <list> // List
-#include <Windows.h> // MessageBox
 #include "CercadoraEntitat.h"
 
 using namespace std;
