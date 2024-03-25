@@ -1,5 +1,6 @@
 #pragma once
 #include "TxConsultaEntitats.h"
+#include "TxConsultaEntitatsTipus.h"
 #include <stdexcept>
 
 namespace application {
@@ -180,16 +181,47 @@ namespace application {
 #pragma endregion
 	private: System::Void ConsultaEntitats_Load(System::Object^ sender, System::EventArgs^ e) {
 		TxConsultaEntitats ent;
-		ent.executar();
+		try {
+			ent.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+
 		dataGridViewEntitats->DataSource = ent.ObteResultat();
 		///falta comprovar si genera be les columnes
 		
 		
-		//probes pel filtre tipus pero es fara en un nou Tx
-		//posar funcio per agafar categoria de la base de dades
+		//funcio per agafar categoria de la base de dades
+		//o al tx fer un obte tipus
 		System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 		MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-		//Tipus->DataSource = ;
+		System::String^ sql = "SELECT * FROM Tipus";
+		MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+		MySqlDataReader^ dataReader;
+		List<System::String^>^ vt = gcnew List<System::String^>();
+
+		try {
+			// obrim la connexió
+			conn->Open();
+			// executem la comanda (cmd) que s’ha creat abans del try
+			dataReader = cmd->ExecuteReader();
+			while (dataReader->Read()) {
+				// Agafarem les columnes per índex, la primera és la 0
+				System::String^ nom = dataReader->GetString(0);
+				vt->Add(nom);
+			}
+		}
+		catch (System::Exception^ ex) {
+			// codi per mostrar l’error en una finestra
+			MessageBox::Show(ex->Message);
+		}
+		finally {
+			// si tot va bé es tanca la connexió
+			conn->Close();
+		}
+		Tipus->DataSource = vt;
+		
 
 		//si li puc posar un DataSource que sigui la Taula de entitats 
 		//a lo millor no ens faria falta casi res de codi
@@ -208,7 +240,6 @@ namespace application {
 		dataGridViewEntitats.Columns["Descripcio"].DataPropertyName = "Descripcio";
 		dataGridViewEntitats.Columns["Tipus"].DataPropertyName = "Tipus";
 		*/
-		//Quan faci la connecio crec que podre posarli de DataSource Entitat així que les columnes es crearien soles.
 	}
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		//quan cliqui en una row vull que carregui la pagina d'aquesta Entitat
@@ -225,10 +256,15 @@ private: System::Void PantallaPrincipal_Click(System::Object^ sender, System::Ev
 	//Torna a la pantalla principal
 }
 private: System::Void Tipus_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	TxConsultaEntitats ent;
-	ent.executar();
+	TxConsultaEntitatsTipus ent;
+	ent.SetTipus(this->Tipus->SelectedItem->ToString());
+	try {
+		ent.executar();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
 	dataGridViewEntitats->DataSource = ent.ObteResultat();
-	//DataSource => Tipus     (Un Enum al MySQL)
 	//Selected Value => None or " " (buit)
 }
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -29,6 +29,21 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CercadoraEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultaEntitats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaEntitats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaEntitatsTipus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -41,6 +56,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Form1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultaEntitats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaEntitats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
