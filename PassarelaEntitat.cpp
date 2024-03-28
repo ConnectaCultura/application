@@ -17,7 +17,7 @@ void PassarelaEntitat::insereix() {
 	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _descripcio + "','" + _tipus + "')";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
-	// obrim la connexió
+	// obrim la connexiï¿½
 	conn->Open();
 	// executem la comanda creada abans del try
 	dataReader = cmd->ExecuteReader();
@@ -30,7 +30,7 @@ void PassarelaEntitat::esborra() {
 	System::String^ sql = "DELETE FROM Entitat WHERE correu_electronic='" + _correuElectronic + "';";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
-	// obrim la connexió
+	// obrim la connexiï¿½
 	conn->Open();
 	// executem la comanda creada abans del try
 	dataReader = cmd->ExecuteReader();

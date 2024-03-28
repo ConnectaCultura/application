@@ -12,3 +12,5 @@ public:
 	void insereix();
 	void esborra();
 };
+
+

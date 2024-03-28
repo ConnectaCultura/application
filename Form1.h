@@ -81,5 +81,6 @@ namespace CppCLRWinFormsProject {
 		application::FormBaixaEntitat^ baixa_entitat = gcnew application::FormBaixaEntitat();
 		baixa_entitat->Show();
 	}
+
 	};
 }

@@ -22,12 +22,12 @@ void PassarelaUsuari::insereix() {
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 
-	// obrim la connexió
+	// obrim la connexiï¿½
 	conn->Open();
 	// executem la comanda creada abans del try
 	dataReader = cmd->ExecuteReader();
 
-	// si tot va bé es tanca la connexió
+	// si tot va bï¿½ es tanca la connexiï¿½
 	conn->Close();
 }
 
@@ -38,11 +38,11 @@ void PassarelaUsuari::esborra() {
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 
-	// obrim la connexió
+	// obrim la connexiï¿½
 	conn->Open();
 	// executem la comanda creada abans del try
 	dataReader = cmd->ExecuteReader();
 
-	// si tot va bé es tanca la connexió
+	// si tot va bï¿½ es tanca la connexiï¿½
 	conn->Close();
 }
