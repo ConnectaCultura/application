@@ -1,5 +1,5 @@
 #pragma once
-#include <list> 
+#include <list>
 #include "PassarelaEntitat.h"
 
 using namespace System;
