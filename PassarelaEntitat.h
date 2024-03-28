@@ -9,5 +9,8 @@ ref class PassarelaEntitat
 	public:
 		PassarelaEntitat() {}
 		PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t);
+		System::String^ GetCorreuE();
+		System::String^ GetDescripcio();
+		System::String^ GetTipus();
 };
 

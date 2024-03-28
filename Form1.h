@@ -76,12 +76,11 @@ namespace CppCLRWinFormsProject {
 			this->Name = L"Form1";
 			this->Text = L"Form1";
 			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::ConsultaEntitats^ consulta_entitats = gcnew application::ConsultaEntitats();
-			consulta_entitats->Show();
+		consulta_entitats->Show();
 	}
 	};
 }
