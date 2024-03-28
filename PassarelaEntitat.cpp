@@ -8,3 +8,15 @@ PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, Syst
 	_tipus = t;
 }
 
+System::String^ PassarelaEntitat::GetCorreuE() 
+{
+	return _correuElectronic;
+}
+System::String^ PassarelaEntitat::GetDescripcio()
+{
+	return _descripcio;
+}
+System::String^ PassarelaEntitat::GetTipus()
+{
+	return _tipus;
+}
