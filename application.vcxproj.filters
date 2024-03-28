@@ -29,10 +29,10 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AltaEntitat.h">
+    <ClInclude Include="FormBaixaEntitat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TxAltaEntitat.h">
+    <ClInclude Include="TxBaixaEntitat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaUsuari.h">
@@ -55,7 +55,13 @@
     <ClCompile Include="Form1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TxAltaEntitat.cpp">
+    <ClCompile Include="FormBaixaEntitat.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxBaixaEntitat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaUsuari.cpp">
