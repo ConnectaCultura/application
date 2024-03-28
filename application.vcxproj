@@ -138,12 +138,18 @@
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="PassarelaEntitat.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Resource.h" />
+
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="FormBaixaEntitat.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h" />
+    <ClInclude Include="PassarelaUsuari.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="TxBaixaEntitat.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -152,7 +158,10 @@
     <ClCompile Include="ConsultaEntitats.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="FormBaixaEntitat.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
+    <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -162,6 +171,7 @@
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="TxBaixaEntitat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -183,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaixaEntitat.resx">
+      <DependentUpon>FormBaixaEntitat.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

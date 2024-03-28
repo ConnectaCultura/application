@@ -12,5 +12,6 @@ ref class PassarelaEntitat
 		System::String^ GetCorreuE();
 		System::String^ GetDescripcio();
 		System::String^ GetTipus();
+		void insereix();
+		void esborra();
 };
-

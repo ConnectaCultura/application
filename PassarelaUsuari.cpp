@@ -1,50 +1,48 @@
 #include "pch.h"
-#include "PassarelaEntitat.h"
+#include "PassarelaUsuari.h"
+
 using namespace MySql::Data::MySqlClient;
 
-PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t) {
-	_correuElectronic = cE;
-	_descripcio = des;
+PassarelaUsuari::PassarelaUsuari(System::String^ nom, System::String^ ceU, System::String^ cU, System::String^ t) {
+	_nom = nom;
+	_correuElectronic = ceU;
+	_contrasenya = cU;
 	_tipus = t;
 }
 
-System::String^ PassarelaEntitat::GetCorreuE() 
+System::String^ PassarelaUsuari::obteContrasenya()
 {
-	return _correuElectronic;
-}
-System::String^ PassarelaEntitat::GetDescripcio()
-{
-	return _descripcio;
-}
-System::String^ PassarelaEntitat::GetTipus()
-{
-	return _tipus;
+	return _contrasenya;
 }
 
-
-
-void PassarelaEntitat::insereix() {
+void PassarelaUsuari::insereix() {
 	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _descripcio + "','" + _tipus + "')";
+	System::String^ sql = "INSERT INTO Usuari VALUES ('" + _nom + "' , '" + _contrasenya + "','" + _tipus + "','" + _correuElectronic + "')";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
-	// obrim la connexiï¿½
+
+	// obrim la connexió
 	conn->Open();
 	// executem la comanda creada abans del try
 	dataReader = cmd->ExecuteReader();
+
+	// si tot va bé es tanca la connexió
 	conn->Close();
 }
 
-void PassarelaEntitat::esborra() {
+void PassarelaUsuari::esborra() {
 	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	System::String^ sql = "DELETE FROM Entitat WHERE correu_electronic='" + _correuElectronic + "';";
+	System::String^ sql = "DELETE FROM Usuari WHERE correu_electronic='" + _correuElectronic + "';"; 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
-	// obrim la connexiï¿½
+
+	// obrim la connexió
 	conn->Open();
 	// executem la comanda creada abans del try
 	dataReader = cmd->ExecuteReader();
+
+	// si tot va bé es tanca la connexió
 	conn->Close();
 }

@@ -33,6 +33,13 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ConsultaEntitats.h">
+    <ClInclude Include="FormBaixaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxBaixaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaUsuari.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaEntitat.h">
@@ -68,6 +75,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ConsultaEntitats.cpp">
+    <ClCompile Include="FormBaixaEntitat.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxBaixaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaUsuari.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaEntitat.cpp">

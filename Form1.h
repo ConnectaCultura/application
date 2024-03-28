@@ -1,5 +1,8 @@
 #pragma once
 #include "ConsultaEntitats.h"
+
+#include "FormBaixaEntitat.h"
+
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -37,10 +40,6 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 
-	protected:
-
-	protected:
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -59,13 +58,13 @@ namespace CppCLRWinFormsProject {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(99, 33);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Location = System::Drawing::Point(12, 34);
+			this->button1->Name = L"EsborrarEntitat";
+			this->button1->Size = System::Drawing::Size(154, 21);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Esborrar entitat";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::EsborrarEntitat_Click);
 			// 
 			// Form1
 			// 
@@ -76,11 +75,12 @@ namespace CppCLRWinFormsProject {
 			this->Name = L"Form1";
 			this->Text = L"Form1";
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		application::ConsultaEntitats^ consulta_entitats = gcnew application::ConsultaEntitats();
-		consulta_entitats->Show();
+	private: System::Void EsborrarEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
+		application::FormBaixaEntitat^ baixa_entitat = gcnew application::FormBaixaEntitat();
+		baixa_entitat->Show();
 	}
 	};
 }
