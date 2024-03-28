@@ -1,4 +1,5 @@
 #pragma once
+#include "ConsultaEntitats.h"
 
 #include "FormBaixaEntitat.h"
 

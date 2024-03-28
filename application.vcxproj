@@ -130,9 +130,18 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CercadoraEntitat.h" />
+    <ClInclude Include="CercadoraTipus.h" />
+    <ClInclude Include="ConsultaEntitats.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+
+    <ClInclude Include="TxConsultaEntitats.h" />
+    <ClInclude Include="TxConsultaEntitatsTipus.h" />
+    <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="FormBaixaEntitat.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraEntitat.cpp" />
+    <ClCompile Include="CercadoraTipus.cpp" />
+    <ClCompile Include="ConsultaEntitats.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="FormBaixaEntitat.cpp" />
@@ -156,6 +168,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TxConsultaEntitats.cpp" />
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
+    <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,11 +182,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConsultaEntitats.resx">
+      <DependentUpon>ConsultaEntitats.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
     </EmbeddedResource>
