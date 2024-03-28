@@ -25,9 +25,3 @@ List<PassarelaEntitat^>^ TxConsultaEntitatsTipus::ObteResultat()
 {
 	return _llistaEntitats;
 }
-/*
-List<System::String^>^ TxConsultaEntitatsTipus::ObteTotsTipus()
-{
-	
-}
-*/

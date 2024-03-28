@@ -1,11 +1,6 @@
 #include "pch.h"
 #include "CercadoraEntitat.h"
 
-using namespace System;
-using namespace System::Collections::Generic;
-using namespace MySql::Data::MySqlClient;
-using namespace System::Windows::Forms;
-
 PassarelaEntitat^ CercadoraEntitat::CercaEntitat(System::String^ cE) 
 {
 	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";

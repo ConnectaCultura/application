@@ -1,10 +1,11 @@
 #pragma once
-#include <list> // List
-#include <Windows.h> // MessageBox
+#include <list> 
 #include "PassarelaEntitat.h"
 
 using namespace System;
 using namespace System::Collections::Generic;
+using namespace MySql::Data::MySqlClient;
+
 ref class CercadoraEntitat
 {
 	public:

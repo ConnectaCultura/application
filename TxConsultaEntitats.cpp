@@ -12,7 +12,6 @@ void TxConsultaEntitats::executar()
 {
 	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
 	_llistaEntitats = cerEnt.ObteTots();
-	//aqui no tinc que fer ni try ni catch no?
 }
 
 List<PassarelaEntitat^>^ TxConsultaEntitats::ObteResultat()

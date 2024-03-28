@@ -2,7 +2,6 @@
 #include<string>
 #include<iostream>
 #include <list> // List
-#include <Windows.h> // MessageBox
 #include "CercadoraEntitat.h"
 using namespace std;
 using namespace System;
@@ -18,6 +17,5 @@ ref class TxConsultaEntitatsTipus
 		void executar();
 		void SetTipus(System::String^ tipus);
 		List<PassarelaEntitat^>^ ObteResultat();
-		//List<System::String^>^ ObteTotsTipus();
 };
 
