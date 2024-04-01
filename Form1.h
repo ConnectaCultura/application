@@ -1,5 +1,7 @@
 #pragma once
 
+#include "LogInForm.h"
+#include "Sessio.h"
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -21,6 +23,20 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
+			logIn->Visible = true;
+			logOut->Visible = false;
+
+		}
+		void ActualitzarForm1() {
+			Sessio^ s = Sessio::getInstance();
+			if (s->obteUsuari() == nullptr) {
+				logIn->Visible = true;
+				logOut->Visible = false;
+			}
+			else {
+				logIn->Visible = false;
+				logOut->Visible = true;
+			}
 		}
 
 	protected:
@@ -34,6 +50,9 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ logIn;
+	private: System::Windows::Forms::Button^ logOut;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,12 +67,65 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->logIn = (gcnew System::Windows::Forms::Button());
+			this->logOut = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// logIn
+			// 
+			this->logIn->BackColor = System::Drawing::Color::OrangeRed;
+			this->logIn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->logIn->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->logIn->Location = System::Drawing::Point(227, 21);
+			this->logIn->Name = L"logIn";
+			this->logIn->Size = System::Drawing::Size(142, 42);
+			this->logIn->TabIndex = 0;
+			this->logIn->Text = L"iniciar sessió";
+			this->logIn->UseVisualStyleBackColor = false;
+			this->logIn->Click += gcnew System::EventHandler(this, &Form1::logIn_Click);
+			// 
+			// logOut
+			// 
+			this->logOut->BackColor = System::Drawing::Color::OrangeRed;
+			this->logOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->logOut->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->logOut->Location = System::Drawing::Point(227, 21);
+			this->logOut->Name = L"logOut";
+			this->logOut->Size = System::Drawing::Size(142, 42);
+			this->logOut->TabIndex = 1;
+			this->logOut->Text = L"tancar sessió";
+			this->logOut->UseVisualStyleBackColor = false;
+			this->logOut->Click += gcnew System::EventHandler(this, &Form1::logOut_Click);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(397, 366);
+			this->Controls->Add(this->logOut);
+			this->Controls->Add(this->logIn);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
-	};
+	private: System::Void logIn_Click(System::Object^ sender, System::EventArgs^ e) {
+		application::LogInForm^ login = gcnew application::LogInForm();
+		login->ShowDialog();
+		Sessio^ s = Sessio::getInstance();
+		/*if (s->obteUsuari() != nullptr) {
+			logIn->Visible = false;
+			logOut->Visible = true;
+		}*/
+		Form1::ActualitzarForm1();
+	}
+	private: System::Void logOut_Click(System::Object^ sender, System::EventArgs^ e) {
+		Sessio^ s = Sessio::getInstance();
+		s->tancaSessio();
+		Form1::ActualitzarForm1();
+	}
+};
 }
