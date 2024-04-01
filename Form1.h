@@ -3,6 +3,7 @@
 #include "LogInForm.h"
 #include "Sessio.h"
 #include "AltaEntitatForm.h"
+#include "BaixaEntitatForm.h"
 
 namespace CppCLRWinFormsProject {
 
@@ -28,6 +29,7 @@ namespace CppCLRWinFormsProject {
 			logIn->Visible = true;
 			logOut->Visible = false;
 			altaEntitat->Visible = false;
+			EsborrarEntitat->Visible = false;
 
 		}
 		void ActualitzarForm1() {
@@ -36,13 +38,16 @@ namespace CppCLRWinFormsProject {
 				logIn->Visible = true;
 				logOut->Visible = false;
 				altaEntitat->Visible = false;
+				EsborrarEntitat->Visible = false;
 			}
 			else {
 				logIn->Visible = false;
 				logOut->Visible = true;
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
-
+				}
+				else if (s->obteUsuari()->obteTipus() == "entitat") {
+					EsborrarEntitat->Visible = true;
 				}
 			}
 		}
@@ -61,6 +66,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ logIn;
 	private: System::Windows::Forms::Button^ logOut;
 	private: System::Windows::Forms::Button^ altaEntitat;
+	private: System::Windows::Forms::Button^ EsborrarEntitat;
+
+
 
 	protected:
 
@@ -80,6 +88,7 @@ namespace CppCLRWinFormsProject {
 			this->logIn = (gcnew System::Windows::Forms::Button());
 			this->logOut = (gcnew System::Windows::Forms::Button());
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
+			this->EsborrarEntitat = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -124,11 +133,26 @@ namespace CppCLRWinFormsProject {
 			this->altaEntitat->UseVisualStyleBackColor = false;
 			this->altaEntitat->Click += gcnew System::EventHandler(this, &Form1::altaEntitat_Click);
 			// 
+			// EsborrarEntitat
+			// 
+			this->EsborrarEntitat->BackColor = System::Drawing::Color::DarkGray;
+			this->EsborrarEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->EsborrarEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->EsborrarEntitat->Location = System::Drawing::Point(39, 168);
+			this->EsborrarEntitat->Name = L"EsborrarEntitat";
+			this->EsborrarEntitat->Size = System::Drawing::Size(188, 38);
+			this->EsborrarEntitat->TabIndex = 3;
+			this->EsborrarEntitat->Text = L"Esborrar entitat";
+			this->EsborrarEntitat->UseVisualStyleBackColor = false;
+			this->EsborrarEntitat->Click += gcnew System::EventHandler(this, &Form1::EsborrarEntitat_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(397, 366);
+			this->Controls->Add(this->EsborrarEntitat);
 			this->Controls->Add(this->altaEntitat);
 			this->Controls->Add(this->logOut);
 			this->Controls->Add(this->logIn);
@@ -156,7 +180,13 @@ namespace CppCLRWinFormsProject {
 	private: System::Void altaEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::AltaEntitatForm^ altaEntitat = gcnew application::AltaEntitatForm();
 		altaEntitat->ShowDialog();
+		Form1::ActualitzarForm1();
 
 	}
+private: System::Void EsborrarEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::BaixaEntitatForm^ baixa_entitat = gcnew application::BaixaEntitatForm();
+	baixa_entitat->ShowDialog();
+	Form1::ActualitzarForm1();
+}
 };
 }
