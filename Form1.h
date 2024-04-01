@@ -2,6 +2,8 @@
 
 #include "LogInForm.h"
 #include "Sessio.h"
+#include "AltaEntitatForm.h"
+
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -25,6 +27,7 @@ namespace CppCLRWinFormsProject {
 			//
 			logIn->Visible = true;
 			logOut->Visible = false;
+			altaEntitat->Visible = false;
 
 		}
 		void ActualitzarForm1() {
@@ -32,10 +35,15 @@ namespace CppCLRWinFormsProject {
 			if (s->obteUsuari() == nullptr) {
 				logIn->Visible = true;
 				logOut->Visible = false;
+				altaEntitat->Visible = false;
 			}
 			else {
 				logIn->Visible = false;
 				logOut->Visible = true;
+				if (s->obteUsuari()->obteTipus() == "ajuntament") {
+					altaEntitat->Visible = true;
+
+				}
 			}
 		}
 
@@ -52,6 +60,8 @@ namespace CppCLRWinFormsProject {
 		}
 	private: System::Windows::Forms::Button^ logIn;
 	private: System::Windows::Forms::Button^ logOut;
+	private: System::Windows::Forms::Button^ altaEntitat;
+
 	protected:
 
 	private:
@@ -69,6 +79,7 @@ namespace CppCLRWinFormsProject {
 		{
 			this->logIn = (gcnew System::Windows::Forms::Button());
 			this->logOut = (gcnew System::Windows::Forms::Button());
+			this->altaEntitat = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -99,11 +110,26 @@ namespace CppCLRWinFormsProject {
 			this->logOut->UseVisualStyleBackColor = false;
 			this->logOut->Click += gcnew System::EventHandler(this, &Form1::logOut_Click);
 			// 
+			// altaEntitat
+			// 
+			this->altaEntitat->BackColor = System::Drawing::Color::DarkGray;
+			this->altaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->altaEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->altaEntitat->Location = System::Drawing::Point(39, 106);
+			this->altaEntitat->Name = L"altaEntitat";
+			this->altaEntitat->Size = System::Drawing::Size(188, 41);
+			this->altaEntitat->TabIndex = 2;
+			this->altaEntitat->Text = L"Donar d\'alta entitat";
+			this->altaEntitat->UseVisualStyleBackColor = false;
+			this->altaEntitat->Click += gcnew System::EventHandler(this, &Form1::altaEntitat_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(397, 366);
+			this->Controls->Add(this->altaEntitat);
 			this->Controls->Add(this->logOut);
 			this->Controls->Add(this->logIn);
 			this->Name = L"Form1";
@@ -126,6 +152,11 @@ namespace CppCLRWinFormsProject {
 		Sessio^ s = Sessio::getInstance();
 		s->tancaSessio();
 		Form1::ActualitzarForm1();
+	}
+	private: System::Void altaEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
+		application::AltaEntitatForm^ altaEntitat = gcnew application::AltaEntitatForm();
+		altaEntitat->ShowDialog();
+
 	}
 };
 }
