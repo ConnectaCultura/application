@@ -142,7 +142,6 @@ namespace application {
 			this->Close();
 		}
 		catch (MySqlException^ ex) {
-			//MessageBox::Show("Usuari NO existeix");
 			MessageBox::Show(ex->Message);
 		}
 		catch (std::runtime_error e) {

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "Connexio.h"
+
 ref class PassarelaUsuari
 {
 
@@ -15,5 +18,6 @@ public:
 	System::String^ obteContrasenya();
 	System::String^ obteNom();
 	System::String^ obteTipus();
+	void insereix();
 };
 

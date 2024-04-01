@@ -36,3 +36,10 @@ System::String^ PassarelaUsuari::obteTipus()
 {
 	return this->tipus;
 }
+
+void PassarelaUsuari::insereix() {
+	System::String^ sql = "INSERT INTO Usuari VALUES ('" + nom + "' , '" + contrasenya + "','" + tipus + "','" + correuElectronic + "')";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
