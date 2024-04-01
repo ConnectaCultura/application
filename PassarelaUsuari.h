@@ -19,5 +19,6 @@ public:
 	System::String^ obteNom();
 	System::String^ obteTipus();
 	void insereix();
+	void esborra();
 };
 
