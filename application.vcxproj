@@ -136,8 +136,12 @@
     <ClInclude Include="BaixaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
+    <ClInclude Include="ConsultaEntitatForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -155,6 +159,7 @@
     <ClInclude Include="Sessio.h" />
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
   </ItemGroup>
@@ -162,8 +167,10 @@
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
+    <ClCompile Include="CercadoraEntitat.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
     <ClCompile Include="Connexio.cpp" />
+    <ClCompile Include="ConsultaEntitatForm.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
@@ -180,6 +187,7 @@
     <ClCompile Include="Sessio.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
   </ItemGroup>
@@ -202,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaixaEntitatForm.resx">
       <DependentUpon>BaixaEntitatForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaEntitatForm.resx">
+      <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>

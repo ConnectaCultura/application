@@ -14,3 +14,14 @@ void PassarelaEntitat::insereix() {
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
 }
+
+System::String^ PassarelaEntitat::obteTipus() {
+	return this->_tipus;
+}
+
+System::String^ PassarelaEntitat::obteDescripcio() {
+	return this->_descripcio;
+}
+System::String^ PassarelaEntitat::obteCorreuElectronic() {
+	return this->_correuElectronic;
+}
