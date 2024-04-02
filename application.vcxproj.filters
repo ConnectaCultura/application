@@ -47,6 +47,30 @@
     <ClInclude Include="PassarelaUsuari.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AltaEntitatForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaixaEntitatForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistreCiutadaForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxAltaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxBaixaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxRegistreCiutada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaCiutada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -77,6 +101,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AltaEntitatForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaixaEntitatForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistreCiutadaForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxAltaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxBaixaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxRegistreCiutada.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaCiutada.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
