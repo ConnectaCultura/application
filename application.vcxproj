@@ -144,14 +144,19 @@
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RegistreCiutadaForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxRegistreCiutada.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AltaEntitatForm.cpp" />
@@ -162,6 +167,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="pch.cpp">
@@ -170,10 +176,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="RegistreCiutadaForm.cpp" />
     <ClCompile Include="Sessio.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxRegistreCiutada.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -200,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistreCiutadaForm.resx">
+      <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
