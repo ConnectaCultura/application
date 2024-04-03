@@ -197,7 +197,7 @@ namespace application {
 		List<PassarelaEntitat^>^ ve = ent.ObteResultat();
 		for each (PassarelaEntitat ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->GetCorreuE(), e->GetDescripcio(), e->GetTipus());
+			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
 		}
 		//tecnicament no fa falta ja que al inicialitzarlo s'autoseleciona el tipus buit i pertant s'escriu sencer
 
@@ -232,7 +232,7 @@ private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender,
 		List<PassarelaEntitat^>^ ve = entip.ObteResultat();
 		for each (PassarelaEntitat ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->GetCorreuE(), e->GetDescripcio(), e->GetTipus());
+			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
 		}
 	}
 	else {
@@ -246,7 +246,7 @@ private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender,
 		List<PassarelaEntitat^>^ ve = en.ObteResultat();
 		for each (PassarelaEntitat ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->GetCorreuE(), e->GetDescripcio(), e->GetTipus());
+			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
 		}
 	}
 }

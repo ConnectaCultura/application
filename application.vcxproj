@@ -140,7 +140,8 @@
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
     <ClInclude Include="ConsultaEntitatForm.h">
-
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CercadoraTipus.h" />
     <ClInclude Include="ConsultaEntitats.h">
       <FileType>CppForm</FileType>
@@ -225,6 +226,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitatForm.resx">
       <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitats.resx">
       <DependentUpon>ConsultaEntitats.h</DependentUpon>
     </EmbeddedResource>
