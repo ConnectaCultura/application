@@ -31,6 +31,10 @@ System::String^ PassarelaUsuari::obteNom()
 {
 	return this->nom;
 }
+void PassarelaUsuari::modificaNom(System::String^ nom)
+{
+	this->nom = nom;
+}
 
 System::String^ PassarelaUsuari::obteTipus()
 {
@@ -46,6 +50,12 @@ void PassarelaUsuari::insereix() {
 
 void PassarelaUsuari::esborra() {
 	System::String^ sql = "DELETE FROM Usuari WHERE correu_electronic='" + correuElectronic + "';";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+void PassarelaUsuari::modifica() {
+	System::String^ sql = "UPDATE Usuari SET nom='" + nom + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

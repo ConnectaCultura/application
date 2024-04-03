@@ -168,6 +168,7 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
