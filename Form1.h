@@ -6,7 +6,7 @@
 #include "BaixaEntitatForm.h"
 #include "RegistreCiutadaForm.h"
 #include "ConsultaEntitatForm.h"
-
+#include "ConsultaEntitats.h"
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -74,8 +74,6 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ registreCiutada;
 	private: System::Windows::Forms::Button^ ConsultaEntitat;
 
-
-
 	protected:
 
 	private:
@@ -110,7 +108,7 @@ namespace CppCLRWinFormsProject {
 			this->logIn->Name = L"logIn";
 			this->logIn->Size = System::Drawing::Size(126, 34);
 			this->logIn->TabIndex = 0;
-			this->logIn->Text = L"iniciar sessió";
+			this->logIn->Text = L"iniciar sessiï¿½";
 			this->logIn->UseVisualStyleBackColor = false;
 			this->logIn->Click += gcnew System::EventHandler(this, &Form1::logIn_Click);
 			// 
@@ -125,7 +123,7 @@ namespace CppCLRWinFormsProject {
 			this->logOut->Name = L"logOut";
 			this->logOut->Size = System::Drawing::Size(126, 34);
 			this->logOut->TabIndex = 1;
-			this->logOut->Text = L"tancar sessió";
+			this->logOut->Text = L"tancar sessiï¿½";
 			this->logOut->UseVisualStyleBackColor = false;
 			this->logOut->Click += gcnew System::EventHandler(this, &Form1::logOut_Click);
 			// 

@@ -51,6 +51,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BaixaEntitatForm.h">
+    <ClInclude Include="CercadoraEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultaEntitats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaEntitat.h">
@@ -69,6 +73,16 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaCiutada.h">
+    <ClInclude Include="TxConsultaEntitats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaEntitatsTipus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraTipus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaTipus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,6 +121,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BaixaEntitatForm.cpp">
+    <ClCompile Include="CercadoraEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultaEntitats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaEntitat.cpp">
@@ -125,6 +143,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaCiutada.cpp">
+    <ClCompile Include="TxConsultaEntitats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraTipus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaTipus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

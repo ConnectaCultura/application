@@ -140,6 +140,9 @@
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
     <ClInclude Include="ConsultaEntitatForm.h">
+
+    <ClInclude Include="CercadoraTipus.h" />
+    <ClInclude Include="ConsultaEntitats.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
@@ -162,6 +165,9 @@
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
+    <ClInclude Include="TxConsultaEntitats.h" />
+    <ClInclude Include="TxConsultaEntitatsTipus.h" />
+    <ClInclude Include="TxConsultaTipus.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AltaEntitatForm.cpp" />
@@ -177,6 +183,8 @@
     <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
+    <ClCompile Include="CercadoraTipus.cpp" />
+    <ClCompile Include="ConsultaEntitats.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -190,6 +198,9 @@
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
+    <ClCompile Include="TxConsultaEntitats.cpp" />
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
+    <ClCompile Include="TxConsultaTipus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -200,6 +211,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -213,6 +225,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitatForm.resx">
       <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
+    <EmbeddedResource Include="ConsultaEntitats.resx">
+      <DependentUpon>ConsultaEntitats.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
