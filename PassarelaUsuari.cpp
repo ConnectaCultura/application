@@ -31,14 +31,15 @@ System::String^ PassarelaUsuari::obteNom()
 {
 	return this->nom;
 }
-void PassarelaUsuari::modificaNom(System::String^ nom)
-{
-	this->nom = nom;
-}
 
 System::String^ PassarelaUsuari::obteTipus()
 {
 	return this->tipus;
+}
+
+void PassarelaUsuari::modificaNom(System::String^ nom)
+{
+	this->nom = nom;
 }
 
 void PassarelaUsuari::insereix() {

@@ -172,8 +172,14 @@ namespace application {
 	private: System::Void ModificaButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		Sessio^ s = Sessio::getInstance();
 		PassarelaUsuari^ u = s->obteUsuari();
-		TxModificaEntitat(NomBox->Text, DescripcioBox->Text, TipusBox->Text, u);
-
+		TxModificaEntitat Mod(NomBox->Text, DescripcioBox->Text, TipusBox->Text, u);
+		try {
+			Mod.executar();
+			this->Close();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show("No s'ha pogut modificar.");
+		}
 		s->modificaUsuari(NomBox->Text);
 	}
 

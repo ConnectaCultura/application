@@ -6,9 +6,18 @@ TxModificaEntitat::TxModificaEntitat(System::String^ nom, System::String^ descri
 	_nom = nom;
 	_descripcio = descripcio;
 	_tipus = tipus;
-	_correuAntic = u->obteCorreuElectronic();
+	_user = u;
 }
 void TxModificaEntitat::executar() {
-	
+	// Modificar nom de l'usuari
+	_user->modificaNom(_nom);
+	_user->modifica();
 
+	// Busquem l'entitat amb el correu del _user
+	CercadoraEntitat cE;
+	PassarelaEntitat^ e = cE.CercaEntitat(_user->obteCorreuElectronic());
+
+	// Modificar descripcio i tipus
+	e->modificaValors(_descripcio, _tipus);
+	e->modifica();
 }
