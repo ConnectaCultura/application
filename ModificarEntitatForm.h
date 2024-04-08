@@ -192,5 +192,14 @@ private: System::Void ModificarEntitatForm_Load(System::Object^ sender, System::
 	DescripcioBox->Text = entitat->obteCorreuElectronic();
 	TipusBox->Text = entitat->obteTipus();
 }
+
+	private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void TipusBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void DescripcioBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+
 };
 }
