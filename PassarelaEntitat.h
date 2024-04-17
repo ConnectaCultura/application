@@ -6,12 +6,12 @@ ref class PassarelaEntitat
 private:
 	System::String^ _correuElectronic;
 	System::String^ _descripcio;
-	System::String^ _tipus;
+	System::String^ _modalitat;
 
 public:
 	PassarelaEntitat() {}
-	PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t);
-	System::String^ obteTipus();
+	PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ m);
+	System::String^ obteModalitat();
 	System::String^ obteDescripcio();
 	System::String^ obteCorreuElectronic();
 	void insereix();

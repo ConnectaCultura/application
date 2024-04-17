@@ -12,13 +12,13 @@ TxConsultaEntitatsTipus::TxConsultaEntitatsTipus()
 void TxConsultaEntitatsTipus::executar()
 {
 	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
-	_llistaEntitats = cerEnt.CercaTipus(_tipus);
+	_llistaEntitats = cerEnt.CercaModalitat(_modalitat);
 	//aqui no tinc que fer ni try ni catch no?
 }
 
-void TxConsultaEntitatsTipus::SetTipus(System::String^ tipus) 
+void TxConsultaEntitatsTipus::SetModalitat(System::String^ modalitat) 
 {
-	_tipus = tipus;
+	_modalitat = modalitat;
 }
 
 List<PassarelaEntitat^>^ TxConsultaEntitatsTipus::ObteResultat()

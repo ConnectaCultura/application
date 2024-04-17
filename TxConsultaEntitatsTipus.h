@@ -11,11 +11,11 @@ ref class TxConsultaEntitatsTipus
 	private:
 		System::String^ _ajuntamentPrincipal;
 		List<PassarelaEntitat^>^ _llistaEntitats;
-		System::String^ _tipus;
+		System::String^ _modalitat;
 	public:
 		TxConsultaEntitatsTipus();
 		void executar();
-		void SetTipus(System::String^ tipus);
+		void SetModalitat(System::String^ modalitat);
 		List<PassarelaEntitat^>^ ObteResultat();
 };
 

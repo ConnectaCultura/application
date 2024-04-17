@@ -5,7 +5,7 @@ List<System::String^>^ CercadoraTipus::ObteTots()
 {
 	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	System::String^ sql = "SELECT * FROM Tipus";
+	System::String^ sql = "SELECT * FROM Modalitat";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 	List<System::String^>^ vt = gcnew List<System::String^>();

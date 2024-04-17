@@ -15,7 +15,7 @@ array<System::String^>^ TxConsultaEntitat::executar() {
 	sol[0] = u->obteNom();
 	CercadoraEntitat cE;
 	PassarelaEntitat^ e = cE.CercaEntitat(_correu);
-	sol[1] = e->obteTipus();
+	sol[1] = e->obteModalitat();
 	sol[2] = e->obteDescripcio();
 	return sol;
 
