@@ -189,7 +189,7 @@ private: System::Void ModificarEntitatForm_Load(System::Object^ sender, System::
 	NomBox->Text = u->obteNom();
 	CercadoraEntitat^ ce;
 	PassarelaEntitat^ entitat = ce->CercaEntitat(u->obteCorreuElectronic());
-	DescripcioBox->Text = entitat->obteCorreuElectronic();
+	DescripcioBox->Text = entitat->obteDescripcio();
 	TipusBox->Text = entitat->obteTipus();
 }
 

@@ -56,7 +56,7 @@ void PassarelaUsuari::esborra() {
 	con->tancarConnexio();
 }
 void PassarelaUsuari::modifica() {
-	System::String^ sql = "UPDATE Usuari SET nom='" + nom + "')";
+	System::String^ sql = "UPDATE Usuari SET nom = '" + nom + "'WHERE correu_electronic='" + correuElectronic + "';)";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

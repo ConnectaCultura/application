@@ -33,6 +33,7 @@ namespace CppCLRWinFormsProject {
 			logOut->Visible = false;
 			altaEntitat->Visible = false;
 			EsborrarEntitat->Visible = false;
+			ModificaEntitatButton->Visible = false;
 
 		}
 		void ActualitzarForm1() {
@@ -43,6 +44,7 @@ namespace CppCLRWinFormsProject {
 				logOut->Visible = false;
 				altaEntitat->Visible = false;
 				EsborrarEntitat->Visible = false;
+				ModificaEntitatButton->Visible = false;
 			}
 			else {
 				logIn->Visible = false;
@@ -53,6 +55,7 @@ namespace CppCLRWinFormsProject {
 				}
 				else if (s->obteUsuari()->obteTipus() == "entitat") {
 					EsborrarEntitat->Visible = true;
+					ModificaEntitatButton->Visible = true;
 				}
 			}
 		}
