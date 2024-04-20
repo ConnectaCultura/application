@@ -152,7 +152,11 @@
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CancelaCompraForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarelaCiutada.h" />
+    <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
@@ -163,6 +167,7 @@
     <ClInclude Include="Sessio.h" />
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
@@ -181,7 +186,9 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
+    <ClCompile Include="PassarelaCompra.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="CercadoraTipus.cpp" />
@@ -196,6 +203,7 @@
     <ClCompile Include="Sessio.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
@@ -224,9 +232,12 @@
     <EmbeddedResource Include="BaixaEntitatForm.resx">
       <DependentUpon>BaixaEntitatForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CancelaCompraForm.resx">
+      <DependentUpon>CancelaCompraForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitatForm.resx">
       <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitats.resx">
       <DependentUpon>ConsultaEntitats.h</DependentUpon>
     </EmbeddedResource>
