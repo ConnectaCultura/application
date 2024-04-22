@@ -39,7 +39,7 @@ List<PassarelaEntitat^>^ CercadoraEntitat::ObteTots()
 List<PassarelaEntitat^>^ CercadoraEntitat::CercaTipus(System::String^ t)
 {
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Entitat WHERE tipus = '" + t + "';";
+	System::String^ sql = "SELECT * FROM Entitat WHERE modalitat = '" + t + "';";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaEntitat^>^ ve = gcnew List<PassarelaEntitat^>();
 	while (dataReader->Read()) {
