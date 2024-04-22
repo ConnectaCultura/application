@@ -4,10 +4,11 @@
 TxConsultaEntitat::TxConsultaEntitat(System::String^ correu) {
 
 	_correu = correu;
+	array<System::String^>^ res;
 
 }
-
-array<System::String^>^ TxConsultaEntitat::executar() {
+//array<System::String^>^
+void TxConsultaEntitat::executar() {
 	CercadoraUsuari cU;
 	PassarelaUsuari^ u = cU.cercaUsuari(_correu);
 
@@ -17,7 +18,12 @@ array<System::String^>^ TxConsultaEntitat::executar() {
 	PassarelaEntitat^ e = cE.CercaEntitat(_correu);
 	sol[1] = e->obteTipus();
 	sol[2] = e->obteDescripcio();
-	return sol;
+	res = sol;
+	return;
 
 
+}
+
+array<System::String^>^ TxConsultaEntitat::ObteResultat() {
+	return res;
 }
