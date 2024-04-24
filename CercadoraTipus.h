@@ -1,5 +1,6 @@
 #pragma once
-#include <list> 
+#include <list>
+#include "Connexio.h"
 
 using namespace System;
 using namespace System::Collections::Generic;

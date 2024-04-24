@@ -195,6 +195,7 @@ namespace application {
 			MessageBox::Show(ex->Message);
 		}
 		List<PassarelaEntitat^>^ ve = ent.ObteResultat();
+		
 		for each (PassarelaEntitat ^ e in ve)
 		{
 			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
@@ -208,8 +209,9 @@ namespace application {
 		catch (System::Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		
-		TipusComboBox->DataSource = tip.ObteResultat();
+		List<String^>^ dades = tip.ObteResultat();
+		dades->Insert(0, "");
+		TipusComboBox->DataSource = dades;
 	}
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		//Mostra Pagina Entitat:
