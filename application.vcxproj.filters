@@ -42,9 +42,37 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sessio.h">
+    <ClInclude Include="FormBaixaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxBaixaEntitat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEsdeveniment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxAltaEsdeveniment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Connexio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormAltaEsdeveniment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaTipus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraTipus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,9 +102,40 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sessio.cpp">
+    <ClCompile Include="FormBaixaEntitat.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxBaixaEntitat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PassarelaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEsdeveniment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxAltaEsdeveniment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Connexio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormAltaEsdeveniment.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaTipus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraTipus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

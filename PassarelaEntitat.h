@@ -12,4 +12,5 @@ public:
 	PassarelaEntitat() {}
 	PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t);
 	void insereix();
+	void esborra();
 };

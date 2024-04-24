@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "PassarelaEntitat.h"
+using namespace MySql::Data::MySqlClient;
 
 PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t) {
 	_correuElectronic = cE;
@@ -14,3 +15,12 @@ void PassarelaEntitat::insereix() {
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
 }
+
+void PassarelaEntitat::esborra() {
+	System::String^ sql = "DELETE FROM Entitat WHERE correu_electronic='" + _correuElectronic + "';";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+
+
