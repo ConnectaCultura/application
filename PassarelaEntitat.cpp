@@ -17,7 +17,7 @@ void PassarelaEntitat::insereix() {
 
 
 void PassarelaEntitat::modifica() {
-	System::String^ sql = "UPDATE Entitat SET descripcio='" + _descripcio + "', tipus='" + _tipus + ")";
+	System::String^ sql = "UPDATE Entitat SET descripcio='" + _descripcio + "', modalitat='" + _tipus + "' WHERE correu_electronic = '" + _correuElectronic + "'";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
