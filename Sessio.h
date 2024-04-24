@@ -15,6 +15,7 @@ public:
 	void iniciaSessio(PassarelaUsuari^ u);
 	void tancaSessio();
 	void refrescaUsuari(PassarelaUsuari^ u);
+	void modificaUsuari(System::String^ nom);
 private:
 	PassarelaUsuari^ usuari = nullptr;
 	static Sessio^ instance = nullptr;
