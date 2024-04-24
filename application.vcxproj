@@ -130,49 +130,87 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CercadoraTipus.h" />
+    <ClInclude Include="AltaEntitatForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BaixaEntitatForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CercadoraEntitat.h" />
+    <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
-    <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="ConsultaEntitatForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CercadoraTipus.h" />
+    <ClInclude Include="ConsultaEntitats.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="LogInForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PassarelaCiutada.h" />
+    <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="FormAltaEsdeveniment.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="FormBaixaEntitat.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaEsdeveniment.h" />
     <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RegistreCiutadaForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
+    <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxRegistreCiutada.h" />
+    <ClInclude Include="TxConsultaEntitats.h" />
+    <ClInclude Include="TxConsultaEntitatsTipus.h" />
+    <ClInclude Include="TxConsultaTipus.h" />
+
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="CercadoraTipus.cpp" />
+    <ClCompile Include="FormAltaEsdeveniment.cpp" />
+    <ClCompile Include="PassarelaEsdeveniment.cpp" />
+    <ClCompile Include="BaixaEntitatForm.cpp" />
+    <ClCompile Include="CercadoraEntitat.cpp" />
+    <ClCompile Include="CercadoraUsuari.cpp" />
     <ClCompile Include="Connexio.cpp" />
-    <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="ConsultaEntitatForm.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
-    <ClCompile Include="FormAltaEsdeveniment.cpp" />
-    <ClCompile Include="FormBaixaEntitat.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
-    <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
+    <ClCompile Include="CercadoraTipus.cpp" />
+    <ClCompile Include="ConsultaEntitats.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Sessio.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
+    <ClCompile Include="RegistreCiutadaForm.cpp" />
+    <ClCompile Include="Sessio.cpp" />
+    <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxRegistreCiutada.cpp" />
+    <ClCompile Include="TxConsultaEntitats.cpp" />
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
+    <ClCompile Include="TxConsultaTipus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -183,19 +221,35 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAltaEsdeveniment.resx">
       <DependentUpon>FormAltaEsdeveniment.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaixaEntitat.resx">
-      <DependentUpon>FormBaixaEntitat.h</DependentUpon>
+    <EmbeddedResource Include="AltaEntitatForm.resx">
+      <DependentUpon>AltaEntitatForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaixaEntitatForm.resx">
+      <DependentUpon>BaixaEntitatForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaEntitatForm.resx">
+      <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
+      </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaEntitats.resx">
+      <DependentUpon>ConsultaEntitats.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInForm.resx">
+      <DependentUpon>LogInForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistreCiutadaForm.resx">
+      <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

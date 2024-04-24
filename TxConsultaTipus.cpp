@@ -5,6 +5,7 @@ TxConsultaTipus::TxConsultaTipus() {}
 //faig el Add("") aqui????? ///!!
 
 void TxConsultaTipus::executar()
+
 {
 	CercadoraTipus cerTipus;
 	_result = cerTipus.ObteTots();

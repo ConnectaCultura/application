@@ -9,6 +9,7 @@ using namespace System;
 using namespace System::Collections::Generic;
 ref class TxConsultaTipus
 {
+
 private:
 	List<System::String^>^ _result;
 public:
@@ -16,3 +17,4 @@ public:
 	void executar();
 	List<System::String^>^ ObteResultat();
 };
+

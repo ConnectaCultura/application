@@ -19,3 +19,4 @@ private:
 	PassarelaUsuari^ usuari = nullptr;
 	static Sessio^ instance = nullptr;
 };
+

@@ -19,3 +19,4 @@ private:
 	static Connexio^ instance = nullptr;
 	MySqlConnection^ conn;
 };
+

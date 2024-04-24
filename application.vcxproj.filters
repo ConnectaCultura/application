@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -29,16 +29,23 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FormBaixaEntitat.h">
+
+    <ClInclude Include="LogInForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TxBaixaEntitat.h">
+    <ClInclude Include="TxLogIn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Connexio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sessio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaUsuari.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarelaEntitat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarelaEsdeveniment.h">
@@ -47,21 +54,48 @@
     <ClInclude Include="TxAltaEsdeveniment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sessio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Connexio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FormAltaEsdeveniment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TxConsultaTipus.h">
+    <ClInclude Include="AltaEntitatForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaixaEntitatForm.h">
+    <ClInclude Include="CercadoraEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultaEntitats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistreCiutadaForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxAltaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxBaixaEntitat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxRegistreCiutada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarelaCiutada.h">
+    <ClInclude Include="TxConsultaEntitats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaEntitatsTipus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CercadoraTipus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TxConsultaTipus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -76,40 +110,69 @@
     <ClCompile Include="Form1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FormBaixaEntitat.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxBaixaEntitat.cpp">
+    <ClCompile Include="LogInForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PassarelaUsuari.cpp">
+    <ClCompile Include="TxLogIn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PassarelaEntitat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarelaEsdeveniment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sessio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxAltaEsdeveniment.cpp">
+    <ClCompile Include="CercadoraUsuari.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Connexio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEsdeveniment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxAltaEsdeveniment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="FormAltaEsdeveniment.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="TxConsultaTipus.cpp">
+    <ClCompile Include="AltaEntitatForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaixaEntitatForm.cpp">
+    <ClCompile Include="CercadoraEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultaEntitats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistreCiutadaForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxAltaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxBaixaEntitat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxRegistreCiutada.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarelaCiutada.cpp">
+    <ClCompile Include="TxConsultaEntitats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CercadoraTipus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaTipus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

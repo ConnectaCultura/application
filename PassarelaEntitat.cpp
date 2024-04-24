@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "PassarelaEntitat.h"
+
 using namespace MySql::Data::MySqlClient;
 
 PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t) {
@@ -9,27 +10,27 @@ PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, Syst
 }
 
 void PassarelaEntitat::insereix() {
-	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
-	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _descripcio + "','" + _tipus + "')";
-	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
-	// obrim la connexió
-	conn->Open();
-	// executem la comanda creada abans del try
-	dataReader = cmd->ExecuteReader();
-	conn->Close();
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
 }
 
 void PassarelaEntitat::esborra() {
-	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
-	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	System::String^ sql = "DELETE FROM Entitat WHERE correu_electronic='" + _correuElectronic + "';";
-	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
-	// obrim la connexió
-	conn->Open();
-	// executem la comanda creada abans del try
-	dataReader = cmd->ExecuteReader();
-	conn->Close();
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
 }
+
+System::String^ PassarelaEntitat::obteTipus() {
+	return this->_tipus;
+}
+
+System::String^ PassarelaEntitat::obteDescripcio() {
+	return this->_descripcio;
+}
+System::String^ PassarelaEntitat::obteCorreuElectronic() {
+	return this->_correuElectronic;
+}
+
