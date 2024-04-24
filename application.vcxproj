@@ -130,6 +130,9 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AltaAjuntamentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AltaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -152,6 +155,7 @@
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaUsuari.h" />
@@ -161,6 +165,7 @@
     </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
@@ -171,6 +176,7 @@
     <ClInclude Include="TxConsultaTipus.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AltaAjuntamentForm.cpp" />
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
@@ -181,6 +187,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="PassarelaAjuntament.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
@@ -194,6 +201,7 @@
     </ClCompile>
     <ClCompile Include="RegistreCiutadaForm.cpp" />
     <ClCompile Include="Sessio.cpp" />
+    <ClCompile Include="TxAltaAjuntament.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
@@ -218,6 +226,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AltaAjuntamentForm.resx">
+      <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaEntitatForm.resx">
       <DependentUpon>AltaEntitatForm.h</DependentUpon>
     </EmbeddedResource>
@@ -226,7 +237,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitatForm.resx">
       <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitats.resx">
       <DependentUpon>ConsultaEntitats.h</DependentUpon>
     </EmbeddedResource>
