@@ -9,7 +9,7 @@ PassarelaAjuntament::PassarelaAjuntament(System::String^ cE, System::String^ n, 
 }
 
 void PassarelaAjuntament::insereix() {
-	//Revisar el codi SQL
+	//Revisar el codi SQL quan es fasi la taula de la base de dades
 	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _nom + "','" + _contrasenya + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);

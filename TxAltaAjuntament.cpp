@@ -8,7 +8,7 @@ TxAltaAjuntament::TxAltaAjuntament(System::String^ nom, System::String^ correuEl
 }
 
 void TxAltaAjuntament::executar() {
-	//No estic segur de com fer aixo
+	//No estic segur de com fer aixo (2 errors)
 	PassarelaAjuntament u(_nom, _correuElectronic, _contrasenya, "ajuntament");
 	u.insereix();
 	PassarelaAjuntament e(_correuElectronic);
