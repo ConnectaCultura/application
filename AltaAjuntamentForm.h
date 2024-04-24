@@ -50,6 +50,12 @@ namespace application {
 
 
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ labelCodiPostal;
+	private: System::Windows::Forms::Label^ labelTelefon;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownPostal;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownTelefon;
+
+
 	protected:
 
 	private:
@@ -72,6 +78,12 @@ namespace application {
 			this->textBoxCorreu = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxContra = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->labelCodiPostal = (gcnew System::Windows::Forms::Label());
+			this->labelTelefon = (gcnew System::Windows::Forms::Label());
+			this->numericUpDownPostal = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDownTelefon = (gcnew System::Windows::Forms::NumericUpDown());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownPostal))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTelefon))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// labelNom
@@ -87,7 +99,7 @@ namespace application {
 			// 
 			// textBoxNom
 			// 
-			this->textBoxNom->Location = System::Drawing::Point(158, 31);
+			this->textBoxNom->Location = System::Drawing::Point(213, 34);
 			this->textBoxNom->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNom->Name = L"textBoxNom";
 			this->textBoxNom->Size = System::Drawing::Size(183, 22);
@@ -118,7 +130,7 @@ namespace application {
 			// 
 			// textBoxCorreu
 			// 
-			this->textBoxCorreu->Location = System::Drawing::Point(158, 87);
+			this->textBoxCorreu->Location = System::Drawing::Point(213, 87);
 			this->textBoxCorreu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxCorreu->Name = L"textBoxCorreu";
 			this->textBoxCorreu->Size = System::Drawing::Size(183, 22);
@@ -126,7 +138,7 @@ namespace application {
 			// 
 			// textBoxContra
 			// 
-			this->textBoxContra->Location = System::Drawing::Point(158, 139);
+			this->textBoxContra->Location = System::Drawing::Point(213, 142);
 			this->textBoxContra->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxContra->Name = L"textBoxContra";
 			this->textBoxContra->Size = System::Drawing::Size(183, 22);
@@ -138,7 +150,7 @@ namespace application {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Transparent;
-			this->button1->Location = System::Drawing::Point(195, 205);
+			this->button1->Location = System::Drawing::Point(303, 295);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(146, 29);
@@ -147,11 +159,51 @@ namespace application {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &AltaAjuntamentForm::button1_Click);
 			// 
+			// labelCodiPostal
+			// 
+			this->labelCodiPostal->AutoSize = true;
+			this->labelCodiPostal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelCodiPostal->Location = System::Drawing::Point(36, 197);
+			this->labelCodiPostal->Name = L"labelCodiPostal";
+			this->labelCodiPostal->Size = System::Drawing::Size(90, 17);
+			this->labelCodiPostal->TabIndex = 12;
+			this->labelCodiPostal->Text = L"Codi Postal";
+			// 
+			// labelTelefon
+			// 
+			this->labelTelefon->AutoSize = true;
+			this->labelTelefon->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelTelefon->Location = System::Drawing::Point(36, 254);
+			this->labelTelefon->Name = L"labelTelefon";
+			this->labelTelefon->Size = System::Drawing::Size(155, 17);
+			this->labelTelefon->TabIndex = 13;
+			this->labelTelefon->Text = L"Telefon de Contacte";
+			// 
+			// numericUpDownPostal
+			// 
+			this->numericUpDownPostal->Location = System::Drawing::Point(213, 191);
+			this->numericUpDownPostal->Name = L"numericUpDownPostal";
+			this->numericUpDownPostal->Size = System::Drawing::Size(183, 22);
+			this->numericUpDownPostal->TabIndex = 14;
+			// 
+			// numericUpDownTelefon
+			// 
+			this->numericUpDownTelefon->Location = System::Drawing::Point(213, 249);
+			this->numericUpDownTelefon->Name = L"numericUpDownTelefon";
+			this->numericUpDownTelefon->Size = System::Drawing::Size(183, 22);
+			this->numericUpDownTelefon->TabIndex = 15;
+			// 
 			// AltaAjuntamentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(387, 256);
+			this->ClientSize = System::Drawing::Size(461, 355);
+			this->Controls->Add(this->numericUpDownTelefon);
+			this->Controls->Add(this->numericUpDownPostal);
+			this->Controls->Add(this->labelTelefon);
+			this->Controls->Add(this->labelCodiPostal);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBoxContra);
 			this->Controls->Add(this->textBoxCorreu);
@@ -161,6 +213,8 @@ namespace application {
 			this->Controls->Add(this->labelNom);
 			this->Name = L"AltaAjuntamentForm";
 			this->Text = L"AltaAjuntamentForm";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownPostal))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTelefon))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -172,13 +226,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	System::String^ nom = this->textBoxNom->Text;
 	System::String^ correuElectronic = this->textBoxCorreu->Text;
 	System::String^ contrasenya = this->textBoxContra->Text;
-	TxAltaAjuntament txAA(nom, correuElectronic, contrasenya);
+	int codiPostal  = System::Convert::ToInt32(this->numericUpDownPostal->Value);
+	int telefon = System::Convert::ToInt32(this->numericUpDownTelefon->Value);
+	
+	TxAltaAjuntament txAA(nom, correuElectronic, contrasenya, codiPostal, telefon); 
 	try {
 		txAA.executar();
 		this->Close();
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::Show("Usuari ja existent");
+		MessageBox::Show("Error en la crecio d'usuai");
 	}
 	catch (std::runtime_error e) {
 		MessageBox::Show(gcnew System::String(e.what()));
@@ -186,5 +243,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 
+private: System::Void textBoxNom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

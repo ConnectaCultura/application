@@ -1,16 +1,20 @@
 #include "pch.h"
 #include "TxAltaAjuntament.h"
 
-TxAltaAjuntament::TxAltaAjuntament(System::String^ nom, System::String^ correuElectronic, System::String^ contrasenya) {
+TxAltaAjuntament::TxAltaAjuntament(System::String^ nom, System::String^ correuElectronic, System::String^ contrasenya, int nP, int nT) {
 	_nom = nom;
 	_correuElectronic = correuElectronic;
 	_contrasenya = contrasenya;
+	_numPostal = nP;
+	_numTelefon = nT;
+
 }
 
 void TxAltaAjuntament::executar() {
-	//No estic segur de com fer aixo (2 errors)
-	PassarelaAjuntament u(_nom, _correuElectronic, _contrasenya, "ajuntament");
+	PassarelaUsuari u(_correuElectronic, _nom, _contrasenya, "ajuntament");
 	u.insereix();
-	PassarelaAjuntament e(_correuElectronic);
-	e.insereix();
+	PassarelaAjuntament a(_correuElectronic, _numPostal, _numTelefon);
+	a.insereix();
+}
+
 	

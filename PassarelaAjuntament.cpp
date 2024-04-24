@@ -2,26 +2,26 @@
 #include "PassarelaAjuntament.h"
 
 
-PassarelaAjuntament::PassarelaAjuntament(System::String^ cE, System::String^ n, System::String^ c) {
+PassarelaAjuntament::PassarelaAjuntament(System::String^ cE, int nP, int nT) {
 	_correuElectronic = cE;
-	_nom = n;
-	_contrasenya = c;
+	_numeroPostal = nP;
+	_numeroTelefon = nT;
 }
 
 void PassarelaAjuntament::insereix() {
 	//Revisar el codi SQL quan es fasi la taula de la base de dades
-	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _nom + "','" + _contrasenya + "')";
+	System::String^ sql = "INSERT INTO Ajuntament VALUES ('" + _correuElectronic + "' , '" + _numeroPostal + "','" + _numeroTelefon + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
 }
 
-System::String^ PassarelaAjuntament::obteNom() {
-	return this->_nom;
+int PassarelaAjuntament::obtePostal() {
+	return this->_numeroPostal;
 }
 
-System::String^ PassarelaAjuntament::obteContrasenya() {
-	return this->_contrasenya;
+int PassarelaAjuntament::obteTelefon() {
+	return this->_numeroTelefon;
 }
 System::String^ PassarelaAjuntament::obteCorreuElectronic() {
 	return this->_correuElectronic;

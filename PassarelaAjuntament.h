@@ -4,14 +4,14 @@ ref class PassarelaAjuntament
 {
 private:
 	System::String^ _correuElectronic;
-	System::String^ _nom;
-	System::String^ _contrasenya;
+	int _numeroPostal;
+	int _numeroTelefon;
 
 public:
 	PassarelaAjuntament() {}
-	PassarelaAjuntament(System::String^ cE, System::String^ des, System::String^ t);
-	System::String^ obteNom();
-	System::String^ obteContrasenya();
+	PassarelaAjuntament(System::String^ cE, int nP, int nT);
+	int obtePostal();
+	int obteTelefon();
 	System::String^ obteCorreuElectronic();
 	void insereix();
 
