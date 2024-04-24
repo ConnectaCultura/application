@@ -17,8 +17,10 @@ public:
 	System::String^ obteCorreuElectronic();
 	System::String^ obteContrasenya();
 	System::String^ obteNom();
+	void modificaNom(System::String^ nom);
 	System::String^ obteTipus();
 	void insereix();
 	void esborra();
+	void modifica();
 };
 
