@@ -1,48 +1,52 @@
 #include "pch.h"
 #include "PassarelaUsuari.h"
 
-using namespace MySql::Data::MySqlClient;
+PassarelaUsuari::PassarelaUsuari(System::String^ nU, System::String^ ceU, System::String^ cU, System::String^ tU)
+{
+	nom = nU;
+	correuElectronic = ceU;
+	contrasenya = cU;
+	tipus = tU;
+}
 
-PassarelaUsuari::PassarelaUsuari(System::String^ nom, System::String^ ceU, System::String^ cU, System::String^ t) {
-	_nom = nom;
-	_correuElectronic = ceU;
-	_contrasenya = cU;
-	_tipus = t;
+PassarelaUsuari^ PassarelaUsuari::operator=(const PassarelaUsuari^ other) {
+	correuElectronic = other->correuElectronic;
+	contrasenya = other->contrasenya;
+	nom = other->nom;
+	tipus = other->tipus;
+	return this;
+}
+
+System::String^ PassarelaUsuari::obteCorreuElectronic()
+{
+	return this->correuElectronic;
 }
 
 System::String^ PassarelaUsuari::obteContrasenya()
 {
-	return _contrasenya;
+	return this->contrasenya;
+}
+
+System::String^ PassarelaUsuari::obteNom()
+{
+	return this->nom;
+}
+
+System::String^ PassarelaUsuari::obteTipus()
+{
+	return this->tipus;
 }
 
 void PassarelaUsuari::insereix() {
-	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
-	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	System::String^ sql = "INSERT INTO Usuari VALUES ('" + _nom + "' , '" + _contrasenya + "','" + _tipus + "','" + _correuElectronic + "')";
-	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
-
-	// obrim la connexió
-	conn->Open();
-	// executem la comanda creada abans del try
-	dataReader = cmd->ExecuteReader();
-
-	// si tot va bé es tanca la connexió
-	conn->Close();
+	System::String^ sql = "INSERT INTO Usuari (nom, contrasenya, tipus, correu_electronic) VALUES ('" + nom + "' , '" + contrasenya + "','" + tipus + "','" + correuElectronic + "')";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
 }
 
 void PassarelaUsuari::esborra() {
-	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
-	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	System::String^ sql = "DELETE FROM Usuari WHERE correu_electronic='" + _correuElectronic + "';"; 
-	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
-
-	// obrim la connexió
-	conn->Open();
-	// executem la comanda creada abans del try
-	dataReader = cmd->ExecuteReader();
-
-	// si tot va bé es tanca la connexió
-	conn->Close();
+	System::String^ sql = "DELETE FROM Usuari WHERE correu_electronic='" + correuElectronic + "';";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
 }

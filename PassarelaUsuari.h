@@ -1,18 +1,23 @@
 #pragma once
+
+#include "Connexio.h"
+
 ref class PassarelaUsuari
 {
+
 private:
-	System::String^ _nom;
-	System::String^ _correuElectronic;
-	System::String^ _contrasenya;
-	System::String^ _tipus;
+	System::String^ nom;
+	System::String^ correuElectronic;
+	System::String^ contrasenya;
+	System::String^ tipus;
 
 public:
-	PassarelaUsuari() {}
-	PassarelaUsuari(System::String^ nom, System::String^ ceU, System::String^ cU, System::String^ t);
+	PassarelaUsuari(System::String^ nU, System::String^ ceU, System::String^ cU, System::String^ tU);
+	PassarelaUsuari^ operator=(const PassarelaUsuari^ other);
+	System::String^ obteCorreuElectronic();
+	System::String^ obteContrasenya();
+	System::String^ obteNom();
+	System::String^ obteTipus();
 	void insereix();
 	void esborra();
-
-
-	System::String^ obteContrasenya();
 };

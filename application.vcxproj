@@ -130,25 +130,39 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CercadoraTipus.h" />
+    <ClInclude Include="Connexio.h" />
+    <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="Form1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormAltaEsdeveniment.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormBaixaEntitat.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarelaEntitat.h" />
+    <ClInclude Include="PassarelaEsdeveniment.h" />
     <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraTipus.cpp" />
+    <ClCompile Include="Connexio.cpp" />
+    <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="FormAltaEsdeveniment.cpp" />
     <ClCompile Include="FormBaixaEntitat.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
+    <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -156,6 +170,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Sessio.cpp" />
+    <ClCompile Include="TxAltaEsdeveniment.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +190,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAltaEsdeveniment.resx">
+      <DependentUpon>FormAltaEsdeveniment.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBaixaEntitat.resx">
       <DependentUpon>FormBaixaEntitat.h</DependentUpon>
