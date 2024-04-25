@@ -8,8 +8,9 @@ using namespace MySql::Data::MySqlClient;
 
 ref class CercadoraTipus
 {
-	public:
-		CercadoraTipus() {}
-		List<System::String^>^ ObteTots();
+
+public:
+	CercadoraTipus() {}
+	List<System::String^>^ ObteTots();
 };
 

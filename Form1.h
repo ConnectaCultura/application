@@ -1,5 +1,6 @@
 #pragma once
 
+#include "FormAltaEsdeveniment.h"
 #include "LogInForm.h"
 #include "Sessio.h"
 #include "AltaEntitatForm.h"
@@ -7,6 +8,7 @@
 #include "RegistreCiutadaForm.h"
 #include "ConsultaEntitatForm.h"
 #include "ConsultaEntitats.h"
+#include "FormAltaEsdeveniment.h"
 #include "ModificarEntitatForm.h"
 namespace CppCLRWinFormsProject {
 
@@ -33,6 +35,7 @@ namespace CppCLRWinFormsProject {
 			logOut->Visible = false;
 			altaEntitat->Visible = false;
 			EsborrarEntitat->Visible = false;
+			CreaEsdeveniment->Visible = false;
 			ModificaEntitatButton->Visible = false;
 
 		}
@@ -52,9 +55,13 @@ namespace CppCLRWinFormsProject {
 				logOut->Visible = true;
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
+					CreaEsdeveniment->Visible = false;
 				}
 				else if (s->obteUsuari()->obteTipus() == "entitat") {
 					EsborrarEntitat->Visible = true;
+
+					CreaEsdeveniment->Visible = true;
+
 					ModificaEntitatButton->Visible = true;
 				}
 			}
@@ -71,6 +78,8 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
+
+
 	private: System::Windows::Forms::Button^ logIn;
 	private: System::Windows::Forms::Button^ logOut;
 	private: System::Windows::Forms::Button^ altaEntitat;
@@ -78,9 +87,10 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ registreCiutada;
 	private: System::Windows::Forms::Button^ ConsultaEntitat;
 	private: System::Windows::Forms::Button^ ConsultaEntitats;
+
+	private: System::Windows::Forms::Button^ CreaEsdeveniment;
 	private: System::Windows::Forms::Button^ ModificaEntitatButton;
 	private: System::Windows::Forms::Label^ ConnectaCulturaTitle;
-
 
 
 
@@ -108,8 +118,11 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada = (gcnew System::Windows::Forms::Button());
 			this->ConsultaEntitat = (gcnew System::Windows::Forms::Button());
 			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
+
+			this->CreaEsdeveniment = (gcnew System::Windows::Forms::Button());
 			this->ModificaEntitatButton = (gcnew System::Windows::Forms::Button());
 			this->ConnectaCulturaTitle = (gcnew System::Windows::Forms::Label());
+
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -146,9 +159,11 @@ namespace CppCLRWinFormsProject {
 			this->altaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->altaEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+
 			this->altaEntitat->Location = System::Drawing::Point(39, 181);
 			this->altaEntitat->Name = L"altaEntitat";
 			this->altaEntitat->Size = System::Drawing::Size(188, 42);
+
 			this->altaEntitat->TabIndex = 2;
 			this->altaEntitat->Text = L"Donar d\'alta entitat";
 			this->altaEntitat->UseVisualStyleBackColor = false;
@@ -174,9 +189,11 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registreCiutada->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+
 			this->registreCiutada->Location = System::Drawing::Point(344, 219);
 			this->registreCiutada->Name = L"registreCiutada";
 			this->registreCiutada->Size = System::Drawing::Size(144, 43);
+
 			this->registreCiutada->TabIndex = 4;
 			this->registreCiutada->Text = L"registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
@@ -188,9 +205,11 @@ namespace CppCLRWinFormsProject {
 			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
+
 			this->ConsultaEntitat->Location = System::Drawing::Point(39, 300);
 			this->ConsultaEntitat->Name = L"ConsultaEntitat";
 			this->ConsultaEntitat->Size = System::Drawing::Size(188, 37);
+
 			this->ConsultaEntitat->TabIndex = 5;
 			this->ConsultaEntitat->Text = L"Consultar entitat";
 			this->ConsultaEntitat->UseVisualStyleBackColor = false;
@@ -202,14 +221,37 @@ namespace CppCLRWinFormsProject {
 			this->ConsultaEntitats->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ConsultaEntitats->ForeColor = System::Drawing::SystemColors::ButtonFace;
+
 			this->ConsultaEntitats->Location = System::Drawing::Point(39, 357);
 			this->ConsultaEntitats->Name = L"ConsultaEntitats";
 			this->ConsultaEntitats->Size = System::Drawing::Size(188, 37);
+
 			this->ConsultaEntitats->TabIndex = 6;
 			this->ConsultaEntitats->Text = L"Consultar entitats";
 			this->ConsultaEntitats->UseVisualStyleBackColor = false;
 			this->ConsultaEntitats->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitats_Click);
 			// 
+
+			// CreaEsdeveniment
+			// 
+			this->CreaEsdeveniment->BackColor = System::Drawing::Color::DarkGray;
+			this->CreaEsdeveniment->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CreaEsdeveniment->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CreaEsdeveniment->Location = System::Drawing::Point(35, 252);
+			this->CreaEsdeveniment->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->CreaEsdeveniment->Name = L"CreaEsdeveniment";
+			this->CreaEsdeveniment->Size = System::Drawing::Size(293, 30);
+			this->CreaEsdeveniment->TabIndex = 7;
+			this->CreaEsdeveniment->Text = L"Crear esdeveniment";
+			this->CreaEsdeveniment->UseVisualStyleBackColor = false;
+			this->CreaEsdeveniment->Click += gcnew System::EventHandler(this, &Form1::CreaEsdeveniment_Click);
+			// 
+			// Form1
+			// 
+
+			this->Controls->Add(this->CreaEsdeveniment);
+
 			// ModificaEntitatButton
 			// 
 			this->ModificaEntitatButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
@@ -245,6 +287,7 @@ namespace CppCLRWinFormsProject {
 			this->ClientSize = System::Drawing::Size(550, 489);
 			this->Controls->Add(this->ConnectaCulturaTitle);
 			this->Controls->Add(this->ModificaEntitatButton);
+
 			this->Controls->Add(this->ConsultaEntitats);
 			this->Controls->Add(this->ConsultaEntitat);
 			this->Controls->Add(this->registreCiutada);
@@ -252,9 +295,11 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->altaEntitat);
 			this->Controls->Add(this->logOut);
 			this->Controls->Add(this->logIn);
+
 			
 			this->Name = L"Form1";
 			this->Text = L"ConnectaCultura";
+
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 
@@ -301,14 +346,23 @@ private: System::Void ConsultaEntitats_Click(System::Object^ sender, System::Eve
 	Consulta_Entitats->ShowDialog();
 	Form1::ActualitzarForm1();
 }
+
+private: System::Void CreaEsdeveniment_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::FormAltaEsdeveniment^ CreaEsdeveniment = gcnew application::FormAltaEsdeveniment();
+	CreaEsdeveniment->ShowDialog();
+
 private: System::Void ModificaEntitatButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	application::ModificarEntitatForm^ Modifica_Entitat = gcnew application::ModificarEntitatForm();
 	Modifica_Entitat->ShowDialog();
+
 	Form1::ActualitzarForm1();
 }
 private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
+
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 };
+
 }

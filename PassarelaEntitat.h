@@ -11,10 +11,13 @@ private:
 public:
 	PassarelaEntitat() {}
 	PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ t);
+
+	void insereix();
+	void esborra();
 	System::String^ obteTipus();
 	System::String^ obteDescripcio();
 	System::String^ obteCorreuElectronic();
 	void modificaValors(System::String^ desc, System::String^ tip);
-	void insereix();
 	void modifica();
+
 };
