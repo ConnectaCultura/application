@@ -17,5 +17,7 @@ public:
 	System::String^ obteTipus();
 	System::String^ obteDescripcio();
 	System::String^ obteCorreuElectronic();
+	void modificaValors(System::String^ desc, System::String^ tip);
+	void modifica();
 
 };

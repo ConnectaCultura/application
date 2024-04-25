@@ -152,6 +152,9 @@
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModificarEntitatForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="FormAltaEsdeveniment.h">
@@ -170,6 +173,7 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
@@ -189,6 +193,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="ModificarEntitatForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
@@ -207,6 +212,7 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
@@ -238,7 +244,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitatForm.resx">
       <DependentUpon>ConsultaEntitatForm.h</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitats.resx">
       <DependentUpon>ConsultaEntitats.h</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarEntitatForm.resx">
+      <DependentUpon>ModificarEntitatForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistreCiutadaForm.resx">
       <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
