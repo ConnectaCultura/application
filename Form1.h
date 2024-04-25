@@ -1,5 +1,6 @@
 #pragma once
 
+#include "FormAltaEsdeveniment.h"
 #include "LogInForm.h"
 #include "Sessio.h"
 #include "AltaEntitatForm.h"
@@ -67,6 +68,8 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
+
+
 	private: System::Windows::Forms::Button^ logIn;
 	private: System::Windows::Forms::Button^ logOut;
 	private: System::Windows::Forms::Button^ altaEntitat;
@@ -74,6 +77,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ registreCiutada;
 	private: System::Windows::Forms::Button^ ConsultaEntitat;
 	private: System::Windows::Forms::Button^ ConsultaEntitats;
+
 
 	protected:
 
@@ -265,4 +269,5 @@ private: System::Void ConsultaEntitats_Click(System::Object^ sender, System::Eve
 	Form1::ActualitzarForm1();
 }
 };
+
 }

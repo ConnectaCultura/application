@@ -8,7 +8,7 @@ List<System::String^>^ CercadoraTipus::ObteTots()
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<System::String^>^ vt = gcnew List<System::String^>();
 	while (dataReader->Read()) {
-		// Agafarem les columnes per índex, la primera és la 0
+		// Agafarem les columnes per Ã­ndex, la primera Ã©s la 0
 		System::String^ nom = dataReader->GetString(0);
 		vt->Add(nom);
 	}
@@ -17,4 +17,5 @@ List<System::String^>^ CercadoraTipus::ObteTots()
 }
 //ho podria fer aqui el Add("") ///!!
 //vt->Add("");////!!!!  vt->Add("Sense Filtre");
+
 

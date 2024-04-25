@@ -15,7 +15,7 @@ public:
 
 
 private:
-	Connexio(){}
+	Connexio() {}
 	static Connexio^ instance = nullptr;
 	MySqlConnection^ conn;
 };

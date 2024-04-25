@@ -20,5 +20,6 @@ public:
 	System::String^ obteTipus();
 	void insereix();
 	void esborra();
+
 };
 
