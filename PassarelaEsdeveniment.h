@@ -2,7 +2,7 @@
 ref class PassarelaEsdeveniment
 {
 private:
-	System::String^ correu_entitat;
+	System::String^ correu;
 	System::String^ nom;
 	System::String^ descripcio;
 	System::String^ data_inici;

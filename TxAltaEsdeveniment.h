@@ -8,11 +8,10 @@ ref class TxAltaEsdeveniment
 {
 
 public:
-	TxAltaEsdeveniment(System::String^ n, System::String^ des, System::String^ data_ini, System::String^ data_f, int afor, float p, System::String^ t);
+	TxAltaEsdeveniment(System::String^ n, System::String^ des, System::String^ data_ini, System::String^ data_f, int afor, float p, System::String^ tipus);
 	void executar();
 
 private:
-	System::String^ correu_entitat;
 	System::String^ nom;
 	System::String^ descripcio;
 	System::String^ data_inici;

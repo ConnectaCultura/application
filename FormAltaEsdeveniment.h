@@ -40,8 +40,8 @@ namespace application {
 	protected:
 	private: System::Windows::Forms::TextBox^ textBox2;
 
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
+
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 
@@ -55,6 +55,10 @@ namespace application {
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: System::Windows::Forms::Button^ Crea;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+
+
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ textBox4;
 
 
 
@@ -73,8 +77,6 @@ namespace application {
 		void InitializeComponent(void)
 		{
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -87,6 +89,8 @@ namespace application {
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->Crea = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->SuspendLayout();
@@ -97,20 +101,6 @@ namespace application {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 22);
 			this->textBox2->TabIndex = 1;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(174, 106);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 22);
-			this->textBox4->TabIndex = 3;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(174, 143);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 22);
-			this->textBox5->TabIndex = 4;
 			// 
 			// numericUpDown1
 			// 
@@ -219,6 +209,20 @@ namespace application {
 			this->comboBox1->Size = System::Drawing::Size(121, 24);
 			this->comboBox1->TabIndex = 17;
 			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(174, 143);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(100, 22);
+			this->textBox5->TabIndex = 4;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(174, 109);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 22);
+			this->textBox4->TabIndex = 3;
+			// 
 			// FormAltaEsdeveniment
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -281,5 +285,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		}
 
 	}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
