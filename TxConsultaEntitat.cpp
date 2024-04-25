@@ -7,12 +7,12 @@ TxConsultaEntitat::TxConsultaEntitat(System::String^ correu) {
 	array<System::String^>^ res;
 
 }
-//array<System::String^>^
+
 void TxConsultaEntitat::executar() {
 	CercadoraUsuari cU;
 	PassarelaUsuari^ u = cU.cercaUsuari(_correu);
 
-	array<System::String^>^ sol = gcnew array<System::String^>(3);
+	List<System::String^>^ sol = gcnew List<System::String^>(3);
 	sol[0] = u->obteNom();
 	CercadoraEntitat cE;
 	PassarelaEntitat^ e = cE.CercaEntitat(_correu);
@@ -24,6 +24,6 @@ void TxConsultaEntitat::executar() {
 
 }
 
-array<System::String^>^ TxConsultaEntitat::ObteResultat() {
+List<System::String^>^ TxConsultaEntitat::ObteResultat() {
 	return res;
 }

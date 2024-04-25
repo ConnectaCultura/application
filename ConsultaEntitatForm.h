@@ -27,8 +27,10 @@ namespace application {
 		}
 		ConsultaEntitatForm(System::String^ ce)
 		{
-
+			
 			InitializeComponent();
+			
+
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -177,7 +179,7 @@ namespace application {
 		TxConsultaEntitat txCE(correu);
 		try {
 			txCE.executar();
-			array<System::String^>^ sol = txCE.ObteResultat();
+			List<System::String^>^ sol = txCE.ObteResultat();
 			NomBox->Text = sol[0];
 			TipusBox->Text = sol[1];
 			DescripcioBox->Text = sol[2];

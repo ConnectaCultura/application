@@ -2,6 +2,7 @@
 #include "TxConsultaEntitats.h"
 #include "TxConsultaEntitatsTipus.h"
 #include "TxConsultaTipus.h"
+#include "ConsultaEntitatForm.h"
 #include <stdexcept>
 
 namespace application {
@@ -212,9 +213,13 @@ namespace application {
 		TipusComboBox->DataSource = tip.ObteResultat();
 	}
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		//Mostra Pagina Entitat:
-		//Quan cliqui en una fila vull que carregui la pagina d'aquesta Entitat
-		//Cridar la pantalla ConsultaEntitat passant-li aquesta entitat (o la info)...
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+			String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[e->ColumnIndex]->Value->ToString();
+			MessageBox::Show(cellText);
+			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
+			Consulta_Entitat->ShowDialog();
+
+		}
 	}
 
 private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
