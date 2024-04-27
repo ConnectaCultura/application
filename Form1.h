@@ -72,7 +72,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ altaEntitat;
 	private: System::Windows::Forms::Button^ EsborrarEntitat;
 	private: System::Windows::Forms::Button^ registreCiutada;
-	private: System::Windows::Forms::Button^ ConsultaEntitat;
+
 	private: System::Windows::Forms::Button^ ConsultaEntitats;
 
 	protected:
@@ -95,7 +95,6 @@ namespace CppCLRWinFormsProject {
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
 			this->EsborrarEntitat = (gcnew System::Windows::Forms::Button());
 			this->registreCiutada = (gcnew System::Windows::Forms::Button());
-			this->ConsultaEntitat = (gcnew System::Windows::Forms::Button());
 			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -106,7 +105,7 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->logIn->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->logIn->Location = System::Drawing::Point(152, 14);
-			this->logIn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->logIn->Margin = System::Windows::Forms::Padding(2);
 			this->logIn->Name = L"logIn";
 			this->logIn->Size = System::Drawing::Size(94, 28);
 			this->logIn->TabIndex = 0;
@@ -121,7 +120,7 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->logOut->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->logOut->Location = System::Drawing::Point(152, 14);
-			this->logOut->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->logOut->Margin = System::Windows::Forms::Padding(2);
 			this->logOut->Name = L"logOut";
 			this->logOut->Size = System::Drawing::Size(94, 28);
 			this->logOut->TabIndex = 1;
@@ -136,7 +135,7 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->altaEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->altaEntitat->Location = System::Drawing::Point(26, 69);
-			this->altaEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->altaEntitat->Margin = System::Windows::Forms::Padding(2);
 			this->altaEntitat->Name = L"altaEntitat";
 			this->altaEntitat->Size = System::Drawing::Size(125, 27);
 			this->altaEntitat->TabIndex = 2;
@@ -151,7 +150,7 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->EsborrarEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->EsborrarEntitat->Location = System::Drawing::Point(26, 109);
-			this->EsborrarEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EsborrarEntitat->Margin = System::Windows::Forms::Padding(2);
 			this->EsborrarEntitat->Name = L"EsborrarEntitat";
 			this->EsborrarEntitat->Size = System::Drawing::Size(125, 24);
 			this->EsborrarEntitat->TabIndex = 3;
@@ -166,28 +165,13 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->registreCiutada->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->registreCiutada->Location = System::Drawing::Point(26, 14);
-			this->registreCiutada->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->registreCiutada->Margin = System::Windows::Forms::Padding(2);
 			this->registreCiutada->Name = L"registreCiutada";
 			this->registreCiutada->Size = System::Drawing::Size(96, 28);
 			this->registreCiutada->TabIndex = 4;
 			this->registreCiutada->Text = L"registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
 			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
-			// 
-			// ConsultaEntitat
-			// 
-			this->ConsultaEntitat->BackColor = System::Drawing::Color::DarkGray;
-			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ConsultaEntitat->Location = System::Drawing::Point(26, 146);
-			this->ConsultaEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->ConsultaEntitat->Name = L"ConsultaEntitat";
-			this->ConsultaEntitat->Size = System::Drawing::Size(125, 24);
-			this->ConsultaEntitat->TabIndex = 5;
-			this->ConsultaEntitat->Text = L"Consultar entitat";
-			this->ConsultaEntitat->UseVisualStyleBackColor = false;
-			this->ConsultaEntitat->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitat_Click);
 			// 
 			// ConsultaEntitats
 			// 
@@ -210,13 +194,12 @@ namespace CppCLRWinFormsProject {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(265, 238);
 			this->Controls->Add(this->ConsultaEntitats);
-			this->Controls->Add(this->ConsultaEntitat);
 			this->Controls->Add(this->registreCiutada);
 			this->Controls->Add(this->EsborrarEntitat);
 			this->Controls->Add(this->altaEntitat);
 			this->Controls->Add(this->logOut);
 			this->Controls->Add(this->logIn);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
 			this->ResumeLayout(false);

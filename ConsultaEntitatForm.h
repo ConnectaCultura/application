@@ -29,7 +29,7 @@ namespace application {
 		{
 			
 			InitializeComponent();
-			
+			this->_CorreuEntitat = ce;
 
 			//
 			//TODO: agregar código de constructor aquí
@@ -112,16 +112,18 @@ namespace application {
 			// NomBox
 			// 
 			this->NomBox->Location = System::Drawing::Point(77, 65);
-			this->NomBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NomBox->Margin = System::Windows::Forms::Padding(2);
 			this->NomBox->Name = L"NomBox";
+			this->NomBox->ReadOnly = true;
 			this->NomBox->Size = System::Drawing::Size(111, 20);
 			this->NomBox->TabIndex = 2;
 			// 
 			// DescripcioBox
 			// 
 			this->DescripcioBox->Location = System::Drawing::Point(77, 126);
-			this->DescripcioBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->DescripcioBox->Margin = System::Windows::Forms::Padding(2);
 			this->DescripcioBox->Name = L"DescripcioBox";
+			this->DescripcioBox->ReadOnly = true;
 			this->DescripcioBox->Size = System::Drawing::Size(172, 20);
 			this->DescripcioBox->TabIndex = 3;
 			// 
@@ -138,8 +140,9 @@ namespace application {
 			// TipusBox
 			// 
 			this->TipusBox->Location = System::Drawing::Point(77, 93);
-			this->TipusBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->TipusBox->Margin = System::Windows::Forms::Padding(2);
 			this->TipusBox->Name = L"TipusBox";
+			this->TipusBox->ReadOnly = true;
 			this->TipusBox->Size = System::Drawing::Size(111, 20);
 			this->TipusBox->TabIndex = 6;
 			// 
@@ -165,7 +168,7 @@ namespace application {
 			this->Controls->Add(this->NomBox);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaEntitatForm";
 			this->Text = L"ConsultaEntitatForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEntitatForm::ConsultaEntitatForm_Load);
@@ -191,12 +194,7 @@ namespace application {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
 	}
-		   /*
-private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	
-	
-}
-*/
+
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };

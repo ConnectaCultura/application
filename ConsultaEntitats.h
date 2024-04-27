@@ -215,7 +215,6 @@ namespace application {
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
 			String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[e->ColumnIndex]->Value->ToString();
-			MessageBox::Show(cellText);
 			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
 			Consulta_Entitat->ShowDialog();
 
