@@ -155,7 +155,11 @@
     <ClInclude Include="ModificarEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CancelaCompraForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarelaCiutada.h" />
+    <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="FormAltaEsdeveniment.h">
       <FileType>CppForm</FileType>
@@ -171,6 +175,7 @@
     <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
@@ -194,7 +199,9 @@
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
     <ClCompile Include="ModificarEntitatForm.cpp" />
+    <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
+    <ClCompile Include="PassarelaCompra.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="CercadoraTipus.cpp" />
@@ -210,6 +217,7 @@
     <ClCompile Include="Sessio.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
@@ -241,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaixaEntitatForm.resx">
       <DependentUpon>BaixaEntitatForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelaCompraForm.resx">
+      <DependentUpon>CancelaCompraForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEntitatForm.resx">
       <DependentUpon>ConsultaEntitatForm.h</DependentUpon>

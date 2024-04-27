@@ -1,23 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="AltaEntitatForm.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="BaixaEntitatForm.cpp" />
+    <ClCompile Include="CercadoraEntitat.cpp" />
+    <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="Connexio.cpp" />
+    <ClCompile Include="ConsultaEntitatForm.cpp" />
+    <ClCompile Include="CppCLR_WinFormsProject.cpp" />
+    <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="PassarelaCiutada.cpp" />
+    <ClCompile Include="PassarelaEntitat.cpp" />
+    <ClCompile Include="PassarelaUsuari.cpp" />
+    <ClCompile Include="CercadoraTipus.cpp" />
+    <ClCompile Include="ConsultaEntitats.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RegistreCiutadaForm.cpp" />
+    <ClCompile Include="Sessio.cpp" />
+    <ClCompile Include="TxAltaEntitat.cpp" />
+    <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxRegistreCiutada.cpp" />
+    <ClCompile Include="TxConsultaEntitats.cpp" />
+    <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
+    <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="CancelaCompraForm.cpp" />
+    <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="PassarelaCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="app.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClInclude Include="AltaEntitatForm.h" />
+    <ClInclude Include="BaixaEntitatForm.h" />
+    <ClInclude Include="CercadoraEntitat.h" />
+    <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="Connexio.h" />
+    <ClInclude Include="ConsultaEntitatForm.h" />
+    <ClInclude Include="CercadoraTipus.h" />
+    <ClInclude Include="ConsultaEntitats.h" />
+    <ClInclude Include="Form1.h" />
+    <ClInclude Include="LogInForm.h" />
+    <ClInclude Include="PassarelaCiutada.h" />
+    <ClInclude Include="PassarelaEntitat.h" />
+    <ClInclude Include="PassarelaUsuari.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="RegistreCiutadaForm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TxAltaEntitat.h" />
+    <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxRegistreCiutada.h" />
+    <ClInclude Include="TxConsultaEntitats.h" />
+    <ClInclude Include="TxConsultaEntitatsTipus.h" />
+    <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="CancelaCompraForm.h" />
+    <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="PassarelaCompra.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -180,5 +222,9 @@
     <Image Include="app.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
   </ItemGroup>
 </Project>
