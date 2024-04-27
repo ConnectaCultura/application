@@ -196,9 +196,12 @@ namespace application {
 			MessageBox::Show(ex->Message);
 		}
 		List<PassarelaEntitat^>^ ve = ent.ObteResultat();
+		//CercadoraUsuari cu;
 		for each (PassarelaEntitat ^ e in ve)
 		{
+			//PassarelaUsuari u = cu->cercaUsuari(e->obteCorreuElectronic());//tindria que fer-ho la tx o un tx busca nom
 			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
+			/*Add(u->ObteNom(),*/
 		}
 		//tecnicament no fa falta ja que al inicialitzarlo s'autoseleciona el tipus buit i pertant s'escriu sencer
 
@@ -215,6 +218,7 @@ namespace application {
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
 			String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[e->ColumnIndex]->Value->ToString();
+			//aqui necesitaria una cerca per nom o un enllaç del nom amb el correu
 			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
 			Consulta_Entitat->ShowDialog();
 
