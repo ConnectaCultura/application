@@ -1,8 +1,9 @@
 #include "pch.h"
 #include "PassarelaCiutada.h"
 
-PassarelaCiutada::PassarelaCiutada(System::String^ cE) {
+PassarelaCiutada::PassarelaCiutada(System::String^ cE, int punts) {
 	_correuElectronic = cE;
+	_punts = punts;
 }
 
 void PassarelaCiutada::insereix() {
@@ -10,4 +11,9 @@ void PassarelaCiutada::insereix() {
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
+}
+
+int^ PassarelaCiutada::obtePunts()
+{
+	return this->_punts;
 }

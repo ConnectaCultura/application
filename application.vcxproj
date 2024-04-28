@@ -136,6 +136,7 @@
     <ClInclude Include="BaixaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CercadoraCiutada.h" />
     <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
@@ -177,17 +178,21 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxConsultaPerfil.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
-
+    <ClInclude Include="VeurePerfilForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraCiutada.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
@@ -219,12 +224,14 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxConsultaPerfil.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="VeurePerfilForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -270,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistreCiutadaForm.resx">
       <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VeurePerfilForm.resx">
+      <DependentUpon>VeurePerfilForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
