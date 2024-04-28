@@ -136,6 +136,7 @@
     <ClInclude Include="BaixaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CercadoraAjuntament.h" />
     <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
@@ -149,6 +150,9 @@
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FormConsultarAjuntament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,6 +162,7 @@
     <ClInclude Include="CancelaCompraForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="PassarelaEntitat.h" />
@@ -176,6 +181,7 @@
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
@@ -183,12 +189,14 @@
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
-
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
+    <ClCompile Include="FormConsultarAjuntament.cpp" />
+    <ClCompile Include="PassarelaAjuntament.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
     <ClCompile Include="CercadoraEntitat.cpp" />
@@ -218,6 +226,7 @@
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
@@ -261,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarAjuntament.resx">
+      <DependentUpon>FormConsultarAjuntament.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.h</DependentUpon>
