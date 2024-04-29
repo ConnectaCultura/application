@@ -33,6 +33,7 @@ namespace CppCLRWinFormsProject {
 			logOut->Visible = false;
 			altaEntitat->Visible = false;
 			EsborrarEntitat->Visible = false;
+			altaAjuntament->Visible = false;
 
 		}
 		void ActualitzarForm1() {
@@ -43,6 +44,7 @@ namespace CppCLRWinFormsProject {
 				logOut->Visible = false;
 				altaEntitat->Visible = false;
 				EsborrarEntitat->Visible = false;
+				altaAjuntament->Visible = false;
 			}
 			else {
 				logIn->Visible = false;
@@ -50,9 +52,14 @@ namespace CppCLRWinFormsProject {
 				logOut->Visible = true;
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
+					altaAjuntament->Visible = false;
 				}
 				else if (s->obteUsuari()->obteTipus() == "entitat") {
 					EsborrarEntitat->Visible = true;
+					altaAjuntament->Visible = false;
+				}
+				else if (s->obteUsuari()->obteTipus() == "administrador") {
+					altaAjuntament->Visible = true;
 				}
 			}
 		}
@@ -217,7 +224,7 @@ namespace CppCLRWinFormsProject {
 			this->altaAjuntament->Location = System::Drawing::Point(221, 85);
 			this->altaAjuntament->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->altaAjuntament->Name = L"altaAjuntament";
-			this->altaAjuntament->Size = System::Drawing::Size(198, 33);
+			this->altaAjuntament->Size = System::Drawing::Size(244, 33);
 			this->altaAjuntament->TabIndex = 7;
 			this->altaAjuntament->Text = L"Donar d\'alta ajuntament";
 			this->altaAjuntament->UseVisualStyleBackColor = false;
@@ -227,7 +234,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(437, 291);
+			this->ClientSize = System::Drawing::Size(477, 317);
 			this->Controls->Add(this->altaAjuntament);
 			this->Controls->Add(this->ConsultaEntitats);
 			this->Controls->Add(this->ConsultaEntitat);

@@ -14,5 +14,3 @@ private:
 	int _numPostal;
 	int _numTelefon;
 };
-
-//Proba configuració github

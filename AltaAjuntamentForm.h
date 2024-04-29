@@ -184,6 +184,7 @@ namespace application {
 			// numericUpDownPostal
 			// 
 			this->numericUpDownPostal->Location = System::Drawing::Point(213, 191);
+			this->numericUpDownPostal->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99999, 0, 0, 0 });
 			this->numericUpDownPostal->Name = L"numericUpDownPostal";
 			this->numericUpDownPostal->Size = System::Drawing::Size(183, 22);
 			this->numericUpDownPostal->TabIndex = 14;
@@ -191,6 +192,7 @@ namespace application {
 			// numericUpDownTelefon
 			// 
 			this->numericUpDownTelefon->Location = System::Drawing::Point(213, 249);
+			this->numericUpDownTelefon->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 999999999, 0, 0, 0 });
 			this->numericUpDownTelefon->Name = L"numericUpDownTelefon";
 			this->numericUpDownTelefon->Size = System::Drawing::Size(183, 22);
 			this->numericUpDownTelefon->TabIndex = 15;
