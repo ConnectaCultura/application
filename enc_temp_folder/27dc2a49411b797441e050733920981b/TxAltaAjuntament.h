@@ -15,4 +15,3 @@ private:
 	int _numTelefon;
 };
 
-//Proba configuració github
