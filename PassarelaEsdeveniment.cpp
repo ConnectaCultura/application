@@ -21,3 +21,15 @@ void PassarelaEsdeveniment::insereix() {
 	con->tancarConnexio();
 }
 
+System::String^ PassarelaEsdeveniment::obteNom() {
+	return nom;
+}
+System::String^ PassarelaEsdeveniment::obteData_inici() {
+	return data_inici;
+}
+System::String^ PassarelaEsdeveniment::obteData_fi() {
+	return data_fi;
+}
+float PassarelaEsdeveniment::obtePreu() {
+	return preu;
+}
