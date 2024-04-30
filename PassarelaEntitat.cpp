@@ -1,10 +1,11 @@
 #include "pch.h"
 #include "PassarelaEntitat.h"
 
-PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ m) {
+PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, System::String^ m, System::String^ a) {
 	_correuElectronic = cE;
 	_descripcio = des;
 	_modalitat = m;
+	_ajuntament = a;
 }
 
 
@@ -13,6 +14,10 @@ void PassarelaEntitat::insereix() {
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
+}
+
+System::String^ PassarelaEntitat::obteAjuntament() {
+	return this->_ajuntament;
 }
 
 System::String^ PassarelaEntitat::obteModalitat() {

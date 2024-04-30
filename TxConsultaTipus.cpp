@@ -2,7 +2,6 @@
 #include "TxConsultaTipus.h"
 
 TxConsultaTipus::TxConsultaTipus() {}
-//faig el Add("") aqui????? ///!!
 
 void TxConsultaTipus::executar() 
 {

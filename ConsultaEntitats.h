@@ -199,10 +199,10 @@ namespace application {
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = ent.ObteResultat();
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = ent.ObteResultat();
+		for each (List<System::String^>^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteModalitat());
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
 		}
 		//tecnicament no fa falta ja que al inicialitzarlo s'autoseleciona el tipus buit i pertant s'escriu sencer
 
@@ -234,10 +234,10 @@ private: System::Void ModalitatComboBox_SelectedIndexChanged(System::Object^ sen
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = entip.ObteResultat();
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = entip.ObteResultat();
+		for each (List<System::String^>^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteModalitat());
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
 		}
 	}
 	else {
@@ -248,10 +248,10 @@ private: System::Void ModalitatComboBox_SelectedIndexChanged(System::Object^ sen
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = en.ObteResultat();
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = en.ObteResultat();
+		for each (List<System::String^>^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteModalitat());
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
 		}
 	}
 }

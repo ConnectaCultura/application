@@ -6,14 +6,28 @@ TxConsultaEntitatsTipus::TxConsultaEntitatsTipus()
 	//Sessio& se = Sessio::getInstance();
 	//PassarellaUsuari u = Sessio.ObteUsuari();
 	//_ajuntamentPrincipal = u.AjuntamentPrincipal;
-	_ajuntamentPrincipal = "ap";
+	//_ajuntamentPrincipal = "ap";
 }
+
 
 void TxConsultaEntitatsTipus::executar()
 {
-	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
-	_llistaEntitats = cerEnt.CercaModalitat(_modalitat);
-	//aqui no tinc que fer ni try ni catch no?
+	CercadoraEntitat cerEnt; 
+	List<PassarelaEntitat^>^ lle = cerEnt.CercaModalitat(_modalitat);
+	CercadoraUsuari cu;
+	for each (PassarelaEntitat ^ e in lle) {
+		PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
+		List<System::String^>^ novaEntitat = gcnew List<System::String^>();
+
+		novaEntitat->Add(u->obteNom());
+		novaEntitat->Add(e->obteCorreuElectronic());
+		novaEntitat->Add(e->obteDescripcio());
+		novaEntitat->Add(e->obteModalitat());
+		novaEntitat->Add(e->obteAjuntament());
+
+		_llistaEntitats->Add(novaEntitat);
+	}
+	return;
 }
 
 void TxConsultaEntitatsTipus::SetModalitat(System::String^ modalitat) 
@@ -21,7 +35,7 @@ void TxConsultaEntitatsTipus::SetModalitat(System::String^ modalitat)
 	_modalitat = modalitat;
 }
 
-List<PassarelaEntitat^>^ TxConsultaEntitatsTipus::ObteResultat()
+List<List<System::String^>^>^ TxConsultaEntitatsTipus::ObteResultat()
 {
 	return _llistaEntitats;
 }

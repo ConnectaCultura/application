@@ -216,7 +216,7 @@ namespace application {
 		System::String^ tipus = this->comboBox1->Text;
 		System::String^ correuElectronic = this->textBox4->Text;
 		System::String^ contrasenya = this->textBox5->Text;
-		TxAltaEntitat txAE(nom, descripcio, tipus, correuElectronic, contrasenya);
+		TxAltaEntitat txAE(nom, descripcio, tipus, correuElectronic, contrasenya, "a");
 		try {
 			txAE.executar();
 			this->Close();

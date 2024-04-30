@@ -9,8 +9,9 @@ PassarelaEntitat^ CercadoraEntitat::CercaEntitat(System::String^ correu) {
 		System::String^ correu_el = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
 		System::String^ modalitat = dataReader->GetString(2);
+		System::String^ ajuntament = dataReader->GetString(3);
 		con->tancarConnexio();
-		return gcnew PassarelaEntitat(correu_el, descripcio, modalitat);
+		return gcnew PassarelaEntitat(correu_el, descripcio, modalitat, ajuntament);
 	}
 	else {
 		throw std::runtime_error("L'Entitat no existeix");
@@ -29,7 +30,8 @@ List<PassarelaEntitat^>^ CercadoraEntitat::ObteTots()
 		System::String^ correu_electronic = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
 		System::String^ modalitat = dataReader->GetString(2);
-		ve->Add(gcnew PassarelaEntitat(correu_electronic, descripcio, modalitat));
+		System::String^ ajuntament = dataReader->GetString(3);
+		ve->Add(gcnew PassarelaEntitat(correu_electronic, descripcio, modalitat, ajuntament));
 	}
 	con->tancarConnexio();
 	return ve;
@@ -47,7 +49,8 @@ List<PassarelaEntitat^>^ CercadoraEntitat::CercaModalitat(System::String^ t)
 		System::String^ correu_electronic = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
 		System::String^ modalitat = dataReader->GetString(2);
-		ve->Add(gcnew PassarelaEntitat(correu_electronic, descripcio, modalitat));
+		System::String^ ajuntament = dataReader->GetString(3);
+		ve->Add(gcnew PassarelaEntitat(correu_electronic, descripcio, modalitat, ajuntament));
 	}
 
 	// si tot va b� es tanca la connexi�

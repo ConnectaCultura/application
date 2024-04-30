@@ -181,7 +181,8 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	System::String^ correu = this->comboBox1->Text;
 	TxConsultaEntitat txCE(correu);
 	try {
-		array<System::String^>^ sol = txCE.executar();
+		txCE.executar();
+		List<System::String^>^ sol = txCE.obteResultat();
 		NomBox->Text = sol[0];
 		ModalitatBox->Text = sol[1];
 		DescripcioBox->Text = sol[2];

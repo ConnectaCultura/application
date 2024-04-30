@@ -9,7 +9,6 @@ List<System::String^>^ CercadoraTipus::ObteTots()
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 	List<System::String^>^ vt = gcnew List<System::String^>();
-	vt->Add("");
 
 	// obrim la connexió
 	conn->Open();
@@ -23,6 +22,4 @@ List<System::String^>^ CercadoraTipus::ObteTots()
 	conn->Close();
 	return vt;
 }
-//ho podria fer aqui el Add("") ///!!
-//vt->Add("");////!!!!  vt->Add("Sense Filtre");
 
