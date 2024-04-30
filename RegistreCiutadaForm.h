@@ -45,6 +45,9 @@ namespace application {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Button^ registre;
 
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -65,6 +68,8 @@ namespace application {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->registre = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -72,9 +77,10 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(42, 88);
+			this->label1->Location = System::Drawing::Point(28, 57);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(43, 20);
+			this->label1->Size = System::Drawing::Size(30, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"nom";
 			// 
@@ -83,9 +89,10 @@ namespace application {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(42, 127);
+			this->label2->Location = System::Drawing::Point(28, 83);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(143, 20);
+			this->label2->Size = System::Drawing::Size(103, 13);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"correu electrònic";
 			// 
@@ -94,31 +101,35 @@ namespace application {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(42, 166);
+			this->label3->Location = System::Drawing::Point(28, 108);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(107, 20);
+			this->label3->Size = System::Drawing::Size(76, 13);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"contrasenya";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(224, 88);
+			this->textBox1->Location = System::Drawing::Point(149, 57);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(184, 26);
+			this->textBox1->Size = System::Drawing::Size(124, 20);
 			this->textBox1->TabIndex = 3;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(224, 127);
+			this->textBox2->Location = System::Drawing::Point(149, 83);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(184, 26);
+			this->textBox2->Size = System::Drawing::Size(124, 20);
 			this->textBox2->TabIndex = 4;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(224, 166);
+			this->textBox3->Location = System::Drawing::Point(149, 108);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(184, 26);
+			this->textBox3->Size = System::Drawing::Size(124, 20);
 			this->textBox3->TabIndex = 5;
 			// 
 			// registre
@@ -127,19 +138,42 @@ namespace application {
 			this->registre->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registre->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->registre->Location = System::Drawing::Point(274, 228);
+			this->registre->Location = System::Drawing::Point(184, 175);
+			this->registre->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->registre->Name = L"registre";
-			this->registre->Size = System::Drawing::Size(134, 38);
+			this->registre->Size = System::Drawing::Size(89, 25);
 			this->registre->TabIndex = 6;
 			this->registre->Text = L"registrar-se";
 			this->registre->UseVisualStyleBackColor = false;
 			this->registre->Click += gcnew System::EventHandler(this, &RegistreCiutadaForm::registre_Click);
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(28, 132);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(69, 13);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"ajuntament";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(149, 133);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 8;
+			// 
 			// RegistreCiutadaForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(464, 299);
+			this->ClientSize = System::Drawing::Size(313, 227);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->registre);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
@@ -147,6 +181,7 @@ namespace application {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"RegistreCiutadaForm";
 			this->Text = L"RegistreCiutadaForm";
 			this->ResumeLayout(false);
@@ -158,7 +193,9 @@ namespace application {
 		System::String^ nom = this->textBox1->Text;
 		System::String^ correuElectronic = this->textBox2->Text;
 		System::String^ contrasenya = this->textBox3->Text;
-		TxRegistreCiutada txRC(nom, correuElectronic, contrasenya);
+		System::String^ ajuntament = this->comboBox1->Text;
+		//falta posar els ajuntaments al combobox.
+		TxRegistreCiutada txRC(nom, correuElectronic, contrasenya, ajuntament);
 		try {
 			txRC.executar();
 			this->Close();

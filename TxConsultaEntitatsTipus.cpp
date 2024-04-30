@@ -4,7 +4,7 @@
 TxConsultaEntitatsTipus::TxConsultaEntitatsTipus()
 {
 	//Sessio& se = Sessio::getInstance();
-	//PassarellaUsuari u = Sessio.ObteUsuari();
+	//PassarellaUsuari u = Sessio.obteUsuari();
 	//_ajuntamentPrincipal = u.AjuntamentPrincipal;
 	//_ajuntamentPrincipal = "ap";
 }
@@ -35,7 +35,7 @@ void TxConsultaEntitatsTipus::SetModalitat(System::String^ modalitat)
 	_modalitat = modalitat;
 }
 
-List<List<System::String^>^>^ TxConsultaEntitatsTipus::ObteResultat()
+List<List<System::String^>^>^ TxConsultaEntitatsTipus::obteResultat()
 {
 	return _llistaEntitats;
 }

@@ -11,7 +11,7 @@ ref class CercadoraEntitat
 	public:
 		CercadoraEntitat() {}
 		PassarelaEntitat^ CercaEntitat(System::String^ cE);
-		List<PassarelaEntitat^>^ ObteTots();
+		List<PassarelaEntitat^>^ obteTots();
 		List<PassarelaEntitat^>^ CercaModalitat(System::String^ t);
 
 };

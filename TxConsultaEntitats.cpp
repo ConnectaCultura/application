@@ -4,14 +4,14 @@
 TxConsultaEntitats::TxConsultaEntitats() 
 {
 	//Sessio& se = Sessio::getInstance();
-	//PassarellaUsuari u = Sessio.ObteUsuari();
+	//PassarellaUsuari u = Sessio.obteUsuari();
 	//_ajuntamentPrincipal = u.AjuntamentPrincipal;
 }
 
 void TxConsultaEntitats::executar()
 {
 	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
-	List<PassarelaEntitat^>^ lle = cerEnt.ObteTots();
+	List<PassarelaEntitat^>^ lle = cerEnt.obteTots();
 	CercadoraUsuari cu;
 	for each (PassarelaEntitat ^ e in lle) {
 		PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
@@ -28,7 +28,7 @@ void TxConsultaEntitats::executar()
 	return;
 }
 
-List<List<System::String^>^>^ TxConsultaEntitats::ObteResultat()
+List<List<System::String^>^>^ TxConsultaEntitats::obteResultat()
 {
 	return _llistaEntitats;
 }

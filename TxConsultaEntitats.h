@@ -24,6 +24,6 @@ ref class TxConsultaEntitats
 	public:
 		TxConsultaEntitats();
 		void executar();
-		List<List<System::String^>^>^ ObteResultat();
+		List<List<System::String^>^>^ obteResultat();
 };
 

@@ -1,25 +1,17 @@
 #include "pch.h"
 #include "CercadoraTipus.h"
 
-List<System::String^>^ CercadoraTipus::ObteTots() 
+List<System::String^>^ CercadoraTipus::obteTots() 
 {
-	System::String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username = amep09; password = \"aejeeY7es9Th-\";database = amep09; ";
-	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+	Connexio^ con = Connexio::getInstance();
 	System::String^ sql = "SELECT * FROM Modalitat";
-	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
+	MySqlDataReader^ dataReader = con->executar(sql);
 	List<System::String^>^ vt = gcnew List<System::String^>();
-
-	// obrim la connexió
-	conn->Open();
-	// executem la comanda (cmd) que s’ha creat abans del try
-	dataReader = cmd->ExecuteReader();
 	while (dataReader->Read()) {
-		// Agafarem les columnes per índex, la primera és la 0
 		System::String^ nom = dataReader->GetString(0);
 		vt->Add(nom);
 	}
-	conn->Close();
+	con->tancarConnexio();
 	return vt;
 }
 

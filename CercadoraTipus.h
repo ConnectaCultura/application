@@ -1,5 +1,6 @@
 #pragma once
 #include <list> 
+#include "Connexio.h"
 
 using namespace System;
 using namespace System::Collections::Generic;
@@ -9,6 +10,6 @@ ref class CercadoraTipus
 {
 	public:
 		CercadoraTipus() {}
-		List<System::String^>^ ObteTots();
+		List<System::String^>^ obteTots();
 };
 

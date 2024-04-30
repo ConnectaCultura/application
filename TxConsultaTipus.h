@@ -14,6 +14,6 @@ ref class TxConsultaTipus
 	public:
 		TxConsultaTipus();
 		void executar();
-		List<System::String^>^ ObteResultat();
+		List<System::String^>^ obteResultat();
 };
 

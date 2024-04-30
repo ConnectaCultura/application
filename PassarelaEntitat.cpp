@@ -10,7 +10,7 @@ PassarelaEntitat::PassarelaEntitat(System::String^ cE, System::String^ des, Syst
 
 
 void PassarelaEntitat::insereix() {
-	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _descripcio + "','" + _modalitat + "')";
+	System::String^ sql = "INSERT INTO Entitat VALUES ('" + _correuElectronic + "' , '" + _descripcio + "','" + _modalitat + "','" + _ajuntament + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

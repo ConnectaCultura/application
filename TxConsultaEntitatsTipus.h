@@ -26,6 +26,6 @@ ref class TxConsultaEntitatsTipus
 		TxConsultaEntitatsTipus();
 		void executar();
 		void SetModalitat(System::String^ modalitat);
-		List<List<System::String^>^>^ ObteResultat();
+		List<List<System::String^>^>^ obteResultat();
 };
 

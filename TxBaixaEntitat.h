@@ -7,12 +7,9 @@
 ref class TxBaixaEntitat
 {
 public:
-
     TxBaixaEntitat();
     TxBaixaEntitat(System::String^ contrasenya);
-
     void executar();
-
 private:
     System::String^ _contrasenya;
 };

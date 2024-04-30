@@ -6,10 +6,10 @@ TxConsultaTipus::TxConsultaTipus() {}
 void TxConsultaTipus::executar() 
 {
 	CercadoraTipus cerTipus;
-	_result = cerTipus.ObteTots();
+	_result = cerTipus.obteTots();
 }
 
-List<System::String^>^ TxConsultaTipus::ObteResultat()
+List<System::String^>^ TxConsultaTipus::obteResultat()
 {
 	return _result;
 }

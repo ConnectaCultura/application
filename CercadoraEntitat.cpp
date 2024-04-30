@@ -19,7 +19,7 @@ PassarelaEntitat^ CercadoraEntitat::CercaEntitat(System::String^ correu) {
 
 }
 
-List<PassarelaEntitat^>^ CercadoraEntitat::ObteTots()
+List<PassarelaEntitat^>^ CercadoraEntitat::obteTots()
 {
 	Connexio^ con = Connexio::getInstance();
 	System::String^ sql = "SELECT * FROM Entitat";
@@ -52,8 +52,6 @@ List<PassarelaEntitat^>^ CercadoraEntitat::CercaModalitat(System::String^ t)
 		System::String^ ajuntament = dataReader->GetString(3);
 		ve->Add(gcnew PassarelaEntitat(correu_electronic, descripcio, modalitat, ajuntament));
 	}
-
-	// si tot va b� es tanca la connexi�
 	con->tancarConnexio();
 	return ve;
 }

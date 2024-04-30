@@ -199,7 +199,7 @@ namespace application {
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<List<System::String^>^>^ ve = ent.ObteResultat();
+		List<List<System::String^>^>^ ve = ent.obteResultat();
 		for each (List<System::String^>^ e in ve)
 		{
 			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
@@ -214,7 +214,7 @@ namespace application {
 			MessageBox::Show(ex->Message);
 		}
 		
-		ModalitatComboBox->DataSource = tip.ObteResultat();
+		ModalitatComboBox->DataSource = tip.obteResultat();
 	}
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		//Mostra Pagina Entitat:
@@ -234,7 +234,7 @@ private: System::Void ModalitatComboBox_SelectedIndexChanged(System::Object^ sen
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<List<System::String^>^>^ ve = entip.ObteResultat();
+		List<List<System::String^>^>^ ve = entip.obteResultat();
 		for each (List<System::String^>^ e in ve)
 		{
 			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
@@ -248,7 +248,7 @@ private: System::Void ModalitatComboBox_SelectedIndexChanged(System::Object^ sen
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<List<System::String^>^>^ ve = en.ObteResultat();
+		List<List<System::String^>^>^ ve = en.obteResultat();
 		for each (List<System::String^>^ e in ve)
 		{
 			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
