@@ -216,26 +216,10 @@ namespace application {
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = ent.ObteResultat();
-		List<System::String^>^ correus = gcnew List<System::String^>();
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = ent.ObteResultat();
+		for each (List<System::String^>^ e in ve)
 		{
-			correus->Add(e->obteCorreuElectronic());
-		}
-		TxConsultaEntitatsNom cen(correus);
-		try {
-			cen.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<System::String^>^ noms(cen.obteResultat());
-
-		int i = 0;
-		for each (PassarelaEntitat^ e in ve)
-		{
-			dataGridViewEntitats->Rows->Add(noms[i], e->obteDescripcio(), e->obteTipus(), e->obteCorreuElectronic());
-			i++;
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
 
 		TxConsultaTipus tip;
@@ -269,25 +253,10 @@ private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender,
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = entip.ObteResultat();
-		List<System::String^>^ correus = gcnew List<System::String^>();
-		for each (PassarelaEntitat ^ e in ve) {
-			correus->Add(e->obteCorreuElectronic());
-		}
-		TxConsultaEntitatsNom cen(correus);
-		try {
-			cen.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<System::String^>^ noms(cen.obteResultat());
-
-		int i = 0;
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = entip.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(noms[i], e->obteDescripcio(), e->obteTipus(), e->obteCorreuElectronic());
-			i++;
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
 	}
 	else {
@@ -298,26 +267,10 @@ private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender,
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = en.ObteResultat();
-		List<System::String^>^ correus = gcnew List<System::String^>();
-		for each (PassarelaEntitat ^ e in ve) {
-			correus->Add(e->obteCorreuElectronic());
-		}
-	
-		TxConsultaEntitatsNom cen(correus);
-		try {
-			cen.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<System::String^>^ noms(cen.obteResultat());
-
-		int i = 0;
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = en.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(noms[i], e->obteDescripcio(), e->obteTipus(), e->obteCorreuElectronic());
-			i++;
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
 	}
 }
