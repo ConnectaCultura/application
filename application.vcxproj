@@ -177,6 +177,7 @@
     <ClInclude Include="Sessio.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxAltaEntitat.h" />
+    <ClInclude Include="TxBaixaCiutada.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
@@ -215,6 +216,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TxBaixaCiutada.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
     <ClCompile Include="RegistreCiutadaForm.cpp" />
     <ClCompile Include="Sessio.cpp" />
