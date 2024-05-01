@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include "TxAltaEntitat.h"
+#include "TxConsultaTipus.h"
 //COSES A MILLORAR: Ara mateix tenim un despelgable amb els tipus que no s'omple a partir de la base de dades si no a partir del codi
 
 namespace application {
@@ -109,9 +110,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(49, 179);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(48, 20);
+			this->label3->Size = System::Drawing::Size(83, 20);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"tipus";
+			this->label3->Text = L"modalitat";
 			// 
 			// label4
 			// 
@@ -180,7 +181,6 @@ namespace application {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"", L"Cinema", L"Concerts", L"Teatre" });
 			this->comboBox1->Location = System::Drawing::Point(260, 171);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(222, 28);
@@ -204,6 +204,7 @@ namespace application {
 			this->Controls->Add(this->label1);
 			this->Name = L"AltaEntitatForm";
 			this->Text = L"AltaEntitatForm";
+			this->Load += gcnew System::EventHandler(this, &AltaEntitatForm::AltaEntitatForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -222,12 +223,24 @@ namespace application {
 			this->Close();
 		}
 		catch (MySqlException^ ex) {
-			MessageBox::Show("Usuari ja existent");
+			MessageBox::Show(ex->Message);
 		}
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
 	
 	}
+private: System::Void AltaEntitatForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	TxConsultaTipus tip;
+	try {
+		tip.executar();
+	}
+	catch (System::Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+
+	comboBox1->DataSource = tip.ObteResultat();
+
+}
 };
 }

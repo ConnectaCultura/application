@@ -1,16 +1,16 @@
 #pragma once
-#include <list>
+#include "PassarelaCiutada.h"
 #include "Connexio.h"
+#include <stdexcept>
 
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace MySql::Data::MySqlClient;
 
-ref class CercadoraTipus
+ref class CercadoraCiutada
 {
-
 public:
-	CercadoraTipus() {}
-	List<System::String^>^ ObteTots();
+	CercadoraCiutada() {};
+	PassarelaCiutada^ cercaCiutada(String^ correu);
 };
 

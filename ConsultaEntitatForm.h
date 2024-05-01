@@ -22,7 +22,7 @@ namespace application {
 			
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 		ConsultaEntitatForm(System::String^ ce)
@@ -32,13 +32,13 @@ namespace application {
 			this->_CorreuEntitat = ce;
 
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~ConsultaEntitatForm()
 		{
@@ -73,14 +73,14 @@ namespace application {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -97,7 +97,7 @@ namespace application {
 			// NomText
 			// 
 			this->NomText->AutoSize = true;
-			this->NomText->Location = System::Drawing::Point(23, 45);
+			this->NomText->Location = System::Drawing::Point(16, 70);
 			this->NomText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomText->Name = L"NomText";
 			this->NomText->Size = System::Drawing::Size(32, 13);
@@ -120,8 +120,12 @@ namespace application {
 			this->NomBox->Margin = System::Windows::Forms::Padding(2);
 			this->NomBox->Name = L"NomBox";
 			this->NomBox->ReadOnly = true;
+			this->NomBox->Location = System::Drawing::Point(77, 65);
+			this->NomBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NomBox->Name = L"NomBox";
 			this->NomBox->Size = System::Drawing::Size(111, 20);
 			this->NomBox->TabIndex = 2;
+			this->NomBox->TextChanged += gcnew System::EventHandler(this, &ConsultaEntitatForm::NomBox_TextChanged);
 			// 
 			// DescripcioBox
 			// 
@@ -131,6 +135,16 @@ namespace application {
 			this->DescripcioBox->ReadOnly = true;
 			this->DescripcioBox->Size = System::Drawing::Size(172, 20);
 			this->DescripcioBox->TabIndex = 3;
+			// 
+			// CorreuText
+			// 
+			this->CorreuText->AutoSize = true;
+			this->CorreuText->Location = System::Drawing::Point(16, 22);
+			this->CorreuText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->CorreuText->Name = L"CorreuText";
+			this->CorreuText->Size = System::Drawing::Size(38, 13);
+			this->CorreuText->TabIndex = 4;
+			this->CorreuText->Text = L"Escull:";
 			// 
 			// TipusText
 			// 
@@ -160,6 +174,7 @@ namespace application {
 			this->CorreuBox->Size = System::Drawing::Size(111, 20);
 			this->CorreuBox->TabIndex = 8;
 			// 
+
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
@@ -212,6 +227,8 @@ namespace application {
 	}
 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
