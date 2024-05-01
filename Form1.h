@@ -51,6 +51,7 @@ namespace CppCLRWinFormsProject {
 				EsborrarEntitat->Visible = false;
 				ModificaEntitatButton->Visible = false;
 				veurePerfil->Visible = false;
+				CreaEsdeveniment->Visible = false;
 			}
 			else {
 				logIn->Visible = false;

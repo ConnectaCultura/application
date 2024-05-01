@@ -51,17 +51,22 @@ namespace application {
 	protected:
 
 	private: System::Windows::Forms::Label^ DescripcioText;
-	private: System::Windows::Forms::TextBox^ NomBox;
 
-	private: System::Windows::Forms::TextBox^ DescripcioBox;
+
+
 
 	private: System::Windows::Forms::Label^ TipusText;
-	private: System::Windows::Forms::TextBox^ TipusBox;
+
 
 
 	private: System::String^ _CorreuEntitat;
-	private: System::Windows::Forms::TextBox^ CorreuBox;
+
 	private: System::Windows::Forms::Label^ CorreuLabel;
+	private: System::Windows::Forms::Label^ CorreuLabelEdit;
+	private: System::Windows::Forms::Label^ ModalitatLabelEdit;
+	private: System::Windows::Forms::Label^ DescripcioLabelEdit;
+
+	private: System::Windows::Forms::Label^ NomLabelEdit;
 
 
 
@@ -86,18 +91,18 @@ namespace application {
 		{
 			this->NomText = (gcnew System::Windows::Forms::Label());
 			this->DescripcioText = (gcnew System::Windows::Forms::Label());
-			this->NomBox = (gcnew System::Windows::Forms::TextBox());
-			this->DescripcioBox = (gcnew System::Windows::Forms::TextBox());
 			this->TipusText = (gcnew System::Windows::Forms::Label());
-			this->TipusBox = (gcnew System::Windows::Forms::TextBox());
-			this->CorreuBox = (gcnew System::Windows::Forms::TextBox());
 			this->CorreuLabel = (gcnew System::Windows::Forms::Label());
+			this->CorreuLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->ModalitatLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->DescripcioLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->NomLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// NomText
 			// 
 			this->NomText->AutoSize = true;
-			this->NomText->Location = System::Drawing::Point(16, 70);
+			this->NomText->Location = System::Drawing::Point(23, 43);
 			this->NomText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomText->Name = L"NomText";
 			this->NomText->Size = System::Drawing::Size(32, 13);
@@ -114,38 +119,6 @@ namespace application {
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
 			// 
-			// NomBox
-			// 
-			this->NomBox->Location = System::Drawing::Point(84, 40);
-			this->NomBox->Margin = System::Windows::Forms::Padding(2);
-			this->NomBox->Name = L"NomBox";
-			this->NomBox->ReadOnly = true;
-			this->NomBox->Location = System::Drawing::Point(77, 65);
-			this->NomBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->NomBox->Name = L"NomBox";
-			this->NomBox->Size = System::Drawing::Size(111, 20);
-			this->NomBox->TabIndex = 2;
-			this->NomBox->TextChanged += gcnew System::EventHandler(this, &ConsultaEntitatForm::NomBox_TextChanged);
-			// 
-			// DescripcioBox
-			// 
-			this->DescripcioBox->Location = System::Drawing::Point(84, 136);
-			this->DescripcioBox->Margin = System::Windows::Forms::Padding(10);
-			this->DescripcioBox->Name = L"DescripcioBox";
-			this->DescripcioBox->ReadOnly = true;
-			this->DescripcioBox->Size = System::Drawing::Size(172, 20);
-			this->DescripcioBox->TabIndex = 3;
-			// 
-			// CorreuText
-			// 
-			this->CorreuText->AutoSize = true;
-			this->CorreuText->Location = System::Drawing::Point(16, 22);
-			this->CorreuText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->CorreuText->Name = L"CorreuText";
-			this->CorreuText->Size = System::Drawing::Size(38, 13);
-			this->CorreuText->TabIndex = 4;
-			this->CorreuText->Text = L"Escull:";
-			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
@@ -156,25 +129,6 @@ namespace application {
 			this->TipusText->TabIndex = 5;
 			this->TipusText->Text = L"Tipus:";
 			// 
-			// TipusBox
-			// 
-			this->TipusBox->Location = System::Drawing::Point(84, 104);
-			this->TipusBox->Margin = System::Windows::Forms::Padding(2);
-			this->TipusBox->Name = L"TipusBox";
-			this->TipusBox->ReadOnly = true;
-			this->TipusBox->Size = System::Drawing::Size(111, 20);
-			this->TipusBox->TabIndex = 6;
-			// 
-			// CorreuBox
-			// 
-			this->CorreuBox->Location = System::Drawing::Point(84, 72);
-			this->CorreuBox->Margin = System::Windows::Forms::Padding(10);
-			this->CorreuBox->Name = L"CorreuBox";
-			this->CorreuBox->ReadOnly = true;
-			this->CorreuBox->Size = System::Drawing::Size(111, 20);
-			this->CorreuBox->TabIndex = 8;
-			// 
-
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
@@ -185,19 +139,57 @@ namespace application {
 			this->CorreuLabel->TabIndex = 7;
 			this->CorreuLabel->Text = L"Correu:";
 			// 
+			// CorreuLabelEdit
+			// 
+			this->CorreuLabelEdit->AutoSize = true;
+			this->CorreuLabelEdit->Location = System::Drawing::Point(99, 75);
+			this->CorreuLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->CorreuLabelEdit->TabIndex = 11;
+			// 
+			// ModalitatLabelEdit
+			// 
+			this->ModalitatLabelEdit->AutoSize = true;
+			this->ModalitatLabelEdit->Location = System::Drawing::Point(99, 107);
+			this->ModalitatLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->ModalitatLabelEdit->Name = L"ModalitatLabelEdit";
+			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->ModalitatLabelEdit->TabIndex = 10;
+			// 
+			// DescripcioLabelEdit
+			// 
+			this->DescripcioLabelEdit->AutoSize = true;
+			this->DescripcioLabelEdit->Location = System::Drawing::Point(99, 139);
+			this->DescripcioLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DescripcioLabelEdit->Name = L"DescripcioLabelEdit";
+			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->DescripcioLabelEdit->TabIndex = 9;
+			// 
+			// NomLabelEdit
+			// 
+			this->NomLabelEdit->AutoSize = true;
+			this->NomLabelEdit->Location = System::Drawing::Point(99, 43);
+			this->NomLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NomLabelEdit->Name = L"NomLabelEdit";
+			this->NomLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->NomLabelEdit->TabIndex = 8;
+			// 
 			// ConsultaEntitatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSize = true;
 			this->ClientSize = System::Drawing::Size(274, 249);
-			this->Controls->Add(this->CorreuBox);
+			this->Controls->Add(this->CorreuLabelEdit);
+			this->Controls->Add(this->ModalitatLabelEdit);
+			this->Controls->Add(this->DescripcioLabelEdit);
+			this->Controls->Add(this->NomLabelEdit);
 			this->Controls->Add(this->CorreuLabel);
-			this->Controls->Add(this->TipusBox);
 			this->Controls->Add(this->TipusText);
-			this->Controls->Add(this->DescripcioBox);
-			this->Controls->Add(this->NomBox);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
+			this->Location = System::Drawing::Point(16, 22);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaEntitatForm";
 			this->Text = L"ConsultaEntitatForm";
@@ -208,15 +200,15 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void ConsultaEntitatForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		CorreuBox->Text = _CorreuEntitat;
+		CorreuLabelEdit->Text = _CorreuEntitat;
 		System::String^ correu = this->_CorreuEntitat;
 		TxConsultaEntitat txCE(correu);
 		try {
 			txCE.executar();
 			List<System::String^>^ sol = txCE.ObteResultat();
-			NomBox->Text = sol[0];
-			TipusBox->Text = sol[1];
-			DescripcioBox->Text = sol[2];
+			NomLabelEdit->Text = sol[0];
+			ModalitatLabelEdit->Text = sol[1];
+			DescripcioLabelEdit->Text = sol[2];
 		}
 		catch (MySqlException^ ex) {
 			MessageBox::Show("existent");
