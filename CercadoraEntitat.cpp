@@ -26,7 +26,6 @@ List<PassarelaEntitat^>^ CercadoraEntitat::obteTots()
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaEntitat^>^ ve = gcnew List<PassarelaEntitat^>();
 	while (dataReader->Read()) {
-		// Agafarem les columnes per �ndex, la primera �s la 0
 		System::String^ correu_electronic = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
 		System::String^ modalitat = dataReader->GetString(2);
@@ -45,7 +44,6 @@ List<PassarelaEntitat^>^ CercadoraEntitat::CercaModalitat(System::String^ t)
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaEntitat^>^ ve = gcnew List<PassarelaEntitat^>();
 	while (dataReader->Read()) {
-		// Agafarem les columnes per �ndex, la primera �s la 0
 		System::String^ correu_electronic = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
 		System::String^ modalitat = dataReader->GetString(2);

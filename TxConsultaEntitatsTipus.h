@@ -12,7 +12,7 @@ ref class TxConsultaEntitatsTipus
 {
 	private:
 		System::String^ _ajuntamentPrincipal;
-		List<List<System::String^>^>^ _llistaEntitats;
+		List<List<System::String^>^>^ _llistaEntitats = gcnew List<List<System::String^>^>();
 		System::String^ _modalitat;
 	public:
 		TxConsultaEntitatsTipus();
