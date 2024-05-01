@@ -43,9 +43,15 @@ namespace application {
 	private: System::Windows::Forms::ComboBox^ ModalitatComboBox;
 
 	private: System::Windows::Forms::Label^ ModalitatLabel;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CorreuElectronic;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nom;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Descripcio;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Modalitat;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ajuntament;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CorreuElectronic;
+
+
+
+
 	protected:
 
 	protected:
@@ -94,9 +100,11 @@ namespace application {
 			this->EntitatsLabel = (gcnew System::Windows::Forms::Label());
 			this->ModalitatComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->ModalitatLabel = (gcnew System::Windows::Forms::Label());
-			this->CorreuElectronic = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Descripcio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Modalitat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Ajuntament = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->CorreuElectronic = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -107,9 +115,9 @@ namespace application {
 			this->dataGridViewEntitats->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->dataGridViewEntitats->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridViewEntitats->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewEntitats->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->CorreuElectronic,
-					this->Descripcio, this->Modalitat
+			this->dataGridViewEntitats->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Nom,
+					this->Descripcio, this->Modalitat, this->Ajuntament, this->CorreuElectronic
 			});
 			this->dataGridViewEntitats->Location = System::Drawing::Point(12, 59);
 			this->dataGridViewEntitats->Name = L"dataGridViewEntitats";
@@ -151,12 +159,11 @@ namespace application {
 			this->ModalitatLabel->Text = L"Modalitat:";
 			this->ModalitatLabel->Click += gcnew System::EventHandler(this, &ConsultaEntitats::ModalitatLabel_Click);
 			// 
-			// CorreuElectronic
+			// Nom
 			// 
-			this->CorreuElectronic->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->CorreuElectronic->HeaderText = L"CorreuElectronic";
-			this->CorreuElectronic->Name = L"CorreuElectronic";
-			this->CorreuElectronic->ReadOnly = true;
+			this->Nom->HeaderText = L"Nom";
+			this->Nom->Name = L"Nom";
+			this->Nom->ReadOnly = true;
 			// 
 			// Descripcio
 			// 
@@ -171,6 +178,20 @@ namespace application {
 			this->Modalitat->HeaderText = L"Modalitat";
 			this->Modalitat->Name = L"Modalitat";
 			this->Modalitat->ReadOnly = true;
+			// 
+			// Ajuntament
+			// 
+			this->Ajuntament->HeaderText = L"Ajuntament";
+			this->Ajuntament->Name = L"Ajuntament";
+			this->Ajuntament->ReadOnly = true;
+			// 
+			// CorreuElectronic
+			// 
+			this->CorreuElectronic->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->CorreuElectronic->HeaderText = L"CorreuElectronic";
+			this->CorreuElectronic->Name = L"CorreuElectronic";
+			this->CorreuElectronic->ReadOnly = true;
+			this->CorreuElectronic->Visible = false;
 			// 
 			// ConsultaEntitats
 			// 

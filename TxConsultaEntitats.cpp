@@ -10,7 +10,7 @@ TxConsultaEntitats::TxConsultaEntitats()
 
 void TxConsultaEntitats::executar()
 {
-	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
+	CercadoraEntitat cerEnt;
 	List<PassarelaEntitat^>^ lle = cerEnt.obteTots();
 	CercadoraUsuari cu;
 	for each (PassarelaEntitat ^ e in lle) {
@@ -18,10 +18,10 @@ void TxConsultaEntitats::executar()
 		List<System::String^>^ novaEntitat = gcnew List<System::String^>();
 
 		novaEntitat->Add(u->obteNom());
-		novaEntitat->Add(e->obteCorreuElectronic());
 		novaEntitat->Add(e->obteDescripcio());
 		novaEntitat->Add(e->obteModalitat());
 		novaEntitat->Add(e->obteAjuntament());
+		novaEntitat->Add(e->obteCorreuElectronic());
 
 		_llistaEntitats->Add(novaEntitat);
 	}

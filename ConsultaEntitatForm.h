@@ -47,6 +47,8 @@ namespace application {
 
 	private: System::Windows::Forms::TextBox^ ModalitatBox;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::TextBox^ AjuntamentBox;
+	private: System::Windows::Forms::Label^ AjuntamentLabel;
 
 
 	protected:
@@ -75,6 +77,8 @@ namespace application {
 			this->ModalitatText = (gcnew System::Windows::Forms::Label());
 			this->ModalitatBox = (gcnew System::Windows::Forms::TextBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->AjuntamentBox = (gcnew System::Windows::Forms::TextBox());
+			this->AjuntamentLabel = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// NomText
@@ -90,7 +94,7 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(16, 126);
+			this->DescripcioText->Location = System::Drawing::Point(16, 157);
 			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(60, 13);
@@ -100,15 +104,15 @@ namespace application {
 			// NomBox
 			// 
 			this->NomBox->Location = System::Drawing::Point(77, 65);
-			this->NomBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NomBox->Margin = System::Windows::Forms::Padding(2);
 			this->NomBox->Name = L"NomBox";
 			this->NomBox->Size = System::Drawing::Size(111, 20);
 			this->NomBox->TabIndex = 2;
 			// 
 			// DescripcioBox
 			// 
-			this->DescripcioBox->Location = System::Drawing::Point(77, 126);
-			this->DescripcioBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->DescripcioBox->Location = System::Drawing::Point(77, 157);
+			this->DescripcioBox->Margin = System::Windows::Forms::Padding(2);
 			this->DescripcioBox->Name = L"DescripcioBox";
 			this->DescripcioBox->Size = System::Drawing::Size(172, 20);
 			this->DescripcioBox->TabIndex = 3;
@@ -137,7 +141,7 @@ namespace application {
 			// ModalitatBox
 			// 
 			this->ModalitatBox->Location = System::Drawing::Point(77, 93);
-			this->ModalitatBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ModalitatBox->Margin = System::Windows::Forms::Padding(2);
 			this->ModalitatBox->Name = L"ModalitatBox";
 			this->ModalitatBox->Size = System::Drawing::Size(111, 20);
 			this->ModalitatBox->TabIndex = 6;
@@ -147,17 +151,37 @@ namespace application {
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"hidi@gmail.com", L"ocine@gmail.com" });
 			this->comboBox1->Location = System::Drawing::Point(77, 22);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(172, 21);
 			this->comboBox1->TabIndex = 7;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &ConsultaEntitatForm::comboBox1_SelectedIndexChanged);
+			// 
+			// AjuntamentBox
+			// 
+			this->AjuntamentBox->Location = System::Drawing::Point(77, 124);
+			this->AjuntamentBox->Margin = System::Windows::Forms::Padding(2);
+			this->AjuntamentBox->Name = L"AjuntamentBox";
+			this->AjuntamentBox->Size = System::Drawing::Size(111, 20);
+			this->AjuntamentBox->TabIndex = 9;
+			// 
+			// AjuntamentLabel
+			// 
+			this->AjuntamentLabel->AutoSize = true;
+			this->AjuntamentLabel->Location = System::Drawing::Point(16, 127);
+			this->AjuntamentLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->AjuntamentLabel->Name = L"AjuntamentLabel";
+			this->AjuntamentLabel->Size = System::Drawing::Size(63, 13);
+			this->AjuntamentLabel->TabIndex = 8;
+			this->AjuntamentLabel->Text = L"Ajuntament:";
 			// 
 			// ConsultaEntitatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(274, 249);
+			this->Controls->Add(this->AjuntamentBox);
+			this->Controls->Add(this->AjuntamentLabel);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->ModalitatBox);
 			this->Controls->Add(this->ModalitatText);
@@ -166,7 +190,7 @@ namespace application {
 			this->Controls->Add(this->NomBox);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaEntitatForm";
 			this->Text = L"ConsultaEntitatForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEntitatForm::ConsultaEntitatForm_Load);
@@ -186,6 +210,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 		NomBox->Text = sol[0];
 		ModalitatBox->Text = sol[1];
 		DescripcioBox->Text = sol[2];
+		AjuntamentBox->Text = sol[3];
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show("existent");
