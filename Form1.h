@@ -91,7 +91,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ altaEntitat;
 	private: System::Windows::Forms::Button^ EsborrarEntitat;
 	private: System::Windows::Forms::Button^ registreCiutada;
-	private: System::Windows::Forms::Button^ ConsultaEntitat;
+
 	private: System::Windows::Forms::Button^ ConsultaEntitats;
 
 	private: System::Windows::Forms::Button^ CreaEsdeveniment;
@@ -123,7 +123,6 @@ namespace CppCLRWinFormsProject {
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
 			this->EsborrarEntitat = (gcnew System::Windows::Forms::Button());
 			this->registreCiutada = (gcnew System::Windows::Forms::Button());
-			this->ConsultaEntitat = (gcnew System::Windows::Forms::Button());
 			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
 			this->CreaEsdeveniment = (gcnew System::Windows::Forms::Button());
 			this->ModificaEntitatButton = (gcnew System::Windows::Forms::Button());
@@ -205,21 +204,6 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada->Text = L"registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
 			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
-			// 
-			// ConsultaEntitat
-			// 
-			this->ConsultaEntitat->BackColor = System::Drawing::Color::DarkGray;
-			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ConsultaEntitat->Location = System::Drawing::Point(26, 195);
-			this->ConsultaEntitat->Margin = System::Windows::Forms::Padding(2);
-			this->ConsultaEntitat->Name = L"ConsultaEntitat";
-			this->ConsultaEntitat->Size = System::Drawing::Size(134, 24);
-			this->ConsultaEntitat->TabIndex = 5;
-			this->ConsultaEntitat->Text = L"Consultar entitat";
-			this->ConsultaEntitat->UseVisualStyleBackColor = false;
-			this->ConsultaEntitat->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitat_Click);
 			// 
 			// ConsultaEntitats
 			// 
@@ -305,7 +289,6 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->ConnectaCulturaTitle);
 			this->Controls->Add(this->ModificaEntitatButton);
 			this->Controls->Add(this->ConsultaEntitats);
-			this->Controls->Add(this->ConsultaEntitat);
 			this->Controls->Add(this->registreCiutada);
 			this->Controls->Add(this->EsborrarEntitat);
 			this->Controls->Add(this->altaEntitat);

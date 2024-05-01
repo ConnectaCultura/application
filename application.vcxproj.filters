@@ -27,6 +27,7 @@
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="PassarelaCompra.cpp" />
@@ -57,6 +58,7 @@
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="CancelaCompraForm.h" />
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="PassarelaCompra.h" />
