@@ -1,6 +1,6 @@
 #pragma once
 #include "TxConsultaEsdeveniments.h"
-
+#include "ConsultaEsdevenimentForm.h"
 namespace application {
 
 	using namespace System;
@@ -48,6 +48,14 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Inici;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
+
+
+
+
+
+
+
+
 	protected:
 
 
@@ -68,11 +76,11 @@ namespace application {
 		void InitializeComponent(void)
 		{
 			this->EsdevDataGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
 			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Inici = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -85,21 +93,34 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(110, 104);
+			this->EsdevDataGrid->Location = System::Drawing::Point(163, 94);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(664, 168);
+			this->EsdevDataGrid->Size = System::Drawing::Size(827, 269);
 			this->EsdevDataGrid->TabIndex = 0;
+			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
+			// 
+			// Esdeveniments
+			// 
+			this->Esdeveniments->AutoSize = true;
+			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Esdeveniments->Location = System::Drawing::Point(19, 24);
+			this->Esdeveniments->Name = L"Esdeveniments";
+			this->Esdeveniments->Size = System::Drawing::Size(209, 32);
+			this->Esdeveniments->TabIndex = 1;
+			this->Esdeveniments->Text = L"Esdeveniments";
 			// 
 			// Nom
 			// 
+			this->Nom->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::DisplayedCells;
 			this->Nom->HeaderText = L"Nom";
 			this->Nom->MinimumWidth = 8;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
-			this->Nom->Width = 150;
+			this->Nom->Width = 78;
 			// 
 			// Inici
 			// 
@@ -125,22 +146,11 @@ namespace application {
 			this->Preu->ReadOnly = true;
 			this->Preu->Width = 150;
 			// 
-			// Esdeveniments
-			// 
-			this->Esdeveniments->AutoSize = true;
-			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Esdeveniments->Location = System::Drawing::Point(19, 24);
-			this->Esdeveniments->Name = L"Esdeveniments";
-			this->Esdeveniments->Size = System::Drawing::Size(209, 32);
-			this->Esdeveniments->TabIndex = 1;
-			this->Esdeveniments->Text = L"Esdeveniments";
-			// 
 			// ConsultarEsdevenimentsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(910, 337);
+			this->ClientSize = System::Drawing::Size(1273, 403);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->Name = L"ConsultarEsdevenimentsForm";
@@ -169,6 +179,19 @@ namespace application {
 			else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
 	}
-	};
+	private: System::Void EsdevDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+			String^ nom = EsdevDataGrid->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+			String^ inici = EsdevDataGrid->Rows[e->RowIndex]->Cells[1]->Value->ToString();
+			String^ fi = EsdevDataGrid->Rows[e->RowIndex]->Cells[2]->Value->ToString();
+			
+			application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
+			Consulta_Esdeveniment->ShowDialog();
+
+		}
+
+
+	}
+};
 }
 

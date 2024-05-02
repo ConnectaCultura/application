@@ -1,9 +1,34 @@
 ﻿#include "pch.h"
 #include "CercadoraEsdeveniment.h"
 
+
+
 PassarelaEsdeveniment^ CercadoraEsdeveniment::CercaEsdeveniment(System::String^ nom, System::String^ inici, System::String^ fi) {
+	//System::String^ iniciMySQL = System::DateTime::ParseExact(inici, "dd/MM/yyyy", System::Globalization::CultureInfo::InvariantCulture).ToString("yyyy-MM-dd");
+
+	// Convertir la fecha de fin al formato aceptado por MySQL (DD/MM/YYYY -> YYYY-MM-DD)
+	//System::String^ fiMySQL = System::DateTime::ParseExact(fi, "dd/MM/yyyy", System::Globalization::CultureInfo::InvariantCulture).ToString("yyyy-MM-dd");
+	//System::String^ iniciMySQL = System::DateTime::ParseExact(inici, "dd/MM/yyyy", System::Globalization::CultureInfo::InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+	//System::Diagnostics::Debug::WriteLine(iniciMySQL);
+	// Convertir la fecha de fin al formato aceptado por MySQL (DD/MM/YYYY -> YYYY-MM-DD HH:MM:SS)
+	//System::String^ fiMySQL = System::DateTime::ParseExact(fi, "dd/MM/yyyy", System::Globalization::CultureInfo::InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+	// Obtener las partes de la fecha
+	System::String^ dia = inici->Substring(0, 2);
+	System::String^ mes = inici->Substring(3, 2);
+	System::String^ año = inici->Substring(6, 4);
+
+	// Construir la nueva cadena con el formato deseado
+	System::String^ iniciMySQL = año + "-" + mes + "-" + dia + " 00:00:00";
+
+	System::String^ _dia = fi->Substring(0, 2);
+	System::String^ _mes = fi->Substring(3, 2);
+	System::String^ _año = fi->Substring(6, 4);
+
+	// Construir la nueva cadena con el formato deseado
+	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
+
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Esdeveniment WHERE nom = '" + nom + "' AND data_inici ='" + inici + "' AND data_fi = '" + fi + "'";
+	System::String^ sql = "SELECT * FROM Esdeveniment WHERE nom = '" + nom + /*"' AND data_inici ='" + iniciMySQL + "' AND data_fi = '" + fiMySQL +*/ "'";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	if (dataReader->Read()) {
 		System::String^ nom= dataReader->GetString(0);

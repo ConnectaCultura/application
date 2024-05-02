@@ -20,6 +20,10 @@ public:
 	System::String^ obteData_inici();
 	System::String^ obteData_fi();
 	float obtePreu();
+	int obteAforament();
+	System::String^ obteDescripcio();
+	System::String^ obteCorreu();
+	System::String^ obteTipus();
 
 };
 

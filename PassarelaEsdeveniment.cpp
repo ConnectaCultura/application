@@ -33,3 +33,19 @@ System::String^ PassarelaEsdeveniment::obteData_fi() {
 float PassarelaEsdeveniment::obtePreu() {
 	return preu;
 }
+
+int PassarelaEsdeveniment::obteAforament() {
+	return aforament;
+}
+
+System::String^ PassarelaEsdeveniment::obteDescripcio() {
+	return descripcio;
+}
+
+System::String^ PassarelaEsdeveniment::obteCorreu() {
+	return correu;
+}
+
+System::String^ PassarelaEsdeveniment::obteTipus() {
+	return tipus;
+}

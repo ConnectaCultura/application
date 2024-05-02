@@ -41,6 +41,8 @@
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
+    <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
+    <ClCompile Include="TxConsultaEsdeveniment.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaEntitatForm.h" />
@@ -82,6 +84,8 @@
     <ClInclude Include="ConsultarEsdevenimentsForm.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
     <ClInclude Include="CercadoraEsdeveniment.h" />
+    <ClInclude Include="ConsultaEsdevenimentForm.h" />
+    <ClInclude Include="TxConsultaEsdeveniment.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
