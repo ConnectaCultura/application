@@ -1,9 +1,6 @@
 #pragma once
 #include "Sessio.h"
-#include "CercadoraUsuari.h"
-#include "CercadoraCiutada.h"
-#include "PassarelaUsuari.h"
-#include "Sessio.h"
+#include "TxConsultaPerfil.h"
 
 namespace application {
 
@@ -39,16 +36,19 @@ namespace application {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ CorreuBox;
+
 	protected:
 
 	protected:
 	private: System::Windows::Forms::Label^ TipusText;
-	private: System::Windows::Forms::TextBox^ PuntsBox;
 
-	private: System::Windows::Forms::TextBox^ NomBox;
+
+
 	private: System::Windows::Forms::Label^ DescripcioText;
 	private: System::Windows::Forms::Label^ NomText;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 
 
 	private:
@@ -64,22 +64,13 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->CorreuBox = (gcnew System::Windows::Forms::TextBox());
 			this->TipusText = (gcnew System::Windows::Forms::Label());
-			this->PuntsBox = (gcnew System::Windows::Forms::TextBox());
-			this->NomBox = (gcnew System::Windows::Forms::TextBox());
 			this->DescripcioText = (gcnew System::Windows::Forms::Label());
 			this->NomText = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// CorreuBox
-			// 
-			this->CorreuBox->Location = System::Drawing::Point(132, 54);
-			this->CorreuBox->Margin = System::Windows::Forms::Padding(2);
-			this->CorreuBox->Name = L"CorreuBox";
-			this->CorreuBox->Size = System::Drawing::Size(111, 20);
-			this->CorreuBox->TabIndex = 12;
-			this->CorreuBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::TipusBox_TextChanged);
 			// 
 			// TipusText
 			// 
@@ -87,28 +78,10 @@ namespace application {
 			this->TipusText->Location = System::Drawing::Point(22, 59);
 			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->TipusText->Name = L"TipusText";
-			this->TipusText->Size = System::Drawing::Size(88, 13);
+			this->TipusText->Size = System::Drawing::Size(91, 13);
 			this->TipusText->TabIndex = 11;
 			this->TipusText->Text = L"Correu Electrònic:";
 			this->TipusText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::TipusText_Click);
-			// 
-			// PuntsBox
-			// 
-			this->PuntsBox->Location = System::Drawing::Point(132, 87);
-			this->PuntsBox->Margin = System::Windows::Forms::Padding(2);
-			this->PuntsBox->Name = L"PuntsBox";
-			this->PuntsBox->Size = System::Drawing::Size(112, 20);
-			this->PuntsBox->TabIndex = 10;
-			this->PuntsBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::DescripcioBox_TextChanged);
-			// 
-			// NomBox
-			// 
-			this->NomBox->Location = System::Drawing::Point(133, 26);
-			this->NomBox->Margin = System::Windows::Forms::Padding(2);
-			this->NomBox->Name = L"NomBox";
-			this->NomBox->Size = System::Drawing::Size(111, 20);
-			this->NomBox->TabIndex = 9;
-			this->NomBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::NomBox_TextChanged);
 			// 
 			// DescripcioText
 			// 
@@ -132,15 +105,40 @@ namespace application {
 			this->NomText->Text = L"Nom:";
 			this->NomText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::NomText_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(147, 31);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(0, 13);
+			this->label1->TabIndex = 12;
+			this->label1->Click += gcnew System::EventHandler(this, &VeurePerfilForm::label1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(147, 59);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->TabIndex = 13;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(147, 87);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(0, 13);
+			this->label3->TabIndex = 14;
+			// 
 			// VeurePerfilForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(368, 122);
-			this->Controls->Add(this->CorreuBox);
+			this->ClientSize = System::Drawing::Size(289, 164);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->TipusText);
-			this->Controls->Add(this->PuntsBox);
-			this->Controls->Add(this->NomBox);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
 			this->Name = L"VeurePerfilForm";
@@ -153,16 +151,14 @@ namespace application {
 #pragma endregion
 		private: System::Void VeurePerfilForm_Load(System::Object^ sender, System::EventArgs^ e) {
 			// Para hacer un consultaPerfil generico
-			//TxConsultaPerfil txCP;
+			TxConsultaPerfil txCP;
 			try {
-				Sessio^ s = Sessio::getInstance();
-				PassarelaUsuari^ u = s->obteUsuari();
-				CercadoraCiutada cC;
-				PassarelaCiutada^ c = cC.cercaCiutada(u->obteCorreuElectronic());
-
-				CorreuBox->Text = u->obteCorreuElectronic();
-				NomBox->Text = u->obteNom();
-				PuntsBox->Text = c->obtePunts()->ToString();
+				
+				txCP.executar();
+				txCP.obteResultat();
+				label1->Text = u->obteCorreuElectronic();
+				label2->Text = u->obteNom();
+				label3->Text = c->obtePunts()->ToString();
 			}
 			catch (MySqlException^ ex) {
 				MessageBox::Show(ex->Message);
@@ -184,5 +180,7 @@ private: System::Void TipusBox_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
