@@ -76,11 +76,11 @@ namespace application {
 		void InitializeComponent(void)
 		{
 			this->EsdevDataGrid = (gcnew System::Windows::Forms::DataGridView());
-			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
 			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Inici = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -93,25 +93,15 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(163, 94);
+			this->EsdevDataGrid->Location = System::Drawing::Point(109, 61);
+			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(827, 269);
+			this->EsdevDataGrid->Size = System::Drawing::Size(568, 172);
 			this->EsdevDataGrid->TabIndex = 0;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
-			// 
-			// Esdeveniments
-			// 
-			this->Esdeveniments->AutoSize = true;
-			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Esdeveniments->Location = System::Drawing::Point(19, 24);
-			this->Esdeveniments->Name = L"Esdeveniments";
-			this->Esdeveniments->Size = System::Drawing::Size(209, 32);
-			this->Esdeveniments->TabIndex = 1;
-			this->Esdeveniments->Text = L"Esdeveniments";
 			// 
 			// Nom
 			// 
@@ -120,7 +110,7 @@ namespace application {
 			this->Nom->MinimumWidth = 8;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
-			this->Nom->Width = 78;
+			this->Nom->Width = 54;
 			// 
 			// Inici
 			// 
@@ -146,13 +136,26 @@ namespace application {
 			this->Preu->ReadOnly = true;
 			this->Preu->Width = 150;
 			// 
+			// Esdeveniments
+			// 
+			this->Esdeveniments->AutoSize = true;
+			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Esdeveniments->Location = System::Drawing::Point(13, 16);
+			this->Esdeveniments->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Esdeveniments->Name = L"Esdeveniments";
+			this->Esdeveniments->Size = System::Drawing::Size(140, 24);
+			this->Esdeveniments->TabIndex = 1;
+			this->Esdeveniments->Text = L"Esdeveniments";
+			// 
 			// ConsultarEsdevenimentsForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1273, 403);
+			this->ClientSize = System::Drawing::Size(849, 262);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"ConsultarEsdevenimentsForm";
 			this->Text = L"ConsultarEsdevenimentsForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::ConsultarEsdevenimentsForm_Load);
