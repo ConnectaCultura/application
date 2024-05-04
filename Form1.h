@@ -8,6 +8,7 @@
 #include "ConsultaEntitatForm.h"
 #include "ConsultaEntitats.h"
 #include "ModificarEntitatForm.h"
+#include "ComprarEntradaForm.h"
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -80,6 +81,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ ConsultaEntitats;
 	private: System::Windows::Forms::Button^ ModificaEntitatButton;
 	private: System::Windows::Forms::Label^ ConnectaCulturaTitle;
+	private: System::Windows::Forms::Button^ CompraEntradaButton;
+
+
 
 
 
@@ -100,7 +104,6 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->logIn = (gcnew System::Windows::Forms::Button());
 			this->logOut = (gcnew System::Windows::Forms::Button());
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
@@ -110,6 +113,7 @@ namespace CppCLRWinFormsProject {
 			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
 			this->ModificaEntitatButton = (gcnew System::Windows::Forms::Button());
 			this->ConnectaCulturaTitle = (gcnew System::Windows::Forms::Label());
+			this->CompraEntradaButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -237,12 +241,23 @@ namespace CppCLRWinFormsProject {
 			this->ConnectaCulturaTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->ConnectaCulturaTitle->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
 			// 
+			// CompraEntradaButton
+			// 
+			this->CompraEntradaButton->Location = System::Drawing::Point(39, 467);
+			this->CompraEntradaButton->Name = L"CompraEntradaButton";
+			this->CompraEntradaButton->Size = System::Drawing::Size(188, 32);
+			this->CompraEntradaButton->TabIndex = 10;
+			this->CompraEntradaButton->Text = L"Compra Entrada";
+			this->CompraEntradaButton->UseVisualStyleBackColor = true;
+			this->CompraEntradaButton->Click += gcnew System::EventHandler(this, &Form1::CompraEntradaButton_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
-			this->ClientSize = System::Drawing::Size(550, 489);
+			this->ClientSize = System::Drawing::Size(550, 546);
+			this->Controls->Add(this->CompraEntradaButton);
 			this->Controls->Add(this->ConnectaCulturaTitle);
 			this->Controls->Add(this->ModificaEntitatButton);
 			this->Controls->Add(this->ConsultaEntitats);
@@ -252,7 +267,6 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->altaEntitat);
 			this->Controls->Add(this->logOut);
 			this->Controls->Add(this->logIn);
-			
 			this->Name = L"Form1";
 			this->Text = L"ConnectaCultura";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
@@ -309,6 +323,13 @@ private: System::Void ModificaEntitatButton_Click(System::Object^ sender, System
 private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void CompraEntradaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::ComprarEntradaForm^ Comprar_entrada = gcnew application::ComprarEntradaForm();
+	Comprar_entrada->ShowDialog();
+	Form1::ActualitzarForm1();
 }
 };
 }
