@@ -81,7 +81,7 @@ namespace application {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(400, 317);
+			this->button1->Location = System::Drawing::Point(421, 387);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(103, 39);
 			this->button1->TabIndex = 0;
@@ -148,7 +148,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(539, 387);
+			this->ClientSize = System::Drawing::Size(559, 449);
 			this->Controls->Add(this->Ciutada);
 			this->Controls->Add(this->esdeveniment);
 			this->Controls->Add(this->preu);

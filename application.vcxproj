@@ -137,6 +137,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CercadoraCiutada.h" />
+    <ClInclude Include="CercadoraCompra.h" />
     <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="ComprarEntradaForm.h">
@@ -185,6 +186,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
     <ClCompile Include="CercadoraCiutada.cpp" />
+    <ClCompile Include="CercadoraCompra.cpp" />
     <ClCompile Include="CercadoraEntitat.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
     <ClCompile Include="ComprarEntradaForm.cpp" />
