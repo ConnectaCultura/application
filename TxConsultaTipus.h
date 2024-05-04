@@ -4,7 +4,7 @@
 #include <list> 
 #include "CercadoraTipus.h"
 
-using namespace std;
+//using namespace std;
 using namespace System;
 using namespace System::Collections::Generic;
 ref class TxConsultaTipus

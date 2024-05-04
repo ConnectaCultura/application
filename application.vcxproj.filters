@@ -11,6 +11,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="ModificarEntitatForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
@@ -23,13 +24,16 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="TxCompraEntrada.cpp" />
+    <ClCompile Include="PassarelaCompra.cpp" />
+    <ClCompile Include="ComprarEntradaForm.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
-    <ClCompile Include="PassarelaCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaEntitatForm.h" />
@@ -42,6 +46,7 @@
     <ClInclude Include="ConsultaEntitats.h" />
     <ClInclude Include="Form1.h" />
     <ClInclude Include="LogInForm.h" />
+    <ClInclude Include="ModificarEntitatForm.h" />
     <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaUsuari.h" />
@@ -53,13 +58,16 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="TxCompraEntrada.h" />
+    <ClInclude Include="PassarelaCompra.h" />
+    <ClInclude Include="ComprarEntradaForm.h" />
     <ClInclude Include="CancelaCompraForm.h" />
     <ClInclude Include="TxCancelaCompra.h" />
-    <ClInclude Include="PassarelaCompra.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

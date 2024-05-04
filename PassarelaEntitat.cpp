@@ -15,6 +15,14 @@ void PassarelaEntitat::insereix() {
 	con->tancarConnexio();
 }
 
+
+void PassarelaEntitat::modifica() {
+	System::String^ sql = "UPDATE Entitat SET descripcio='" + _descripcio + "', modalitat='" + _tipus + "' WHERE correu_electronic = '" + _correuElectronic + "'";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+
 System::String^ PassarelaEntitat::obteTipus() {
 	return this->_tipus;
 }
@@ -24,4 +32,9 @@ System::String^ PassarelaEntitat::obteDescripcio() {
 }
 System::String^ PassarelaEntitat::obteCorreuElectronic() {
 	return this->_correuElectronic;
+}
+
+void PassarelaEntitat::modificaValors(System::String^ desc, System::String^ tip) {
+	_descripcio = desc;
+	_tipus = tip;
 }
