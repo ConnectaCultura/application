@@ -21,4 +21,6 @@ ref class PassarelaCompra
 		System::String^ obteDataFi();
 
 		void insereix();
+	  void esborra();
+  
 };

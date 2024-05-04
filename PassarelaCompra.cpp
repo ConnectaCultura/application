@@ -31,3 +31,10 @@ void PassarelaCompra::insereix() {
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
 }
+
+void PassarelaCompra::esborra() {
+	System::String^ sql = "DELETE FROM Compra WHERE usuari='" + usuari->obteCorreuElectronic() + "' && esdeveniment='"/* + esdeveniment.nom + */";";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
