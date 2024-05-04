@@ -21,5 +21,5 @@ void TxCompraEntrada::executar() {
 }
 
 int TxCompraEntrada::puntsCompra() {
-	return(_preuEntrada / 10);
+	return Convert::ToInt32(_preuEntrada/10.0);
 }

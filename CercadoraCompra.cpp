@@ -36,7 +36,7 @@ PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::S
 	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
 
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + Ciutada + "'AND nomesdev = '" + esdeveniment + "' AND data_inici ='" + iniciMySQL + "' AND data_fi = '" + fiMySQL + "'";
+	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + Ciutada + "'&& nomesdev = '" + esdeveniment + "' && datainici ='" + iniciMySQL + "' && datafi = '" + fiMySQL + "';";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	if (dataReader->Read()) {
 		System::String^ correuCiu = dataReader->GetString(0);
@@ -44,10 +44,13 @@ PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::S
 		System::String^ dataini = dataReader->GetString(2);
 		System::String^ datafi = dataReader->GetString(3);
 		float preu = 0;
-		if (!dataReader->IsDBNull(5)) {
-			preu = dataReader->GetFloat(5);
+		if (!dataReader->IsDBNull(4)) {
+			preu = dataReader->GetFloat(4);
 		}
 		con->tancarConnexio();
 		return gcnew PassarelaCompra(correuCiu, esdeve, dataini, datafi, preu);
+	}
+	else {
+		throw std::runtime_error("La compra no existeix");
 	}
 }

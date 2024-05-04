@@ -38,6 +38,7 @@
   <ItemGroup>
     <ClInclude Include="AltaEntitatForm.h" />
     <ClInclude Include="BaixaEntitatForm.h" />
+    <ClInclude Include="CercadoraCompra.h" />
     <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />

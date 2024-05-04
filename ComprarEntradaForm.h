@@ -81,9 +81,10 @@ namespace application {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(400, 317);
+			this->button1->Location = System::Drawing::Point(267, 206);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(103, 39);
+			this->button1->Size = System::Drawing::Size(69, 25);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Comprar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -92,9 +93,10 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(58, 34);
+			this->label1->Location = System::Drawing::Point(39, 22);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(171, 20);
+			this->label1->Size = System::Drawing::Size(116, 13);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"COMPRAR ENTRADA";
 			this->label1->Click += gcnew System::EventHandler(this, &ComprarEntradaForm::label1_Click);
@@ -102,53 +104,58 @@ namespace application {
 			// data_inici
 			// 
 			this->data_inici->AutoSize = true;
-			this->data_inici->Location = System::Drawing::Point(71, 189);
+			this->data_inici->Location = System::Drawing::Point(47, 123);
+			this->data_inici->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->data_inici->Name = L"data_inici";
-			this->data_inici->Size = System::Drawing::Size(91, 20);
+			this->data_inici->Size = System::Drawing::Size(61, 13);
 			this->data_inici->TabIndex = 3;
 			this->data_inici->Text = L"2024-04-25";
 			// 
 			// data_fi
 			// 
 			this->data_fi->AutoSize = true;
-			this->data_fi->Location = System::Drawing::Point(71, 235);
+			this->data_fi->Location = System::Drawing::Point(47, 153);
+			this->data_fi->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->data_fi->Name = L"data_fi";
-			this->data_fi->Size = System::Drawing::Size(91, 20);
+			this->data_fi->Size = System::Drawing::Size(61, 13);
 			this->data_fi->TabIndex = 4;
 			this->data_fi->Text = L"2024-04-25";
 			// 
 			// preu
 			// 
 			this->preu->AutoSize = true;
-			this->preu->Location = System::Drawing::Point(71, 274);
+			this->preu->Location = System::Drawing::Point(47, 178);
+			this->preu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->preu->Name = L"preu";
-			this->preu->Size = System::Drawing::Size(27, 20);
+			this->preu->Size = System::Drawing::Size(19, 13);
 			this->preu->TabIndex = 5;
 			this->preu->Text = L"20";
 			// 
 			// esdeveniment
 			// 
 			this->esdeveniment->AutoSize = true;
-			this->esdeveniment->Location = System::Drawing::Point(71, 137);
+			this->esdeveniment->Location = System::Drawing::Point(47, 89);
+			this->esdeveniment->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->esdeveniment->Name = L"esdeveniment";
-			this->esdeveniment->Size = System::Drawing::Size(19, 20);
+			this->esdeveniment->Size = System::Drawing::Size(15, 13);
 			this->esdeveniment->TabIndex = 6;
 			this->esdeveniment->Text = L"vi";
 			// 
 			// Ciutada
 			// 
 			this->Ciutada->AutoSize = true;
-			this->Ciutada->Location = System::Drawing::Point(71, 92);
+			this->Ciutada->Location = System::Drawing::Point(47, 60);
+			this->Ciutada->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Ciutada->Name = L"Ciutada";
-			this->Ciutada->Size = System::Drawing::Size(18, 20);
+			this->Ciutada->Size = System::Drawing::Size(13, 13);
 			this->Ciutada->TabIndex = 7;
 			this->Ciutada->Text = L"a";
 			// 
 			// ComprarEntradaForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(539, 387);
+			this->ClientSize = System::Drawing::Size(359, 252);
 			this->Controls->Add(this->Ciutada);
 			this->Controls->Add(this->esdeveniment);
 			this->Controls->Add(this->preu);
@@ -156,6 +163,7 @@ namespace application {
 			this->Controls->Add(this->data_inici);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"ComprarEntradaForm";
 			this->Text = L"ComprarEntradaForm";
 			this->Load += gcnew System::EventHandler(this, &ComprarEntradaForm::ComprarEntradaForm_Load);
@@ -168,6 +176,7 @@ namespace application {
 		float preuCompra = Convert::ToSingle(this->preu->Text);
 		TxCompraEntrada entrada(Ciutada->Text, esdeveniment->Text, data_inici->Text, data_fi->Text, preuCompra);
 		entrada.executar();
+		this->Close();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

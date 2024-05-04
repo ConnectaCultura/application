@@ -136,7 +136,7 @@
     <ClInclude Include="BaixaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="CercadoraCiutada.h" />
+    <ClInclude Include="CercadoraCompra.h" />
     <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="ComprarEntradaForm.h">
@@ -164,7 +164,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarelaCiutada.h" />
-    <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="PassarelaEntitat.h" />
     <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
@@ -189,6 +188,7 @@
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
+    <ClCompile Include="CercadoraCompra.cpp" />
     <ClCompile Include="CercadoraCiutada.cpp" />
     <ClCompile Include="CercadoraEntitat.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
@@ -199,7 +199,6 @@
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
     <ClCompile Include="ModificarEntitatForm.cpp" />
-    <ClCompile Include="PassarelaCompra.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaCompra.cpp" />
