@@ -32,6 +32,8 @@
     <ClCompile Include="TxCompraEntrada.cpp" />
     <ClCompile Include="PassarelaCompra.cpp" />
     <ClCompile Include="ComprarEntradaForm.cpp" />
+    <ClCompile Include="CancelaCompraForm.cpp" />
+    <ClCompile Include="TxCancelaCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaEntitatForm.h" />
@@ -64,6 +66,8 @@
     <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="ComprarEntradaForm.h" />
+    <ClInclude Include="CancelaCompraForm.h" />
+    <ClInclude Include="TxCancelaCompra.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
