@@ -13,7 +13,17 @@ void PassarelaCiutada::insereix() {
 	con->tancarConnexio();
 }
 
-int^ PassarelaCiutada::obtePunts()
+int PassarelaCiutada::obtePunts()
 {
 	return this->_punts;
+}
+void PassarelaCiutada::modificaPunts() {
+	System::String^ sql = "UPDATE Ciutada SET punts='" + _punts + "' WHERE correu_electronic = '" + _correuElectronic + "'";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+
+void PassarelaCiutada::setPunts(int punts) {
+	_punts += punts;
 }

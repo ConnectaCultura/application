@@ -5,13 +5,14 @@ ref class PassarelaCiutada
 {
 private:
 	System::String^ _correuElectronic;
-	int^ _punts;
+	int _punts;
 
 public:
 	PassarelaCiutada() {}
 	PassarelaCiutada(System::String^ cE, int punts);
 	void insereix();
-
-	int^ obtePunts();
+	int obtePunts();
+	void modificaPunts();
+	void setPunts(int punts);
 };
 

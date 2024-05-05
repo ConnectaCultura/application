@@ -11,7 +11,8 @@
 #include "ModificarEntitatForm.h"
 #include "VeurePerfilForm.h"
 #include "ConsultarEsdevenimentsForm.h"
-
+#include "ComprarEntradaForm.h"
+#include "CancelaCompraForm.h"
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -101,6 +102,8 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ ConnectaCulturaTitle;
 	private: System::Windows::Forms::Button^ veurePerfil;
 	private: System::Windows::Forms::Button^ consultarEsdeveniments;
+	private: System::Windows::Forms::Button^ CompraEntradaButton;
+	private: System::Windows::Forms::Button^ CancelaCompraButton;
 
 
 
@@ -134,6 +137,8 @@ namespace CppCLRWinFormsProject {
 			this->ConnectaCulturaTitle = (gcnew System::Windows::Forms::Label());
 			this->veurePerfil = (gcnew System::Windows::Forms::Button());
 			this->consultarEsdeveniments = (gcnew System::Windows::Forms::Button());
+			this->CompraEntradaButton = (gcnew System::Windows::Forms::Button());
+			this->CancelaCompraButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -175,7 +180,7 @@ namespace CppCLRWinFormsProject {
 			this->altaEntitat->Location = System::Drawing::Point(26, 118);
 			this->altaEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->altaEntitat->Name = L"altaEntitat";
-			this->altaEntitat->Size = System::Drawing::Size(148, 27);
+			this->altaEntitat->Size = System::Drawing::Size(125, 27);
 			this->altaEntitat->TabIndex = 2;
 			this->altaEntitat->Text = L"Donar d\'alta entitat";
 			this->altaEntitat->UseVisualStyleBackColor = false;
@@ -191,6 +196,7 @@ namespace CppCLRWinFormsProject {
 			this->EsborrarEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->EsborrarEntitat->Name = L"EsborrarEntitat";
 			this->EsborrarEntitat->Size = System::Drawing::Size(148, 24);
+			this->EsborrarEntitat->Size = System::Drawing::Size(125, 24);
 			this->EsborrarEntitat->TabIndex = 3;
 			this->EsborrarEntitat->Text = L"Esborrar entitat";
 			this->EsborrarEntitat->UseVisualStyleBackColor = false;
@@ -211,6 +217,21 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada->UseVisualStyleBackColor = false;
 			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
 			// 
+			// ConsultaEntitat
+			// 
+			this->ConsultaEntitat->BackColor = System::Drawing::Color::DarkGray;
+			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ConsultaEntitat->Location = System::Drawing::Point(26, 195);
+			this->ConsultaEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ConsultaEntitat->Name = L"ConsultaEntitat";
+			this->ConsultaEntitat->Size = System::Drawing::Size(125, 24);
+			this->ConsultaEntitat->TabIndex = 5;
+			this->ConsultaEntitat->Text = L"Consultar entitat";
+			this->ConsultaEntitat->UseVisualStyleBackColor = false;
+			this->ConsultaEntitat->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitat_Click);
+			// 
 			// ConsultaEntitats
 			// 
 			this->ConsultaEntitats->BackColor = System::Drawing::Color::DarkGray;
@@ -220,7 +241,7 @@ namespace CppCLRWinFormsProject {
 			this->ConsultaEntitats->Location = System::Drawing::Point(26, 232);
 			this->ConsultaEntitats->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->ConsultaEntitats->Name = L"ConsultaEntitats";
-			this->ConsultaEntitats->Size = System::Drawing::Size(148, 24);
+			this->ConsultaEntitats->Size = System::Drawing::Size(125, 24);
 			this->ConsultaEntitats->TabIndex = 6;
 			this->ConsultaEntitats->Text = L"Consultar entitats";
 			this->ConsultaEntitats->UseVisualStyleBackColor = false;
@@ -251,7 +272,7 @@ namespace CppCLRWinFormsProject {
 			this->ModificaEntitatButton->Location = System::Drawing::Point(26, 268);
 			this->ModificaEntitatButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->ModificaEntitatButton->Name = L"ModificaEntitatButton";
-			this->ModificaEntitatButton->Size = System::Drawing::Size(148, 24);
+			this->ModificaEntitatButton->Size = System::Drawing::Size(125, 24);
 			this->ModificaEntitatButton->TabIndex = 7;
 			this->ModificaEntitatButton->Text = L"Modifica Entitat";
 			this->ModificaEntitatButton->UseVisualStyleBackColor = false;
@@ -299,6 +320,28 @@ namespace CppCLRWinFormsProject {
 			this->consultarEsdeveniments->Text = L"Consultar esdeveniments";
 			this->consultarEsdeveniments->UseVisualStyleBackColor = false;
 			this->consultarEsdeveniments->Click += gcnew System::EventHandler(this, &Form1::consultarEsdeveniments_Click);
+      //
+			// CompraEntradaButton
+			// 
+			this->CompraEntradaButton->Location = System::Drawing::Point(26, 304);
+			this->CompraEntradaButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->CompraEntradaButton->Name = L"CompraEntradaButton";
+			this->CompraEntradaButton->Size = System::Drawing::Size(125, 21);
+			this->CompraEntradaButton->TabIndex = 10;
+			this->CompraEntradaButton->Text = L"Compra Entrada";
+			this->CompraEntradaButton->UseVisualStyleBackColor = true;
+			this->CompraEntradaButton->Click += gcnew System::EventHandler(this, &Form1::CompraEntradaButton_Click);
+			// 
+			// CancelaCompraButton
+			// 
+			this->CancelaCompraButton->Location = System::Drawing::Point(212, 304);
+			this->CancelaCompraButton->Margin = System::Windows::Forms::Padding(2);
+			this->CancelaCompraButton->Name = L"CancelaCompraButton";
+			this->CancelaCompraButton->Size = System::Drawing::Size(125, 21);
+			this->CancelaCompraButton->TabIndex = 11;
+			this->CancelaCompraButton->Text = L"Cancela Compra";
+			this->CancelaCompraButton->UseVisualStyleBackColor = true;
+			this->CancelaCompraButton->Click += gcnew System::EventHandler(this, &Form1::CancelaCompraButton_Click);
 			// 
 			// Form1
 			// 
@@ -309,6 +352,8 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->consultarEsdeveniments);
 			this->Controls->Add(this->veurePerfil);
 			this->Controls->Add(this->CreaEsdeveniment);
+			this->Controls->Add(this->CancelaCompraButton);
+			this->Controls->Add(this->CompraEntradaButton);
 			this->Controls->Add(this->ConnectaCulturaTitle);
 			this->Controls->Add(this->ModificaEntitatButton);
 			this->Controls->Add(this->ConsultaEntitats);
@@ -392,6 +437,22 @@ namespace CppCLRWinFormsProject {
 private: System::Void consultarEsdeveniments_Click(System::Object^ sender, System::EventArgs^ e) {
 	application::ConsultarEsdevenimentsForm^ CEsdev = gcnew application::ConsultarEsdevenimentsForm();
 	CEsdev->ShowDialog();
+	Form1::ActualitzarForm1();
+}
+private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void CompraEntradaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::ComprarEntradaForm^ Comprar_entrada = gcnew application::ComprarEntradaForm();
+	Comprar_entrada->ShowDialog();
+	Form1::ActualitzarForm1();
+}
+private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::CancelaCompraForm^ CancelaComprar = gcnew application::CancelaCompraForm();
+	CancelaComprar->ShowDialog();
 	Form1::ActualitzarForm1();
 }
 };
