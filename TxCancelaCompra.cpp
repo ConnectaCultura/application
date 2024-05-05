@@ -9,14 +9,13 @@ TxCancelaCompra::TxCancelaCompra(System::String^ contrasenya, System::String^ co
 	_nomesdev = nomesdev;
 	_datainici = datainici;
 	_datafi = datafi;
-
 }
 void TxCancelaCompra::executar() 
 {
 	Sessio^ s = Sessio::getInstance();
 	PassarelaUsuari^ u = s->obteUsuari();
 
-	if (_contrasenya != u->obteContrasenya())  throw std::runtime_error("La contrasenya no és correcta, la compra no s'ha cancelat.");
+	if (_contrasenya != u->obteContrasenya())  throw std::runtime_error("La contrasenya no Ã©s correcta, la compra no s'ha cancelat.");
 	CercadoraCiutada cu;
 	PassarelaCiutada^ ciu = cu.cercaCiutada(_correuCiutada);
 	CercadoraCompra cc;

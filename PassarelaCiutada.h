@@ -11,6 +11,7 @@ public:
 	PassarelaCiutada() {}
 	PassarelaCiutada(System::String^ cE, int punts);
 	void insereix();
+	int obtePunts();
 	void modificaPunts();
 	void setPunts(int punts);
 };

@@ -12,7 +12,7 @@ PassarelaCiutada^ CercadoraCiutada::cercaCiutada(System::String^ correu) {
 		return gcnew PassarelaCiutada(correu_electronic, punts);
 	}
 	else {
-		throw std::runtime_error("El ciutad‡ no existeix");
+		throw std::runtime_error("El ciutad√† no existeix");
 	}
 
 }

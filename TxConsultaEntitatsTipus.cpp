@@ -11,9 +11,19 @@ TxConsultaEntitatsTipus::TxConsultaEntitatsTipus()
 
 void TxConsultaEntitatsTipus::executar()
 {
-	CercadoraEntitat cerEnt; // no es perque no em deixa fer cerEnt();
-	_llistaEntitats = cerEnt.CercaTipus(_tipus);
-	//aqui no tinc que fer ni try ni catch no?
+	CercadoraEntitat cerEnt; 
+	List<PassarelaEntitat^>^ lle = cerEnt.CercaTipus(_tipus);
+	CercadoraUsuari cu;
+	for each (PassarelaEntitat ^ e in lle) {
+		PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
+		List<System::String^>^ ll = gcnew List<System::String^>();
+		ll->Add(u->obteNom());
+		ll->Add(e->obteDescripcio());
+		ll->Add(e->obteTipus());
+		ll->Add(e->obteCorreuElectronic());
+		_llistaEntitats->Add(ll);
+	}
+	return;
 }
 
 void TxConsultaEntitatsTipus::SetTipus(System::String^ tipus) 
@@ -21,7 +31,7 @@ void TxConsultaEntitatsTipus::SetTipus(System::String^ tipus)
 	_tipus = tipus;
 }
 
-List<PassarelaEntitat^>^ TxConsultaEntitatsTipus::ObteResultat()
+List<List<System::String^>^>^ TxConsultaEntitatsTipus::ObteResultat()
 {
 	return _llistaEntitats;
 }

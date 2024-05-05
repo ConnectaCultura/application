@@ -15,4 +15,6 @@ public:
 
 private:
     System::String^ _contrasenya;
+
 };
+

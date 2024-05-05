@@ -41,6 +41,7 @@ namespace application {
 	private: System::Windows::Forms::Button^ ConfirmarButton;
 	private: System::Windows::Forms::Label^ InfoLabel2;
 	private: System::Windows::Forms::TextBox^ ContrasenyaBox;
+
 	private: System::Windows::Forms::Label^ Ciutada;
 	private: System::Windows::Forms::Label^ esdeveniment;
 	private: System::Windows::Forms::Label^ preu;
