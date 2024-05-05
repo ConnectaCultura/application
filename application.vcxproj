@@ -138,6 +138,7 @@
     </ClInclude>
     <ClInclude Include="CercadoraCiutada.h" />
     <ClInclude Include="CercadoraEntitat.h" />
+    <ClInclude Include="CercadoraEsdeveniment.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="Connexio.h" />
     <ClInclude Include="ConsultaEntitatForm.h">
@@ -145,6 +146,12 @@
     </ClInclude>
     <ClInclude Include="CercadoraTipus.h" />
     <ClInclude Include="ConsultaEntitats.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ConsultaEsdevenimentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ConsultarEsdevenimentsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
@@ -179,6 +186,8 @@
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
+    <ClInclude Include="TxConsultaEsdeveniment.h" />
+    <ClInclude Include="TxConsultaEsdeveniments.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
@@ -194,6 +203,9 @@
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CercadoraCiutada.cpp" />
+    <ClCompile Include="CercadoraEsdeveniment.cpp" />
+    <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
+    <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
@@ -226,6 +238,8 @@
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
+    <ClCompile Include="TxConsultaEsdeveniment.cpp" />
+    <ClCompile Include="TxConsultaEsdeveniments.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
@@ -250,6 +264,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
+      <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarEsdevenimentsForm.resx">
+      <DependentUpon>ConsultarEsdevenimentsForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAltaEsdeveniment.resx">
       <DependentUpon>FormAltaEsdeveniment.h</DependentUpon>
     </EmbeddedResource>
