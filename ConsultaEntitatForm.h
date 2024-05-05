@@ -1,5 +1,6 @@
 #pragma once
 #include "TxConsultaEntitat.h"
+#include "ConsultarEsdevenimentsForm.h"
 
 namespace application {
 
@@ -67,6 +68,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ DescripcioLabelEdit;
 
 	private: System::Windows::Forms::Label^ NomLabelEdit;
+	private: System::Windows::Forms::Button^ consultarEsdeveniments;
 
 
 
@@ -97,6 +99,7 @@ namespace application {
 			this->ModalitatLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->DescripcioLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->NomLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->consultarEsdeveniments = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// NomText
@@ -175,12 +178,29 @@ namespace application {
 			this->NomLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->NomLabelEdit->TabIndex = 8;
 			// 
+			// consultarEsdeveniments
+			// 
+			this->consultarEsdeveniments->BackColor = System::Drawing::Color::DarkGray;
+			this->consultarEsdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->consultarEsdeveniments->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->consultarEsdeveniments->Location = System::Drawing::Point(26, 178);
+			this->consultarEsdeveniments->Margin = System::Windows::Forms::Padding(2);
+			this->consultarEsdeveniments->Name = L"consultarEsdeveniments";
+			this->consultarEsdeveniments->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->consultarEsdeveniments->Size = System::Drawing::Size(187, 24);
+			this->consultarEsdeveniments->TabIndex = 12;
+			this->consultarEsdeveniments->Text = L"Consultar esdeveniments";
+			this->consultarEsdeveniments->UseVisualStyleBackColor = false;
+			this->consultarEsdeveniments->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::consultarEsdeveniments_Click);
+			// 
 			// ConsultaEntitatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(274, 249);
+			this->ClientSize = System::Drawing::Size(386, 222);
+			this->Controls->Add(this->consultarEsdeveniments);
 			this->Controls->Add(this->CorreuLabelEdit);
 			this->Controls->Add(this->ModalitatLabelEdit);
 			this->Controls->Add(this->DescripcioLabelEdit);
@@ -221,6 +241,10 @@ namespace application {
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void consultarEsdeveniments_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::ConsultarEsdevenimentsForm^ CEsdev = gcnew application::ConsultarEsdevenimentsForm(CorreuLabelEdit->Text);
+	CEsdev->ShowDialog();
 }
 };
 }

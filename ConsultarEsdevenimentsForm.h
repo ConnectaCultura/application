@@ -23,6 +23,14 @@ namespace application {
 			//TODO: agregar código de constructor aquí
 			//
 		}
+		ConsultarEsdevenimentsForm(System::String^ correu)
+		{
+			InitializeComponent();
+			//
+			//TODO: agregar código de constructor aquí
+			//
+			_correuEntitat = correu;
+		}
 
 	protected:
 		/// <summary>
@@ -48,6 +56,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Inici;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
+	private: System::String^ _correuEntitat;
 
 
 
@@ -168,7 +177,7 @@ namespace application {
 
 #pragma endregion
 	private: System::Void ConsultarEsdevenimentsForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultaEsdeveniments txEsdev;
+		TxConsultaEsdeveniments txEsdev(_correuEntitat);
 		try {
 			txEsdev.executar();
 		}
