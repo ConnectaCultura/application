@@ -174,8 +174,8 @@ namespace application {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		float preuCompra = Convert::ToSingle(this->preu->Text);
-		TxCompraEntrada entrada(Ciutada->Text, esdeveniment->Text, data_inici->Text, data_fi->Text, preuCompra);
-		entrada.executar();
+		//TxCompraEntrada entrada(Ciutada->Text, esdeveniment->Text, data_inici->Text, data_fi->Text, preuCompra);
+		//entrada.executar();
 		this->Close();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {

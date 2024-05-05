@@ -24,10 +24,12 @@ System::String^ PassarelaCompra::obteDataInici() {
 }
 System::String^ PassarelaCompra::obteDataFi() {
 	return _dataFi;
-}
+} 
+//
 
 void PassarelaCompra::insereix() {
-	System::String^ sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" + _nomEsdev + "','" + _dataInici + "','" + _dataFi + "','" + _preuEntrada + "')";
+	System::String^ sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" + 
+		_nomEsdev + "','" + _dataInici + "','" + _dataFi + "','" + _preuEntrada + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

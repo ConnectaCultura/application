@@ -15,7 +15,7 @@ void PassarelaCiutada::insereix() {
 
 int PassarelaCiutada::obtePunts()
 {
-	return this->_punts;
+	return _punts;
 }
 void PassarelaCiutada::modificaPunts() {
 	System::String^ sql = "UPDATE Ciutada SET punts='" + _punts + "' WHERE correu_electronic = '" + _correuElectronic + "'";
@@ -25,5 +25,5 @@ void PassarelaCiutada::modificaPunts() {
 }
 
 void PassarelaCiutada::setPunts(int punts) {
-	_punts += punts;
+	_punts = _punts + punts;
 }

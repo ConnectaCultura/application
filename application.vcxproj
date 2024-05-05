@@ -167,7 +167,6 @@
     <ClInclude Include="ModificarEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="CancelaCompraForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -208,7 +207,6 @@
   <ItemGroup>
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="CercadoraCiutada.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />

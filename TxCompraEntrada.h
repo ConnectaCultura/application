@@ -1,4 +1,5 @@
 #pragma once
+#include "Sessio.h"
 #include "PassarelaCompra.h"
 #include "CercadoraCiutada.h"
 #include "PassarelaCiutada.h"
@@ -6,7 +7,7 @@
 ref class TxCompraEntrada
 {
 	public:
-		TxCompraEntrada(System::String^ correuCiutada, System::String^ nomEsdev, System::String^ dataInici, System::String^ dataFi, float preuEntrada);
+		TxCompraEntrada(System::String^ nomEsdev, System::String^ data, float preuEntrada);
 		void executar();
 		int puntsCompra();
 	

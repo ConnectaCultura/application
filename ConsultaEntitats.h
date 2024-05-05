@@ -230,7 +230,7 @@ namespace application {
 			MessageBox::Show(ex->Message);
 		}
 		List<String^>^ dades = tip.ObteResultat();
-		dades->Insert(0, "");
+		dades->Insert(0, "Tots");
 		TipusComboBox->DataSource = dades;
 	}
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -245,7 +245,7 @@ namespace application {
 private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	dataGridViewEntitats->Rows->Clear();
 	TxConsultaEntitatsTipus entip;
-	if (this->TipusComboBox->SelectedItem->ToString() != "") {
+	if (this->TipusComboBox->SelectedItem->ToString() != "Tots") {
 
 		entip.SetTipus(this->TipusComboBox->SelectedItem->ToString());
 		try {

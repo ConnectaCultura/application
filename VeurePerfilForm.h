@@ -44,11 +44,14 @@ namespace application {
 
 	protected:
 	private: System::Windows::Forms::Label^ TipusText;
-	private: System::Windows::Forms::TextBox^ PuntsBox;
+
 
 	private: System::Windows::Forms::TextBox^ NomBox;
 	private: System::Windows::Forms::Label^ DescripcioText;
 	private: System::Windows::Forms::Label^ NomText;
+
+	private: System::Windows::Forms::Label^ PuntsLabelEdit;
+
 
 
 	private:
@@ -66,10 +69,10 @@ namespace application {
 		{
 			this->CorreuBox = (gcnew System::Windows::Forms::TextBox());
 			this->TipusText = (gcnew System::Windows::Forms::Label());
-			this->PuntsBox = (gcnew System::Windows::Forms::TextBox());
 			this->NomBox = (gcnew System::Windows::Forms::TextBox());
 			this->DescripcioText = (gcnew System::Windows::Forms::Label());
 			this->NomText = (gcnew System::Windows::Forms::Label());
+			this->PuntsLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// CorreuBox
@@ -77,6 +80,7 @@ namespace application {
 			this->CorreuBox->Location = System::Drawing::Point(132, 54);
 			this->CorreuBox->Margin = System::Windows::Forms::Padding(2);
 			this->CorreuBox->Name = L"CorreuBox";
+			this->CorreuBox->ReadOnly = true;
 			this->CorreuBox->Size = System::Drawing::Size(111, 20);
 			this->CorreuBox->TabIndex = 12;
 			this->CorreuBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::TipusBox_TextChanged);
@@ -87,25 +91,17 @@ namespace application {
 			this->TipusText->Location = System::Drawing::Point(22, 59);
 			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->TipusText->Name = L"TipusText";
-			this->TipusText->Size = System::Drawing::Size(88, 13);
+			this->TipusText->Size = System::Drawing::Size(91, 13);
 			this->TipusText->TabIndex = 11;
 			this->TipusText->Text = L"Correu Electrònic:";
 			this->TipusText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::TipusText_Click);
 			// 
-			// PuntsBox
-			// 
-			this->PuntsBox->Location = System::Drawing::Point(132, 87);
-			this->PuntsBox->Margin = System::Windows::Forms::Padding(2);
-			this->PuntsBox->Name = L"PuntsBox";
-			this->PuntsBox->Size = System::Drawing::Size(112, 20);
-			this->PuntsBox->TabIndex = 10;
-			this->PuntsBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::DescripcioBox_TextChanged);
-			// 
 			// NomBox
 			// 
-			this->NomBox->Location = System::Drawing::Point(133, 26);
+			this->NomBox->Location = System::Drawing::Point(132, 28);
 			this->NomBox->Margin = System::Windows::Forms::Padding(2);
 			this->NomBox->Name = L"NomBox";
+			this->NomBox->ReadOnly = true;
 			this->NomBox->Size = System::Drawing::Size(111, 20);
 			this->NomBox->TabIndex = 9;
 			this->NomBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::NomBox_TextChanged);
@@ -113,7 +109,7 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(22, 87);
+			this->DescripcioText->Location = System::Drawing::Point(22, 85);
 			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(37, 13);
@@ -132,14 +128,24 @@ namespace application {
 			this->NomText->Text = L"Nom:";
 			this->NomText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::NomText_Click);
 			// 
+			// PuntsLabelEdit
+			// 
+			this->PuntsLabelEdit->AutoSize = true;
+			this->PuntsLabelEdit->Location = System::Drawing::Point(129, 85);
+			this->PuntsLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->PuntsLabelEdit->Name = L"PuntsLabelEdit";
+			this->PuntsLabelEdit->Size = System::Drawing::Size(13, 13);
+			this->PuntsLabelEdit->TabIndex = 14;
+			this->PuntsLabelEdit->Text = L"e";
+			// 
 			// VeurePerfilForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(368, 122);
+			this->Controls->Add(this->PuntsLabelEdit);
 			this->Controls->Add(this->CorreuBox);
 			this->Controls->Add(this->TipusText);
-			this->Controls->Add(this->PuntsBox);
 			this->Controls->Add(this->NomBox);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
@@ -162,7 +168,7 @@ namespace application {
 
 				CorreuBox->Text = u->obteCorreuElectronic();
 				NomBox->Text = u->obteNom();
-				PuntsBox->Text = c->obtePunts()->ToString();
+				PuntsLabelEdit->Text = c->obtePunts().ToString();
 			}
 			catch (MySqlException^ ex) {
 				MessageBox::Show(ex->Message);

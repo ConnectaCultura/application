@@ -1,5 +1,6 @@
 #pragma once
 #include "TxConsultaEsdeveniment.h"
+#include "TxCompraEntrada.h"
 namespace application {
 
 	using namespace System;
@@ -62,6 +63,7 @@ namespace application {
 		String^ _fi;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ descripcio;
+	private: System::Windows::Forms::Button^ ComprarButton;
 		   /// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
@@ -91,6 +93,7 @@ namespace application {
 			this->eDisp = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->descripcio = (gcnew System::Windows::Forms::Label());
+			this->ComprarButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -262,11 +265,23 @@ namespace application {
 			this->descripcio->TabIndex = 16;
 			this->descripcio->Text = L"label9";
 			// 
+			// ComprarButton
+			// 
+			this->ComprarButton->Location = System::Drawing::Point(254, 266);
+			this->ComprarButton->Margin = System::Windows::Forms::Padding(2);
+			this->ComprarButton->Name = L"ComprarButton";
+			this->ComprarButton->Size = System::Drawing::Size(122, 25);
+			this->ComprarButton->TabIndex = 17;
+			this->ComprarButton->Text = L"Comprar Entrada";
+			this->ComprarButton->UseVisualStyleBackColor = true;
+			this->ComprarButton->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ComprarButton_Click);
+			// 
 			// ConsultaEsdevenimentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(413, 316);
+			this->Controls->Add(this->ComprarButton);
 			this->Controls->Add(this->descripcio);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->eDisp);
@@ -284,7 +299,7 @@ namespace application {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nom);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaEsdevenimentForm";
 			this->Text = L"ConsultaEsdevenimentForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ConsultaEsdevenimentForm_Load);
@@ -320,5 +335,22 @@ namespace application {
 	
 	
 	}
+private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	float preuCompra;
+	if (preu->Text == "Gratuit") {
+		preuCompra = 0;
+	}
+	else {
+		preuCompra = Convert::ToSingle(this->preu->Text);
+	}
+	//Error amb el preu o algo MySql.Data.MySqlClient.MySqlException (0x80004005): Cannot add or update a 
+	// child row: a foreign key constraint fails (`amep09`.`Compra`, CONSTRAINT `Compra_ibfk_5` 
+	// FOREIGN KEY (`preu`) REFERENCES `Esdeveniment` (`preu`))
+	//Quan detecto que te que ser un ciutada
+	TxCompraEntrada entrada(nom->Text, data->Text, preuCompra);
+	entrada.executar();
+	this->Close();
+
+}
 };
 }

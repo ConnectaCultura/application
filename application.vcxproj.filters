@@ -40,7 +40,6 @@
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
-    <ClCompile Include="PassarelaCompra.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
