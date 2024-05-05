@@ -185,6 +185,7 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
@@ -236,6 +237,7 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
@@ -273,6 +275,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaEntitatForm.resx">
       <DependentUpon>AltaEntitatForm.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaixaEntitatForm.resx">
       <DependentUpon>BaixaEntitatForm.h</DependentUpon>
