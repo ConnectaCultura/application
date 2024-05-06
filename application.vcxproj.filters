@@ -37,6 +37,9 @@
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="AltaAjuntamentForm.cpp" />
+    <ClCompile Include="TxAltaAjuntament.cpp" />
+    <ClCompile Include="PassarelaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
@@ -98,6 +101,9 @@
     <ClInclude Include="CercadoraEsdeveniment.h" />
     <ClInclude Include="ConsultaEsdevenimentForm.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
+    <ClInclude Include="AltaAjuntamentForm.h" />
+    <ClInclude Include="TxAltaAjuntament.h" />
+    <ClInclude Include="PassarelaAjuntament.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">

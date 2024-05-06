@@ -130,6 +130,9 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AltaAjuntamentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AltaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -164,6 +167,7 @@
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="ModificarEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -184,6 +188,7 @@
     </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
@@ -205,6 +210,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AltaAjuntamentForm.cpp" />
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
@@ -223,6 +229,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="PassarelaAjuntament.cpp" />
     <ClCompile Include="ModificarEntitatForm.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
@@ -240,6 +247,7 @@
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
     <ClCompile Include="RegistreCiutadaForm.cpp" />
     <ClCompile Include="Sessio.cpp" />
+    <ClCompile Include="TxAltaAjuntament.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxCompraEntrada.cpp" />
@@ -272,6 +280,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AltaAjuntamentForm.resx">
+      <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
     <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
       <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>
     </EmbeddedResource>

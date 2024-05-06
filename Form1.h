@@ -8,11 +8,13 @@
 #include "RegistreCiutadaForm.h"
 #include "ConsultaEntitatForm.h"
 #include "ConsultaEntitats.h"
+#include "AltaAjuntamentForm.h"
 #include "ModificarEntitatForm.h"
 #include "VeurePerfilForm.h"
 #include "ConsultarEsdevenimentsForm.h"
 #include "ComprarEntradaForm.h"
 #include "CancelaCompraForm.h"
+
 namespace CppCLRWinFormsProject {
 
 	using namespace System;
@@ -38,6 +40,7 @@ namespace CppCLRWinFormsProject {
 			logOut->Visible = false;
 			altaEntitat->Visible = false;
 			EsborrarEntitat->Visible = false;
+			altaAjuntament->Visible = false;
 			CreaEsdeveniment->Visible = false;
 			ModificaEntitatButton->Visible = false;
 			veurePerfil->Visible = false;
@@ -51,6 +54,7 @@ namespace CppCLRWinFormsProject {
 				logOut->Visible = false;
 				altaEntitat->Visible = false;
 				EsborrarEntitat->Visible = false;
+				altaAjuntament->Visible = false;
 				ModificaEntitatButton->Visible = false;
 				veurePerfil->Visible = false;
 				CreaEsdeveniment->Visible = false;
@@ -62,14 +66,19 @@ namespace CppCLRWinFormsProject {
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
 					CreaEsdeveniment->Visible = false;
+          altaAjuntament->Visible = false;
 				}
 				else if (s->obteUsuari()->obteTipus() == "entitat") {
 					EsborrarEntitat->Visible = true;
+          altaAjuntament->Visible = false;
 
 					CreaEsdeveniment->Visible = true;
 
 					ModificaEntitatButton->Visible = true;
 				}
+        else if (s->obteUsuari()->obteTipus() == "administrador") {
+					altaAjuntament->Visible = true;
+          }
 				else {
 					veurePerfil->Visible = true;
 				}
@@ -96,6 +105,8 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ registreCiutada;
 
 	private: System::Windows::Forms::Button^ ConsultaEntitats;
+	private: System::Windows::Forms::Button^ altaAjuntament;
+
 
 	private: System::Windows::Forms::Button^ CreaEsdeveniment;
 	private: System::Windows::Forms::Button^ ModificaEntitatButton;
@@ -132,6 +143,7 @@ namespace CppCLRWinFormsProject {
 			this->EsborrarEntitat = (gcnew System::Windows::Forms::Button());
 			this->registreCiutada = (gcnew System::Windows::Forms::Button());
 			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
+			this->altaAjuntament = (gcnew System::Windows::Forms::Button());
 			this->CreaEsdeveniment = (gcnew System::Windows::Forms::Button());
 			this->ModificaEntitatButton = (gcnew System::Windows::Forms::Button());
 			this->ConnectaCulturaTitle = (gcnew System::Windows::Forms::Label());
@@ -148,7 +160,7 @@ namespace CppCLRWinFormsProject {
 			this->logIn->Location = System::Drawing::Point(229, 174);
 			this->logIn->Margin = System::Windows::Forms::Padding(2);
 			this->logIn->Name = L"logIn";
-			this->logIn->Size = System::Drawing::Size(94, 28);
+			this->logIn->Size = System::Drawing::Size(125, 34);
 			this->logIn->TabIndex = 0;
 			this->logIn->Text = L"iniciar sessi�";
 			this->logIn->UseVisualStyleBackColor = false;
@@ -163,7 +175,7 @@ namespace CppCLRWinFormsProject {
 			this->logOut->Location = System::Drawing::Point(229, 206);
 			this->logOut->Margin = System::Windows::Forms::Padding(2);
 			this->logOut->Name = L"logOut";
-			this->logOut->Size = System::Drawing::Size(94, 28);
+			this->logOut->Size = System::Drawing::Size(125, 34);
 			this->logOut->TabIndex = 1;
 			this->logOut->Text = L"tancar sessi�";
 			this->logOut->UseVisualStyleBackColor = false;
@@ -178,7 +190,7 @@ namespace CppCLRWinFormsProject {
 			this->altaEntitat->Location = System::Drawing::Point(26, 118);
 			this->altaEntitat->Margin = System::Windows::Forms::Padding(2);
 			this->altaEntitat->Name = L"altaEntitat";
-			this->altaEntitat->Size = System::Drawing::Size(125, 27);
+			this->altaEntitat->Size = System::Drawing::Size(167, 33);
 			this->altaEntitat->TabIndex = 2;
 			this->altaEntitat->Text = L"Donar d\'alta entitat";
 			this->altaEntitat->UseVisualStyleBackColor = false;
@@ -193,7 +205,7 @@ namespace CppCLRWinFormsProject {
 			this->EsborrarEntitat->Location = System::Drawing::Point(26, 158);
 			this->EsborrarEntitat->Margin = System::Windows::Forms::Padding(2);
 			this->EsborrarEntitat->Name = L"EsborrarEntitat";
-			this->EsborrarEntitat->Size = System::Drawing::Size(125, 24);
+			this->EsborrarEntitat->Size = System::Drawing::Size(167, 30);
 			this->EsborrarEntitat->TabIndex = 3;
 			this->EsborrarEntitat->Text = L"Esborrar entitat";
 			this->EsborrarEntitat->UseVisualStyleBackColor = false;
@@ -208,11 +220,26 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada->Location = System::Drawing::Point(229, 142);
 			this->registreCiutada->Margin = System::Windows::Forms::Padding(2);
 			this->registreCiutada->Name = L"registreCiutada";
-			this->registreCiutada->Size = System::Drawing::Size(96, 28);
+			this->registreCiutada->Size = System::Drawing::Size(128, 34);
 			this->registreCiutada->TabIndex = 4;
 			this->registreCiutada->Text = L"registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
 			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
+			// 
+			// ConsultaEntitat
+			// 
+			this->ConsultaEntitat->BackColor = System::Drawing::Color::DarkGray;
+			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ConsultaEntitat->Location = System::Drawing::Point(35, 180);
+			this->ConsultaEntitat->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->ConsultaEntitat->Name = L"ConsultaEntitat";
+			this->ConsultaEntitat->Size = System::Drawing::Size(167, 30);
+			this->ConsultaEntitat->TabIndex = 5;
+			this->ConsultaEntitat->Text = L"Consultar entitat";
+			this->ConsultaEntitat->UseVisualStyleBackColor = false;
+			this->ConsultaEntitat->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitat_Click);
 			// 
 			// ConsultaEntitats
 			// 
@@ -223,7 +250,7 @@ namespace CppCLRWinFormsProject {
 			this->ConsultaEntitats->Location = System::Drawing::Point(27, 307);
 			this->ConsultaEntitats->Margin = System::Windows::Forms::Padding(2);
 			this->ConsultaEntitats->Name = L"ConsultaEntitats";
-			this->ConsultaEntitats->Size = System::Drawing::Size(125, 24);
+			this->ConsultaEntitats->Size = System::Drawing::Size(167, 30);
 			this->ConsultaEntitats->TabIndex = 6;
 			this->ConsultaEntitats->Text = L"Consultar entitats";
 			this->ConsultaEntitats->UseVisualStyleBackColor = false;
@@ -302,10 +329,25 @@ namespace CppCLRWinFormsProject {
 			this->consultarEsdeveniments->Text = L"Consultar esdeveniments";
 			this->consultarEsdeveniments->UseVisualStyleBackColor = false;
 			this->consultarEsdeveniments->Click += gcnew System::EventHandler(this, &Form1::consultarEsdeveniments_Click);
+      //
+      // altaAjuntament
+			// 
+			this->altaAjuntament->BackColor = System::Drawing::Color::DarkGray;
+			this->altaAjuntament->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->altaAjuntament->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->altaAjuntament->Location = System::Drawing::Point(221, 85);
+			this->altaAjuntament->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->altaAjuntament->Name = L"altaAjuntament";
+			this->altaAjuntament->Size = System::Drawing::Size(244, 33);
+			this->altaAjuntament->TabIndex = 7;
+			this->altaAjuntament->Text = L"Donar d\'alta ajuntament";
+			this->altaAjuntament->UseVisualStyleBackColor = false;
+			this->altaAjuntament->Click += gcnew System::EventHandler(this, &Form1::altaAjuntament_Click);
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(493, 375);
@@ -314,6 +356,7 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->CreaEsdeveniment);
 			this->Controls->Add(this->ConnectaCulturaTitle);
 			this->Controls->Add(this->ModificaEntitatButton);
+      this->Controls->Add(this->altaAjuntament);
 			this->Controls->Add(this->ConsultaEntitats);
 			this->Controls->Add(this->registreCiutada);
 			this->Controls->Add(this->EsborrarEntitat);
@@ -408,6 +451,11 @@ private: System::Void CompraEntradaButton_Click(System::Object^ sender, System::
 private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	application::CancelaCompraForm^ CancelaComprar = gcnew application::CancelaCompraForm();
 	CancelaComprar->ShowDialog();
+	Form1::ActualitzarForm1();
+}
+private: System::Void altaAjuntament_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::AltaAjuntamentForm^ Alta_Ajuntament = gcnew application::AltaAjuntamentForm();
+	Alta_Ajuntament->ShowDialog();
 	Form1::ActualitzarForm1();
 }
 };
