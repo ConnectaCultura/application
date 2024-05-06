@@ -13,3 +13,4 @@ public:
 	CercadoraCiutada() {};
 	PassarelaCiutada^ cercaCiutada(String^ correu);
 };
+//
