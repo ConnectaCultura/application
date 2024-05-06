@@ -164,7 +164,8 @@ namespace application {
 			this->Close();
 		}
 		catch (MySqlException^ ex) {
-			MessageBox::Show("El correu electrònic ja existeix");
+			MessageBox::Show(ex->Message);
+			//MessageBox::Show("El correu electrònic ja existeix");
 		}
 
 	

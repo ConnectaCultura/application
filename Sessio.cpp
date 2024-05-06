@@ -17,3 +17,6 @@ void Sessio::refrescaUsuari(PassarelaUsuari^ u)
 {
     usuari = u;
 }
+void Sessio::modificaUsuari(System::String^ nom) {
+    usuari->modificaNom(nom);
+}

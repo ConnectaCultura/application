@@ -8,8 +8,10 @@ PassarelaUsuari^ CercadoraUsuari::cercaUsuari(System::String^ correu) {
 	if (dataReader->Read()) {
 		System::String^ correu_electronic = dataReader->GetString(0);
 		System::String^ nom = dataReader->GetString(1);
+
 		System::String^ tipus = dataReader->GetString(3);
 		System::String^ contrasenya = dataReader->GetString(2);
+
 		con->tancarConnexio();
 		return gcnew PassarelaUsuari (nom, correu_electronic, contrasenya, tipus);
 	}
