@@ -1,5 +1,7 @@
 #pragma once
 
+#include "TxBaixaCiutada.h"
+
 namespace application {
 
 	using namespace System;
@@ -129,6 +131,18 @@ namespace application {
 	private: System::Void labelbaixaciutada1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::String^ contrasenya = this->textBoxbaixaciutada->Text;
+		TxBaixaCiutada txBC(contrasenya);
+		try {
+			txBC.executar();
+			this->Close();
+		}
+		catch (std::runtime_error e) {
+			MessageBox::Show("Contrasenya incorrecta");
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 	}
 private: System::Void BaixaCiutadaForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
