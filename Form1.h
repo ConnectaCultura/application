@@ -10,6 +10,7 @@
 #include "ConsultaEntitats.h"
 #include "AltaAjuntamentForm.h"
 #include "ModificarEntitatForm.h"
+#include "FormConsultarAjuntament.h"
 #include "VeurePerfilForm.h"
 #include "ConsultarEsdevenimentsForm.h"
 #include "ComprarEntradaForm.h"
@@ -111,6 +112,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ CreaEsdeveniment;
 	private: System::Windows::Forms::Button^ ModificaEntitatButton;
 	private: System::Windows::Forms::Label^ ConnectaCulturaTitle;
+	private: System::Windows::Forms::Button^ ConsultaAjuntamentButton;
 	private: System::Windows::Forms::Button^ veurePerfil;
 	private: System::Windows::Forms::Button^ consultarEsdeveniments;
 
@@ -147,6 +149,7 @@ namespace CppCLRWinFormsProject {
 			this->CreaEsdeveniment = (gcnew System::Windows::Forms::Button());
 			this->ModificaEntitatButton = (gcnew System::Windows::Forms::Button());
 			this->ConnectaCulturaTitle = (gcnew System::Windows::Forms::Label());
+			this->ConsultaAjuntamentButton = (gcnew System::Windows::Forms::Button());
 			this->veurePerfil = (gcnew System::Windows::Forms::Button());
 			this->consultarEsdeveniments = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
@@ -300,7 +303,22 @@ namespace CppCLRWinFormsProject {
 			this->ConnectaCulturaTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->ConnectaCulturaTitle->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
 			// 
-			// veurePerfil
+			// ConsultaAjuntamentButton
+			// 
+			this->ConsultaAjuntamentButton->BackColor = System::Drawing::Color::DarkGray;
+			this->ConsultaAjuntamentButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ConsultaAjuntamentButton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ConsultaAjuntamentButton->Location = System::Drawing::Point(207, 307);
+			this->ConsultaAjuntamentButton->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
+			this->ConsultaAjuntamentButton->Name = L"ConsultaAjuntamentButton";
+			this->ConsultaAjuntamentButton->Size = System::Drawing::Size(134, 20);
+			this->ConsultaAjuntamentButton->TabIndex = 9;
+			this->ConsultaAjuntamentButton->Text = L"Consulta ajuntament";
+			this->ConsultaAjuntamentButton->UseVisualStyleBackColor = false;
+			this->ConsultaAjuntamentButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaAjuntamentButton_Click);
+      //
+      // veurePerfil
 			// 
 			this->veurePerfil->BackColor = System::Drawing::Color::OrangeRed;
 			this->veurePerfil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -407,7 +425,6 @@ namespace CppCLRWinFormsProject {
 	private: System::Void ModificaEntitatButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::ModificarEntitatForm^ Modifica_Entitat = gcnew application::ModificarEntitatForm();
 		Modifica_Entitat->ShowDialog();
-
 		Form1::ActualitzarForm1();
 	}
 
@@ -415,6 +432,11 @@ namespace CppCLRWinFormsProject {
 	}
 
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void ConsultaAjuntamentButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		application::FormConsultarAjuntament^ Consulta_Ajuntament = gcnew application::FormConsultarAjuntament("aj1");
+		Consulta_Ajuntament->ShowDialog();
+		Form1::ActualitzarForm1();
 	}
 	private: System::Void veurePerfil_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::VeurePerfilForm^ Veure_Perfil = gcnew application::VeurePerfilForm();
