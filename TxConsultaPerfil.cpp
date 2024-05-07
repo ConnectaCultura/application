@@ -15,7 +15,7 @@ void TxConsultaPerfil::executar()
 	_resultat  = gcnew List<System::String^>();
 	_resultat->Add(u->obteCorreuElectronic());
 	_resultat->Add(u->obteNom());
-	_resultat->Add(c->obtePunts()->ToString());
+	_resultat->Add(c->obtePunts().ToString());
 }
 
 List<System::String^>^ TxConsultaPerfil::obteResultat()
