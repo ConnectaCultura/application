@@ -21,13 +21,13 @@ namespace application {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~VeurePerfilForm()
 		{
@@ -44,23 +44,27 @@ namespace application {
 
 
 
+
 	private: System::Windows::Forms::Label^ DescripcioText;
 	private: System::Windows::Forms::Label^ NomText;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 
+	private: System::Windows::Forms::Label^ PuntsLabelEdit;
+
+
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -80,13 +84,13 @@ namespace application {
 			this->TipusText->Name = L"TipusText";
 			this->TipusText->Size = System::Drawing::Size(91, 13);
 			this->TipusText->TabIndex = 11;
-			this->TipusText->Text = L"Correu Electrònic:";
+			this->TipusText->Text = L"Correu ElectrÃ²nic:";
 			this->TipusText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::TipusText_Click);
 			// 
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(22, 87);
+			this->DescripcioText->Location = System::Drawing::Point(22, 85);
 			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(37, 13);
@@ -153,7 +157,6 @@ namespace application {
 			// Para hacer un consultaPerfil generico
 			TxConsultaPerfil txCP;
 			try {
-				
 				txCP.executar();
 				List<String^>^ ciutada = txCP.obteResultat();
 				label1->Text = ciutada[0];

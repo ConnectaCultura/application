@@ -7,12 +7,12 @@ PassarelaCiutada^ CercadoraCiutada::cercaCiutada(System::String^ correu) {
 	MySqlDataReader^ dataReader = con->executar(sql);
 	if (dataReader->Read()) {
 		System::String^ correu_electronic = dataReader->GetString(0);
-		int punts = (int) dataReader->GetInt32(1);
+		int punts = (int)dataReader->GetInt32(1);
 		con->tancarConnexio();
 		return gcnew PassarelaCiutada(correu_electronic, punts);
 	}
 	else {
-		throw std::runtime_error("El ciutad‡ no existeix");
+		throw std::runtime_error("El ciutad√† no existeix");
 	}
 
 }

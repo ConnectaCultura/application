@@ -1,18 +1,27 @@
 #pragma once
 #include "Connexio.h"
-#include "PassarelaUsuari.h"
-//#include "PassarelaEsdeveniment.h"
 
 ref class PassarelaCompra
 {
-private:
-	System::String^ dia_compra;
-	PassarelaUsuari^ usuari;
-	//PassarelaEsdeveniment esdeveniment;
+	private:
+		System::String^ _correuCiutada;
+		System::String^ _nomEsdev;
+		System::String^ _dataInici;
+		System::String^ _dataFi;
+		float _preuEntrada;
 
+	public:
+		PassarelaCompra() {}
+		PassarelaCompra(System::String^ correuCiutada, System::String^ nomEsdev, System::String^ dataInici, System::String^ dataFi, float preuEntrada);
+		~PassarelaCompra(){}
 
-public:
-	PassarelaCompra(System::String^ dc, PassarelaUsuari^ u/*, PassarelaEsdeveniment e*/);
-	void esborra();
+		float obtePreu();
+		System::String^ obteNomEsdev();
+		System::String^ obteCorreuCiutada();
+		System::String^ obteDataInici();
+		System::String^ obteDataFi();
+
+		void insereix();
+		void esborra();
+  
 };
-

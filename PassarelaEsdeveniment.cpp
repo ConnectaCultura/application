@@ -21,3 +21,31 @@ void PassarelaEsdeveniment::insereix() {
 	con->tancarConnexio();
 }
 
+System::String^ PassarelaEsdeveniment::obteNom() {
+	return nom;
+}
+System::String^ PassarelaEsdeveniment::obteData_inici() {
+	return data_inici;
+}
+System::String^ PassarelaEsdeveniment::obteData_fi() {
+	return data_fi;
+}
+float PassarelaEsdeveniment::obtePreu() {
+	return preu;
+}
+
+int PassarelaEsdeveniment::obteAforament() {
+	return aforament;
+}
+
+System::String^ PassarelaEsdeveniment::obteDescripcio() {
+	return descripcio;
+}
+
+System::String^ PassarelaEsdeveniment::obteCorreu() {
+	return correu;
+}
+
+System::String^ PassarelaEsdeveniment::obteTipus() {
+	return tipus;
+}
