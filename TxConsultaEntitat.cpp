@@ -1,23 +1,30 @@
 #include "pch.h"
 #include "TxConsultaEntitat.h"
 
+
 TxConsultaEntitat::TxConsultaEntitat(System::String^ correu) {
 
 	_correu = correu;
+	List<System::String^>^ res;
 
 }
 
-array<System::String^>^ TxConsultaEntitat::executar() {
+void TxConsultaEntitat::executar() {
 	CercadoraUsuari cU;
 	PassarelaUsuari^ u = cU.cercaUsuari(_correu);
 
-	array<System::String^>^ sol = gcnew array<System::String^>(3);
-	sol[0] = u->obteNom();
+	List<System::String^>^ sol = gcnew List<System::String^>();
+	sol->Add(u->obteNom());
 	CercadoraEntitat cE;
 	PassarelaEntitat^ e = cE.CercaEntitat(_correu);
-	sol[1] = e->obteTipus();
-	sol[2] = e->obteDescripcio();
-	return sol;
+	sol->Add(e->obteTipus());
+	sol->Add(e->obteDescripcio());
+	res = sol;
+	return;
 
 
+}
+
+List<System::String^>^ TxConsultaEntitat::ObteResultat() {
+	return res;
 }

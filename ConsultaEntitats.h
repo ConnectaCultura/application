@@ -1,7 +1,9 @@
 #pragma once
 #include "TxConsultaEntitats.h"
 #include "TxConsultaEntitatsTipus.h"
+#include "TxConsultaEntitatsNom.h"
 #include "TxConsultaTipus.h"
+#include "ConsultaEntitatForm.h"
 #include <stdexcept>
 
 namespace application {
@@ -51,9 +53,21 @@ namespace application {
 
 
 	private: System::Windows::Forms::Label^ TipusLabel;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CorreuElectronic;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nom;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Descripcio;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Tipus;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Correu_Electronic;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,12 +100,13 @@ namespace application {
 		void InitializeComponent(void)
 		{
 			this->dataGridViewEntitats = (gcnew System::Windows::Forms::DataGridView());
-			this->CorreuElectronic = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Descripcio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Tipus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->EntitatsLabel = (gcnew System::Windows::Forms::Label());
 			this->TipusComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->TipusLabel = (gcnew System::Windows::Forms::Label());
+			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Descripcio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Tipus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Correu_Electronic = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -102,9 +117,9 @@ namespace application {
 			this->dataGridViewEntitats->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->dataGridViewEntitats->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridViewEntitats->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewEntitats->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->CorreuElectronic,
-					this->Descripcio, this->Tipus
+			this->dataGridViewEntitats->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Nom,
+					this->Descripcio, this->Tipus, this->Correu_Electronic
 			});
 			this->dataGridViewEntitats->Location = System::Drawing::Point(12, 59);
 			this->dataGridViewEntitats->Name = L"dataGridViewEntitats";
@@ -112,27 +127,6 @@ namespace application {
 			this->dataGridViewEntitats->Size = System::Drawing::Size(800, 352);
 			this->dataGridViewEntitats->TabIndex = 0;
 			this->dataGridViewEntitats->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitats::dataGridViewEntitats_CellContentClick);
-			// 
-			// CorreuElectronic
-			// 
-			this->CorreuElectronic->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->CorreuElectronic->HeaderText = L"CorreuElectronic";
-			this->CorreuElectronic->Name = L"CorreuElectronic";
-			this->CorreuElectronic->ReadOnly = true;
-			// 
-			// Descripcio
-			// 
-			this->Descripcio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->Descripcio->HeaderText = L"Descripcio";
-			this->Descripcio->Name = L"Descripcio";
-			this->Descripcio->ReadOnly = true;
-			// 
-			// Tipus
-			// 
-			this->Tipus->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->Tipus->HeaderText = L"Tipus";
-			this->Tipus->Name = L"Tipus";
-			this->Tipus->ReadOnly = true;
 			// 
 			// EntitatsLabel
 			// 
@@ -167,6 +161,34 @@ namespace application {
 			this->TipusLabel->Text = L"Tipus:";
 			this->TipusLabel->Click += gcnew System::EventHandler(this, &ConsultaEntitats::TipusLabel_Click);
 			// 
+			// Nom
+			// 
+			this->Nom->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Nom->HeaderText = L"Nom";
+			this->Nom->Name = L"Nom";
+			this->Nom->ReadOnly = true;
+			// 
+			// Descripcio
+			// 
+			this->Descripcio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Descripcio->HeaderText = L"Descripcio";
+			this->Descripcio->Name = L"Descripcio";
+			this->Descripcio->ReadOnly = true;
+			// 
+			// Tipus
+			// 
+			this->Tipus->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Tipus->HeaderText = L"Tipus";
+			this->Tipus->Name = L"Tipus";
+			this->Tipus->ReadOnly = true;
+			// 
+			// Correu_Electronic
+			// 
+			this->Correu_Electronic->HeaderText = L"Correu_Electronic";
+			this->Correu_Electronic->Name = L"Correu_Electronic";
+			this->Correu_Electronic->ReadOnly = true;
+			this->Correu_Electronic->Visible = false;
+			// 
 			// ConsultaEntitats
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -194,13 +216,11 @@ namespace application {
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = ent.ObteResultat();
-		
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = ent.ObteResultat();
+		for each (List<System::String^>^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
-		//tecnicament no fa falta ja que al inicialitzarlo s'autoseleciona el tipus buit i pertant s'escriu sencer
 
 		TxConsultaTipus tip;
 		try {
@@ -210,19 +230,22 @@ namespace application {
 			MessageBox::Show(ex->Message);
 		}
 		List<String^>^ dades = tip.ObteResultat();
-		dades->Insert(0, "");
+		dades->Insert(0, "Tots");
 		TipusComboBox->DataSource = dades;
 	}
 	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		//Mostra Pagina Entitat:
-		//Quan cliqui en una fila vull que carregui la pagina d'aquesta Entitat
-		//Cridar la pantalla ConsultaEntitat passant-li aquesta entitat (o la info)...
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+			String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[3]->Value->ToString();
+			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
+			Consulta_Entitat->ShowDialog();
+
+		}
 	}
 
 private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	dataGridViewEntitats->Rows->Clear();
 	TxConsultaEntitatsTipus entip;
-	if (this->TipusComboBox->SelectedItem->ToString() != "") {
+	if (this->TipusComboBox->SelectedItem->ToString() != "Tots") {
 
 		entip.SetTipus(this->TipusComboBox->SelectedItem->ToString());
 		try {
@@ -231,10 +254,10 @@ private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender,
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = entip.ObteResultat();
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = entip.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
 	}
 	else {
@@ -245,10 +268,10 @@ private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender,
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		List<PassarelaEntitat^>^ ve = en.ObteResultat();
-		for each (PassarelaEntitat ^ e in ve)
+		List<List<System::String^>^>^ ve = en.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
 		{
-			dataGridViewEntitats->Rows->Add(e->obteCorreuElectronic(), e->obteDescripcio(), e->obteTipus());
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3]);
 		}
 	}
 }
