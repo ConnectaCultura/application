@@ -12,6 +12,7 @@ void TxConsultaPerfil::executar()
 	PassarelaUsuari^ u = s->obteUsuari();
 	CercadoraCiutada cC;
 	PassarelaCiutada^ c = cC.cercaCiutada(u->obteCorreuElectronic());
+	_resultat  = gcnew List<System::String^>();
 	_resultat->Add(u->obteCorreuElectronic());
 	_resultat->Add(u->obteNom());
 	_resultat->Add(c->obtePunts()->ToString());

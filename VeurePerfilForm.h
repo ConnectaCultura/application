@@ -155,10 +155,10 @@ namespace application {
 			try {
 				
 				txCP.executar();
-				txCP.obteResultat();
-				label1->Text = u->obteCorreuElectronic();
-				label2->Text = u->obteNom();
-				label3->Text = c->obtePunts()->ToString();
+				List<String^>^ ciutada = txCP.obteResultat();
+				label1->Text = ciutada[0];
+				label2->Text = ciutada[1];
+				label3->Text = ciutada[2];
 			}
 			catch (MySqlException^ ex) {
 				MessageBox::Show(ex->Message);
