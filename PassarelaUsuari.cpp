@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "PassarelaUsuari.h"
 
-PassarelaUsuari::PassarelaUsuari(System::String^ ceU, System::String^ nU, System::String^ cU, System::String^ tU)
+PassarelaUsuari::PassarelaUsuari(System::String^ nU, System::String^ ceU, System::String^ cU, System::String^ tU)
 {
 	nom = nU;
 	correuElectronic = ceU;
@@ -43,9 +43,8 @@ void PassarelaUsuari::modificaNom(System::String^ nom)
 }
 
 void PassarelaUsuari::insereix() {
-
-	System::String^ sql = "INSERT INTO Usuari VALUES ('" + correuElectronic + "' , '" + nom + "','" + contrasenya + "','" + tipus + "')";
-
+	//System::String^ sql = "INSERT INTO Usuari VALUES ('" + correuElectronic + "' , '" + nom + "','" + contrasenya + "','" + tipus + "')";
+	System::String^ sql = "INSERT INTO Usuari (nom, contrasenya, tipus, correu_electronic) VALUES ('" + nom + "' , '" + contrasenya + "','" + tipus + "','" + correuElectronic + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

@@ -12,7 +12,7 @@ private:
 	System::String^ tipus;
 
 public:
-	PassarelaUsuari(System::String^ ceU, System::String^ nU, System::String^ cU, System::String^ tU);
+	PassarelaUsuari(System::String^ nU, System::String^ ceU, System::String^ cU, System::String^ tU);
 	PassarelaUsuari^ operator=(const PassarelaUsuari^ other);
 	System::String^ obteCorreuElectronic();
 	System::String^ obteContrasenya();
