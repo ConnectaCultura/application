@@ -226,21 +226,6 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada->UseVisualStyleBackColor = false;
 			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
 			// 
-			// ConsultaEntitat
-			// 
-			this->ConsultaEntitat->BackColor = System::Drawing::Color::DarkGray;
-			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ConsultaEntitat->Location = System::Drawing::Point(35, 180);
-			this->ConsultaEntitat->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->ConsultaEntitat->Name = L"ConsultaEntitat";
-			this->ConsultaEntitat->Size = System::Drawing::Size(167, 30);
-			this->ConsultaEntitat->TabIndex = 5;
-			this->ConsultaEntitat->Text = L"Consultar entitat";
-			this->ConsultaEntitat->UseVisualStyleBackColor = false;
-			this->ConsultaEntitat->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitat_Click);
-			// 
 			// ConsultaEntitats
 			// 
 			this->ConsultaEntitats->BackColor = System::Drawing::Color::DarkGray;

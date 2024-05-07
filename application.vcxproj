@@ -282,6 +282,7 @@
   <ItemGroup>
     <EmbeddedResource Include="AltaAjuntamentForm.resx">
       <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
       <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>
     </EmbeddedResource>
