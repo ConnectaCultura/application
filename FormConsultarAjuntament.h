@@ -43,9 +43,9 @@ namespace application {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ CorreuBox;
-	private: System::Windows::Forms::TextBox^ NPostalBox;
-	private: System::Windows::Forms::TextBox^ TelefonBox;
+
+
+
 
 
 
@@ -58,6 +58,10 @@ namespace application {
 
 
 	private: System::Windows::Forms::Label^ NomLabel;
+	private: System::Windows::Forms::Label^ TelefonLabelEdit;
+
+	private: System::Windows::Forms::Label^ PostalLabelEdit;
+	private: System::Windows::Forms::Label^ CorreuLabelEdit;
 
 	protected:
 
@@ -76,41 +80,14 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->CorreuBox = (gcnew System::Windows::Forms::TextBox());
-			this->NPostalBox = (gcnew System::Windows::Forms::TextBox());
-			this->TelefonBox = (gcnew System::Windows::Forms::TextBox());
 			this->CorreuLabel = (gcnew System::Windows::Forms::Label());
 			this->NumeroPostalLabel = (gcnew System::Windows::Forms::Label());
 			this->TelefonLabel = (gcnew System::Windows::Forms::Label());
 			this->NomLabel = (gcnew System::Windows::Forms::Label());
+			this->TelefonLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->PostalLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->CorreuLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// CorreuBox
-			// 
-			this->CorreuBox->Location = System::Drawing::Point(122, 63);
-			this->CorreuBox->Margin = System::Windows::Forms::Padding(7);
-			this->CorreuBox->Name = L"CorreuBox";
-			this->CorreuBox->ReadOnly = true;
-			this->CorreuBox->Size = System::Drawing::Size(100, 20);
-			this->CorreuBox->TabIndex = 0;
-			// 
-			// NPostalBox
-			// 
-			this->NPostalBox->Location = System::Drawing::Point(122, 97);
-			this->NPostalBox->Margin = System::Windows::Forms::Padding(7);
-			this->NPostalBox->Name = L"NPostalBox";
-			this->NPostalBox->ReadOnly = true;
-			this->NPostalBox->Size = System::Drawing::Size(100, 20);
-			this->NPostalBox->TabIndex = 1;
-			// 
-			// TelefonBox
-			// 
-			this->TelefonBox->Location = System::Drawing::Point(122, 131);
-			this->TelefonBox->Margin = System::Windows::Forms::Padding(7);
-			this->TelefonBox->Name = L"TelefonBox";
-			this->TelefonBox->ReadOnly = true;
-			this->TelefonBox->Size = System::Drawing::Size(100, 20);
-			this->TelefonBox->TabIndex = 2;
 			// 
 			// CorreuLabel
 			// 
@@ -150,18 +127,42 @@ namespace application {
 			this->NomLabel->TabIndex = 9;
 			this->NomLabel->Text = L"Nom:";
 			// 
+			// TelefonLabelEdit
+			// 
+			this->TelefonLabelEdit->AutoSize = true;
+			this->TelefonLabelEdit->Location = System::Drawing::Point(134, 134);
+			this->TelefonLabelEdit->Name = L"TelefonLabelEdit";
+			this->TelefonLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->TelefonLabelEdit->TabIndex = 12;
+			// 
+			// PostalLabelEdit
+			// 
+			this->PostalLabelEdit->AutoSize = true;
+			this->PostalLabelEdit->Location = System::Drawing::Point(134, 100);
+			this->PostalLabelEdit->Name = L"PostalLabelEdit";
+			this->PostalLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->PostalLabelEdit->TabIndex = 11;
+			// 
+			// CorreuLabelEdit
+			// 
+			this->CorreuLabelEdit->AutoSize = true;
+			this->CorreuLabelEdit->Location = System::Drawing::Point(134, 66);
+			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->CorreuLabelEdit->TabIndex = 10;
+			// 
 			// FormConsultarAjuntament
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->TelefonLabelEdit);
+			this->Controls->Add(this->PostalLabelEdit);
+			this->Controls->Add(this->CorreuLabelEdit);
 			this->Controls->Add(this->NomLabel);
 			this->Controls->Add(this->TelefonLabel);
 			this->Controls->Add(this->NumeroPostalLabel);
 			this->Controls->Add(this->CorreuLabel);
-			this->Controls->Add(this->TelefonBox);
-			this->Controls->Add(this->NPostalBox);
-			this->Controls->Add(this->CorreuBox);
 			this->Name = L"FormConsultarAjuntament";
 			this->Text = L"FormConsultarAjuntament";
 			this->Load += gcnew System::EventHandler(this, &FormConsultarAjuntament::FormConsultarAjuntament_Load);
@@ -171,15 +172,15 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void FormConsultarAjuntament_Load(System::Object^ sender, System::EventArgs^ e) {
-		CorreuBox->Text = _CorreuAjuntament;
+		CorreuLabelEdit->Text = _CorreuAjuntament;
 		System::String^ correu = this->_CorreuAjuntament;
 		TxConsultaAjuntament txCA(correu);
 		try {
 			txCA.executar();
 			List<System::String^>^ sol = txCA.ObteResultat();
 			NomLabel->Text = sol[0];
-			NPostalBox->Text = sol[1];
-			TelefonBox->Text = sol[2];
+			PostalLabelEdit->Text = sol[1];
+			TelefonLabelEdit->Text = sol[2];
 		}
 		catch (MySqlException^ ex) {
 			MessageBox::Show("existent");
