@@ -1,6 +1,5 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "TxBaixaEntitat.h"
-
 
 TxBaixaEntitat::TxBaixaEntitat() {
 }
@@ -11,7 +10,8 @@ TxBaixaEntitat::TxBaixaEntitat(System::String^ contrasenya) {
 
 
 void TxBaixaEntitat::executar() {
-	// Necessito la sessió per agafar el correu electrňnic de l'entitat
+	// Necessito la sessió per agafar el correu electronic de l'entitat
+
 	Sessio^ s = Sessio::getInstance();
 	PassarelaUsuari^ u = s->obteUsuari();
 

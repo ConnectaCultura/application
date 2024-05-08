@@ -37,8 +37,14 @@ System::String^ PassarelaUsuari::obteTipus()
 	return this->tipus;
 }
 
+void PassarelaUsuari::modificaNom(System::String^ nom)
+{
+	this->nom = nom;
+}
+
 void PassarelaUsuari::insereix() {
-	System::String^ sql = "INSERT INTO Usuari VALUES ('" + nom + "' , '" + contrasenya + "','" + tipus + "','" + correuElectronic + "')";
+	//System::String^ sql = "INSERT INTO Usuari VALUES ('" + correuElectronic + "' , '" + nom + "','" + contrasenya + "','" + tipus + "')";
+	System::String^ sql = "INSERT INTO Usuari (nom, contrasenya, tipus, correu_electronic) VALUES ('" + nom + "' , '" + contrasenya + "','" + tipus + "','" + correuElectronic + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
@@ -46,6 +52,12 @@ void PassarelaUsuari::insereix() {
 
 void PassarelaUsuari::esborra() {
 	System::String^ sql = "DELETE FROM Usuari WHERE correu_electronic='" + correuElectronic + "';";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+void PassarelaUsuari::modifica() {
+	System::String^ sql = "UPDATE Usuari SET nom = '" + nom + "' WHERE correu_electronic='" + correuElectronic + "';";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
