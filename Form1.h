@@ -251,7 +251,7 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->altaAjuntament->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->altaAjuntament->Location = System::Drawing::Point(22, 89);
-			this->altaAjuntament->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->altaAjuntament->Margin = System::Windows::Forms::Padding(2);
 			this->altaAjuntament->Name = L"altaAjuntament";
 			this->altaAjuntament->Size = System::Drawing::Size(183, 27);
 			this->altaAjuntament->TabIndex = 7;
@@ -317,15 +317,15 @@ namespace CppCLRWinFormsProject {
 			this->ConsultaAjuntamentButton->Text = L"Consulta ajuntament";
 			this->ConsultaAjuntamentButton->UseVisualStyleBackColor = false;
 			this->ConsultaAjuntamentButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaAjuntamentButton_Click);
-      //
-      // veurePerfil
+			// 
+			// veurePerfil
 			// 
 			this->veurePerfil->BackColor = System::Drawing::Color::OrangeRed;
 			this->veurePerfil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->veurePerfil->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->veurePerfil->Location = System::Drawing::Point(251, 154);
-			this->veurePerfil->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->veurePerfil->Margin = System::Windows::Forms::Padding(2);
 			this->veurePerfil->Name = L"veurePerfil";
 			this->veurePerfil->Size = System::Drawing::Size(94, 28);
 			this->veurePerfil->TabIndex = 9;

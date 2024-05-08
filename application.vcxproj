@@ -171,7 +171,6 @@
     <ClInclude Include="LogInForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="ModificarEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -225,7 +224,6 @@
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
     <ClCompile Include="FormConsultarAjuntament.cpp" />
-    <ClCompile Include="PassarelaAjuntament.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
     <ClCompile Include="CercadoraCompra.cpp" />
