@@ -3,6 +3,7 @@
 #include<iostream>
 #include <list> 
 #include "CercadoraEntitat.h"
+#include "CercadoraUsuari.h"
 
 using namespace std;
 using namespace System;
@@ -11,10 +12,11 @@ ref class TxConsultaEntitats
 {
 	private:
 		System::String^ _ajuntamentPrincipal;
-		List<PassarelaEntitat^>^ _llistaEntitats;
+		//System::String^ _tipus;
+		List<List<System::String^>^>^ _llistaEntitats = gcnew List<List<System::String^>^>();
 	public:
 		TxConsultaEntitats();
 		void executar();
-		List<PassarelaEntitat^>^ ObteResultat();
+		List<List<System::String^>^>^ ObteResultat();
 };
 

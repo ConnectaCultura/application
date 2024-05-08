@@ -43,6 +43,7 @@ void PassarelaUsuari::modificaNom(System::String^ nom)
 }
 
 void PassarelaUsuari::insereix() {
+	//System::String^ sql = "INSERT INTO Usuari VALUES ('" + correuElectronic + "' , '" + nom + "','" + contrasenya + "','" + tipus + "')";
 	System::String^ sql = "INSERT INTO Usuari (nom, contrasenya, tipus, correu_electronic) VALUES ('" + nom + "' , '" + contrasenya + "','" + tipus + "','" + correuElectronic + "')";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);

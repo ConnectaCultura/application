@@ -8,5 +8,6 @@ ref class CercadoraUsuari
 public:
 	CercadoraUsuari() {};
 	PassarelaUsuari^ cercaUsuari(System::String^ correu);
+	//PassarelaUsuari^ cercaUsuariNom(System::String^ nom);
 };
 
