@@ -37,6 +37,7 @@
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="BaixaCiutadaForm.cpp" />
     <ClCompile Include="AltaAjuntamentForm.cpp" />
     <ClCompile Include="TxAltaAjuntament.cpp" />
     <ClCompile Include="PassarelaAjuntament.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="BaixaCiutadaForm.h" />
     <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="ComprarEntradaForm.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
