@@ -1,7 +1,7 @@
 #pragma once
 #include "TxConsultaEntitat.h"
 #include "ConsultarEsdevenimentsForm.h"
-
+#include "TxConsultaEsdeveniments.h"
 namespace application {
 
 	using namespace System;
@@ -68,7 +68,12 @@ namespace application {
 	private: System::Windows::Forms::Label^ DescripcioLabelEdit;
 
 	private: System::Windows::Forms::Label^ NomLabelEdit;
-	private: System::Windows::Forms::Button^ consultarEsdeveniments;
+
+	private: System::Windows::Forms::DataGridView^ EsdevDataGrid;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nom;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Inici;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
 
 
 
@@ -99,101 +104,150 @@ namespace application {
 			this->ModalitatLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->DescripcioLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->NomLabelEdit = (gcnew System::Windows::Forms::Label());
-			this->consultarEsdeveniments = (gcnew System::Windows::Forms::Button());
+			this->EsdevDataGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Inici = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// NomText
 			// 
 			this->NomText->AutoSize = true;
-			this->NomText->Location = System::Drawing::Point(27, 25);
+			this->NomText->Location = System::Drawing::Point(20, 20);
+			this->NomText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomText->Name = L"NomText";
-			this->NomText->Size = System::Drawing::Size(39, 16);
+			this->NomText->Size = System::Drawing::Size(32, 13);
 			this->NomText->TabIndex = 0;
 			this->NomText->Text = L"Nom:";
 			// 
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(254, 25);
+			this->DescripcioText->Location = System::Drawing::Point(190, 20);
+			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
-			this->DescripcioText->Size = System::Drawing::Size(75, 16);
+			this->DescripcioText->Size = System::Drawing::Size(60, 13);
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(27, 104);
+			this->TipusText->Location = System::Drawing::Point(20, 84);
+			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->TipusText->Name = L"TipusText";
-			this->TipusText->Size = System::Drawing::Size(44, 16);
+			this->TipusText->Size = System::Drawing::Size(36, 13);
 			this->TipusText->TabIndex = 5;
 			this->TipusText->Text = L"Tipus:";
 			// 
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
-			this->CorreuLabel->Location = System::Drawing::Point(27, 64);
+			this->CorreuLabel->Location = System::Drawing::Point(20, 52);
+			this->CorreuLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CorreuLabel->Name = L"CorreuLabel";
-			this->CorreuLabel->Size = System::Drawing::Size(50, 16);
+			this->CorreuLabel->Size = System::Drawing::Size(41, 13);
 			this->CorreuLabel->TabIndex = 7;
 			this->CorreuLabel->Text = L"Correu:";
 			// 
 			// CorreuLabelEdit
 			// 
 			this->CorreuLabelEdit->AutoSize = true;
-			this->CorreuLabelEdit->Location = System::Drawing::Point(119, 64);
+			this->CorreuLabelEdit->Location = System::Drawing::Point(89, 52);
+			this->CorreuLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
-			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->CorreuLabelEdit->TabIndex = 11;
 			// 
 			// ModalitatLabelEdit
 			// 
 			this->ModalitatLabelEdit->AutoSize = true;
-			this->ModalitatLabelEdit->Location = System::Drawing::Point(119, 104);
+			this->ModalitatLabelEdit->Location = System::Drawing::Point(89, 84);
+			this->ModalitatLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->ModalitatLabelEdit->Name = L"ModalitatLabelEdit";
-			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->ModalitatLabelEdit->TabIndex = 10;
 			// 
 			// DescripcioLabelEdit
 			// 
 			this->DescripcioLabelEdit->AutoSize = true;
-			this->DescripcioLabelEdit->Location = System::Drawing::Point(346, 25);
-			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(650, 0);
+			this->DescripcioLabelEdit->Location = System::Drawing::Point(260, 20);
+			this->DescripcioLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(488, 0);
 			this->DescripcioLabelEdit->Name = L"DescripcioLabelEdit";
-			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->DescripcioLabelEdit->TabIndex = 9;
 			// 
 			// NomLabelEdit
 			// 
 			this->NomLabelEdit->AutoSize = true;
-			this->NomLabelEdit->Location = System::Drawing::Point(119, 25);
+			this->NomLabelEdit->Location = System::Drawing::Point(89, 20);
+			this->NomLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomLabelEdit->Name = L"NomLabelEdit";
-			this->NomLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->NomLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->NomLabelEdit->TabIndex = 8;
 			// 
-			// consultarEsdeveniments
+			// EsdevDataGrid
 			// 
-			this->consultarEsdeveniments->BackColor = System::Drawing::Color::DarkGray;
-			this->consultarEsdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->consultarEsdeveniments->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->consultarEsdeveniments->Location = System::Drawing::Point(30, 147);
-			this->consultarEsdeveniments->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->consultarEsdeveniments->Name = L"consultarEsdeveniments";
-			this->consultarEsdeveniments->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->consultarEsdeveniments->Size = System::Drawing::Size(232, 32);
-			this->consultarEsdeveniments->TabIndex = 12;
-			this->consultarEsdeveniments->Text = L"Consultar esdeveniments";
-			this->consultarEsdeveniments->UseVisualStyleBackColor = false;
-			this->consultarEsdeveniments->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::consultarEsdeveniments_Click);
+			this->EsdevDataGrid->AllowUserToAddRows = false;
+			this->EsdevDataGrid->AllowUserToDeleteRows = false;
+			this->EsdevDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->EsdevDataGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Nom, this->Inici,
+					this->Fi, this->Preu
+			});
+			this->EsdevDataGrid->Location = System::Drawing::Point(23, 126);
+			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2);
+			this->EsdevDataGrid->Name = L"EsdevDataGrid";
+			this->EsdevDataGrid->ReadOnly = true;
+			this->EsdevDataGrid->RowHeadersWidth = 62;
+			this->EsdevDataGrid->RowTemplate->Height = 28;
+			this->EsdevDataGrid->Size = System::Drawing::Size(568, 172);
+			this->EsdevDataGrid->TabIndex = 13;
+			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitatForm::EsdevDataGrid_CellContentClick);
+			// 
+			// Nom
+			// 
+			this->Nom->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::DisplayedCells;
+			this->Nom->HeaderText = L"Nom";
+			this->Nom->MinimumWidth = 8;
+			this->Nom->Name = L"Nom";
+			this->Nom->ReadOnly = true;
+			this->Nom->Width = 54;
+			// 
+			// Inici
+			// 
+			this->Inici->HeaderText = L"Inici";
+			this->Inici->MinimumWidth = 8;
+			this->Inici->Name = L"Inici";
+			this->Inici->ReadOnly = true;
+			this->Inici->Width = 150;
+			// 
+			// Fi
+			// 
+			this->Fi->HeaderText = L"Fi";
+			this->Fi->MinimumWidth = 8;
+			this->Fi->Name = L"Fi";
+			this->Fi->ReadOnly = true;
+			this->Fi->Width = 150;
+			// 
+			// Preu
+			// 
+			this->Preu->HeaderText = L"Preu";
+			this->Preu->MinimumWidth = 8;
+			this->Preu->Name = L"Preu";
+			this->Preu->ReadOnly = true;
+			this->Preu->Width = 150;
 			// 
 			// ConsultaEntitatForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(426, 209);
-			this->Controls->Add(this->consultarEsdeveniments);
+			this->ClientSize = System::Drawing::Size(721, 309);
+			this->Controls->Add(this->EsdevDataGrid);
 			this->Controls->Add(this->CorreuLabelEdit);
 			this->Controls->Add(this->ModalitatLabelEdit);
 			this->Controls->Add(this->DescripcioLabelEdit);
@@ -203,10 +257,11 @@ namespace application {
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
 			this->Location = System::Drawing::Point(16, 22);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaEntitatForm";
 			this->Text = L"ConsultaEntitatForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEntitatForm::ConsultaEntitatForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -229,15 +284,36 @@ namespace application {
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
+
+		TxConsultaEsdeveniments txEsdev(_CorreuEntitat);
+		try {
+			txEsdev.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+		List<List<System::String^>^>^ ve = txEsdev.obteResultat();
+		for each (List<System::String^> ^ e in ve)
+		{
+			if (e[3] == "0") EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Gratuit");
+			else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
+		}
+	}
+	private: System::Void EsdevDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+			String^ nom = EsdevDataGrid->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+			String^ inici = EsdevDataGrid->Rows[e->RowIndex]->Cells[1]->Value->ToString();
+			String^ fi = EsdevDataGrid->Rows[e->RowIndex]->Cells[2]->Value->ToString();
+
+			application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
+			Consulta_Esdeveniment->ShowDialog();
+		}
 	}
 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void consultarEsdeveniments_Click(System::Object^ sender, System::EventArgs^ e) {
-	application::ConsultarEsdevenimentsForm^ CEsdev = gcnew application::ConsultarEsdevenimentsForm(CorreuLabelEdit->Text);
-	CEsdev->ShowDialog();
-}
+
 };
 }
