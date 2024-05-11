@@ -26,6 +26,12 @@ namespace application {
 			_inici = inici;
 			_fi = fi;
 		}
+		void CheckUsuari() {
+			Sessio^ s = Sessio::getInstance();
+			if (s->obteUsuari() == nullptr) {
+				ComprarButton->Visible = false;
+			}
+		}
 
 	protected:
 		/// <summary>
@@ -306,12 +312,15 @@ namespace application {
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
+
+			
+
 		}
 #pragma endregion
 	private: System::Void ConsultaEsdevenimentForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		CheckUsuari();
 		this->nom->Text = _nom;
 		this->data->Text = _inici + "  " + _fi;
-		//MessageBox::Show(iniciMySQL);
 		TxConsultaEsdeveniment txCE(_nom, _inici, _fi);
 		txCE.executar();
 		List<System::String^>^ ve = txCE.obteResultat();
@@ -343,14 +352,9 @@ private: System::Void ComprarButton_Click(System::Object^ sender, System::EventA
 	else {
 		preuCompra = Convert::ToSingle(this->preu->Text);
 	}
-	//Error amb el preu o algo MySql.Data.MySqlClient.MySqlException (0x80004005): Cannot add or update a 
-	// child row: a foreign key constraint fails (`amep09`.`Compra`, CONSTRAINT `Compra_ibfk_5` 
-	// FOREIGN KEY (`preu`) REFERENCES `Esdeveniment` (`preu`))
-	//Quan detecto que te que ser un ciutada
 	TxCompraEntrada entrada(nom->Text, data->Text, preuCompra);
 	entrada.executar();
 	this->Close();
-
 }
 };
 }
