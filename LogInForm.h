@@ -65,6 +65,7 @@ namespace application {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			textBox2->PasswordChar = '*';
 			// 
 			// label1
 			// 

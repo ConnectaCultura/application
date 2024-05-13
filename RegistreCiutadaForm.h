@@ -120,6 +120,7 @@ namespace application {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(184, 26);
 			this->textBox3->TabIndex = 5;
+			this->textBox3->PasswordChar = '*';
 			// 
 			// registre
 			// 

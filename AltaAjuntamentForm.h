@@ -143,6 +143,7 @@ namespace application {
 			this->textBoxContra->Name = L"textBoxContra";
 			this->textBoxContra->Size = System::Drawing::Size(183, 22);
 			this->textBoxContra->TabIndex = 10;
+			this->textBoxContra->PasswordChar = '*';
 			// 
 			// button1
 			// 
