@@ -74,6 +74,9 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Inici;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
+	private: System::Windows::Forms::Label^ AjuntamentLabelEdit;
+
+	private: System::Windows::Forms::Label^ label2;
 
 
 
@@ -109,6 +112,8 @@ namespace application {
 			this->Inici = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->AjuntamentLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -125,7 +130,7 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(190, 20);
+			this->DescripcioText->Location = System::Drawing::Point(199, 20);
 			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(60, 13);
@@ -155,7 +160,7 @@ namespace application {
 			// CorreuLabelEdit
 			// 
 			this->CorreuLabelEdit->AutoSize = true;
-			this->CorreuLabelEdit->Location = System::Drawing::Point(89, 52);
+			this->CorreuLabelEdit->Location = System::Drawing::Point(96, 52);
 			this->CorreuLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
 			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 13);
@@ -164,7 +169,7 @@ namespace application {
 			// ModalitatLabelEdit
 			// 
 			this->ModalitatLabelEdit->AutoSize = true;
-			this->ModalitatLabelEdit->Location = System::Drawing::Point(89, 84);
+			this->ModalitatLabelEdit->Location = System::Drawing::Point(96, 84);
 			this->ModalitatLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->ModalitatLabelEdit->Name = L"ModalitatLabelEdit";
 			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 13);
@@ -173,7 +178,7 @@ namespace application {
 			// DescripcioLabelEdit
 			// 
 			this->DescripcioLabelEdit->AutoSize = true;
-			this->DescripcioLabelEdit->Location = System::Drawing::Point(260, 20);
+			this->DescripcioLabelEdit->Location = System::Drawing::Point(263, 20);
 			this->DescripcioLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(488, 0);
 			this->DescripcioLabelEdit->Name = L"DescripcioLabelEdit";
@@ -183,7 +188,7 @@ namespace application {
 			// NomLabelEdit
 			// 
 			this->NomLabelEdit->AutoSize = true;
-			this->NomLabelEdit->Location = System::Drawing::Point(89, 20);
+			this->NomLabelEdit->Location = System::Drawing::Point(96, 20);
 			this->NomLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomLabelEdit->Name = L"NomLabelEdit";
 			this->NomLabelEdit->Size = System::Drawing::Size(0, 13);
@@ -198,7 +203,7 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(23, 126);
+			this->EsdevDataGrid->Location = System::Drawing::Point(23, 137);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
@@ -241,12 +246,35 @@ namespace application {
 			this->Preu->ReadOnly = true;
 			this->Preu->Width = 150;
 			// 
+			// AjuntamentLabelEdit
+			// 
+			this->AjuntamentLabelEdit->AutoSize = true;
+			this->AjuntamentLabelEdit->Location = System::Drawing::Point(96, 112);
+			this->AjuntamentLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->AjuntamentLabelEdit->Name = L"AjuntamentLabelEdit";
+			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->AjuntamentLabelEdit->TabIndex = 15;
+			this->AjuntamentLabelEdit->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label1_Click_1);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(20, 112);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(63, 13);
+			this->label2->TabIndex = 14;
+			this->label2->Text = L"Ajuntament:";
+			this->label2->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label2_Click);
+			// 
 			// ConsultaEntitatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(721, 309);
+			this->ClientSize = System::Drawing::Size(722, 329);
+			this->Controls->Add(this->AjuntamentLabelEdit);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->Controls->Add(this->CorreuLabelEdit);
 			this->Controls->Add(this->ModalitatLabelEdit);
@@ -277,6 +305,7 @@ namespace application {
 			NomLabelEdit->Text = sol[0];
 			ModalitatLabelEdit->Text = sol[1];
 			DescripcioLabelEdit->Text = sol[2];
+			AjuntamentLabelEdit->Text = sol[3];
 		}
 		catch (MySqlException^ ex) {
 			MessageBox::Show("existent");
@@ -315,5 +344,9 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
