@@ -74,6 +74,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Inici;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
+	private: System::Windows::Forms::Button^ buttonTorna;
 
 
 
@@ -109,84 +110,77 @@ namespace application {
 			this->Inici = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// NomText
 			// 
 			this->NomText->AutoSize = true;
-			this->NomText->Location = System::Drawing::Point(20, 20);
-			this->NomText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NomText->Location = System::Drawing::Point(27, 25);
 			this->NomText->Name = L"NomText";
-			this->NomText->Size = System::Drawing::Size(32, 13);
+			this->NomText->Size = System::Drawing::Size(39, 16);
 			this->NomText->TabIndex = 0;
 			this->NomText->Text = L"Nom:";
 			// 
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(190, 20);
-			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DescripcioText->Location = System::Drawing::Point(253, 25);
 			this->DescripcioText->Name = L"DescripcioText";
-			this->DescripcioText->Size = System::Drawing::Size(60, 13);
+			this->DescripcioText->Size = System::Drawing::Size(75, 16);
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(20, 84);
-			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->TipusText->Location = System::Drawing::Point(27, 103);
 			this->TipusText->Name = L"TipusText";
-			this->TipusText->Size = System::Drawing::Size(36, 13);
+			this->TipusText->Size = System::Drawing::Size(44, 16);
 			this->TipusText->TabIndex = 5;
 			this->TipusText->Text = L"Tipus:";
 			// 
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
-			this->CorreuLabel->Location = System::Drawing::Point(20, 52);
-			this->CorreuLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->CorreuLabel->Location = System::Drawing::Point(27, 64);
 			this->CorreuLabel->Name = L"CorreuLabel";
-			this->CorreuLabel->Size = System::Drawing::Size(41, 13);
+			this->CorreuLabel->Size = System::Drawing::Size(50, 16);
 			this->CorreuLabel->TabIndex = 7;
 			this->CorreuLabel->Text = L"Correu:";
 			// 
 			// CorreuLabelEdit
 			// 
 			this->CorreuLabelEdit->AutoSize = true;
-			this->CorreuLabelEdit->Location = System::Drawing::Point(89, 52);
-			this->CorreuLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->CorreuLabelEdit->Location = System::Drawing::Point(119, 64);
 			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
-			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 16);
 			this->CorreuLabelEdit->TabIndex = 11;
 			// 
 			// ModalitatLabelEdit
 			// 
 			this->ModalitatLabelEdit->AutoSize = true;
-			this->ModalitatLabelEdit->Location = System::Drawing::Point(89, 84);
-			this->ModalitatLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->ModalitatLabelEdit->Location = System::Drawing::Point(119, 103);
 			this->ModalitatLabelEdit->Name = L"ModalitatLabelEdit";
-			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 16);
 			this->ModalitatLabelEdit->TabIndex = 10;
 			// 
 			// DescripcioLabelEdit
 			// 
 			this->DescripcioLabelEdit->AutoSize = true;
-			this->DescripcioLabelEdit->Location = System::Drawing::Point(260, 20);
-			this->DescripcioLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(488, 0);
+			this->DescripcioLabelEdit->Location = System::Drawing::Point(347, 25);
+			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(651, 0);
 			this->DescripcioLabelEdit->Name = L"DescripcioLabelEdit";
-			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 16);
 			this->DescripcioLabelEdit->TabIndex = 9;
 			// 
 			// NomLabelEdit
 			// 
 			this->NomLabelEdit->AutoSize = true;
-			this->NomLabelEdit->Location = System::Drawing::Point(89, 20);
-			this->NomLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NomLabelEdit->Location = System::Drawing::Point(119, 25);
 			this->NomLabelEdit->Name = L"NomLabelEdit";
-			this->NomLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->NomLabelEdit->Size = System::Drawing::Size(0, 16);
 			this->NomLabelEdit->TabIndex = 8;
 			// 
 			// EsdevDataGrid
@@ -198,13 +192,13 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(23, 126);
-			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2);
+			this->EsdevDataGrid->Location = System::Drawing::Point(31, 155);
+			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(568, 172);
+			this->EsdevDataGrid->Size = System::Drawing::Size(757, 212);
 			this->EsdevDataGrid->TabIndex = 13;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitatForm::EsdevDataGrid_CellContentClick);
 			// 
@@ -215,7 +209,7 @@ namespace application {
 			this->Nom->MinimumWidth = 8;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
-			this->Nom->Width = 54;
+			this->Nom->Width = 65;
 			// 
 			// Inici
 			// 
@@ -241,12 +235,28 @@ namespace application {
 			this->Preu->ReadOnly = true;
 			this->Preu->Width = 150;
 			// 
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(826, 338);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->TabIndex = 18;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::buttonTorna_Click);
+			// 
 			// ConsultaEntitatForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(721, 309);
+			this->ClientSize = System::Drawing::Size(961, 380);
+			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->Controls->Add(this->CorreuLabelEdit);
 			this->Controls->Add(this->ModalitatLabelEdit);
@@ -257,7 +267,7 @@ namespace application {
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
 			this->Location = System::Drawing::Point(16, 22);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultaEntitatForm";
 			this->Text = L"ConsultaEntitatForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEntitatForm::ConsultaEntitatForm_Load);
@@ -315,5 +325,8 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }
