@@ -15,13 +15,15 @@ void TxConsultaEntitats::executar()
 		CercadoraUsuari cu;
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
-			List<System::String^>^ novaEntitat = gcnew List<System::String^>();
-			novaEntitat->Add(u->obteNom());
-			novaEntitat->Add(e->obteDescripcio());
-			novaEntitat->Add(e->obteTipus());
-			novaEntitat->Add(e->obteCorreuElectronic());
-			novaEntitat->Add(e->obteAjuntament());
-			_llistaEntitats->Add(novaEntitat);
+			if (u->obteActiu() == 1) {
+				List<System::String^>^ novaEntitat = gcnew List<System::String^>();
+				novaEntitat->Add(u->obteNom());
+				novaEntitat->Add(e->obteDescripcio());
+				novaEntitat->Add(e->obteTipus());
+				novaEntitat->Add(e->obteCorreuElectronic());
+				novaEntitat->Add(e->obteAjuntament());
+				_llistaEntitats->Add(novaEntitat);
+			}
 		}
 	}
 	else if (_tipus != "Totes" && _ajuntament=="Tots") {
@@ -29,13 +31,15 @@ void TxConsultaEntitats::executar()
 		CercadoraUsuari cu;
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
-			List<System::String^>^ ll = gcnew List<System::String^>();
-			ll->Add(u->obteNom());
-			ll->Add(e->obteDescripcio());
-			ll->Add(e->obteTipus());
-			ll->Add(e->obteCorreuElectronic());
-			ll->Add(e->obteAjuntament());
-			_llistaEntitats->Add(ll);
+			if (u->obteActiu() == 1) {
+				List<System::String^>^ ll = gcnew List<System::String^>();
+				ll->Add(u->obteNom());
+				ll->Add(e->obteDescripcio());
+				ll->Add(e->obteTipus());
+				ll->Add(e->obteCorreuElectronic());
+				ll->Add(e->obteAjuntament());
+				_llistaEntitats->Add(ll);
+			}
 		}
 	}
 
@@ -44,6 +48,7 @@ void TxConsultaEntitats::executar()
 		CercadoraUsuari cu;
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
+			if (u->obteActiu() == 1) {
 			List<System::String^>^ ll = gcnew List<System::String^>();
 			ll->Add(u->obteNom());
 			ll->Add(e->obteDescripcio());
@@ -51,6 +56,7 @@ void TxConsultaEntitats::executar()
 			ll->Add(e->obteCorreuElectronic());
 			ll->Add(e->obteAjuntament());
 			_llistaEntitats->Add(ll);
+			}
 		}
 	}
 
@@ -59,13 +65,15 @@ void TxConsultaEntitats::executar()
 		CercadoraUsuari cu;
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
-			List<System::String^>^ ll = gcnew List<System::String^>();
-			ll->Add(u->obteNom());
-			ll->Add(e->obteDescripcio());
-			ll->Add(e->obteTipus());
-			ll->Add(e->obteCorreuElectronic());
-			ll->Add(e->obteAjuntament());
-			_llistaEntitats->Add(ll);
+			if (u->obteActiu() == 1) {
+				List<System::String^>^ ll = gcnew List<System::String^>();
+				ll->Add(u->obteNom());
+				ll->Add(e->obteDescripcio());
+				ll->Add(e->obteTipus());
+				ll->Add(e->obteCorreuElectronic());
+				ll->Add(e->obteAjuntament());
+				_llistaEntitats->Add(ll);
+			}
 		}
 	}
 

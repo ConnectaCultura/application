@@ -12,7 +12,7 @@ TxAltaEntitat::TxAltaEntitat(System::String^ nom, System::String^ descripcio, Sy
 }
 
 void TxAltaEntitat::executar() {
-	PassarelaUsuari u(_nom, _correuElectronic, _contrasenya, "entitat");
+	PassarelaUsuari u(_nom, _correuElectronic, _contrasenya, "entitat", 1);
 	u.insereix();
 	PassarelaEntitat e(_correuElectronic, _descripcio, _tipus, _ajuntament);
 	e.insereix();

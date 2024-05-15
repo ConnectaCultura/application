@@ -340,6 +340,10 @@ namespace application {
 			//eDisp->Text = ve[5];
 
 		}
+		Sessio^ s = Sessio::getInstance();
+		if (s->obteUsuari()->obteTipus() != "ciutada") {
+			ComprarButton->Visible = false;
+		}
 	
 	
 	
