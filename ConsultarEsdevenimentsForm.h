@@ -58,6 +58,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
 	private: System::String^ _correuEntitat;
+	private: System::Windows::Forms::Button^ buttonTorna;
 
 
 
@@ -91,6 +92,7 @@ namespace application {
 			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -103,13 +105,13 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(109, 61);
-			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EsdevDataGrid->Location = System::Drawing::Point(145, 75);
+			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(568, 172);
+			this->EsdevDataGrid->Size = System::Drawing::Size(757, 212);
 			this->EsdevDataGrid->TabIndex = 0;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
 			// 
@@ -120,7 +122,7 @@ namespace application {
 			this->Nom->MinimumWidth = 8;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
-			this->Nom->Width = 54;
+			this->Nom->Width = 65;
 			// 
 			// Inici
 			// 
@@ -151,21 +153,36 @@ namespace application {
 			this->Esdeveniments->AutoSize = true;
 			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Esdeveniments->Location = System::Drawing::Point(13, 16);
-			this->Esdeveniments->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Esdeveniments->Location = System::Drawing::Point(17, 20);
 			this->Esdeveniments->Name = L"Esdeveniments";
-			this->Esdeveniments->Size = System::Drawing::Size(140, 24);
+			this->Esdeveniments->Size = System::Drawing::Size(178, 29);
 			this->Esdeveniments->TabIndex = 1;
 			this->Esdeveniments->Text = L"Esdeveniments";
 			// 
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(12, 293);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->TabIndex = 18;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::buttonTorna_Click);
+			// 
 			// ConsultarEsdevenimentsForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(849, 262);
+			this->ClientSize = System::Drawing::Size(1132, 333);
+			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultarEsdevenimentsForm";
 			this->Text = L"ConsultarEsdevenimentsForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::ConsultarEsdevenimentsForm_Load);
@@ -205,6 +222,9 @@ namespace application {
 
 
 	}
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }
 

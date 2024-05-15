@@ -1,19 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="AltaAjuntamentForm.cpp" />
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="CercadoraCiutada.cpp" />
+    <ClCompile Include="BaixaCiutadaForm.cpp" />
+    <ClCompile Include="CercadoraAjuntament.cpp" />
+    <ClCompile Include="CercadoraEsdeveniment.cpp" />
+    <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
+    <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
+    <ClCompile Include="FormConsultarAjuntament.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
+    <ClCompile Include="CercadoraCompra.cpp" />
+    <ClCompile Include="CercadoraCiutada.cpp" />
     <ClCompile Include="CercadoraEntitat.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="ComprarEntradaForm.cpp" />
     <ClCompile Include="Connexio.cpp" />
     <ClCompile Include="ConsultaEntitatForm.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="LogInForm.cpp" />
+    <ClCompile Include="PassarelaAjuntament.cpp" />
     <ClCompile Include="ModificarEntitatForm.cpp" />
     <ClCompile Include="CancelaCompraForm.cpp" />
     <ClCompile Include="PassarelaCiutada.cpp" />
@@ -23,13 +33,20 @@
     <ClCompile Include="CercadoraTipus.cpp" />
     <ClCompile Include="ConsultaEntitats.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="TxBaixaCiutada.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
     <ClCompile Include="RegistreCiutadaForm.cpp" />
     <ClCompile Include="Sessio.cpp" />
+    <ClCompile Include="TxAltaAjuntament.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxCompraEntrada.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitatsNom.cpp" />
+    <ClCompile Include="TxConsultaEsdeveniment.cpp" />
+    <ClCompile Include="TxConsultaEsdeveniments.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
@@ -37,37 +54,32 @@
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
-    <ClCompile Include="BaixaCiutadaForm.cpp" />
-    <ClCompile Include="AltaAjuntamentForm.cpp" />
-    <ClCompile Include="TxAltaAjuntament.cpp" />
-    <ClCompile Include="PassarelaAjuntament.cpp" />
-    <ClCompile Include="TxConsultaEntitatsNom.cpp" />
-    <ClCompile Include="CancelaCompraForm.cpp" />
-    <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
-    <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
-    <ClCompile Include="TxConsultaEsdeveniments.cpp" />
-    <ClCompile Include="CercadoraEsdeveniment.cpp" />
-    <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
-    <ClCompile Include="TxConsultaEsdeveniment.cpp" />
-    <ClCompile Include="TxCompraEntrada.cpp" />
-    <ClCompile Include="ComprarEntradaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AltaAjuntamentForm.h" />
     <ClInclude Include="AltaEntitatForm.h" />
+    <ClInclude Include="BaixaCiutadaForm.h" />
     <ClInclude Include="BaixaEntitatForm.h" />
+    <ClInclude Include="CercadoraAjuntament.h" />
     <ClInclude Include="CercadoraCiutada.h" />
     <ClInclude Include="CercadoraCompra.h" />
     <ClInclude Include="CercadoraEntitat.h" />
+    <ClInclude Include="CercadoraEsdeveniment.h" />
     <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="ComprarEntradaForm.h" />
     <ClInclude Include="Connexio.h" />
     <ClInclude Include="ConsultaEntitatForm.h" />
     <ClInclude Include="CercadoraTipus.h" />
     <ClInclude Include="ConsultaEntitats.h" />
+    <ClInclude Include="ConsultaEsdevenimentForm.h" />
+    <ClInclude Include="ConsultarEsdevenimentsForm.h" />
     <ClInclude Include="Form1.h" />
+    <ClInclude Include="FormConsultarAjuntament.h" />
     <ClInclude Include="LogInForm.h" />
     <ClInclude Include="ModificarEntitatForm.h" />
     <ClInclude Include="CancelaCompraForm.h" />
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="PassarelaEntitat.h" />
@@ -78,11 +90,18 @@
     <ClInclude Include="RegistreCiutadaForm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxAltaEntitat.h" />
+    <ClInclude Include="TxBaixaCiutada.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitatsNom.h" />
+    <ClInclude Include="TxConsultaEsdeveniment.h" />
+    <ClInclude Include="TxConsultaEsdeveniments.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
@@ -90,181 +109,7 @@
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
-    <ClInclude Include="BaixaCiutadaForm.h" />
-    <ClInclude Include="TxCompraEntrada.h" />
-    <ClInclude Include="ComprarEntradaForm.h" />
-    <ClInclude Include="TxConsultaEntitatsNom.h" />
-    <ClInclude Include="CancelaCompraForm.h" />
-    <ClInclude Include="TxCancelaCompra.h" />
-    <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="VeurePerfilForm.h" />
-    <ClInclude Include="ConsultarEsdevenimentsForm.h" />
-    <ClInclude Include="TxConsultaEsdeveniments.h" />
-    <ClInclude Include="CercadoraEsdeveniment.h" />
-    <ClInclude Include="ConsultaEsdevenimentForm.h" />
-    <ClInclude Include="TxConsultaEsdeveniment.h" />
-    <ClInclude Include="AltaAjuntamentForm.h" />
-    <ClInclude Include="TxAltaAjuntament.h" />
-    <ClInclude Include="PassarelaAjuntament.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Form1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-
-    <ClInclude Include="LogInForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxLogIn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CercadoraUsuari.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Connexio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sessio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarelaUsuari.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarelaEsdeveniment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxAltaEsdeveniment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FormAltaEsdeveniment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AltaEntitatForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaixaEntitatForm.h">
-    <ClInclude Include="CercadoraEntitat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ConsultaEntitats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarelaEntitat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RegistreCiutadaForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxAltaEntitat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxBaixaEntitat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxRegistreCiutada.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarelaCiutada.h">
-    <ClInclude Include="TxConsultaEntitats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxConsultaEntitatsTipus.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CercadoraTipus.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxConsultaTipus.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    
-
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CppCLR_WinFormsProject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AssemblyInfo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Form1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LogInForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxLogIn.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CercadoraUsuari.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Connexio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sessio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarelaUsuari.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarelaEsdeveniment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxAltaEsdeveniment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FormAltaEsdeveniment.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AltaEntitatForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BaixaEntitatForm.cpp">
-    <ClCompile Include="CercadoraEntitat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ConsultaEntitats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarelaEntitat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RegistreCiutadaForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxAltaEntitat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxBaixaEntitat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxRegistreCiutada.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarelaCiutada.cpp">
-    <ClCompile Include="TxConsultaEntitats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxConsultaEntitatsTipus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CercadoraTipus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxConsultaTipus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
