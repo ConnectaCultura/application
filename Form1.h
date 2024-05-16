@@ -47,7 +47,7 @@ namespace CppCLRWinFormsProject {
 			ModificaEntitatButton->Visible = false;
 			esborrarUsuari->Visible = false;
 			veurePerfil->Visible = false;
-
+			
 		}
 		void ActualitzarForm1() {
 			Sessio^ s = Sessio::getInstance();
@@ -62,6 +62,7 @@ namespace CppCLRWinFormsProject {
 				esborrarUsuari->Visible = false;
 				veurePerfil->Visible = false;
 				CreaEsdeveniment->Visible = false;
+				
 			}
 			else {
 				logIn->Visible = false;
@@ -71,19 +72,21 @@ namespace CppCLRWinFormsProject {
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
 					CreaEsdeveniment->Visible = false;
-          altaAjuntament->Visible = false;
+					altaAjuntament->Visible = false;
+					veurePerfil->Visible = true;
 				}
 				else if (s->obteUsuari()->obteTipus() == "entitat") {
 					EsborrarEntitat->Visible = true;
-          altaAjuntament->Visible = false;
+					altaAjuntament->Visible = false;
 					CreaEsdeveniment->Visible = true;
 					ModificaEntitatButton->Visible = true;
+					veurePerfil->Visible = true;
 				}
-        else if (s->obteUsuari()->obteTipus() == "administrador") {
+				else if (s->obteUsuari()->obteTipus() == "administrador") {
 					altaAjuntament->Visible = true;
-          }
+				}
 				else {
-          esborrarUsuari->Visible = true;
+					esborrarUsuari->Visible = true;
 					veurePerfil->Visible = true;
 				}
 			}
@@ -459,10 +462,24 @@ namespace CppCLRWinFormsProject {
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void veurePerfil_Click(System::Object^ sender, System::EventArgs^ e) {
-		application::VeurePerfilForm^ Veure_Perfil = gcnew application::VeurePerfilForm();
-		Veure_Perfil->ShowDialog();
+		Sessio^ s = Sessio::getInstance();
+		if (s->obteUsuari()->obteTipus() == "ciutada") {
+			application::VeurePerfilForm^ Veure_Perfil = gcnew application::VeurePerfilForm();
+			Veure_Perfil->ShowDialog();
+		}
+		else if (s->obteUsuari()->obteTipus() == "entitat") {
+			application::ConsultaEntitatForm^ Veure_Perfil = gcnew application::ConsultaEntitatForm(s->obteUsuari()->obteCorreuElectronic());
+			Veure_Perfil->ShowDialog();
+		}
+		else if (s->obteUsuari()->obteTipus() == "ajuntament") {
+			application::FormConsultarAjuntament^ Veure_Perfil = gcnew application::FormConsultarAjuntament(s->obteUsuari()->obteCorreuElectronic());
+			Veure_Perfil->ShowDialog();
+		}
 		Form1::ActualitzarForm1();
 	}
+
+//		application::VeurePerfilForm^ Veure_Perfil = gcnew application::VeurePerfilForm();
+//		   Veure_Perfil->ShowDialog();
 private: System::Void consultarEsdeveniments_Click(System::Object^ sender, System::EventArgs^ e) {
 	application::ConsultarEsdevenimentsForm^ CEsdev = gcnew application::ConsultarEsdevenimentsForm();
 	CEsdev->ShowDialog();

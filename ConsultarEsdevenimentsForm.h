@@ -22,6 +22,7 @@ namespace application {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			_correuEntitat = System::String::Empty;
 		}
 		ConsultarEsdevenimentsForm(System::String^ correu)
 		{

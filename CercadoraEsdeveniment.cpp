@@ -28,7 +28,7 @@ PassarelaEsdeveniment^ CercadoraEsdeveniment::CercaEsdeveniment(System::String^ 
 	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
 
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Esdeveniment WHERE nom = '" + nom + "' AND data_inici ='" + iniciMySQL + "' AND data_fi = '" + fiMySQL + "'";
+	System::String^ sql = "SELECT * FROM Esdeveniment WHERE nom = '" + nom + "' && data_inici ='" + iniciMySQL + "' && data_fi = '" + fiMySQL + "'";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	if (dataReader->Read()) {
 		System::String^ nom= dataReader->GetString(0);

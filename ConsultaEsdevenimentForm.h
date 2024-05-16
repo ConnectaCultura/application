@@ -21,17 +21,23 @@ namespace application {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 			_nom = nom;
 			_inici = inici;
 			_fi = fi; 
 			
 		}
+		void CheckUsuari() {
+			Sessio^ s = Sessio::getInstance();
+			if (s->obteUsuari() == nullptr) {
+				ComprarButton->Visible = false;
+			}
+		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~ConsultaEsdevenimentForm()
 		{
@@ -68,14 +74,14 @@ namespace application {
 	private: System::Windows::Forms::Button^ ComprarButton;
 	private: System::Windows::Forms::Button^ Cancel_button;
 		   /// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -257,7 +263,7 @@ namespace application {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(57, 13);
 			this->label8->TabIndex = 15;
-			this->label8->Text = L"Descripció";
+			this->label8->Text = L"DescripciÃ³";
 			// 
 			// descripcio
 			// 
@@ -287,7 +293,7 @@ namespace application {
 			this->Cancel_button->Name = L"Cancel_button";
 			this->Cancel_button->Size = System::Drawing::Size(71, 24);
 			this->Cancel_button->TabIndex = 18;
-			this->Cancel_button->Text = L"Cance·lar";
+			this->Cancel_button->Text = L"CanceÂ·lar";
 			this->Cancel_button->UseVisualStyleBackColor = true;
 			this->Cancel_button->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::Cancel_button_Click_1);
 			// 
@@ -322,9 +328,13 @@ namespace application {
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
+
+			
+
 		}
 #pragma endregion
 	private: System::Void ConsultaEsdevenimentForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		CheckUsuari();
 		this->nom->Text = _nom;
 		this->data->Text = _inici + "  " + _fi;
 
@@ -367,14 +377,9 @@ private: System::Void ComprarButton_Click(System::Object^ sender, System::EventA
 	else {
 		preuCompra = Convert::ToSingle(this->preu->Text);
 	}
-	//Error amb el preu o algo MySql.Data.MySqlClient.MySqlException (0x80004005): Cannot add or update a 
-	// child row: a foreign key constraint fails (`amep09`.`Compra`, CONSTRAINT `Compra_ibfk_5` 
-	// FOREIGN KEY (`preu`) REFERENCES `Esdeveniment` (`preu`))
-	//Quan detecto que te que ser un ciutada
 	TxCompraEntrada entrada(nom->Text, data->Text, preuCompra);
 	entrada.executar();
 	this->Close();
-
 }
 
 private: System::Void Cancel_Button_Click(System::Object^ sender, System::EventArgs^ e) {
