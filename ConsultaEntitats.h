@@ -353,22 +353,22 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void EntitatsLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
-private: System::Void AjuntamentcomboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	dataGridViewEntitats->Rows->Clear();
-	TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
-	try {
-		en.executar();
-	}
-	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
-	}
-	List<List<System::String^>^>^ ve = en.ObteResultat();
-	for each (List<System::String^> ^ e in ve)
-	{
-		dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
-	}
+	private: System::Void AjuntamentcomboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		dataGridViewEntitats->Rows->Clear();
+		TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
+		try {
+			en.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+		List<List<System::String^>^>^ ve = en.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
+		{
+			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
+		}
 
-
+	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }

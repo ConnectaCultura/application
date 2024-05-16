@@ -363,7 +363,8 @@ private: System::Void NomBox_TextChanged(System::Object^ sender, System::EventAr
 
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 

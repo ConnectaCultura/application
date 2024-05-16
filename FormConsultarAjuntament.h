@@ -309,17 +309,18 @@ namespace application {
 	}
 
 
-private: System::Void dataGridViewEntitatsAjuntament_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
-		String^ cellText = dataGridViewEntitatsAjuntament->Rows[e->RowIndex]->Cells[3]->Value->ToString();
-		application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
-		Consulta_Entitat->ShowDialog();
+	private: System::Void dataGridViewEntitatsAjuntament_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+			String^ cellText = dataGridViewEntitatsAjuntament->Rows[e->RowIndex]->Cells[3]->Value->ToString();
+			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
+			Consulta_Entitat->ShowDialog();
+
+		}
+	} 
+	private: System::Void buttonTorna_Click(System::Object ^ sender, System::EventArgs ^ e) {
+		this->Close();
 
 	}
-
-private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-
-}
+	
 };
 }

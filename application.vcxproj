@@ -310,7 +310,7 @@
       <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaixaCiutadaForm.resx">
-      <DependentUpon>BaixaCiutadaForm.h</DependentUpon>7
+      <DependentUpon>BaixaCiutadaForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CancelarEsdevenimentForm.resx">
       <DependentUpon>CancelarEsdevenimentForm.h</DependentUpon>
