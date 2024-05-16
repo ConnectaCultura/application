@@ -19,4 +19,3 @@ private:
 
 	List<System::String^>^ _result;
 };
-

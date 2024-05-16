@@ -20,6 +20,25 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 	return vt;
 }
 
+List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ ciutada) {
+	Connexio^ con = Connexio::getInstance();
+	System::String^ sql = "SELECT * FROM Compra";
+	MySqlDataReader^ dataReader = con->executar(sql);
+	List<PassarelaCompra^>^ vt = gcnew List<PassarelaCompra^>();
+	while (dataReader->Read()) {
+		// Agafarem les columnes per índex, la primera és la 0
+		System::String^ correu = dataReader->GetString(0);
+		System::String^ nom = dataReader->GetString(1);
+		System::String^ dataini = dataReader->GetString(2);
+		System::String^ datafi = dataReader->GetString(3);
+		float preu = Convert::ToSingle(dataReader->GetString(4));
+
+		vt->Add(gcnew PassarelaCompra(correu, nom, dataini, datafi, preu));
+	}
+	con->tancarConnexio();
+	return vt;
+}
+
 PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi) {
 	System::String^ dia = data_inici->Substring(0, 2);
 	System::String^ mes = data_inici->Substring(3, 2);

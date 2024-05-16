@@ -148,6 +148,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connexio.h" />
+    <ClInclude Include="ConsultaCompraForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ConsultaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -194,6 +197,7 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="TxConsultaCompra.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
@@ -214,6 +218,7 @@
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
+    <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
@@ -252,6 +257,7 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxCompraEntrada.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="TxConsultaCompra.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
@@ -282,6 +288,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AltaAjuntamentForm.resx">
       <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompraForm.resx">
+      <DependentUpon>ConsultaCompraForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
       <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>
