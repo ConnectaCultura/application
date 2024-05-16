@@ -1,6 +1,7 @@
 #pragma once
 #include "TxConsultaEsdeveniment.h"
 #include "TxCompraEntrada.h"
+#include "CancelaEsdevenimentForm.h"
 namespace application {
 
 	using namespace System;
@@ -64,6 +65,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ descripcio;
 	private: System::Windows::Forms::Button^ ComprarButton;
+	private: System::Windows::Forms::Button^ Cancel_button;
 		   /// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
@@ -94,193 +96,191 @@ namespace application {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->descripcio = (gcnew System::Windows::Forms::Label());
 			this->ComprarButton = (gcnew System::Windows::Forms::Button());
+			this->Cancel_button = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(36, 33);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(48, 41);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(29, 13);
+			this->label1->Size = System::Drawing::Size(36, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nom";
 			// 
 			// nom
 			// 
 			this->nom->AutoSize = true;
-			this->nom->Location = System::Drawing::Point(166, 33);
-			this->nom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->nom->Location = System::Drawing::Point(221, 41);
 			this->nom->Name = L"nom";
-			this->nom->Size = System::Drawing::Size(35, 13);
+			this->nom->Size = System::Drawing::Size(44, 16);
 			this->nom->TabIndex = 1;
 			this->nom->Text = L"label2";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(33, 161);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(44, 198);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 2;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(33, 133);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(44, 164);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(101, 13);
+			this->label3->Size = System::Drawing::Size(126, 16);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"Entitat organizadora";
 			// 
 			// correu
 			// 
 			this->correu->AutoSize = true;
-			this->correu->Location = System::Drawing::Point(166, 133);
-			this->correu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->correu->Location = System::Drawing::Point(221, 164);
 			this->correu->Name = L"correu";
-			this->correu->Size = System::Drawing::Size(35, 13);
+			this->correu->Size = System::Drawing::Size(44, 16);
 			this->correu->TabIndex = 4;
 			this->correu->Text = L"label4";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(33, 161);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Location = System::Drawing::Point(44, 198);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(30, 13);
+			this->label4->Size = System::Drawing::Size(36, 16);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Data";
 			// 
 			// data
 			// 
 			this->data->AutoSize = true;
-			this->data->Location = System::Drawing::Point(166, 161);
-			this->data->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->data->Location = System::Drawing::Point(221, 198);
 			this->data->Name = L"data";
-			this->data->Size = System::Drawing::Size(35, 13);
+			this->data->Size = System::Drawing::Size(44, 16);
 			this->data->TabIndex = 6;
 			this->data->Text = L"label5";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(33, 239);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Location = System::Drawing::Point(44, 294);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(87, 13);
+			this->label5->Size = System::Drawing::Size(110, 16);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Aforament maxim";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(33, 266);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Location = System::Drawing::Point(44, 327);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(104, 13);
+			this->label6->Size = System::Drawing::Size(134, 16);
 			this->label6->TabIndex = 8;
 			this->label6->Text = L"Entrades disponibles";
 			// 
 			// lable7
 			// 
 			this->lable7->AutoSize = true;
-			this->lable7->Location = System::Drawing::Point(33, 217);
-			this->lable7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lable7->Location = System::Drawing::Point(44, 267);
 			this->lable7->Name = L"lable7";
-			this->lable7->Size = System::Drawing::Size(29, 13);
+			this->lable7->Size = System::Drawing::Size(35, 16);
 			this->lable7->TabIndex = 9;
 			this->lable7->Text = L"Preu";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(33, 190);
-			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label7->Location = System::Drawing::Point(44, 234);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(50, 13);
+			this->label7->Size = System::Drawing::Size(62, 16);
 			this->label7->TabIndex = 10;
 			this->label7->Text = L"Modalitat";
 			// 
 			// modalitat
 			// 
 			this->modalitat->AutoSize = true;
-			this->modalitat->Location = System::Drawing::Point(166, 190);
-			this->modalitat->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->modalitat->Location = System::Drawing::Point(221, 234);
 			this->modalitat->Name = L"modalitat";
-			this->modalitat->Size = System::Drawing::Size(35, 13);
+			this->modalitat->Size = System::Drawing::Size(44, 16);
 			this->modalitat->TabIndex = 11;
 			this->modalitat->Text = L"label8";
 			// 
 			// preu
 			// 
 			this->preu->AutoSize = true;
-			this->preu->Location = System::Drawing::Point(166, 217);
-			this->preu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->preu->Location = System::Drawing::Point(221, 267);
 			this->preu->Name = L"preu";
-			this->preu->Size = System::Drawing::Size(35, 13);
+			this->preu->Size = System::Drawing::Size(44, 16);
 			this->preu->TabIndex = 12;
 			this->preu->Text = L"label8";
 			// 
 			// afMax
 			// 
 			this->afMax->AutoSize = true;
-			this->afMax->Location = System::Drawing::Point(166, 239);
-			this->afMax->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->afMax->Location = System::Drawing::Point(221, 294);
 			this->afMax->Name = L"afMax";
-			this->afMax->Size = System::Drawing::Size(35, 13);
+			this->afMax->Size = System::Drawing::Size(44, 16);
 			this->afMax->TabIndex = 13;
 			this->afMax->Text = L"label8";
 			// 
 			// eDisp
 			// 
 			this->eDisp->AutoSize = true;
-			this->eDisp->Location = System::Drawing::Point(166, 266);
-			this->eDisp->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->eDisp->Location = System::Drawing::Point(221, 327);
 			this->eDisp->Name = L"eDisp";
-			this->eDisp->Size = System::Drawing::Size(35, 13);
+			this->eDisp->Size = System::Drawing::Size(44, 16);
 			this->eDisp->TabIndex = 14;
 			this->eDisp->Text = L"label8";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(36, 62);
-			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label8->Location = System::Drawing::Point(48, 76);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(57, 13);
+			this->label8->Size = System::Drawing::Size(72, 16);
 			this->label8->TabIndex = 15;
 			this->label8->Text = L"Descripció";
 			// 
 			// descripcio
 			// 
 			this->descripcio->AutoSize = true;
-			this->descripcio->Location = System::Drawing::Point(169, 62);
-			this->descripcio->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->descripcio->Location = System::Drawing::Point(225, 76);
 			this->descripcio->Name = L"descripcio";
-			this->descripcio->Size = System::Drawing::Size(35, 13);
+			this->descripcio->Size = System::Drawing::Size(44, 16);
 			this->descripcio->TabIndex = 16;
 			this->descripcio->Text = L"label9";
 			// 
 			// ComprarButton
 			// 
-			this->ComprarButton->Location = System::Drawing::Point(254, 266);
-			this->ComprarButton->Margin = System::Windows::Forms::Padding(2);
+			this->ComprarButton->Location = System::Drawing::Point(417, 327);
+			this->ComprarButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ComprarButton->Name = L"ComprarButton";
-			this->ComprarButton->Size = System::Drawing::Size(122, 25);
+			this->ComprarButton->Size = System::Drawing::Size(122, 31);
 			this->ComprarButton->TabIndex = 17;
 			this->ComprarButton->Text = L"Comprar Entrada";
 			this->ComprarButton->UseVisualStyleBackColor = true;
 			this->ComprarButton->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ComprarButton_Click);
 			// 
+			// Cancel_button
+			// 
+			this->Cancel_button->Location = System::Drawing::Point(316, 327);
+			this->Cancel_button->Name = L"Cancel_button";
+			this->Cancel_button->Size = System::Drawing::Size(95, 30);
+			this->Cancel_button->TabIndex = 18;
+			this->Cancel_button->Text = L"Cance·lar";
+			this->Cancel_button->UseVisualStyleBackColor = true;
+			Sessio^ s = Sessio::getInstance();
+			if (s->obteUsuari()->obteNom() != this->nom->Text) {
+				Cancel_button->Visible = false;
+			}
+			// 
 			// ConsultaEsdevenimentForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(413, 316);
+			this->ClientSize = System::Drawing::Size(551, 389);
+			this->Controls->Add(this->Cancel_button);
 			this->Controls->Add(this->ComprarButton);
 			this->Controls->Add(this->descripcio);
 			this->Controls->Add(this->label8);
@@ -299,7 +299,7 @@ namespace application {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nom);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultaEsdevenimentForm";
 			this->Text = L"ConsultaEsdevenimentForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ConsultaEsdevenimentForm_Load);
@@ -352,5 +352,11 @@ private: System::Void ComprarButton_Click(System::Object^ sender, System::EventA
 	this->Close();
 
 }
+
+private: System::Void Cancel_Button_Click(System::Object^ sender, System::EventArgs^ e) {
+	application::CancelaEsdevenimentForm^ CancelaEsdev = gcnew application::CancelaEsdevenimentForm();
+	CancelaEsdev->ShowDialog();
+}
+
 };
 }

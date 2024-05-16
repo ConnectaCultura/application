@@ -21,6 +21,13 @@ void PassarelaEsdeveniment::insereix() {
 	con->tancarConnexio();
 }
 
+void PassarelaEsdeveniment::esborra() {
+	System::String^ sql = "DELETE FROM Esdeveniment WHERE ( nom='" + nom + "', data_inici='" + data_inici + "', data_fi='" + data_fi + "')";
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+
 System::String^ PassarelaEsdeveniment::obteNom() {
 	return nom;
 }
