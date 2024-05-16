@@ -45,11 +45,9 @@ namespace application {
 	private: System::Windows::Forms::TextBox^ Contrasenya_box;
 
 	private:
-		/// <summary>
 		String^ nom_esdev;
 		String^ data_ini;
 		String^ data_fi;
-		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code

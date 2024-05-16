@@ -3,6 +3,7 @@
 #include "PassarelaEsdeveniment.h"
 #include "PassarelaCompra.h"
 #include "CercadoraCompra.h"
+#include "CercadoraEsdeveniment.h"
 #include "TxCancelaCompra.h"
 #include <stdexcept>
 

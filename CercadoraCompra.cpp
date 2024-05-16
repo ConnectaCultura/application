@@ -1,9 +1,25 @@
 #include "pch.h"
 #include "CercadoraCompra.h"
 
-List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ esdeveniment) {
+List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi) {
+	
+	System::String^ dia = data_inici->Substring(0, 2);
+	System::String^ mes = data_inici->Substring(3, 2);
+	System::String^ año = data_inici->Substring(6, 4);
+
+	// Construir la nueva cadena con el formato deseado
+	System::String^ iniciMySQL = año + "-" + mes + "-" + dia + " 00:00:00";
+
+	System::String^ _dia = data_fi->Substring(0, 2);
+	System::String^ _mes = data_fi->Substring(3, 2);
+	System::String^ _año = data_fi->Substring(6, 4);
+
+	// Construir la nueva cadena con el formato deseado
+	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
+	
+	
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Compra";
+	System::String^ sql = "SELECT * FROM Compra WHERE nomesdev= '"+ esdeveniment +"' && datainici = '"+ iniciMySQL + "' && datafi = '"+ fiMySQL + "';";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaCompra^>^ vt = gcnew List<PassarelaCompra^>();
 	while (dataReader->Read()) {
