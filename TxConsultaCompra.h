@@ -9,7 +9,7 @@ using namespace System::Collections::Generic;
 ref class TxConsultaCompra
 {
 	public:
-		TxConsultaCompra(System::String^ correuCiu, System::String^ nomEsdev, System::String^ dataIni, System::String^ dataFi, float preu);
+		TxConsultaCompra(System::String^ correuCiu, System::String^ nomEsdev, System::String^ dataIni, System::String^ dataFi);
 		void executar();
 		List<System::String^>^ obteResultat();
 
@@ -18,7 +18,6 @@ ref class TxConsultaCompra
 		System::String^ _nomEsdev;
 		System::String^ _dataIni;
 		System::String^ _dataFi;
-		float _preu;
 
 		List<System::String^>^ _result;
 };

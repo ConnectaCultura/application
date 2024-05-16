@@ -12,7 +12,7 @@ ref class CercadoraCompra
 public:
 	CercadoraCompra() {}
 	List<PassarelaCompra^>^ CercaPerEsdeveniment(System::String^ esdeveniment);
-	List<PassarelaCompra^>^ CercaPerEsdeveniment(System::String^ ciutada);
+	List<PassarelaCompra^>^ CercaPerCiutada(System::String^ ciutada);
 	PassarelaCompra^ CercaCompra(System::String^ Ciutada, System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi);
 };
 

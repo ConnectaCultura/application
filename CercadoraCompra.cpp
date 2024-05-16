@@ -20,7 +20,7 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 	return vt;
 }
 
-List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ ciutada) {
+List<PassarelaCompra^>^ CercadoraCompra::CercaPerCiutada(System::String^ ciutada) {
 	Connexio^ con = Connexio::getInstance();
 	System::String^ sql = "SELECT * FROM Compra";
 	MySqlDataReader^ dataReader = con->executar(sql);
@@ -33,7 +33,8 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ ci
 		System::String^ datafi = dataReader->GetString(3);
 		float preu = Convert::ToSingle(dataReader->GetString(4));
 
-		vt->Add(gcnew PassarelaCompra(correu, nom, dataini, datafi, preu));
+		if (correu == ciutada)
+			vt->Add(gcnew PassarelaCompra(correu, nom, dataini, datafi, preu));
 	}
 	con->tancarConnexio();
 	return vt;
