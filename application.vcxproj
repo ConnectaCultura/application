@@ -144,6 +144,9 @@
     <ClInclude Include="BaixaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CancelarEsdevenimentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CercadoraAjuntament.h" />
     <ClInclude Include="CercadoraCiutada.h" />
     <ClInclude Include="CercadoraCompra.h" />
@@ -202,8 +205,10 @@
     <ClInclude Include="TxAltaEntitat.h" />
     <ClInclude Include="TxBaixaCiutada.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxCancelaEsdeveniment.h" />
     <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="TxComprobacontrasenya.h" />
     <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
@@ -226,6 +231,7 @@
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BaixaCiutadaForm.cpp" />
+    <ClCompile Include="CancelarEsdevenimentForm.cpp" />
     <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
@@ -266,8 +272,10 @@
     <ClCompile Include="TxAltaAjuntament.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxCancelaEsdeveniment.cpp" />
     <ClCompile Include="TxCompraEntrada.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="TxComprobacontrasenya.cpp" />
     <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
@@ -302,7 +310,10 @@
       <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaixaCiutadaForm.resx">
-      <DependentUpon>BaixaCiutadaForm.h</DependentUpon>
+      <DependentUpon>BaixaCiutadaForm.h</DependentUpon>7
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelarEsdevenimentForm.resx">
+      <DependentUpon>CancelarEsdevenimentForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
       <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>
