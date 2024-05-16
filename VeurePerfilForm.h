@@ -162,7 +162,7 @@ namespace application {
 
 				CorreuBox->Text = u->obteCorreuElectronic();
 				NomBox->Text = u->obteNom();
-				PuntsBox->Text = c->obtePunts()->ToString();
+				PuntsBox->Text = c->obtePunts().ToString();
 			}
 			catch (MySqlException^ ex) {
 				MessageBox::Show(ex->Message);

@@ -167,7 +167,6 @@
     <ClInclude Include="ModificarEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="CancelaCompraForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -190,6 +189,7 @@
     <ClInclude Include="TxBaixaEntitat.h" />
     <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="TxComprovaContrasenya.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
@@ -216,7 +216,6 @@
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
     <ClCompile Include="CercadoraCompra.cpp" />
-    <ClCompile Include="CercadoraCiutada.cpp" />
     <ClCompile Include="CercadoraEntitat.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
     <ClCompile Include="ComprarEntradaForm.cpp" />
@@ -246,6 +245,7 @@
     <ClCompile Include="TxBaixaEntitat.cpp" />
     <ClCompile Include="TxCompraEntrada.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="TxComprovaContrasenya.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />

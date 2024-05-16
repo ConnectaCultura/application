@@ -217,21 +217,6 @@ namespace CppCLRWinFormsProject {
 			this->registreCiutada->UseVisualStyleBackColor = false;
 			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
 			// 
-			// ConsultaEntitat
-			// 
-			this->ConsultaEntitat->BackColor = System::Drawing::Color::DarkGray;
-			this->ConsultaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ConsultaEntitat->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ConsultaEntitat->Location = System::Drawing::Point(26, 195);
-			this->ConsultaEntitat->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->ConsultaEntitat->Name = L"ConsultaEntitat";
-			this->ConsultaEntitat->Size = System::Drawing::Size(125, 24);
-			this->ConsultaEntitat->TabIndex = 5;
-			this->ConsultaEntitat->Text = L"Consultar entitat";
-			this->ConsultaEntitat->UseVisualStyleBackColor = false;
-			this->ConsultaEntitat->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitat_Click);
-			// 
 			// ConsultaEntitats
 			// 
 			this->ConsultaEntitats->BackColor = System::Drawing::Color::DarkGray;
@@ -438,10 +423,6 @@ private: System::Void consultarEsdeveniments_Click(System::Object^ sender, Syste
 	application::ConsultarEsdevenimentsForm^ CEsdev = gcnew application::ConsultarEsdevenimentsForm();
 	CEsdev->ShowDialog();
 	Form1::ActualitzarForm1();
-}
-private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
