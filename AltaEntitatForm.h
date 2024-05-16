@@ -25,13 +25,13 @@ namespace application {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~AltaEntitatForm()
 		{
@@ -53,6 +53,7 @@ namespace application {
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Button^ buttonTorna;
 
 
 
@@ -61,14 +62,14 @@ namespace application {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -83,6 +84,7 @@ namespace application {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -94,6 +96,7 @@ namespace application {
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(30, 13);
+
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"nom";
 			// 
@@ -102,12 +105,13 @@ namespace application {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+
 			this->label2->Location = System::Drawing::Point(33, 77);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(65, 13);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"descripció";
+			this->label2->Text = L"descripciÃ³";
 			// 
 			// label3
 			// 
@@ -118,6 +122,7 @@ namespace application {
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(58, 13);
+
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"modalitat";
 			// 
@@ -130,14 +135,16 @@ namespace application {
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(103, 13);
+
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"correu electrònic";
+			this->label4->Text = L"correu electrÃ²nic";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+
 			this->label5->Location = System::Drawing::Point(33, 198);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
@@ -147,6 +154,7 @@ namespace application {
 			// 
 			// textBox1
 			// 
+
 			this->textBox1->Location = System::Drawing::Point(173, 38);
 			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
@@ -163,6 +171,7 @@ namespace application {
 			// 
 			// textBox4
 			// 
+
 			this->textBox4->Location = System::Drawing::Point(173, 153);
 			this->textBox4->Margin = System::Windows::Forms::Padding(2);
 			this->textBox4->Name = L"textBox4";
@@ -176,6 +185,7 @@ namespace application {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(149, 20);
 			this->textBox5->TabIndex = 9;
+			this->textBox5->PasswordChar = '*';
 			// 
 			// button1
 			// 
@@ -202,11 +212,28 @@ namespace application {
 			this->comboBox1->Size = System::Drawing::Size(149, 21);
 			this->comboBox1->TabIndex = 12;
 			// 
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(34, 282);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->TabIndex = 17;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &AltaEntitatForm::buttonTorna_Click);
+			// 
 			// AltaEntitatForm
 			// 
+
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(348, 268);
+			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox5);
@@ -257,6 +284,9 @@ private: System::Void AltaEntitatForm_Load(System::Object^ sender, System::Event
 		MessageBox::Show(ex->Message);
 	}
 	comboBox1->DataSource = tip.ObteResultat();
+}
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }
