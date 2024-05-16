@@ -16,7 +16,7 @@ PassarelaUsuari^ CercadoraUsuari::cercaUsuari(System::String^ correu) {
 		return gcnew PassarelaUsuari (nom, correu_electronic, contrasenya, tipus);
 	}
 	else {
-		throw std::runtime_error("L'Usuari no existeix");
+		throw std::runtime_error("L'Usuari o la contrasenya no existeix");
 	}
 
 }

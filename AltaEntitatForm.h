@@ -169,6 +169,7 @@ namespace application {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(198, 22);
 			this->textBox5->TabIndex = 9;
+			this->textBox5->PasswordChar = '*';
 			// 
 			// button1
 			// 

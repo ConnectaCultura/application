@@ -122,6 +122,7 @@ namespace application {
 			this->ContrasenyaBox->Size = System::Drawing::Size(132, 22);
 			this->ContrasenyaBox->TabIndex = 3;
 			this->ContrasenyaBox->TextChanged += gcnew System::EventHandler(this, &CancelaCompraForm::ContrasenyaBox_TextChanged);
+			this->ContrasenyaBox->PasswordChar = '*';
 			// 
 			// Ciutada
 			// 

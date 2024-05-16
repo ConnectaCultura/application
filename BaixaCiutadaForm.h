@@ -114,6 +114,7 @@ namespace application {
 			this->buttonbaixaciutada->Text = L"confirmar";
 			this->buttonbaixaciutada->UseVisualStyleBackColor = false;
 			this->buttonbaixaciutada->Click += gcnew System::EventHandler(this, &BaixaCiutadaForm::button1_Click);
+			this->textBoxbaixaciutada->PasswordChar = '*';
 			// 
 			// buttonTorna
 			// 
