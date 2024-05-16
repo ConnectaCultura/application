@@ -13,6 +13,8 @@ ref class CercadoraEntitat
 		PassarelaEntitat^ CercaEntitat(System::String^ cE);
 		List<PassarelaEntitat^>^ ObteTots();
 		List<PassarelaEntitat^>^ CercaTipus(System::String^ t);
+		List<PassarelaEntitat^>^ CercaAjuntament(System::String^ a);
+		List<PassarelaEntitat^>^ CercaTipusAjuntament(System::String^ t, System::String^ a);
 
 };
 

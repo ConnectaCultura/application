@@ -80,6 +80,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -119,6 +120,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -209,6 +211,7 @@
     <ClInclude Include="TxComprobacontrasenya.h" />
     <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
@@ -275,6 +278,7 @@
     <ClCompile Include="TxComprobacontrasenya.cpp" />
     <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
@@ -304,6 +308,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AltaAjuntamentForm.resx">
       <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaixaCiutadaForm.resx">
+      <DependentUpon>BaixaCiutadaForm.h</DependentUpon>7
     </EmbeddedResource>
     <EmbeddedResource Include="CancelarEsdevenimentForm.resx">
       <DependentUpon>CancelarEsdevenimentForm.h</DependentUpon>

@@ -57,6 +57,7 @@
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
+    <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
     <ClCompile Include="TxComprobacontrasenya.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +116,7 @@
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="VeurePerfilForm.h" />
+    <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
     <ClInclude Include="TxComprobacontrasenya.h" />
   </ItemGroup>
   <ItemGroup>

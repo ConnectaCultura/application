@@ -4,6 +4,7 @@
 #include "CercadoraEntitat.h"
 #include "PassarelaEntitat.h"
 #include "TxConsultaTipus.h"
+#include "TxConsultaEntitat.h"
 
 
 namespace application {
@@ -25,13 +26,13 @@ namespace application {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~ModificarEntitatForm()
 		{
@@ -55,6 +56,10 @@ namespace application {
 	private: System::Windows::Forms::TextBox^ DescripcioBox;
 	private: System::Windows::Forms::Button^ ModificaButton;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ AjuntamentLabelEdit;
+	private: System::Windows::Forms::Button^ buttonTorna;
+
 
 
 
@@ -62,14 +67,14 @@ namespace application {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -80,25 +85,27 @@ namespace application {
 			this->DescripcioBox = (gcnew System::Windows::Forms::TextBox());
 			this->ModificaButton = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->AjuntamentLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+
 			this->SuspendLayout();
 			// 
 			// NomLabel
 			// 
 			this->NomLabel->AutoSize = true;
-			this->NomLabel->Location = System::Drawing::Point(24, 20);
-			this->NomLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NomLabel->Location = System::Drawing::Point(32, 25);
 			this->NomLabel->Name = L"NomLabel";
-			this->NomLabel->Size = System::Drawing::Size(32, 13);
+			this->NomLabel->Size = System::Drawing::Size(39, 16);
 			this->NomLabel->TabIndex = 0;
 			this->NomLabel->Text = L"Nom:";
 			// 
 			// TipusLabel
 			// 
 			this->TipusLabel->AutoSize = true;
-			this->TipusLabel->Location = System::Drawing::Point(24, 54);
-			this->TipusLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->TipusLabel->Location = System::Drawing::Point(32, 66);
 			this->TipusLabel->Name = L"TipusLabel";
-			this->TipusLabel->Size = System::Drawing::Size(53, 13);
+			this->TipusLabel->Size = System::Drawing::Size(65, 16);
 			this->TipusLabel->TabIndex = 1;
 			this->TipusLabel->Text = L"Modalitat:";
 			this->TipusLabel->Click += gcnew System::EventHandler(this, &ModificarEntitatForm::TipusLabel_Click);
@@ -106,37 +113,41 @@ namespace application {
 			// DescripcioLabel
 			// 
 			this->DescripcioLabel->AutoSize = true;
-			this->DescripcioLabel->Location = System::Drawing::Point(24, 91);
-			this->DescripcioLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DescripcioLabel->Location = System::Drawing::Point(32, 112);
 			this->DescripcioLabel->Name = L"DescripcioLabel";
-			this->DescripcioLabel->Size = System::Drawing::Size(60, 13);
+			this->DescripcioLabel->Size = System::Drawing::Size(75, 16);
 			this->DescripcioLabel->TabIndex = 2;
-			this->DescripcioLabel->Text = L"Descripció:";
+			this->DescripcioLabel->Text = L"DescripciÃ³:";
 			// 
 			// NomBox
 			// 
+
 			this->NomBox->Location = System::Drawing::Point(91, 20);
-			this->NomBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NomBox->Margin = System::Windows::Forms::Padding(2);
+
 			this->NomBox->Name = L"NomBox";
-			this->NomBox->Size = System::Drawing::Size(76, 20);
+			this->NomBox->Size = System::Drawing::Size(100, 22);
 			this->NomBox->TabIndex = 3;
 			this->NomBox->TextChanged += gcnew System::EventHandler(this, &ModificarEntitatForm::NomBox_TextChanged);
 			// 
 			// DescripcioBox
 			// 
+
 			this->DescripcioBox->Location = System::Drawing::Point(91, 89);
-			this->DescripcioBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->DescripcioBox->Margin = System::Windows::Forms::Padding(2);
+
 			this->DescripcioBox->Name = L"DescripcioBox";
-			this->DescripcioBox->Size = System::Drawing::Size(145, 20);
+			this->DescripcioBox->Size = System::Drawing::Size(192, 22);
 			this->DescripcioBox->TabIndex = 5;
 			this->DescripcioBox->TextChanged += gcnew System::EventHandler(this, &ModificarEntitatForm::DescripcioBox_TextChanged);
 			// 
 			// ModificaButton
 			// 
-			this->ModificaButton->Location = System::Drawing::Point(179, 140);
-			this->ModificaButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+
+			this->ModificaButton->Location = System::Drawing::Point(180, 156);
+			this->ModificaButton->Margin = System::Windows::Forms::Padding(2);
 			this->ModificaButton->Name = L"ModificaButton";
-			this->ModificaButton->Size = System::Drawing::Size(56, 19);
+			this->ModificaButton->Size = System::Drawing::Size(75, 23);
 			this->ModificaButton->TabIndex = 6;
 			this->ModificaButton->Text = L"Modifica";
 			this->ModificaButton->UseVisualStyleBackColor = true;
@@ -145,17 +156,57 @@ namespace application {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(91, 54);
+			this->comboBox1->Location = System::Drawing::Point(121, 66);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->Size = System::Drawing::Size(160, 24);
 			this->comboBox1->TabIndex = 7;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &ModificarEntitatForm::comboBox1_SelectedIndexChanged);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(24, 125);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(63, 13);
+			this->label1->TabIndex = 8;
+			this->label1->Text = L"Ajuntament:";
+			// 
+			// AjuntamentLabelEdit
+			// 
+			this->AjuntamentLabelEdit->AutoSize = true;
+			this->AjuntamentLabelEdit->Location = System::Drawing::Point(91, 125);
+			this->AjuntamentLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->AjuntamentLabelEdit->Name = L"AjuntamentLabelEdit";
+			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->AjuntamentLabelEdit->TabIndex = 9;
+
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(12, 174);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->TabIndex = 18;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &ModificarEntitatForm::buttonTorna_Click);
+
+			// 
 			// ModificarEntitatForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+
 			this->ClientSize = System::Drawing::Size(263, 186);
+			this->Controls->Add(this->AjuntamentLabelEdit);
+			this->Controls->Add(this->label1);
+
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->ModificaButton);
 			this->Controls->Add(this->DescripcioBox);
@@ -163,7 +214,8 @@ namespace application {
 			this->Controls->Add(this->DescripcioLabel);
 			this->Controls->Add(this->TipusLabel);
 			this->Controls->Add(this->NomLabel);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ModificarEntitatForm";
 			this->Text = L"ModificarEntitatForm";
 			this->Load += gcnew System::EventHandler(this, &ModificarEntitatForm::ModificarEntitatForm_Load);
@@ -188,17 +240,24 @@ namespace application {
 
 private: System::Void ModificarEntitatForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
-	PassarelaUsuari^ u = s->obteUsuari();
-	NomBox->Text = u->obteNom();
+	NomBox->Text = s->obteUsuari()->obteNom();
+	TxConsultaEntitat ce(s->obteUsuari()->obteCorreuElectronic());
+	try {
+		ce.executar();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	List<System::String^>^ entitat = ce.ObteResultat();
+	DescripcioBox->Text = entitat[2];
+	AjuntamentLabelEdit->Text = entitat[3];
 
-	CercadoraEntitat^ ce;
-	PassarelaEntitat^ entitat = ce->CercaEntitat(u->obteCorreuElectronic());
-	DescripcioBox->Text = entitat->obteDescripcio();
+
 
 	TxConsultaTipus txCT;
 	txCT.executar();
 	comboBox1->DataSource = txCT.ObteResultat();
-	int index = comboBox1->FindStringExact(entitat->obteTipus());
+	int index = comboBox1->FindStringExact(entitat[1]);
 	comboBox1->SelectedIndex = index;
 }
 
@@ -213,6 +272,9 @@ private: System::Void ModificarEntitatForm_Load(System::Object^ sender, System::
 private: System::Void TipusLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

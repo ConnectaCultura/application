@@ -11,12 +11,13 @@ PassarelaUsuari^ CercadoraUsuari::cercaUsuari(System::String^ correu) {
 
 		System::String^ tipus = dataReader->GetString(3);
 		System::String^ contrasenya = dataReader->GetString(2);
+		int actiu = dataReader->GetInt32(4);
 
 		con->tancarConnexio();
-		return gcnew PassarelaUsuari (nom, correu_electronic, contrasenya, tipus);
+		return gcnew PassarelaUsuari (nom, correu_electronic, contrasenya, tipus, actiu);
 	}
 	else {
-		throw std::runtime_error("L'Usuari no existeix");
+		throw std::runtime_error("L'Usuari o la contrasenya no existeix");
 	}
 
 }

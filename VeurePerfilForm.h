@@ -52,6 +52,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ label3;
 
 	private: System::Windows::Forms::Label^ PuntsLabelEdit;
+	private: System::Windows::Forms::Button^ buttonTorna;
 
 
 
@@ -74,15 +75,15 @@ namespace application {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(22, 59);
-			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->TipusText->Location = System::Drawing::Point(29, 73);
 			this->TipusText->Name = L"TipusText";
-			this->TipusText->Size = System::Drawing::Size(91, 13);
+			this->TipusText->Size = System::Drawing::Size(112, 16);
 			this->TipusText->TabIndex = 11;
 			this->TipusText->Text = L"Correu Electrònic:";
 			this->TipusText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::TipusText_Click);
@@ -90,10 +91,9 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(22, 85);
-			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DescripcioText->Location = System::Drawing::Point(29, 105);
 			this->DescripcioText->Name = L"DescripcioText";
-			this->DescripcioText->Size = System::Drawing::Size(37, 13);
+			this->DescripcioText->Size = System::Drawing::Size(43, 16);
 			this->DescripcioText->TabIndex = 8;
 			this->DescripcioText->Text = L"Punts:";
 			this->DescripcioText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::DescripcioText_Click);
@@ -101,10 +101,9 @@ namespace application {
 			// NomText
 			// 
 			this->NomText->AutoSize = true;
-			this->NomText->Location = System::Drawing::Point(22, 31);
-			this->NomText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NomText->Location = System::Drawing::Point(29, 38);
 			this->NomText->Name = L"NomText";
-			this->NomText->Size = System::Drawing::Size(32, 13);
+			this->NomText->Size = System::Drawing::Size(39, 16);
 			this->NomText->TabIndex = 7;
 			this->NomText->Text = L"Nom:";
 			this->NomText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::NomText_Click);
@@ -112,39 +111,59 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(147, 31);
+			this->label1->Location = System::Drawing::Point(196, 38);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(0, 13);
+			this->label1->Size = System::Drawing::Size(0, 16);
 			this->label1->TabIndex = 12;
 			this->label1->Click += gcnew System::EventHandler(this, &VeurePerfilForm::label1_Click);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(147, 59);
+			this->label2->Location = System::Drawing::Point(196, 73);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 13;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(147, 87);
+			this->label3->Location = System::Drawing::Point(196, 107);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(0, 13);
+			this->label3->Size = System::Drawing::Size(0, 16);
 			this->label3->TabIndex = 14;
+			// 
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(12, 162);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->TabIndex = 18;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &VeurePerfilForm::buttonTorna_Click);
 			// 
 			// VeurePerfilForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(289, 164);
+			this->ClientSize = System::Drawing::Size(385, 202);
+			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->TipusText);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"VeurePerfilForm";
 			this->Text = L"VeurePerfilForm";
 			this->Load += gcnew System::EventHandler(this, &VeurePerfilForm::VeurePerfilForm_Load);
@@ -184,6 +203,9 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

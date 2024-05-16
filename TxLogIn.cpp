@@ -12,7 +12,10 @@ void TxLogIn::executar() {
 	System::String^ con_aux = u->obteContrasenya();
 	Sessio^ s = Sessio::getInstance();
 	if (con_aux != _contrasenya) {
-		throw std::runtime_error("La contrasenya no és correcta");
+		throw std::runtime_error("La contrasenya o el correu no son correctes");
+	}
+	else if (u->obteActiu() != 1){
+		throw std::runtime_error("Aquest compte esta inactiu.");
 	}
 	else {
 		s->iniciaSessio(u);
