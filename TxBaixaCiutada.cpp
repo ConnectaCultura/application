@@ -16,6 +16,7 @@ void TxBaixaCiutada::executar() {
 
 	System::String^ c = u->obteContrasenya();
 	if (c != _contrasenya) throw std::runtime_error("La contrasenya no és correcta, l'usuari no s'ha donat de baixa.");
-	u->esborra();
+	u->setInactiu();
+	u->modifica();
 	s->tancaSessio();
 }

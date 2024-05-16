@@ -28,7 +28,7 @@ namespace application {
 		}
 		void CheckUsuari() {
 			Sessio^ s = Sessio::getInstance();
-			if (s->obteUsuari() == nullptr) {
+			if (s->obteUsuari() == nullptr || s->obteUsuari()->obteTipus() != "ciutada") {
 				ComprarButton->Visible = false;
 			}
 		}
@@ -338,8 +338,6 @@ namespace application {
 			//eDisp->Text = ve[5];
 
 		}
-	
-	
 	
 	}
 private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {

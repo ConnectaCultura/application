@@ -19,6 +19,7 @@ void TxConsultaEntitat::executar() {
 	PassarelaEntitat^ e = cE.CercaEntitat(_correu);
 	sol->Add(e->obteTipus());
 	sol->Add(e->obteDescripcio());
+	sol->Add(e->obteAjuntament());
 	res = sol;
 	return;
 

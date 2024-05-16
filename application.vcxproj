@@ -206,6 +206,7 @@
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
@@ -269,6 +270,7 @@
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />

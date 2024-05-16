@@ -1,5 +1,7 @@
 #pragma once
 #include "TxConsultaAjuntament.h"
+#include "TxConsultaEntitats.h"
+#include "ConsultaEntitatForm.h"
 
 namespace application {
 
@@ -62,7 +64,17 @@ namespace application {
 
 	private: System::Windows::Forms::Label^ PostalLabelEdit;
 	private: System::Windows::Forms::Label^ CorreuLabelEdit;
+
+	private: System::Windows::Forms::DataGridView^ dataGridViewEntitatsAjuntament;
+
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nom;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Descripcio;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Tipus;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Correu_Electronic;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ajutament;
+
 	private: System::Windows::Forms::Button^ buttonTorna;
+
 
 	protected:
 
@@ -88,7 +100,16 @@ namespace application {
 			this->TelefonLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->PostalLabelEdit = (gcnew System::Windows::Forms::Label());
 			this->CorreuLabelEdit = (gcnew System::Windows::Forms::Label());
+			this->dataGridViewEntitatsAjuntament = (gcnew System::Windows::Forms::DataGridView());
+			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Descripcio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Tipus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Correu_Electronic = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Ajutament = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitatsAjuntament))->BeginInit();
+
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+
 			this->SuspendLayout();
 			// 
 			// CorreuLabel
@@ -160,6 +181,59 @@ namespace application {
 			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 16);
 			this->CorreuLabelEdit->TabIndex = 10;
 			// 
+
+			// dataGridViewEntitatsAjuntament
+			// 
+			this->dataGridViewEntitatsAjuntament->AllowUserToAddRows = false;
+			this->dataGridViewEntitatsAjuntament->AllowUserToDeleteRows = false;
+			this->dataGridViewEntitatsAjuntament->BackgroundColor = System::Drawing::SystemColors::Control;
+			this->dataGridViewEntitatsAjuntament->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->dataGridViewEntitatsAjuntament->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewEntitatsAjuntament->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Nom,
+					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
+			});
+			this->dataGridViewEntitatsAjuntament->Location = System::Drawing::Point(32, 174);
+			this->dataGridViewEntitatsAjuntament->Name = L"dataGridViewEntitatsAjuntament";
+			this->dataGridViewEntitatsAjuntament->ReadOnly = true;
+			this->dataGridViewEntitatsAjuntament->Size = System::Drawing::Size(637, 163);
+			this->dataGridViewEntitatsAjuntament->TabIndex = 13;
+			this->dataGridViewEntitatsAjuntament->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FormConsultarAjuntament::dataGridViewEntitatsAjuntament_CellContentClick);
+			// 
+			// Nom
+			// 
+			this->Nom->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Nom->HeaderText = L"Nom";
+			this->Nom->Name = L"Nom";
+			this->Nom->ReadOnly = true;
+			// 
+			// Descripcio
+			// 
+			this->Descripcio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Descripcio->HeaderText = L"Descripcio";
+			this->Descripcio->Name = L"Descripcio";
+			this->Descripcio->ReadOnly = true;
+			// 
+			// Tipus
+			// 
+			this->Tipus->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Tipus->HeaderText = L"Modalitat";
+			this->Tipus->Name = L"Tipus";
+			this->Tipus->ReadOnly = true;
+			// 
+			// Correu_Electronic
+			// 
+			this->Correu_Electronic->HeaderText = L"Correu_Electronic";
+			this->Correu_Electronic->Name = L"Correu_Electronic";
+			this->Correu_Electronic->ReadOnly = true;
+			this->Correu_Electronic->Visible = false;
+			// 
+			// Ajutament
+			// 
+			this->Ajutament->HeaderText = L"Ajuntament";
+			this->Ajutament->Name = L"Ajutament";
+			this->Ajutament->ReadOnly = true;
+			this->Ajutament->Width = 150;
 			// buttonTorna
 			// 
 			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
@@ -174,13 +248,16 @@ namespace application {
 			this->buttonTorna->Text = L"Torna";
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &FormConsultarAjuntament::buttonTorna_Click);
+
 			// 
 			// FormConsultarAjuntament
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(379, 321);
-			this->Controls->Add(this->buttonTorna);
+
+			this->ClientSize = System::Drawing::Size(681, 349);
+			this->Controls->Add(this->dataGridViewEntitatsAjuntament);
+
 			this->Controls->Add(this->TelefonLabelEdit);
 			this->Controls->Add(this->PostalLabelEdit);
 			this->Controls->Add(this->CorreuLabelEdit);
@@ -192,6 +269,7 @@ namespace application {
 			this->Name = L"FormConsultarAjuntament";
 			this->Text = L"FormConsultarAjuntament";
 			this->Load += gcnew System::EventHandler(this, &FormConsultarAjuntament::FormConsultarAjuntament_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitatsAjuntament))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -214,10 +292,34 @@ namespace application {
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
+		TxConsultaEntitats ca("Totes", this->_CorreuAjuntament);
+		try {
+			ca.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+		List<List<System::String^>^>^ ve = ca.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
+		{
+			dataGridViewEntitatsAjuntament->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
+		}
+
+
+	}
+
+
+private: System::Void dataGridViewEntitatsAjuntament_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+		String^ cellText = dataGridViewEntitatsAjuntament->Rows[e->RowIndex]->Cells[3]->Value->ToString();
+		application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
+		Consulta_Entitat->ShowDialog();
+
 	}
 
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+
 }
 };
 }

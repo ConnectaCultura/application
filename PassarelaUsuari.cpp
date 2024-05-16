@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "PassarelaUsuari.h"
 
-PassarelaUsuari::PassarelaUsuari(System::String^ nU, System::String^ ceU, System::String^ cU, System::String^ tU)
+PassarelaUsuari::PassarelaUsuari(System::String^ nU, System::String^ ceU, System::String^ cU, System::String^ tU, int act)
 {
 	nom = nU;
 	correuElectronic = ceU;
 	contrasenya = cU;
 	tipus = tU;
+	actiu = act;
 }
 
 PassarelaUsuari^ PassarelaUsuari::operator=(const PassarelaUsuari^ other) {
@@ -14,6 +15,7 @@ PassarelaUsuari^ PassarelaUsuari::operator=(const PassarelaUsuari^ other) {
 	contrasenya = other->contrasenya;
 	nom = other->nom;
 	tipus = other->tipus;
+	actiu = other->actiu;
 	return this;
 }
 
@@ -36,7 +38,13 @@ System::String^ PassarelaUsuari::obteTipus()
 {
 	return this->tipus;
 }
+int PassarelaUsuari::obteActiu() {
+	return this->actiu;
+}
 
+void PassarelaUsuari::setInactiu() {
+	this->actiu = 0;
+}
 void PassarelaUsuari::modificaNom(System::String^ nom)
 {
 	this->nom = nom;
@@ -56,8 +64,9 @@ void PassarelaUsuari::esborra() {
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
 }
+
 void PassarelaUsuari::modifica() {
-	System::String^ sql = "UPDATE Usuari SET nom = '" + nom + "' WHERE correu_electronic='" + correuElectronic + "';";
+	System::String^ sql = "UPDATE Usuari SET nom = '" + nom + "', actiu = '" + actiu + "' WHERE correu_electronic = '" + correuElectronic + "';";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

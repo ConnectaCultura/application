@@ -13,7 +13,7 @@ PassarelaAjuntament^ CercadoraAjuntament::cercaAjuntament(System::String^ correu
 		return gcnew PassarelaAjuntament(correu_el, postal, telefon);
 	}
 	else {
-		throw std::runtime_error("L'Entitat no existeix");
+		throw std::runtime_error("L'Ajuntament no existeix");
 	}
 
 }

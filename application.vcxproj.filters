@@ -55,6 +55,7 @@
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
+    <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -110,6 +111,7 @@
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="VeurePerfilForm.h" />
+    <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
