@@ -1,5 +1,6 @@
 #pragma once
 #include "TxCancelaCompra.h"
+#include "TxComprobacontrasenya.h"
 
 namespace application {
 
@@ -192,7 +193,9 @@ namespace application {
 	private: System::Void CancelaCompraForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ConfirmarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		TxCancelaCompra cancelacompra(ContrasenyaBox->Text, Ciutada->Text, esdeveniment->Text, data_inici->Text, data_fi->Text);
+		TxComprobacontrasenya co(ContrasenyaBox->Text);
+		co.executar();
+		TxCancelaCompra cancelacompra(Ciutada->Text, esdeveniment->Text, data_inici->Text, data_fi->Text);
 		cancelacompra.executar();
 		MessageBox::Show("Se t'han restat els punts de la compra i retornat els diners");
 		this->Close();

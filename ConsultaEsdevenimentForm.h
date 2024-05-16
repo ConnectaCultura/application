@@ -1,6 +1,7 @@
 #pragma once
 #include "TxConsultaEsdeveniment.h"
 #include "TxCompraEntrada.h"
+#include "CancelarEsdevenimentForm.h"
 namespace application {
 
 	using namespace System;
@@ -20,11 +21,12 @@ namespace application {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 			_nom = nom;
 			_inici = inici;
-			_fi = fi;
+			_fi = fi; 
+			
 		}
 		void CheckUsuari() {
 			Sessio^ s = Sessio::getInstance();
@@ -35,7 +37,7 @@ namespace application {
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~ConsultaEsdevenimentForm()
 		{
@@ -70,15 +72,16 @@ namespace application {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ descripcio;
 	private: System::Windows::Forms::Button^ ComprarButton;
+	private: System::Windows::Forms::Button^ Cancel_button;
 		   /// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -100,6 +103,7 @@ namespace application {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->descripcio = (gcnew System::Windows::Forms::Label());
 			this->ComprarButton = (gcnew System::Windows::Forms::Button());
+			this->Cancel_button = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -259,7 +263,7 @@ namespace application {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(57, 13);
 			this->label8->TabIndex = 15;
-			this->label8->Text = L"Descripció";
+			this->label8->Text = L"DescripciÃ³";
 			// 
 			// descripcio
 			// 
@@ -273,20 +277,32 @@ namespace application {
 			// 
 			// ComprarButton
 			// 
-			this->ComprarButton->Location = System::Drawing::Point(254, 266);
-			this->ComprarButton->Margin = System::Windows::Forms::Padding(2);
+			this->ComprarButton->Location = System::Drawing::Point(313, 266);
+			this->ComprarButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->ComprarButton->Name = L"ComprarButton";
-			this->ComprarButton->Size = System::Drawing::Size(122, 25);
+			this->ComprarButton->Size = System::Drawing::Size(92, 25);
 			this->ComprarButton->TabIndex = 17;
 			this->ComprarButton->Text = L"Comprar Entrada";
 			this->ComprarButton->UseVisualStyleBackColor = true;
 			this->ComprarButton->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ComprarButton_Click);
+			// 
+			// Cancel_button
+			// 
+			this->Cancel_button->Location = System::Drawing::Point(237, 266);
+			this->Cancel_button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Cancel_button->Name = L"Cancel_button";
+			this->Cancel_button->Size = System::Drawing::Size(71, 24);
+			this->Cancel_button->TabIndex = 18;
+			this->Cancel_button->Text = L"CanceÂ·lar";
+			this->Cancel_button->UseVisualStyleBackColor = true;
+			this->Cancel_button->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::Cancel_button_Click_1);
 			// 
 			// ConsultaEsdevenimentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(413, 316);
+			this->Controls->Add(this->Cancel_button);
 			this->Controls->Add(this->ComprarButton);
 			this->Controls->Add(this->descripcio);
 			this->Controls->Add(this->label8);
@@ -305,7 +321,7 @@ namespace application {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nom);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"ConsultaEsdevenimentForm";
 			this->Text = L"ConsultaEsdevenimentForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ConsultaEsdevenimentForm_Load);
@@ -321,6 +337,15 @@ namespace application {
 		CheckUsuari();
 		this->nom->Text = _nom;
 		this->data->Text = _inici + "  " + _fi;
+
+		Sessio^ s = Sessio::getInstance();
+		if (s->obteUsuari()->obteTipus() != "ciutada") {
+			ComprarButton->Visible = false;
+		}
+		if (s->obteUsuari()->obteTipus() != "entitat") {
+			Cancel_button->Visible = false;
+		}
+		//MessageBox::Show(iniciMySQL);
 		TxConsultaEsdeveniment txCE(_nom, _inici, _fi);
 		txCE.executar();
 		List<System::String^>^ ve = txCE.obteResultat();
@@ -355,6 +380,17 @@ private: System::Void ComprarButton_Click(System::Object^ sender, System::EventA
 	TxCompraEntrada entrada(nom->Text, data->Text, preuCompra);
 	entrada.executar();
 	this->Close();
+}
+
+private: System::Void Cancel_Button_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	
+
+}
+
+private: System::Void Cancel_button_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	application::CancelarEsdevenimentForm^ CancelaEsdev = gcnew application::CancelarEsdevenimentForm(_nom, _inici, _fi);
+	CancelaEsdev->ShowDialog();
 }
 };
 }

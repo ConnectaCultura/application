@@ -21,6 +21,27 @@ void PassarelaEsdeveniment::insereix() {
 	con->tancarConnexio();
 }
 
+void PassarelaEsdeveniment::esborra() {
+	System::String^ dia = data_inici->Substring(0, 2);
+	System::String^ mes = data_inici->Substring(3, 2);
+	System::String^ año = data_inici->Substring(6, 4);
+
+	// Construir la nueva cadena con el formato deseado
+	System::String^ iniciMySQL = año + "-" + mes + "-" + dia + " 00:00:00";
+
+	System::String^ _dia = data_fi->Substring(0, 2);
+	System::String^ _mes = data_fi->Substring(3, 2);
+	System::String^ _año = data_fi->Substring(6, 4);
+
+	// Construir la nueva cadena con el formato deseado
+	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
+	System::String^ sql = "DELETE FROM Esdeveniment WHERE nom='" + nom + "' AND data_inici='" + iniciMySQL + "' AND data_fi='" + fiMySQL + "'";
+	Connexio^ con = Connexio::getInstance();
+	//això falla
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+
 System::String^ PassarelaEsdeveniment::obteNom() {
 	return nom;
 }
