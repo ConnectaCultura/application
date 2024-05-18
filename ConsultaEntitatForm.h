@@ -331,7 +331,7 @@ namespace application {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
 
-		TxConsultaEsdeveniments txEsdev(_CorreuEntitat, 1);
+		TxConsultaEsdeveniments txEsdev(_CorreuEntitat, 1, 1, 1); //CAL CANVIAR AIXOOOOOO
 		try {
 			txEsdev.executar();
 		}

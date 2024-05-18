@@ -294,6 +294,7 @@
   <ItemGroup>
     <Image Include="..\..\..\..\..\..\..\Downloads\logo.ico" />
     <Image Include="app.ico" />
+    <Image Include="lupa.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
