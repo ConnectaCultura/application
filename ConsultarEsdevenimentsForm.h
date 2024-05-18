@@ -36,7 +36,8 @@ namespace application {
 
 		void actualitzarForm(void) {
 			EsdevDataGrid-> Rows->Clear();
-			TxConsultaEsdeveniments txEsdev(_correuEntitat, checkBox1->Checked, checkBox2->Checked, checkBox3->Checked);
+			System::String^ nomEsd = textBox1->Text;
+			TxConsultaEsdeveniments txEsdev(_correuEntitat, nomEsd, checkBox1->Checked, checkBox2->Checked, checkBox3->Checked);
 			try {
 				txEsdev.executar();
 			}
@@ -55,9 +56,9 @@ namespace application {
 		void ajustarAlcadaDataGrid() {
 			int minHeight = 20;  // Altura mínima 
 			int maxHeight = 200;  // Altura máxima
-			int rowHeight = 36;
+			int rowHeight = 30;
 			int rowCount = EsdevDataGrid->RowCount;
-			int totalHeight = (rowHeight) * rowCount;
+			int totalHeight = (rowHeight) * (rowCount+1);
 
 			// Ajustar alçada dins dels limits desitjats
 			if (totalHeight < minHeight) 
@@ -252,6 +253,7 @@ namespace application {
 			this->checkBox3->TabIndex = 21;
 			this->checkBox3->Text = L"Sense entrada";
 			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::checkBox3_CheckedChanged);
 			// 
 			// textBox1
 			// 
@@ -270,6 +272,7 @@ namespace application {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 23;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::pictureBox1_Click);
 			// 
 			// ConsultarEsdevenimentsForm
 			// 
@@ -320,6 +323,14 @@ private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArg
 	this->Close();
 }
 private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if(checkBox2->Checked) checkBox3->Checked=false;
+	actualitzarForm();
+}
+private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if(checkBox3->Checked) checkBox2->Checked = false;
+	actualitzarForm();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	actualitzarForm();
 }
 };

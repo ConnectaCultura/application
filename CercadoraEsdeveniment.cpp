@@ -78,3 +78,29 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteEsdevEntitat(System::St
 	con->tancarConnexio();
 	return ve;
 }
+
+List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obtePerNom(System::String^ nom) {
+	Connexio^ con = Connexio::getInstance();
+	System::String^ sql = "SELECT * FROM Esdeveniment WHERE nom = '" + nom + "'ORDER BY data_inici ASC";
+	MySqlDataReader^ dataReader = con->executar(sql);
+	List<PassarelaEsdeveniment^>^ ve = gcnew List<PassarelaEsdeveniment^>();
+	while (dataReader->Read()) {
+		System::String^ nom = dataReader->GetString(0);
+		System::String^ descripcio = dataReader->GetString(1);
+		System::DateTime data_inici = dataReader->GetDateTime(2);
+		System::DateTime data_fi = dataReader->GetDateTime(3);
+		int^ aforament = nullptr;
+		if (!dataReader->IsDBNull(4)) {
+			aforament = dataReader->GetInt32(4);
+		}
+		float^ preu = nullptr;
+		if (!dataReader->IsDBNull(5)) {
+			preu = dataReader->GetFloat(5);
+		}
+		System::String^ tipus = dataReader->GetString(6);
+		System::String^ correu = dataReader->GetString(7);
+		ve->Add(gcnew PassarelaEsdeveniment(correu, nom, descripcio, data_inici, data_fi, aforament, preu, tipus));
+	}
+	con->tancarConnexio();
+	return ve;
+}
