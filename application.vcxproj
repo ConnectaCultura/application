@@ -292,7 +292,7 @@
     <ClCompile Include="VeurePerfilForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\..\Downloads\Connecta-Cultura-logos-_3_.ico" />
+    <Image Include="..\..\..\..\..\..\..\Downloads\logo.ico" />
     <Image Include="app.ico" />
   </ItemGroup>
   <ItemGroup>

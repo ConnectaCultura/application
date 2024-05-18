@@ -25,6 +25,7 @@ namespace application {
 		ModificarEntitatForm(void)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//

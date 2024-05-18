@@ -30,6 +30,7 @@ namespace application {
 		{
 			
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			this->_CorreuEntitat = ce;
 
 			//

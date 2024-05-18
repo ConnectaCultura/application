@@ -20,6 +20,7 @@ namespace application {
 		FormAltaEsdeveniment(void)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -281,7 +282,8 @@ namespace application {
 			this->Controls->Add(this->numericUpDown2);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->textBox2);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			//this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"FormAltaEsdeveniment";
 			this->Text = L"FormAltaEsdeveniment";
@@ -311,13 +313,17 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		// Comprovo que la data fi >= data inici
 		DateTime data_inici = this->dateTimePicker1->Value;
 		DateTime data_fi = this->dateTimePicker2->Value;
-		if (data_inici >= data_fi)
+		if (data_inici > data_fi)
 		{
 			MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 			return;
 		}
 
 		System::String^ nom = this->textBox2->Text;
+		if (nom == "") {
+			MessageBox::Show("El nom no pot ser buit");
+			return;
+		}
 		System::String^ descripcio = this->richTextBox1->Text;
 		int aforament = Convert::ToInt32(this->numericUpDown1->Value);
 		float preu = Convert::ToSingle(this->numericUpDown2->Value);
@@ -328,6 +334,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 			this->Close();
 		}
 		catch (MySqlException^ ex) {
+			MessageBox::Show("Aquest esdeveniment ja existeix, canvia el nom");
 			MessageBox::Show(ex->Message);
 		}
 
@@ -339,7 +346,7 @@ private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, Syste
 	DateTime endDateTime = this->dateTimePicker2->Value;
 
 	// Validation logic
-	if (startDateTime >= endDateTime)
+	if (startDateTime > endDateTime)
 	{
 		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 		return;
@@ -352,7 +359,7 @@ private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, Syste
 	DateTime endDateTime = this->dateTimePicker2->Value;
 
 	// Validation logic
-	if (startDateTime >= endDateTime)
+	if (startDateTime > endDateTime)
 	{
 		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 		return;

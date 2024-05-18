@@ -412,6 +412,7 @@ namespace CppCLRWinFormsProject {
 			this->Margin = System::Windows::Forms::Padding(1);
 			this->Name = L"Form1";
 			this->Text = L"ConnectaCultura";
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 
