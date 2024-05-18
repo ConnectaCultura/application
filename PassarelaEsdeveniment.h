@@ -5,8 +5,8 @@ private:
 	System::String^ correu;
 	System::String^ nom;
 	System::String^ descripcio;
-	System::String^ data_inici;
-	System::String^ data_fi;
+	System::DateTime data_inici;
+	System::DateTime data_fi;
 	int aforament;
 	float preu;
 	System::String^ tipus;
@@ -14,12 +14,12 @@ private:
 
 public:
 	PassarelaEsdeveniment() {}
-	PassarelaEsdeveniment(System::String^ cE, System::String^ n, System::String^ des, System::String^ data_ini, System::String^ data_f, int afor, float p, System::String^ t);
+	PassarelaEsdeveniment(System::String^ cE, System::String^ n, System::String^ des, System::DateTime data_ini, System::DateTime data_f, int afor, float p, System::String^ t);
 	void insereix();
 	void esborra();
 	System::String^ obteNom();
-	System::String^ obteData_inici();
-	System::String^ obteData_fi();
+	System::DateTime obteData_inici();
+	System::DateTime obteData_fi();
 	float obtePreu();
 	int obteAforament();
 	System::String^ obteDescripcio();
