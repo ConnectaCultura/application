@@ -21,6 +21,7 @@ namespace application {
 		FormConsultarAjuntament(void)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: Add the constructor code here
 			//

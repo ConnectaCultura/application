@@ -292,6 +292,7 @@
     <ClCompile Include="VeurePerfilForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\Downloads\logo.ico" />
     <Image Include="app.ico" />
   </ItemGroup>
   <ItemGroup>

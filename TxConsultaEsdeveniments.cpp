@@ -13,8 +13,8 @@ void TxConsultaEsdeveniments::executar() {
 		for (int i = 0; i < llistaEsdev->Count; i++) {
 			List<System::String^>^ laux = gcnew List<System::String^>;
 			laux->Add(llistaEsdev[i]->obteNom());
-			laux->Add(llistaEsdev[i]->obteData_inici());
-			laux->Add(llistaEsdev[i]->obteData_fi());
+			laux->Add(llistaEsdev[i]->obteData_inici().ToString());
+			laux->Add(llistaEsdev[i]->obteData_fi().ToString());
 			laux->Add((llistaEsdev[i]->obtePreu()).ToString());
 			_result->Add(laux);
 		}
@@ -26,8 +26,8 @@ void TxConsultaEsdeveniments::executar() {
 		for (int i = 0; i < llistaEsdev->Count; i++) {
 			List<System::String^>^ laux = gcnew List<System::String^>;
 			laux->Add(llistaEsdev[i]->obteNom());
-			laux->Add(llistaEsdev[i]->obteData_inici());
-			laux->Add(llistaEsdev[i]->obteData_fi());
+			laux->Add(llistaEsdev[i]->obteData_inici().ToString());
+			laux->Add(llistaEsdev[i]->obteData_fi().ToString());
 			laux->Add((llistaEsdev[i]->obtePreu()).ToString());
 			_result->Add(laux);
 		}

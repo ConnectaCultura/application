@@ -33,8 +33,8 @@ PassarelaEsdeveniment^ CercadoraEsdeveniment::CercaEsdeveniment(System::String^ 
 	if (dataReader->Read()) {
 		System::String^ nom= dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
-		System::String^ data_inici = dataReader->GetString(2);
-		System::String^ data_fi = dataReader->GetString(3);
+		System::DateTime data_inici = dataReader->GetDateTime(2);
+		System::DateTime data_fi = dataReader->GetDateTime(3);
 		int aforament = -1;
 		if (!dataReader->IsDBNull(4)) {
 			aforament = dataReader->GetInt32(4);
@@ -59,15 +59,15 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteTots() {
 		// Agafarem les columnes per �ndex, la primera �s la 0
 		System::String^ nom = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
-		System::String^ data_inici = dataReader->GetString(2);
-		System::String^ data_fi = dataReader->GetString(3);
+		System::DateTime data_inici = dataReader->GetDateTime(2);
+		System::DateTime data_fi = dataReader->GetDateTime(3);
 		int aforament = -1;
 		if (!dataReader->IsDBNull(4)) {
 			aforament = dataReader->GetInt32(4);
 		}
 		float preu = 0;
 		if (!dataReader->IsDBNull(5)) {
-			preu = dataReader->GetInt32(5);
+			preu = dataReader->GetFloat(5);
 		}
 		System::String^ tipus = dataReader->GetString(6);
 		System::String^ correu = dataReader->GetString(7);
@@ -85,8 +85,8 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteEsdevEntitat(System::St
 		// Agafarem les columnes per �ndex, la primera �s la 0
 		System::String^ nom = dataReader->GetString(0);
 		System::String^ descripcio = dataReader->GetString(1);
-		System::String^ data_inici = dataReader->GetString(2);
-		System::String^ data_fi = dataReader->GetString(3);
+		System::DateTime data_inici = dataReader->GetDateTime(2);
+		System::DateTime data_fi = dataReader->GetDateTime(3);
 		int aforament = -1;
 		if (!dataReader->IsDBNull(4)) {
 			aforament = dataReader->GetInt32(4);

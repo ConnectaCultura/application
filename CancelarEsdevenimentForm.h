@@ -20,6 +20,7 @@ namespace application {
 		CancelarEsdevenimentForm(String^ nom_esdev, String^ data_ini, String^ data_fi)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -87,6 +88,7 @@ namespace application {
 			this->Contrasenya_box->Name = L"Contrasenya_box";
 			this->Contrasenya_box->Size = System::Drawing::Size(127, 22);
 			this->Contrasenya_box->TabIndex = 2;
+			this->Contrasenya_box->PasswordChar = '*';
 			// 
 			// CancelarEsdevenimentForm
 			// 
