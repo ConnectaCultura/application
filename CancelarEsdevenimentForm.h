@@ -111,9 +111,23 @@ namespace application {
 
 	private: System::Void Acceptar_button_Click(System::Object^ sender, System::EventArgs^ e) {
 		TxComprobacontrasenya cc(Contrasenya_box->Text);
-		cc.executar();
+		try {
+			cc.executar();
+		}
+		catch (std::runtime_error e) {
+			MessageBox::Show("La contrasenya no es correcta no s'ha cancelat l'esdeveniment");
+		}
+		DateTime iniciDateTime = DateTime::Parse(data_ini);
+		System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 		TxCancelaEsdeveniment tx_Ce(nom_esdev, data_ini, data_fi);
-		tx_Ce.executar();
+		try {
+			tx_Ce.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+		this->Close();
+
 	}
 };
 }

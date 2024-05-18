@@ -9,13 +9,14 @@ TxCancelaEsdeveniment::TxCancelaEsdeveniment(System::String^ nom_esdev, System::
 
 void TxCancelaEsdeveniment::executar() {
 	CercadoraCompra cerca;
-
 	List<PassarelaCompra^>^ compres = cerca.CercaPerEsdeveniment(nom_esdev, data_ini, data_fi);
-	for (unsigned int i = 0; i < compres->Count; ++i) {
+
+	for (unsigned int i = 0; compres!=nullptr && i < compres->Count; ++i) {
 		TxCancelaCompra tx_CC(compres[i]->obteCorreuCiutada(), nom_esdev, data_ini, data_fi);
 		tx_CC.executar();
 	}
 	CercadoraEsdeveniment ce;
 	PassarelaEsdeveniment^ esborra = ce.CercaEsdeveniment(nom_esdev, data_ini, data_fi);
-	esborra->esborra();
+	if(esborra!=nullptr)
+		esborra->esborra();
 }

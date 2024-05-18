@@ -20,7 +20,7 @@ void TxConsultaEsdeveniments::executar() {
 			List<PassarelaEsdeveniment^>^ llistaEsdev = cEsdev.obteTots();
 			for (int i = 0; i < llistaEsdev->Count; i++) {
 				if (_antics || (!_antics && llistaEsdev[i]->obteData_fi() >= System::DateTime::Now)) {
-					if (!_gratuit || (_gratuit && (llistaEsdev[i]->obtePreu() == nullptr || *llistaEsdev[i]->obtePreu() == 0))) {
+					if (!_gratuit || (_gratuit && (llistaEsdev[i]->obtePreu() == nullptr || llistaEsdev[i]->obtePreu() == "0"))) {
 						if (!_senseEntrada || (_senseEntrada && llistaEsdev[i]->obtePreu() == nullptr)) {
 							List<System::String^>^ laux = gcnew List<System::String^>;
 							laux->Add(llistaEsdev[i]->obteNom());
@@ -37,7 +37,7 @@ void TxConsultaEsdeveniments::executar() {
 			List<PassarelaEsdeveniment^>^ llistaEsdev = cEsdev.obtePerNom(_nom);
 			for (int i = 0; i < llistaEsdev->Count; i++) {
 				if (_antics || (!_antics && llistaEsdev[i]->obteData_fi() >= System::DateTime::Now)) {
-					if (!_gratuit || (_gratuit && (llistaEsdev[i]->obtePreu() == nullptr || *llistaEsdev[i]->obtePreu() == 0))) {
+					if (!_gratuit || (_gratuit && (llistaEsdev[i]->obtePreu() == nullptr || llistaEsdev[i]->obtePreu() == "0"))) {
 						if (!_senseEntrada || (_senseEntrada && llistaEsdev[i]->obtePreu() == nullptr)) {
 							List<System::String^>^ laux = gcnew List<System::String^>;
 							laux->Add(llistaEsdev[i]->obteNom());

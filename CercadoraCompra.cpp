@@ -1,25 +1,13 @@
 #include "pch.h"
 #include "CercadoraCompra.h"
 
-List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi) {
-	
-	System::String^ dia = data_inici->Substring(0, 2);
-	System::String^ mes = data_inici->Substring(3, 2);
-	System::String^ año = data_inici->Substring(6, 4);
-
-	// Construir la nueva cadena con el formato deseado
-	System::String^ iniciMySQL = año + "-" + mes + "-" + dia + " 00:00:00";
-
-	System::String^ _dia = data_fi->Substring(0, 2);
-	System::String^ _mes = data_fi->Substring(3, 2);
-	System::String^ _año = data_fi->Substring(6, 4);
-
-	// Construir la nueva cadena con el formato deseado
-	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
-	
-	
+List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ esdeveniment, System::String^ inici, System::String^ fi) {
+	DateTime iniciDateTime = DateTime::Parse(inici);
+	DateTime fiDateTime = DateTime::Parse(fi);
+	System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Compra WHERE nomesdev= '"+ esdeveniment +"' && datainici = '"+ iniciMySQL + "' && datafi = '"+ fiMySQL + "';";
+	System::String^ sql = "SELECT * FROM Compra WHERE nomesdev= '"+ esdeveniment +"' && datainici = '"+ data_inici_sql + "' && datafi = '"+ data_fi_sql+ "';";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaCompra^>^ vt = gcnew List<PassarelaCompra^>();
 	while (dataReader->Read()) {
@@ -36,23 +24,14 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 	return vt;
 }
 
-PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi) {
-	System::String^ dia = data_inici->Substring(0, 2);
-	System::String^ mes = data_inici->Substring(3, 2);
-	System::String^ año = data_inici->Substring(6, 4);
-
-	// Construir la nueva cadena con el formato deseado
-	System::String^ iniciMySQL = año + "-" + mes + "-" + dia + " 00:00:00";
-
-	System::String^ _dia = data_fi->Substring(0, 2);
-	System::String^ _mes = data_fi->Substring(3, 2);
-	System::String^ _año = data_fi->Substring(6, 4);
-
-	// Construir la nueva cadena con el formato deseado
-	System::String^ fiMySQL = _año + "-" + _mes + "-" + _dia + " 00:00:00";
+PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::String^ esdeveniment, System::String^ inici, System::String^ fi) {
+	DateTime iniciDateTime = DateTime::Parse(inici);
+	DateTime fiDateTime = DateTime::Parse(fi);
+	System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + Ciutada + "'&& nomesdev = '" + esdeveniment + "' && datainici ='" + iniciMySQL + "' && datafi = '" + fiMySQL + "';";
+	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + Ciutada + "'&& nomesdev = '" + esdeveniment + "' && datainici ='" + data_inici_sql + "' && datafi = '" + data_fi_sql + "';";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	if (dataReader->Read()) {
 		System::String^ correuCiu = dataReader->GetString(0);

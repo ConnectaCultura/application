@@ -3,7 +3,7 @@
 #include "Sessio.h"
 using namespace MySql::Data::MySqlClient;
 
-PassarelaEsdeveniment::PassarelaEsdeveniment(System::String^ cE, System::String^ n, System::String^ des, System::DateTime data_ini, System::DateTime data_f, int^ afor, float^ p, System::String^ t) {
+PassarelaEsdeveniment::PassarelaEsdeveniment(System::String^ cE, System::String^ n, System::String^ des, System::DateTime data_ini, System::DateTime data_f, int^ afor, System::String^ p, System::String^ t) {
 	correu = cE;
 	nom = n;
 	descripcio = des;
@@ -48,7 +48,7 @@ System::DateTime PassarelaEsdeveniment::obteData_inici() {
 System::DateTime PassarelaEsdeveniment::obteData_fi() {
 	return data_fi;
 }
-float^ PassarelaEsdeveniment::obtePreu() {
+System::String^ PassarelaEsdeveniment::obtePreu() {
 	return preu;
 }
 

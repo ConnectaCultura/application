@@ -12,14 +12,18 @@ void TxConsultaEsdeveniment::executar() {
 	CercadoraEsdeveniment cEsd;
 	PassarelaEsdeveniment^ esdev = cEsd.CercaEsdeveniment(_nom, _inici, _fi);
 	CercadoraUsuari cEnt;
-	PassarelaUsuari^ us = cEnt.cercaUsuari(esdev->obteCorreu());
+	//PassarelaUsuari^ us = cEnt.cercaUsuari(esdev->obteCorreu());
 	List<System::String^>^ sol = gcnew List<System::String^>();
 	sol->Add(esdev->obteDescripcio());
-	//entitat organitzadora
 	sol->Add(esdev->obteCorreu());
 	sol->Add(esdev->obteTipus());
-	sol->Add(Convert::ToString(esdev->obtePreu()));
+	sol->Add(esdev->obtePreu());
 	sol->Add(Convert::ToString(esdev->obteAforament()));
+	// Entrades disponibles
+	/*
+	CercadoraCompra cC;
+	sol->Add(Convert::ToString(cC.numCompreEsd(_nom, _inici, _fi));
+	*/
 	_result = sol;
 	return;
 }

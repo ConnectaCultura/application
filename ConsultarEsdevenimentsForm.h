@@ -47,7 +47,7 @@ namespace application {
 			List<List<System::String^>^>^ ve = txEsdev.obteResultat();
 			for each (List<System::String^> ^ e in ve)
 			{
-				if (e[3] == "") EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Sense entrada");
+				if (e[3] == nullptr) EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Sense entrada");
 				else if (e[3] == "0") EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Gratuit");
 				else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
 			}
@@ -312,6 +312,7 @@ private: System::Void EsdevDataGrid_CellContentClick(System::Object^ sender, Sys
 		application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
 		Consulta_Esdeveniment->ShowDialog();
 	}
+	actualitzarForm();
 }
 
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {

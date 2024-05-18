@@ -131,6 +131,7 @@ namespace application {
 			// numericUpDown2
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
+			this->numericUpDown2->ImeMode = System::Windows::Forms::ImeMode::Disable;
 			this->numericUpDown2->Location = System::Drawing::Point(196, 361);
 			this->numericUpDown2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
@@ -250,11 +251,9 @@ namespace application {
 			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy HH:mm:ss";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(196, 140);
-			this->dateTimePicker1->MinDate = System::DateTime::Now;
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker1->TabIndex = 20;
-			this->dateTimePicker1->Value = System::DateTime::Now;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker1_ValueChanged);
 			// 
 			// dateTimePicker2
@@ -262,11 +261,9 @@ namespace application {
 			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy HH:mm:ss";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker2->Location = System::Drawing::Point(196, 186);
-			this->dateTimePicker2->MinDate = DateTime::Now;
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker2->TabIndex = 21;
-			this->dateTimePicker2->Value = DateTime::Now;
 			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker2_ValueChanged);
 			// 
 			// checkBox1
@@ -344,14 +341,16 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		}
 		System::String^ descripcio = this->richTextBox1->Text;
 		int^ aforament;
-		float^ preu;
+		System::String^ preu;
 		if (!checkBox1->Checked) {
 			aforament = nullptr;
 			preu = nullptr;
 		}
 		else {
 			aforament = Convert::ToInt32(this->numericUpDown1->Value);
-			preu = Convert::ToSingle(this->numericUpDown2->Value);
+			System::String^ valorStr = this->numericUpDown2->Value.ToString();
+			MessageBox::Show(valorStr);
+			preu = valorStr->Replace(',', '.');
 		}
 		System::String^ tipus = this->comboBox1->Text;
 		TxAltaEsdeveniment tx_ae(nom, descripcio, data_inici, data_fi, aforament, preu, tipus);
