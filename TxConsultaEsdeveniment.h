@@ -12,11 +12,11 @@ public:
 	TxConsultaEsdeveniment(String^ nom, String^ inici, String^ fi);
 	void executar();
 	List<System::String^>^ obteResultat();
+
 private:
 	String^ _nom;
 	String^ _inici;
 	String^ _fi;
-
 	List<System::String^>^ _result;
 };
 

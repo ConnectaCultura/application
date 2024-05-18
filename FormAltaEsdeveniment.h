@@ -24,6 +24,11 @@ namespace application {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			numericUpDown1->Visible = false;
+			label5->Visible = false;
+			numericUpDown2->Visible = false;
+			label6->Visible = false;
+			
 		}
 
 	protected:
@@ -63,6 +68,7 @@ namespace application {
 	private: System::Windows::Forms::Button^ buttonTorna;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 
 
 
@@ -81,7 +87,6 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FormAltaEsdeveniment::typeid));
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -98,6 +103,7 @@ namespace application {
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->SuspendLayout();
@@ -112,18 +118,20 @@ namespace application {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(196, 240);
+			this->numericUpDown1->Location = System::Drawing::Point(196, 319);
 			this->numericUpDown1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(112, 26);
 			this->numericUpDown1->TabIndex = 5;
+			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::numericUpDown1_ValueChanged);
 			// 
 			// numericUpDown2
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
-			this->numericUpDown2->Location = System::Drawing::Point(196, 295);
+			this->numericUpDown2->Location = System::Drawing::Point(196, 361);
 			this->numericUpDown2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -169,7 +177,7 @@ namespace application {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(31, 240);
+			this->label5->Location = System::Drawing::Point(29, 321);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(84, 20);
 			this->label5->TabIndex = 12;
@@ -178,7 +186,7 @@ namespace application {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(31, 297);
+			this->label6->Location = System::Drawing::Point(30, 363);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(42, 20);
 			this->label6->TabIndex = 13;
@@ -187,7 +195,7 @@ namespace application {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(31, 365);
+			this->label7->Location = System::Drawing::Point(29, 231);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(74, 20);
 			this->label7->TabIndex = 14;
@@ -216,7 +224,7 @@ namespace application {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(196, 357);
+			this->comboBox1->Location = System::Drawing::Point(195, 228);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(136, 28);
@@ -242,11 +250,11 @@ namespace application {
 			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy HH:mm:ss";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(196, 140);
-			this->dateTimePicker1->MinDate = System::DateTime::Now;  // data minima l'actual
+			this->dateTimePicker1->MinDate = System::DateTime::Now;
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker1->TabIndex = 20;
-			//this->dateTimePicker1->Value = System::DateTime(2024, 5, 18, 9, 4, 48, 785);
+			this->dateTimePicker1->Value = System::DateTime::Now;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker1_ValueChanged);
 			// 
 			// dateTimePicker2
@@ -254,18 +262,30 @@ namespace application {
 			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy HH:mm:ss";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker2->Location = System::Drawing::Point(196, 186);
-			this->dateTimePicker2->MinDate = System::DateTime::Now; // data minima l'actual
+			this->dateTimePicker2->MinDate = DateTime::Now;
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker2->TabIndex = 21;
-			//this->dateTimePicker2->Value = System::DateTime(2024, 5, 18, 9, 4, 48, 785);
+			this->dateTimePicker2->Value = DateTime::Now;
 			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker2_ValueChanged);
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(33, 269);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(230, 24);
+			this->checkBox1->TabIndex = 22;
+			this->checkBox1->Text = L"Esdeveniment amb entrada";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::checkBox1_CheckedChanged);
 			// 
 			// FormAltaEsdeveniment
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(571, 503);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->buttonTorna);
@@ -282,8 +302,6 @@ namespace application {
 			this->Controls->Add(this->numericUpDown2);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->textBox2);
-			//this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"FormAltaEsdeveniment";
 			this->Text = L"FormAltaEsdeveniment";
@@ -313,7 +331,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		// Comprovo que la data fi >= data inici
 		DateTime data_inici = this->dateTimePicker1->Value;
 		DateTime data_fi = this->dateTimePicker2->Value;
-		if (data_inici > data_fi)
+		if (data_inici >= data_fi)
 		{
 			MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 			return;
@@ -325,8 +343,16 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 			return;
 		}
 		System::String^ descripcio = this->richTextBox1->Text;
-		int aforament = Convert::ToInt32(this->numericUpDown1->Value);
-		float preu = Convert::ToSingle(this->numericUpDown2->Value);
+		int^ aforament;
+		float^ preu;
+		if (!checkBox1->Checked) {
+			aforament = nullptr;
+			preu = nullptr;
+		}
+		else {
+			aforament = Convert::ToInt32(this->numericUpDown1->Value);
+			preu = Convert::ToSingle(this->numericUpDown2->Value);
+		}
 		System::String^ tipus = this->comboBox1->Text;
 		TxAltaEsdeveniment tx_ae(nom, descripcio, data_inici, data_fi, aforament, preu, tipus);
 		try{
@@ -346,7 +372,7 @@ private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, Syste
 	DateTime endDateTime = this->dateTimePicker2->Value;
 
 	// Validation logic
-	if (startDateTime > endDateTime)
+	if (startDateTime >= endDateTime)
 	{
 		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 		return;
@@ -359,7 +385,7 @@ private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, Syste
 	DateTime endDateTime = this->dateTimePicker2->Value;
 
 	// Validation logic
-	if (startDateTime > endDateTime)
+	if (startDateTime >= endDateTime)
 	{
 		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 		return;
@@ -369,6 +395,21 @@ private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, Syste
 
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (checkBox1->Checked) {
+		label5->Visible = true;
+		numericUpDown1->Visible = true;
+		label6->Visible = true;
+		numericUpDown2->Visible = true;
+
+	}
+	else {
+		numericUpDown1->Visible = false;
+		label5->Visible = false;
+		numericUpDown2->Visible = false;
+		label6->Visible = false;
+	}
 }
 };
 }
