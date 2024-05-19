@@ -45,6 +45,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DataFiColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PreuColumn;
 	private: System::String^ _correuCiu;
+	private: System::Windows::Forms::Button^ TornaButton;
 
 	private:
 		/// <summary>
@@ -65,6 +66,7 @@ namespace application {
 			this->DataIniciColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->DataFiColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PreuColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -95,7 +97,7 @@ namespace application {
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(664, 273);
+			this->dataGridView1->Size = System::Drawing::Size(665, 217);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaCompresForm::dataGridView1_CellContentClick);
 			// 
@@ -131,11 +133,26 @@ namespace application {
 			this->PreuColumn->ReadOnly = true;
 			this->PreuColumn->Width = 150;
 			// 
+			// TornaButton
+			// 
+			this->TornaButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->TornaButton->Location = System::Drawing::Point(12, 323);
+			this->TornaButton->Name = L"TornaButton";
+			this->TornaButton->Size = System::Drawing::Size(75, 23);
+			this->TornaButton->TabIndex = 11;
+			this->TornaButton->Text = L"Torna";
+			this->TornaButton->UseVisualStyleBackColor = false;
+			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompresForm::TornaButton_Click);
+			// 
 			// ConsultaCompresForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(823, 358);
+			this->Controls->Add(this->TornaButton);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -174,6 +191,9 @@ private: System::Void ConsultaCompresForm_Load(System::Object^ sender, System::E
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

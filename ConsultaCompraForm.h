@@ -207,6 +207,7 @@ namespace application {
 			this->TornaButton->TabIndex = 10;
 			this->TornaButton->Text = L"Torna";
 			this->TornaButton->UseVisualStyleBackColor = false;
+			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::TornaButton_Click);
 			// 
 			// ConsultaCompraForm
 			// 
@@ -258,5 +259,8 @@ private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::Ev
 
 }
 
+private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }
