@@ -15,6 +15,7 @@ void TxConsultaCompres::executar() {
 		laux->Add(llistaCompra[i]->obteDataInici());
 		laux->Add(llistaCompra[i]->obteDataFi());
 		laux->Add((llistaCompra[i]->obtePreu()));
+		laux->Add((llistaCompra[i]->obteQuantitat()));
 		_result->Add(laux);
 	}
 }

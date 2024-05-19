@@ -1,6 +1,7 @@
 #pragma once
 #include "TxConsultaCompra.h"
 #include "Sessio.h"
+#include "CancelaCompraForm.h"
 
 namespace application {
 
@@ -62,11 +63,11 @@ namespace application {
 		String^ _nomEsdev;
 		String^ _dataInici;
 		String^ _dataFi;
-		String^ _preu;
 	private: System::Windows::Forms::Label^ QuantitatLabel;
 
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Button^ TornaButton;
+	private: System::Windows::Forms::Button^ CancelaCompraButton;
 
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -91,6 +92,7 @@ namespace application {
 			this->QuantitatLabel = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->TornaButton = (gcnew System::Windows::Forms::Button());
+			this->CancelaCompraButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -209,11 +211,26 @@ namespace application {
 			this->TornaButton->UseVisualStyleBackColor = false;
 			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::TornaButton_Click);
 			// 
+			// CancelaCompraButton
+			// 
+			this->CancelaCompraButton->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->CancelaCompraButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CancelaCompraButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->CancelaCompraButton->Location = System::Drawing::Point(230, 239);
+			this->CancelaCompraButton->Name = L"CancelaCompraButton";
+			this->CancelaCompraButton->Size = System::Drawing::Size(107, 23);
+			this->CancelaCompraButton->TabIndex = 11;
+			this->CancelaCompraButton->Text = L"CancelaCompra";
+			this->CancelaCompraButton->UseVisualStyleBackColor = false;
+			this->CancelaCompraButton->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::CancelaCompraButton_Click);
+			// 
 			// ConsultaCompraForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(349, 274);
+			this->Controls->Add(this->CancelaCompraButton);
 			this->Controls->Add(this->TornaButton);
 			this->Controls->Add(this->QuantitatLabel);
 			this->Controls->Add(this->label6);
@@ -251,7 +268,7 @@ private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::Ev
 		DataIniciLabel->Text = e[2];
 		DataFiLabel->Text = e[3];
 		PreuLabel->Text = e[4];
-		//QuantitatLabel->Text = e[5];
+		QuantitatLabel->Text = e[5];
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
@@ -260,6 +277,12 @@ private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::Ev
 }
 
 private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Sessio^ s = Sessio::getInstance();
+	application::CancelaCompraForm^ Cancela_Compra = gcnew application::CancelaCompraForm(s->obteUsuari()->obteCorreuElectronic(), esdevenimentLabel->Text, DataIniciLabel->Text, DataFiLabel->Text);
+	Cancela_Compra->ShowDialog();
 	this->Close();
 }
 };

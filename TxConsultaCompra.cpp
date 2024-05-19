@@ -18,6 +18,7 @@ void TxConsultaCompra::executar() {
 	sol->Add(_dataIni);
 	sol->Add(_dataFi);
 	sol->Add(pComp->obtePreu());
+	sol->Add(pComp->obteQuantitat());
 
 	_result = sol;
 	return;

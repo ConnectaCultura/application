@@ -17,7 +17,8 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 		System::String^ dataini = dataReader->GetString(2);
 		System::String^ datafi = dataReader->GetString(3);
 		System::String^ preu = dataReader->GetString(4);
-		vt->Add(gcnew PassarelaCompra (correu, nom, dataini, datafi, preu));
+		System::String^ quantitat = dataReader->GetString(5);
+		vt->Add(gcnew PassarelaCompra (correu, nom, dataini, datafi, preu, quantitat));
 	}
 	con->tancarConnexio();
 	return vt;
@@ -33,7 +34,8 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerCiutada(System::String^ ciutada
 		System::String^ dataini = dataReader->GetString(2);
 		System::String^ datafi = dataReader->GetString(3);
 		System::String^ preu = dataReader->GetString(4);
-		vt->Add(gcnew PassarelaCompra(correu, nom, dataini, datafi, preu));
+		System::String^ quantitat = dataReader->GetString(5);
+		vt->Add(gcnew PassarelaCompra(correu, nom, dataini, datafi, preu, quantitat));
 	}
 	con->tancarConnexio();
 	return vt;
@@ -54,12 +56,13 @@ PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::S
 		System::String^ esdeve = dataReader->GetString(1);
 		System::String^ dataini = dataReader->GetString(2);
 		System::String^ datafi = dataReader->GetString(3);
+		System::String^ quantitat = dataReader->GetString(5);
 		System::String^ preu = "0";
 		if (!dataReader->IsDBNull(4)) {
 			preu = dataReader->GetString(4);
 		}
 		con->tancarConnexio();
-		return gcnew PassarelaCompra(correuCiu, esdeve, dataini, datafi, preu);
+		return gcnew PassarelaCompra(correuCiu, esdeve, dataini, datafi, preu, quantitat);
 	}
 	else {
 		throw std::runtime_error("La compra no existeix");

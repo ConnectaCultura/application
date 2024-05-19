@@ -1,18 +1,16 @@
 #include "pch.h"
 #include "PassarelaCompra.h"
 
-PassarelaCompra::PassarelaCompra(System::String^ correuCiutada, System::String^ nomEsdev, System::String^ dataInici, System::String^ dataFi, System::String^ preuEntrada) {
+PassarelaCompra::PassarelaCompra(System::String^ correuCiutada, System::String^ nomEsdev, System::String^ dataInici, System::String^ dataFi, System::String^ preuEntrada, System::String^ quantitat) {
 	_correuCiutada = correuCiutada;
 	_nomEsdev = nomEsdev;
 	_dataInici = dataInici;
 	_dataFi = dataFi;
 	_preuEntrada = preuEntrada;
+	_quantitat = quantitat;
 }
 
 
-System::String^ PassarelaCompra::obtePreu() {
-	return _preuEntrada;
-}
 System::String^ PassarelaCompra::obteNomEsdev() {
 	return _nomEsdev;
 }
@@ -25,7 +23,12 @@ System::String^ PassarelaCompra::obteDataInici() {
 System::String^ PassarelaCompra::obteDataFi() {
 	return _dataFi;
 }
-//
+System::String^ PassarelaCompra::obtePreu() {
+	return _preuEntrada;
+}
+System::String^ PassarelaCompra::obteQuantitat() {
+	return _quantitat;
+}
 
 void PassarelaCompra::insereix() {
 	System::String^ sql;
@@ -35,11 +38,11 @@ void PassarelaCompra::insereix() {
 	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 	if (_preuEntrada == "0") {
 		sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" +
-			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "',NULL)";
+			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "', NULL, '" + _quantitat + "')";
 	}
 	else {
 		sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" +
-			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "','" + _preuEntrada + "')";
+			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "','" + _preuEntrada + "', '" + _quantitat + "')";
 	}
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
