@@ -456,7 +456,12 @@ namespace application {
 		if (DateTime::Parse(_fi) < now)
 			ComprarButton->Visible = false;
 		TxConsultaEsdeveniment txCE(_nom, _inici, _fi);
-		txCE.executar();
+		try {
+			txCE.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 		List<System::String^>^ ve = txCE.obteResultat();
 		this->descripcio->Text = ve[0];
 		this->correu->Text = ve[1];
@@ -487,7 +492,6 @@ private: System::Void ComprarButton_Click(System::Object^ sender, System::EventA
 		preuCompra = this->preu->Text;
 	}
 	System::String^ preuDef = preuCompra->Replace(',', '.');
-	MessageBox::Show(_nom);
 	TxCompraEntrada entrada(_nom, _inici, _fi, preuDef);
 	entrada.executar();
 	this->Close();
