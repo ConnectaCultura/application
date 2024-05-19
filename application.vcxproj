@@ -157,6 +157,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connexio.h" />
+    <ClInclude Include="ConsultaCompraForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ConsultaCompresForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ConsultaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -211,6 +217,8 @@
     <ClInclude Include="TxComprobacontrasenya.h" />
     <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntEsde.h" />
+    <ClInclude Include="TxConsultaCompra.h" />
+    <ClInclude Include="TxConsultaCompres.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
@@ -236,6 +244,8 @@
     <ClCompile Include="CancelarEsdevenimentForm.cpp" />
     <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
+    <ClCompile Include="ConsultaCompraForm.cpp" />
+    <ClCompile Include="ConsultaCompresForm.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
@@ -280,6 +290,8 @@
     <ClCompile Include="TxComprobacontrasenya.cpp" />
     <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntEsde.cpp" />
+    <ClCompile Include="TxConsultaCompra.cpp" />
+    <ClCompile Include="TxConsultaCompres.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
@@ -320,6 +332,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CancelarEsdevenimentForm.resx">
       <DependentUpon>CancelarEsdevenimentForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompraForm.resx">
+      <DependentUpon>ConsultaCompraForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompresForm.resx">
+      <DependentUpon>ConsultaCompresForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
       <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>

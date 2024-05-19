@@ -26,6 +26,7 @@ void TxConsultaEsdeveniment::executar() {
 		entradesDisp = *(esdev->obteAforament()) - entradesDisp;
 		sol->Add(Convert::ToString(entradesDisp));
 
+
 	}
 	_result = sol;
 	return;

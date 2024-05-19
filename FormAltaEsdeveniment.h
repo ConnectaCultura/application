@@ -22,7 +22,7 @@ namespace application {
 			InitializeComponent();
 			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 			numericUpDown1->Visible = false;
 			label5->Visible = false;
@@ -33,7 +33,7 @@ namespace application {
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~FormAltaEsdeveniment()
 		{
@@ -76,14 +76,14 @@ namespace application {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -155,7 +155,7 @@ namespace application {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(83, 20);
 			this->label2->TabIndex = 9;
-			this->label2->Text = L"Descripció";
+			this->label2->Text = L"DescripciÃ³";
 			// 
 			// label3
 			// 
@@ -330,7 +330,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		DateTime data_fi = this->dateTimePicker2->Value;
 		if (data_inici >= data_fi)
 		{
-			MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+			MessageBox::Show("La data d'acabament ha de ser mÃ©s tard que la de inici");
 			return;
 		}
 
@@ -362,7 +362,6 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 			MessageBox::Show("Aquest esdeveniment ja existeix, canvia el nom");
 			MessageBox::Show(ex->Message);
 		}
-
 	}
 private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
 // Comprovo que la data fi >= data inici
@@ -373,7 +372,7 @@ private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, Syste
 	// Validation logic
 	if (startDateTime >= endDateTime)
 	{
-		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+		MessageBox::Show("La data d'acabament ha de ser mÃ©s tard que la de inici");
 		return;
 	}
 }
@@ -386,7 +385,7 @@ private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, Syste
 	// Validation logic
 	if (startDateTime >= endDateTime)
 	{
-		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+		MessageBox::Show("La data d'acabament ha de ser mÃ©s tard que la de inici");
 		return;
 	}
 

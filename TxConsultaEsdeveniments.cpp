@@ -51,7 +51,7 @@ void TxConsultaEsdeveniments::executar() {
 			}
 		}
 	}
-	
+
 	else {
 		List<PassarelaEsdeveniment^>^ llistaEsdev = cEsdev.obteEsdevEntitat(_correu);
 		_result = gcnew List<List<System::String^>^>();

@@ -20,4 +20,3 @@ private:
 	String^ _fi;
 	List<System::String^>^ _result;
 };
-

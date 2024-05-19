@@ -61,6 +61,8 @@
     <ClCompile Include="VeurePerfilForm.cpp" />
     <ClCompile Include="TxConsultaEntEsde.cpp" />
     <ClCompile Include="TxExisteixCompra.cpp" />
+    <ClCompile Include="ConsultaCompraForm.cpp" />
+    <ClCompile Include="TxConsultaCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -84,6 +86,7 @@
     <ClInclude Include="Form1.h" />
     <ClInclude Include="FormConsultarAjuntament.h" />
     <ClInclude Include="LogInForm.h" />
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="ModificarEntitatForm.h" />
     <ClInclude Include="CancelaCompraForm.h" />
     <ClInclude Include="PassarelaAjuntament.h" />
@@ -122,6 +125,8 @@
     <ClInclude Include="VeurePerfilForm.h" />
     <ClInclude Include="TxConsultaEntEsde.h" />
     <ClInclude Include="TxExisteixCompra.h" />
+    <ClInclude Include="ConsultaCompraForm.h" />
+    <ClInclude Include="TxConsultaCompra.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

@@ -16,6 +16,7 @@
 #include "ConsultarEsdevenimentsForm.h"
 #include "ComprarEntradaForm.h"
 #include "CancelaCompraForm.h"
+#include "ConsultaCompresForm.h"
 
 namespace CppCLRWinFormsProject {
 
@@ -47,7 +48,7 @@ namespace CppCLRWinFormsProject {
 			ModificaEntitatButton->Visible = false;
 			esborrarUsuari->Visible = false;
 			veurePerfil->Visible = false;
-			
+			ConsultaCompresButton->Visible = false;
 		}
 		void ActualitzarForm1() {
 			Sessio^ s = Sessio::getInstance();
@@ -62,13 +63,13 @@ namespace CppCLRWinFormsProject {
 				esborrarUsuari->Visible = false;
 				veurePerfil->Visible = false;
 				CreaEsdeveniment->Visible = false;
-				
+				ConsultaCompresButton->Visible = false;
 			}
 			else {
 				logIn->Visible = false;
 				registreCiutada->Visible = false;
 				logOut->Visible = true;
-
+				ConsultaCompresButton->Visible = false;
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
 					CreaEsdeveniment->Visible = false;
@@ -88,6 +89,7 @@ namespace CppCLRWinFormsProject {
 				else {
 					esborrarUsuari->Visible = true;
 					veurePerfil->Visible = true;
+					ConsultaCompresButton->Visible = true;
 				}
 			}
 		}
@@ -123,6 +125,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ veurePerfil;
 	private: System::Windows::Forms::Button^ consultarEsdeveniments;
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::Button^ ConsultaCompresButton;
 
 
 
@@ -162,6 +165,7 @@ namespace CppCLRWinFormsProject {
 			this->veurePerfil = (gcnew System::Windows::Forms::Button());
 			this->consultarEsdeveniments = (gcnew System::Windows::Forms::Button());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->ConsultaCompresButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -388,6 +392,18 @@ namespace CppCLRWinFormsProject {
 			this->buttonTorna->Text = L"Surt";
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &Form1::buttonTorna_Click);
+      //
+			// ConsultaCompresButton
+			// 
+			this->ConsultaCompresButton->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->ConsultaCompresButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ConsultaCompresButton->Location = System::Drawing::Point(33, 475);
+			this->ConsultaCompresButton->Name = L"ConsultaCompresButton";
+			this->ConsultaCompresButton->Size = System::Drawing::Size(209, 36);
+			this->ConsultaCompresButton->TabIndex = 11;
+			this->ConsultaCompresButton->Text = L"Consulta Compres";
+			this->ConsultaCompresButton->UseVisualStyleBackColor = false;
+			this->ConsultaCompresButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaCompresButton_Click);
 			// 
 			// Form1
 			// 
@@ -395,7 +411,8 @@ namespace CppCLRWinFormsProject {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(517, 364);
-			this->Controls->Add(this->buttonTorna);
+      this->Controls->Add(this->buttonTorna);
+      this->Controls->Add(this->ConsultaCompresButton);
 			this->Controls->Add(this->consultarEsdeveniments);
 			this->Controls->Add(this->esborrarUsuari);
 			this->Controls->Add(this->veurePerfil);
@@ -530,6 +547,12 @@ private: System::Void altaAjuntament_Click(System::Object^ sender, System::Event
 }
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void ConsultaCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Sessio^ s = Sessio::getInstance();
+	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic());
+	CCompres->ShowDialog();
+	Form1::ActualitzarForm1();
 }
 };
 }

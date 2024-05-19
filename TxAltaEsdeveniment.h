@@ -20,4 +20,3 @@ private:
 	System::String^ preu;
 	System::String^ tipus;
 };
-
