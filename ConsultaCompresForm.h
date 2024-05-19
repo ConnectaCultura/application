@@ -73,24 +73,29 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(60, 66);
+			this->label1->Location = System::Drawing::Point(40, 43);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(265, 32);
+			this->label1->Size = System::Drawing::Size(180, 24);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Les meves compres";
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->EsdevenimentColumn,
 					this->DataIniciColumn, this->DataFiColumn, this->PreuColumn
 			});
-			this->dataGridView1->Location = System::Drawing::Point(68, 148);
+			this->dataGridView1->Location = System::Drawing::Point(45, 96);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(662, 420);
+			this->dataGridView1->Size = System::Drawing::Size(664, 273);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaCompresForm::dataGridView1_CellContentClick);
 			// 
@@ -99,6 +104,7 @@ namespace application {
 			this->EsdevenimentColumn->HeaderText = L"Esdeveniment";
 			this->EsdevenimentColumn->MinimumWidth = 8;
 			this->EsdevenimentColumn->Name = L"EsdevenimentColumn";
+			this->EsdevenimentColumn->ReadOnly = true;
 			this->EsdevenimentColumn->Width = 150;
 			// 
 			// DataIniciColumn
@@ -106,6 +112,7 @@ namespace application {
 			this->DataIniciColumn->HeaderText = L"Data Inici";
 			this->DataIniciColumn->MinimumWidth = 8;
 			this->DataIniciColumn->Name = L"DataIniciColumn";
+			this->DataIniciColumn->ReadOnly = true;
 			this->DataIniciColumn->Width = 150;
 			// 
 			// DataFiColumn
@@ -113,6 +120,7 @@ namespace application {
 			this->DataFiColumn->HeaderText = L"Data Fi";
 			this->DataFiColumn->MinimumWidth = 8;
 			this->DataFiColumn->Name = L"DataFiColumn";
+			this->DataFiColumn->ReadOnly = true;
 			this->DataFiColumn->Width = 150;
 			// 
 			// PreuColumn
@@ -120,15 +128,17 @@ namespace application {
 			this->PreuColumn->HeaderText = L"Preu";
 			this->PreuColumn->MinimumWidth = 8;
 			this->PreuColumn->Name = L"PreuColumn";
+			this->PreuColumn->ReadOnly = true;
 			this->PreuColumn->Width = 150;
 			// 
 			// ConsultaCompresForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(877, 636);
+			this->ClientSize = System::Drawing::Size(823, 358);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaCompresForm";
 			this->Text = L"ConsultaCompresForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaCompresForm::ConsultaCompresForm_Load);
@@ -144,9 +154,8 @@ namespace application {
 			String^ nom = dataGridView1->Rows[e->RowIndex]->Cells[0]->Value->ToString();
 			String^ inici = dataGridView1->Rows[e->RowIndex]->Cells[1]->Value->ToString();
 			String^ fi = dataGridView1->Rows[e->RowIndex]->Cells[2]->Value->ToString();
-			String^ preu = dataGridView1->Rows[e->RowIndex]->Cells[3]->Value->ToString();
 
-			application::ConsultaCompraForm^ Consulta_Compra = gcnew application::ConsultaCompraForm(nom, inici, fi, preu);
+			application::ConsultaCompraForm^ Consulta_Compra = gcnew application::ConsultaCompraForm(nom, inici, fi);
 			Consulta_Compra->ShowDialog();
 		}
 	}
