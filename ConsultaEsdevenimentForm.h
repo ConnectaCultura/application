@@ -599,7 +599,10 @@ namespace application {
 				MessageBox::Show(ex->Message);
 			}
 			int maxpunts = pc.obteResultat();
-			DescompteNumeric->Maximum = maxpunts;
+			System::String^ preuCompra = this->preu->Text;
+			System::Decimal preuc = System::Decimal::Parse(preuCompra);
+			preuc = preuc.Ceiling(preuc);
+			DescompteNumeric->Maximum = __min(maxpunts, preuc);
 		}
 	
 	}
@@ -614,6 +617,9 @@ private: System::Void ComprarButton_Click(System::Object^ sender, System::EventA
 		preuc = System::Decimal::Parse(preuCompra);
 		preuc = preuc * QuantitatNumeric->Value;
 		preuc = preuc.Subtract(preuc, DescompteNumeric->Value);
+		if (preuc < 0) {
+			preuc = 0;
+		}
 		preuCompra = preuc.ToString();
 	}
 	System::String^ preuDef = preuCompra->Replace(',', '.');

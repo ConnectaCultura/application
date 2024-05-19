@@ -26,6 +26,7 @@ namespace application {
 			_correuCiu = ciutada;
 		}
 		void actualitzaForm(void) {
+			dataGridView1->Rows->Clear();
 			TxConsultaCompres txCompres(_correuCiu);
 			try {
 				txCompres.executar();
