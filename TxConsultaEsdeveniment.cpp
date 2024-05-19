@@ -20,10 +20,10 @@ void TxConsultaEsdeveniment::executar() {
 	sol->Add(esdev->obtePreu());
 	sol->Add(Convert::ToString(esdev->obteAforament()));
 	// Entrades disponibles
-	/*
 	CercadoraCompra cC;
-	sol->Add(Convert::ToString(cC.numCompreEsd(_nom, _inici, _fi));
-	*/
+	int entradesDisp = (cC.CercaPerEsdeveniment(_nom, _inici, _fi))->Count;
+	entradesDisp = *(esdev->obteAforament()) - entradesDisp;
+	sol->Add(Convert::ToString(entradesDisp));
 	_result = sol;
 	return;
 }

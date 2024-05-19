@@ -349,7 +349,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		else {
 			aforament = Convert::ToInt32(this->numericUpDown1->Value);
 			System::String^ valorStr = this->numericUpDown2->Value.ToString();
-			MessageBox::Show(valorStr);
+			//MessageBox::Show(valorStr);
 			preu = valorStr->Replace(',', '.');
 		}
 		System::String^ tipus = this->comboBox1->Text;

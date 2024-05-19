@@ -2,7 +2,8 @@
 #include <list>
 #include "CercadoraEsdeveniment.h"
 #include "CercadoraUsuari.h"
-//#include "CercadoraCompra.h"
+#include "CercadoraCompra.h"
+
 using namespace System;
 using namespace System::Collections::Generic;
 

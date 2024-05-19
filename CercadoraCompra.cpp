@@ -16,7 +16,7 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 		System::String^ nom = dataReader->GetString(1);
 		System::String^ dataini = dataReader->GetString(2);
 		System::String^ datafi = dataReader->GetString(3);
-		float preu = Convert::ToSingle(dataReader->GetString(4));
+		System::String^ preu = dataReader->GetString(4);
 
 		vt->Add(gcnew PassarelaCompra (correu, nom, dataini, datafi, preu));
 	}
@@ -38,9 +38,9 @@ PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::S
 		System::String^ esdeve = dataReader->GetString(1);
 		System::String^ dataini = dataReader->GetString(2);
 		System::String^ datafi = dataReader->GetString(3);
-		float preu = 0;
+		System::String^ preu = "0";
 		if (!dataReader->IsDBNull(4)) {
-			preu = dataReader->GetFloat(4);
+			preu = dataReader->GetString(4);
 		}
 		con->tancarConnexio();
 		return gcnew PassarelaCompra(correuCiu, esdeve, dataini, datafi, preu);
@@ -48,4 +48,22 @@ PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::S
 	else {
 		throw std::runtime_error("La compra no existeix");
 	}
+}
+
+
+
+bool CercadoraCompra::existeix(System::String^ Ciutada, System::String^ esdeveniment, System::String^ inici, System::String^ fi) {
+	DateTime iniciDateTime = DateTime::Parse(inici);
+	DateTime fiDateTime = DateTime::Parse(fi);
+	System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+	Connexio^ con = Connexio::getInstance();
+	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + Ciutada + "'&& nomesdev = '" + esdeveniment + "' && datainici ='" + data_inici_sql + "' && datafi = '" + data_fi_sql + "';";
+	MySqlDataReader^ dataReader = con->executar(sql);
+	bool sol = false;
+	if (dataReader->Read()) {
+		sol = true;
+	}
+	con->tancarConnexio();
+	return sol;
 }

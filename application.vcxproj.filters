@@ -60,6 +60,7 @@
     <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
     <ClCompile Include="TxConsultaEntEsde.cpp" />
+    <ClCompile Include="TxExisteixCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="VeurePerfilForm.h" />
     <ClInclude Include="TxConsultaEntEsde.h" />
+    <ClInclude Include="TxExisteixCompra.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

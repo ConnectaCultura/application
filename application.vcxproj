@@ -217,6 +217,7 @@
     <ClInclude Include="TxConsultaEsdeveniment.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
+    <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
@@ -285,6 +286,7 @@
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
+    <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />

@@ -2,6 +2,7 @@
 #include "TxConsultaEsdeveniment.h"
 #include "TxCompraEntrada.h"
 #include "TxConsultaEntEsde.h"
+#include "TxExisteixCompra.h"
 #include "CancelarEsdevenimentForm.h"
 namespace application {
 
@@ -39,23 +40,25 @@ namespace application {
 				TxConsultaEntEsde cEE (s->obteUsuari()->obteCorreuElectronic(), _nom, _inici, _fi);
 				try {
 					cEE.executar();
-					if (cEE.obteResultat()) {
-						// Comprovo si l'esdeveniment pot ser cancel·lat o modificat -> si la dataHora actual > data_fi + dia
-						System::DateTime now = System::DateTime::Now;
-						System::TimeSpan twentyFourHours(24, 0, 0); // 24 horas
-						System::DateTime futureTime = now + twentyFourHours;
-						if (DateTime::Parse(_fi) < futureTime) _usuari = 0;
-						else _usuari = 3;
-					}
-					else _usuari = 0;
+					if (cEE.obteResultat())
+						_usuari = 3;
+					else 
+						_usuari = 0;
 				}
 				catch (MySqlException^ ex) {
 					MessageBox::Show(ex->Message);
 				}
 			}
 			else if (s->obteUsuari()->obteTipus() == "ciutada") {
-				//comprovar compras falta cercadora!!!
-
+				//comprovar si ja ha comprat aquest esdeveniment l'usuari
+				TxExisteixCompra txEC(s->obteUsuari()->obteCorreuElectronic(), _nom, _inici, _fi);
+				txEC.executar();
+				if (txEC.obteResultat()) {
+					_usuari = 2;
+				}
+				else {
+					_usuari = 1;
+				}
 			}
 		}
 
@@ -443,6 +446,15 @@ namespace application {
 		this->nom->Text = _nom;
 		this->inici->Text = _inici;
 		this->fi->Text=_fi;
+		System::DateTime now = System::DateTime::Now;
+		System::TimeSpan twentyFourHours(24, 0, 0); // 24 horas
+		System::DateTime futureTime = now + twentyFourHours;
+		if (DateTime::Parse(_inici) < futureTime) {
+			Cancel_button->Visible = false;
+			ModificarButton->Visible = false;
+		}
+		if (DateTime::Parse(_fi) < now)
+			ComprarButton->Visible = false;
 		TxConsultaEsdeveniment txCE(_nom, _inici, _fi);
 		txCE.executar();
 		List<System::String^>^ ve = txCE.obteResultat();
@@ -453,8 +465,8 @@ namespace application {
 			if (ve[3] == "0") this->preu->Text = "Gratuit";
 			else this->preu->Text = ve[3];
 			afMax->Text = ve[4];
-			//eDisp->Text = v[5];
-			// if(eDisp == 0) ComprarButton->Visible = false;
+			eDisp->Text = ve[5];
+			if(eDisp->Text == "0") ComprarButton->Visible = false;
 		}
 		else{
 			this->preu->Text = "Sense entrada";
@@ -467,17 +479,18 @@ namespace application {
 	
 	}
 private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*float preuCompra;
+	System::String^ preuCompra;
 	if (preu->Text == "Gratuit") {
-		preuCompra = 0;
+		preuCompra = "0";
 	}
 	else {
-		preuCompra = Convert::ToSingle(this->preu->Text);
+		preuCompra = this->preu->Text;
 	}
-	TxCompraEntrada entrada(nom->Text, data->Text, preuCompra);
+	System::String^ preuDef = preuCompra->Replace(',', '.');
+	MessageBox::Show(_nom);
+	TxCompraEntrada entrada(_nom, _inici, _fi, preuDef);
 	entrada.executar();
 	this->Close();
-	*/
 }
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();

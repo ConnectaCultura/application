@@ -16,8 +16,10 @@ void TxCancelaCompra::executar()
 	PassarelaCiutada^ ciu = cu.cercaCiutada(_correuCiutada);
 	CercadoraCompra cc;
 	PassarelaCompra^ com = cc.CercaCompra(_correuCiutada, _nomesdev, _datainici, _datafi);
-	int punts = Convert::ToInt32(com->obtePreu()/10.0);
-	ciu->setPunts(-punts);
+	double preuEntradaNumero = Convert::ToDouble(com->obtePreu());
+	double resultadoDivision = preuEntradaNumero / 10.0;
+	int resultadoFinal = Convert::ToInt32(resultadoDivision);
+	ciu->setPunts(-resultadoFinal);
 	ciu->modificaPunts();
 	com->esborra();
 }
