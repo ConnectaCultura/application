@@ -10,6 +10,8 @@ public:
 	CercadoraEsdeveniment() {}
 	PassarelaEsdeveniment^ CercaEsdeveniment(System::String^ nom, System::String^ inici, System::String^ fi);
 	List<PassarelaEsdeveniment^>^ obteTots();
+	bool existeix(System::String^ nomEnt, System::String^ nomE, System::String^ inici, System::String^ fi);
+	List<PassarelaEsdeveniment^>^ obtePerNom(System::String^ nom);
 	//List<PassarelaEntitat^>^ CercaTipus(System::String^ t);
 	List<PassarelaEsdeveniment^>^ obteEsdevEntitat(System::String^ correuEntitat);
 };

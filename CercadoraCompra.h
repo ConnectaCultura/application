@@ -13,5 +13,6 @@ public:
 	CercadoraCompra() {}
 	List<PassarelaCompra^>^ CercaPerEsdeveniment(System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi);
 	PassarelaCompra^ CercaCompra(System::String^ Ciutada, System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi);
+	bool existeix(System::String^ Ciutada, System::String^ esdeveniment, System::String^ data_inici, System::String^ data_fi);
 };
 

@@ -34,6 +34,40 @@ namespace application {
 			_correuEntitat = correu;
 		}
 
+		void actualitzarForm(void) {
+			EsdevDataGrid-> Rows->Clear();
+			System::String^ nomEsd = textBox1->Text;
+			TxConsultaEsdeveniments txEsdev(_correuEntitat, nomEsd, checkBox1->Checked, checkBox2->Checked, checkBox3->Checked);
+			try {
+				txEsdev.executar();
+			}
+			catch (MySqlException^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+			List<List<System::String^>^>^ ve = txEsdev.obteResultat();
+			for each (List<System::String^> ^ e in ve)
+			{
+				if (e[3] == nullptr) EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Sense entrada");
+				else if (e[3] == "0") EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Gratuit");
+				else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
+			}
+			ajustarAlcadaDataGrid();
+		}
+		void ajustarAlcadaDataGrid() {
+			int minHeight = 20;  // Altura mínima 
+			int maxHeight = 200;  // Altura máxima
+			int rowHeight = 30;
+			int rowCount = EsdevDataGrid->RowCount;
+			int totalHeight = (rowHeight) * (rowCount+1);
+
+			// Ajustar alçada dins dels limits desitjats
+			if (totalHeight < minHeight) 
+				EsdevDataGrid->Height = minHeight;
+			else if (totalHeight > maxHeight)
+				EsdevDataGrid->Height = maxHeight;
+			else
+				EsdevDataGrid->Height = totalHeight;
+		}
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -60,6 +94,12 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
 	private: System::String^ _correuEntitat;
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::CheckBox^ checkBox2;
+	private: System::Windows::Forms::CheckBox^ checkBox3;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 
 
@@ -87,6 +127,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConsultarEsdevenimentsForm::typeid));
 			this->EsdevDataGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Inici = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -94,7 +135,13 @@ namespace application {
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// EsdevDataGrid
@@ -106,13 +153,13 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(145, 75);
+			this->EsdevDataGrid->Location = System::Drawing::Point(51, 160);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(757, 212);
+			this->EsdevDataGrid->Size = System::Drawing::Size(852, 265);
 			this->EsdevDataGrid->TabIndex = 0;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
 			// 
@@ -123,7 +170,7 @@ namespace application {
 			this->Nom->MinimumWidth = 8;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
-			this->Nom->Width = 65;
+			this->Nom->Width = 78;
 			// 
 			// Inici
 			// 
@@ -154,9 +201,9 @@ namespace application {
 			this->Esdeveniments->AutoSize = true;
 			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Esdeveniments->Location = System::Drawing::Point(17, 20);
+			this->Esdeveniments->Location = System::Drawing::Point(19, 25);
 			this->Esdeveniments->Name = L"Esdeveniments";
-			this->Esdeveniments->Size = System::Drawing::Size(178, 29);
+			this->Esdeveniments->Size = System::Drawing::Size(209, 32);
 			this->Esdeveniments->TabIndex = 1;
 			this->Esdeveniments->Text = L"Esdeveniments";
 			// 
@@ -166,28 +213,86 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(12, 293);
+			this->buttonTorna->Location = System::Drawing::Point(12, 471);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->Size = System::Drawing::Size(120, 36);
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Torna";
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::buttonTorna_Click);
 			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(543, 55);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(360, 24);
+			this->checkBox1->TabIndex = 19;
+			this->checkBox1->Text = L"Mostra tots tambe els esdeveniments acabats";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::checkBox1_CheckedChanged);
+			// 
+			// checkBox2
+			// 
+			this->checkBox2->AutoSize = true;
+			this->checkBox2->Location = System::Drawing::Point(543, 85);
+			this->checkBox2->Name = L"checkBox2";
+			this->checkBox2->Size = System::Drawing::Size(92, 24);
+			this->checkBox2->TabIndex = 20;
+			this->checkBox2->Text = L"Gratuits";
+			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::checkBox2_CheckedChanged);
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->Location = System::Drawing::Point(543, 116);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(140, 24);
+			this->checkBox3->TabIndex = 21;
+			this->checkBox3->Text = L"Sense entrada";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::checkBox3_CheckedChanged);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(51, 94);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(356, 26);
+			this->textBox1->TabIndex = 22;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
+			this->pictureBox1->Location = System::Drawing::Point(413, 94);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(25, 26);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 23;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::pictureBox1_Click);
+			// 
 			// ConsultarEsdevenimentsForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1132, 333);
+			this->ClientSize = System::Drawing::Size(1274, 561);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->checkBox3);
+			this->Controls->Add(this->checkBox2);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultarEsdevenimentsForm";
-			this->Text = L"ConsultarEsdevenimentsForm";
+			this->Text = L"Esdeveniments";
 			this->Load += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::ConsultarEsdevenimentsForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -195,37 +300,39 @@ namespace application {
 
 
 #pragma endregion
-	private: System::Void ConsultarEsdevenimentsForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultaEsdeveniments txEsdev(_correuEntitat);
-		try {
-			txEsdev.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<List<System::String^>^>^ ve = txEsdev.obteResultat();
-		for each (List<System::String^> ^ e in ve)
-		{
-			if (e[3] == "0") EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Gratuit");
-			else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
-		}
+private: System::Void ConsultarEsdevenimentsForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
+}
+
+private: System::Void EsdevDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+		String^ nom = EsdevDataGrid->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+		String^ inici = EsdevDataGrid->Rows[e->RowIndex]->Cells[1]->Value->ToString();
+		String^ fi = EsdevDataGrid->Rows[e->RowIndex]->Cells[2]->Value->ToString();
+		application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
+		Consulta_Esdeveniment->ShowDialog();
 	}
-	private: System::Void EsdevDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
-			String^ nom = EsdevDataGrid->Rows[e->RowIndex]->Cells[0]->Value->ToString();
-			String^ inici = EsdevDataGrid->Rows[e->RowIndex]->Cells[1]->Value->ToString();
-			String^ fi = EsdevDataGrid->Rows[e->RowIndex]->Cells[2]->Value->ToString();
-			
-			application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
-			Consulta_Esdeveniment->ShowDialog();
+	actualitzarForm();
+}
 
-		}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
+}
 
 
-	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
+private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if(checkBox2->Checked) checkBox3->Checked=false;
+	actualitzarForm();
+}
+private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if(checkBox3->Checked) checkBox2->Checked = false;
+	actualitzarForm();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
+}
 };
 }
-

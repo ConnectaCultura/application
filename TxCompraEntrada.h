@@ -7,7 +7,7 @@
 ref class TxCompraEntrada
 {
 	public:
-		TxCompraEntrada(System::String^ nomEsdev, System::String^ data, float preuEntrada);
+		TxCompraEntrada(System::String^ nomEsdev, System::String^ data_inici, System::String^ data_fi, System::String^ preuEntrada);
 		void executar();
 		int puntsCompra();
 	
@@ -16,5 +16,5 @@ ref class TxCompraEntrada
 		System::String^ _nomEsdev;
 		System::String^ _dataInici;
 		System::String^ _dataFi;
-		float _preuEntrada;
+		System::String^ _preuEntrada;
 };
