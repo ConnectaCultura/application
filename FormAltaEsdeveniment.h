@@ -267,7 +267,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 	comboBox1->DataSource = tip.ObteResultat();
 }
 	private: System::Void Crea_Click(System::Object^ sender, System::EventArgs^ e) {
-		System::String^ nom = this->textBox2->Text;
+		/*System::String^ nom = this->textBox2->Text;
 		System::String^ descripcio = this->richTextBox1->Text;
 		System::String^ data_inici = this->textBox4->Text;
 		System::String^ data_fi = this->textBox5->Text;
@@ -283,7 +283,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-
+*/
 	}
 private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }

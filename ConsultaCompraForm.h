@@ -1,5 +1,5 @@
 #pragma once
-#include ""
+#include "TxConsultaCompra.h"
 
 namespace application {
 
@@ -188,6 +188,7 @@ namespace application {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }

@@ -8,14 +8,13 @@ TxConsultaCompres::TxConsultaCompres(System::String^ correu) {
 void TxConsultaCompres::executar() {
 	CercadoraCompra cComp;
 	List<PassarelaCompra^>^ llistaCompra = cComp.CercaPerCiutada(_correu);
-
 	_result = gcnew List<List<System::String^>^>();
 	for (int i = 0; i < llistaCompra->Count; i++) {
-		List<System::String^>^ laux = gcnew List<System::String^>;
+		List<System::String^>^ laux = gcnew List<System::String^>();
 		laux->Add(llistaCompra[i]->obteNomEsdev());
 		laux->Add(llistaCompra[i]->obteDataInici());
 		laux->Add(llistaCompra[i]->obteDataFi());
-		laux->Add((llistaCompra[i]->obtePreu()).ToString());
+		laux->Add((llistaCompra[i]->obtePreu()));
 		_result->Add(laux);
 	}
 }

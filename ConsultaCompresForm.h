@@ -71,11 +71,11 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Milky Matcha Personal Use", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(60, 66);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(376, 46);
+			this->label1->Size = System::Drawing::Size(265, 32);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Les meves compres";
 			// 
@@ -131,26 +131,13 @@ namespace application {
 			this->Controls->Add(this->label1);
 			this->Name = L"ConsultaCompresForm";
 			this->Text = L"ConsultaCompresForm";
+			this->Load += gcnew System::EventHandler(this, &ConsultaCompresForm::ConsultaCompresForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void ConsultarCompresForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultaCompres txCompres(_correuCiu);
-		try {
-			txCompres.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<List<System::String^>^>^ ve = txCompres.obteResultat();
-		for each (List<System::String^> ^ e in ve)
-		{
-			dataGridView1->Rows->Add(e[0], e[1], e[2], e[3]);
-		}
-	}
 
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
@@ -163,5 +150,21 @@ namespace application {
 			Consulta_Compra->ShowDialog();
 		}
 	}
+
+private: System::Void ConsultaCompresForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	TxConsultaCompres txCompres(_correuCiu);
+	try {
+		txCompres.executar();
+		List<List<System::String^>^>^ ve = txCompres.obteResultat();
+		for each (List<System::String^> ^ e in ve)
+		{
+			dataGridView1->Rows->Add(e[0], e[1], e[2], e[3]);
+		}
+
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
 };
 }

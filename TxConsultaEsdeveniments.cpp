@@ -6,7 +6,7 @@ TxConsultaEsdeveniments::TxConsultaEsdeveniments(System::String^ correu) {
 }
 
 void TxConsultaEsdeveniments::executar() {
-	CercadoraEsdeveniment cEsdev;
+	/*CercadoraEsdeveniment cEsdev;
 	//if (_correu == "") {
 		List<PassarelaEsdeveniment^>^ llistaEsdev = cEsdev.obteTots();
 		_result = gcnew List<List<System::String^>^>();
@@ -15,10 +15,11 @@ void TxConsultaEsdeveniments::executar() {
 			laux->Add(llistaEsdev[i]->obteNom());
 			laux->Add(llistaEsdev[i]->obteData_inici());
 			laux->Add(llistaEsdev[i]->obteData_fi());
-			laux->Add((llistaEsdev[i]->obtePreu()).ToString());
+			laux->Add((llistaEsdev[i]->obtePreu()));
 			_result->Add(laux);
 		}
 	//}
+	*/
 	/*
 	else {
 		List<PassarelaEsdeveniment^>^ llistaEsdev = cEsdev.obteEsdevEntitat(_correu);

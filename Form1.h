@@ -458,7 +458,8 @@ private: System::Void altaAjuntament_Click(System::Object^ sender, System::Event
 	Form1::ActualitzarForm1();
 }
 private: System::Void ConsultaCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm();
+	Sessio^ s = Sessio::getInstance();
+	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic());
 	CCompres->ShowDialog();
 	Form1::ActualitzarForm1();
 }

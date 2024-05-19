@@ -336,20 +336,7 @@ namespace application {
 	
 	}
 private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	float preuCompra;
-	if (preu->Text == "Gratuit") {
-		preuCompra = 0;
-	}
-	else {
-		preuCompra = Convert::ToSingle(this->preu->Text);
-	}
-	//Error amb el preu o algo MySql.Data.MySqlClient.MySqlException (0x80004005): Cannot add or update a 
-	// child row: a foreign key constraint fails (`amep09`.`Compra`, CONSTRAINT `Compra_ibfk_5` 
-	// FOREIGN KEY (`preu`) REFERENCES `Esdeveniment` (`preu`))
-	//Quan detecto que te que ser un ciutada
-	TxCompraEntrada entrada(nom->Text, data->Text, preuCompra);
-	entrada.executar();
-	this->Close();
+
 
 }
 };

@@ -17,7 +17,7 @@ void TxConsultaCompra::executar() {
 	sol->Add(_nomEsdev);
 	sol->Add(_dataIni);
 	sol->Add(_dataFi);
-	sol->Add(pComp.obtePreu().ToString());
+	sol->Add(pComp->obtePreu());
 
 	_result = sol;
 	return;

@@ -18,8 +18,8 @@ void TxConsultaEsdeveniment::executar() {
 	//entitat organitzadora
 	sol->Add(esdev->obteCorreu());
 	sol->Add(esdev->obteTipus());
-	sol->Add((esdev->obtePreu()).ToString());
-	sol->Add((esdev->obteAforament()).ToString());
+	sol->Add((esdev->obtePreu()));
+	sol->Add((esdev->obteAforament())->ToString());
 
 	//Quan es crei les compres
 	//CercadoraCompres cC;

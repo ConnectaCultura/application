@@ -3,7 +3,7 @@
 #include "Sessio.h"
 using namespace MySql::Data::MySqlClient;
 
-PassarelaEsdeveniment::PassarelaEsdeveniment(System::String^ cE, System::String^ n, System::String^ des, System::String^ data_ini, System::String^ data_f, int afor, float p, System::String^ t) {
+PassarelaEsdeveniment::PassarelaEsdeveniment(System::String^ cE, System::String^ n, System::String^ des, System::DateTime data_ini, System::DateTime data_f, int^ afor, System::String^ p, System::String^ t) {
 	correu = cE;
 	nom = n;
 	descripcio = des;
@@ -15,7 +15,25 @@ PassarelaEsdeveniment::PassarelaEsdeveniment(System::String^ cE, System::String^
 }
 
 void PassarelaEsdeveniment::insereix() {
-	System::String^ sql = "INSERT INTO Esdeveniment VALUES ( '" + nom + "', '" + descripcio + "', '" + data_inici + "', '" + data_fi + "', '" + aforament + "', '" + preu +"', '"+ tipus + "', '" + correu +"')";
+	System::String^ data_inici_sql = data_inici.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ data_fi_sql = data_fi.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ sql;
+	if (aforament != nullptr) {
+		sql = "INSERT INTO Esdeveniment VALUES ( '" + nom + "', '" + descripcio + "', '" + data_inici_sql + "', '" + data_fi_sql + "', '" + aforament + "', '" + preu + "', '" + tipus + "', '" + correu + "')";
+	}
+	else {
+		sql = "INSERT INTO Esdeveniment VALUES ( '" + nom + "', '" + descripcio + "', '" + data_inici_sql + "', '" + data_fi_sql + "', NULL, NULL, '" + tipus + "', '" + correu + "')";
+
+	}
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
+
+void PassarelaEsdeveniment::esborra() {
+	System::String^ data_inici_sql = data_inici.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ data_fi_sql = data_fi.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ sql = "DELETE FROM Esdeveniment WHERE nom='" + nom + "' AND data_inici='" + data_inici_sql + "' AND data_fi='" + data_fi_sql + "'";
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
@@ -24,17 +42,17 @@ void PassarelaEsdeveniment::insereix() {
 System::String^ PassarelaEsdeveniment::obteNom() {
 	return nom;
 }
-System::String^ PassarelaEsdeveniment::obteData_inici() {
+System::DateTime PassarelaEsdeveniment::obteData_inici() {
 	return data_inici;
 }
-System::String^ PassarelaEsdeveniment::obteData_fi() {
+System::DateTime PassarelaEsdeveniment::obteData_fi() {
 	return data_fi;
 }
-float PassarelaEsdeveniment::obtePreu() {
+System::String^ PassarelaEsdeveniment::obtePreu() {
 	return preu;
 }
 
-int PassarelaEsdeveniment::obteAforament() {
+int^ PassarelaEsdeveniment::obteAforament() {
 	return aforament;
 }
 
