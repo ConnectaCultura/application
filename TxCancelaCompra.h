@@ -16,7 +16,7 @@ private:
 	System::String^ _datafi;
 
 public:
-	TxCancelaCompra(System::String^ contrasenya, System::String^ correuCiutada, System::String^ nomesdev, System::String^ datainici, System::String^ datafi);
+	TxCancelaCompra(System::String^ correuCiutada, System::String^ nomesdev, System::String^ datainici, System::String^ datafi);
 	void executar();
 };
 

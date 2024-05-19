@@ -20,6 +20,7 @@ namespace application {
 		AltaAjuntamentForm(void)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -54,6 +55,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ labelTelefon;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownPostal;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownTelefon;
+	private: System::Windows::Forms::Button^ buttonTorna;
 
 
 	protected:
@@ -82,6 +84,7 @@ namespace application {
 			this->labelTelefon = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownPostal = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDownTelefon = (gcnew System::Windows::Forms::NumericUpDown());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownPostal))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTelefon))->BeginInit();
 			this->SuspendLayout();
@@ -143,6 +146,7 @@ namespace application {
 			this->textBoxContra->Name = L"textBoxContra";
 			this->textBoxContra->Size = System::Drawing::Size(183, 22);
 			this->textBoxContra->TabIndex = 10;
+			this->textBoxContra->PasswordChar = '*';
 			// 
 			// button1
 			// 
@@ -197,11 +201,27 @@ namespace application {
 			this->numericUpDownTelefon->Size = System::Drawing::Size(183, 22);
 			this->numericUpDownTelefon->TabIndex = 15;
 			// 
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(39, 295);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->TabIndex = 16;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &AltaAjuntamentForm::buttonTorna_Click);
+			// 
 			// AltaAjuntamentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(461, 355);
+			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->numericUpDownTelefon);
 			this->Controls->Add(this->numericUpDownPostal);
 			this->Controls->Add(this->labelTelefon);
@@ -237,7 +257,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		this->Close();
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::Show("Error en la crecio d'usuai");
+		MessageBox::
+			("Error en la crecio d'usuai");
 	}
 	catch (std::runtime_error e) {
 		MessageBox::Show(gcnew System::String(e.what()));
@@ -246,6 +267,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 private: System::Void textBoxNom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close(); 
 }
 };
 }

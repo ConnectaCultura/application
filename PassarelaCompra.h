@@ -23,5 +23,4 @@ ref class PassarelaCompra
 
 		void insereix();
 		void esborra();
-  
 };

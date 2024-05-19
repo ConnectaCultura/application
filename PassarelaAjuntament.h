@@ -14,10 +14,5 @@ public:
 	int obteTelefon();
 	System::String^ obteCorreuElectronic();
 	void insereix();
-
-
-
-
-
 };
 

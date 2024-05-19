@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "PassarelaAjuntament.h"
 
-
 PassarelaAjuntament::PassarelaAjuntament(System::String^ cE, int nP, int nT) {
 	_correuElectronic = cE;
 	_numeroPostal = nP;

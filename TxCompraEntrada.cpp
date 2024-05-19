@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "TxCompraEntrada.h"
 
-TxCompraEntrada::TxCompraEntrada(System::String^ nomEsdev, System::String^ data_inici, System::String^ data_fi, System::String^ preuEntrada) {
+TxCompraEntrada::TxCompraEntrada(System::String^ nomEsdev, System::String^ data_inici, System::String^ data_fi, System::String^ preuEntrada){
 	Sessio^ s = Sessio::getInstance();
 	PassarelaUsuari^ u = s->obteUsuari();
 	_correuCiutada = u->obteCorreuElectronic();

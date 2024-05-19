@@ -4,10 +4,14 @@
     <ClCompile Include="AltaAjuntamentForm.cpp" />
     <ClCompile Include="AltaEntitatForm.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="BaixaCiutadaForm.cpp" />
+    <ClCompile Include="CancelarEsdevenimentForm.cpp" />
+    <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
+    <ClCompile Include="FormConsultarAjuntament.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
     <ClCompile Include="BaixaEntitatForm.cpp" />
     <ClCompile Include="CercadoraCompra.cpp" />
@@ -30,15 +34,20 @@
     <ClCompile Include="CercadoraTipus.cpp" />
     <ClCompile Include="ConsultaEntitats.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="TxBaixaCiutada.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
     <ClCompile Include="RegistreCiutadaForm.cpp" />
     <ClCompile Include="Sessio.cpp" />
     <ClCompile Include="TxAltaAjuntament.cpp" />
     <ClCompile Include="TxAltaEntitat.cpp" />
     <ClCompile Include="TxBaixaEntitat.cpp" />
+    <ClCompile Include="TxCancelaEsdeveniment.cpp" />
     <ClCompile Include="TxCompraEntrada.cpp" />
     <ClCompile Include="TxCancelaCompra.cpp" />
+    <ClCompile Include="TxComprobacontrasenya.cpp" />
+    <ClCompile Include="TxConsultaAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
+    <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
@@ -50,13 +59,18 @@
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
+    <ClCompile Include="TxConsultaEntEsde.cpp" />
+    <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="TxConsultaCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
     <ClInclude Include="AltaEntitatForm.h" />
+    <ClInclude Include="BaixaCiutadaForm.h" />
     <ClInclude Include="BaixaEntitatForm.h" />
+    <ClInclude Include="CancelarEsdevenimentForm.h" />
+    <ClInclude Include="CercadoraAjuntament.h" />
     <ClInclude Include="CercadoraCiutada.h" />
     <ClInclude Include="CercadoraCompra.h" />
     <ClInclude Include="CercadoraEntitat.h" />
@@ -70,10 +84,12 @@
     <ClInclude Include="ConsultaEsdevenimentForm.h" />
     <ClInclude Include="ConsultarEsdevenimentsForm.h" />
     <ClInclude Include="Form1.h" />
+    <ClInclude Include="FormConsultarAjuntament.h" />
     <ClInclude Include="LogInForm.h" />
     <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="ModificarEntitatForm.h" />
     <ClInclude Include="CancelaCompraForm.h" />
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="PassarelaCiutada.h" />
     <ClInclude Include="PassarelaCompra.h" />
     <ClInclude Include="PassarelaEntitat.h" />
@@ -87,10 +103,15 @@
     <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxAltaEntitat.h" />
+    <ClInclude Include="TxBaixaCiutada.h" />
     <ClInclude Include="TxBaixaEntitat.h" />
+    <ClInclude Include="TxCancelaEsdeveniment.h" />
     <ClInclude Include="TxCompraEntrada.h" />
     <ClInclude Include="TxCancelaCompra.h" />
+    <ClInclude Include="TxComprobacontrasenya.h" />
+    <ClInclude Include="TxConsultaAjuntament.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
+    <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
@@ -102,6 +123,8 @@
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="VeurePerfilForm.h" />
+    <ClInclude Include="TxConsultaEntEsde.h" />
+    <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="ConsultaCompraForm.h" />
     <ClInclude Include="TxConsultaCompra.h" />
   </ItemGroup>
@@ -109,6 +132,8 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\Downloads\logo.ico" />
     <Image Include="app.ico" />
+    <Image Include="lupa.png" />
   </ItemGroup>
 </Project>
