@@ -398,7 +398,6 @@ namespace application {
 				}
 			}
 			catch (std::runtime_error ex) {
-				MessageBox::Show(gcnew System::String(ex.what()));
 			}
 		}
 		else {
