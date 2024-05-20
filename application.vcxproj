@@ -152,6 +152,7 @@
     <ClInclude Include="CercadoraCompra.h" />
     <ClInclude Include="CercadoraEntitat.h" />
     <ClInclude Include="CercadoraEsdeveniment.h" />
+    <ClInclude Include="CercadoraFavorita.h" />
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="ComprarEntradaForm.h">
       <FileType>CppForm</FileType>
@@ -193,6 +194,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarelaEsdeveniment.h" />
+    <ClInclude Include="PassarelaFavorita.h" />
     <ClInclude Include="PassarelaUsuari.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RegistreCiutadaForm.h">
@@ -200,6 +202,7 @@
     </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TxAfegirFavorita.h" />
     <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
     <ClInclude Include="TxAltaEntitat.h" />
@@ -215,7 +218,9 @@
     <ClInclude Include="TxConsultaEntitatsNom.h" />
     <ClInclude Include="TxConsultaEsdeveniment.h" />
     <ClInclude Include="TxConsultaEsdeveniments.h" />
+    <ClInclude Include="TxConsultaFavorita.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
+    <ClInclude Include="TxEsborrarFavorita.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
@@ -234,6 +239,7 @@
     <ClCompile Include="CancelarEsdevenimentForm.cpp" />
     <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
+    <ClCompile Include="CercadoraFavorita.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
@@ -256,6 +262,7 @@
     <ClCompile Include="PassarelaCiutada.cpp" />
     <ClCompile Include="PassarelaCompra.cpp" />
     <ClCompile Include="PassarelaEntitat.cpp" />
+    <ClCompile Include="PassarelaFavorita.cpp" />
     <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="CercadoraTipus.cpp" />
     <ClCompile Include="ConsultaEntitats.cpp" />
@@ -265,6 +272,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TxAfegirFavorita.cpp" />
     <ClCompile Include="TxBaixaCiutada.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
     <ClCompile Include="RegistreCiutadaForm.cpp" />
@@ -282,7 +290,9 @@
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
     <ClCompile Include="TxConsultaEsdeveniment.cpp" />
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
+    <ClCompile Include="TxConsultaFavorita.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
+    <ClCompile Include="TxEsborrarFavorita.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
