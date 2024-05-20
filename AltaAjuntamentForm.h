@@ -20,6 +20,7 @@ namespace application {
 		AltaAjuntamentForm(void)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -256,7 +257,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		this->Close();
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::Show("Error en la crecio d'usuai");
+		MessageBox::Show("Error en la crecio d'usuari");
 	}
 	catch (std::runtime_error e) {
 		MessageBox::Show(gcnew System::String(e.what()));

@@ -34,6 +34,7 @@ namespace application {
 		{
 			
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			this->_CorreuEntitat = ce;
 
 			//
@@ -368,7 +369,7 @@ namespace application {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
 
-		TxConsultaEsdeveniments txEsdev(_CorreuEntitat);
+		TxConsultaEsdeveniments txEsdev(_CorreuEntitat,"", 1, 1, 1); //CAL CANVIAR AIXOOOOOO
 		try {
 			txEsdev.executar();
 		}

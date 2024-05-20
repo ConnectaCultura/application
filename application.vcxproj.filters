@@ -64,6 +64,10 @@
     <ClCompile Include="TxConsultaFavorita.cpp" />
     <ClCompile Include="TxAfegirFavorita.cpp" />
     <ClCompile Include="TxEsborrarFavorita.cpp" />
+    <ClCompile Include="TxConsultaEntEsde.cpp" />
+    <ClCompile Include="TxExisteixCompra.cpp" />
+    <ClCompile Include="ConsultaCompraForm.cpp" />
+    <ClCompile Include="TxConsultaCompra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -87,6 +91,7 @@
     <ClInclude Include="Form1.h" />
     <ClInclude Include="FormConsultarAjuntament.h" />
     <ClInclude Include="LogInForm.h" />
+    <ClInclude Include="PassarelaAjuntament.h" />
     <ClInclude Include="ModificarEntitatForm.h" />
     <ClInclude Include="CancelaCompraForm.h" />
     <ClInclude Include="PassarelaAjuntament.h" />
@@ -128,11 +133,17 @@
     <ClInclude Include="TxConsultaFavorita.h" />
     <ClInclude Include="TxAfegirFavorita.h" />
     <ClInclude Include="TxEsborrarFavorita.h" />
+    <ClInclude Include="TxConsultaEntEsde.h" />
+    <ClInclude Include="TxExisteixCompra.h" />
+    <ClInclude Include="ConsultaCompraForm.h" />
+    <ClInclude Include="TxConsultaCompra.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\Downloads\logo.ico" />
     <Image Include="app.ico" />
+    <Image Include="lupa.png" />
   </ItemGroup>
 </Project>

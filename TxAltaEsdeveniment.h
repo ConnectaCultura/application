@@ -8,16 +8,15 @@ ref class TxAltaEsdeveniment
 {
 
 public:
-	TxAltaEsdeveniment(System::String^ n, System::String^ des, System::String^ data_ini, System::String^ data_f, int afor, float p, System::String^ tipus);
+	TxAltaEsdeveniment(System::String^ n, System::String^ des, System::DateTime data_ini, System::DateTime data_f, int^ afor, System::String^ p, System::String^ tipus);
 	void executar();
 
 private:
 	System::String^ nom;
 	System::String^ descripcio;
-	System::String^ data_inici;
-	System::String^ data_fi;
-	int aforament;
-	float preu;
+	System::DateTime data_inici;
+	System::DateTime data_fi;
+	int^ aforament;
+	System::String^ preu;
 	System::String^ tipus;
 };
-

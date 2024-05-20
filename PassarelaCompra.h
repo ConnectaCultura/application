@@ -8,18 +8,20 @@ ref class PassarelaCompra
 		System::String^ _nomEsdev;
 		System::String^ _dataInici;
 		System::String^ _dataFi;
-		float _preuEntrada;
+		System::String^ _preuEntrada;
+		System::String^ _quantitat;
 
 	public:
 		PassarelaCompra() {}
-		PassarelaCompra(System::String^ correuCiutada, System::String^ nomEsdev, System::String^ dataInici, System::String^ dataFi, float preuEntrada);
+		PassarelaCompra(System::String^ correuCiutada, System::String^ nomEsdev, System::String^ dataInici, System::String^ dataFi, System::String^ preuEntrada, System::String^ quantitat);
 		~PassarelaCompra(){}
 
-		float obtePreu();
 		System::String^ obteNomEsdev();
 		System::String^ obteCorreuCiutada();
 		System::String^ obteDataInici();
 		System::String^ obteDataFi();
+		System::String^ obtePreu();
+		System::String^ obteQuantitat();
 
 		void insereix();
 		void esborra();
