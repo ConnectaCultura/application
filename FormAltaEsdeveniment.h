@@ -255,6 +255,7 @@ namespace application {
 			this->dateTimePicker1->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker1->TabIndex = 20;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker1_ValueChanged);
+			this->dateTimePicker1->MinDate = DateTime::Now;
 			// 
 			// dateTimePicker2
 			// 
@@ -265,6 +266,7 @@ namespace application {
 			this->dateTimePicker2->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker2->TabIndex = 21;
 			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker2_ValueChanged);
+			this->dateTimePicker1->MinDate = DateTime::Now;
 			// 
 			// checkBox1
 			// 
@@ -330,7 +332,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 		DateTime data_fi = this->dateTimePicker2->Value;
 		if (data_inici >= data_fi)
 		{
-			MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+			MessageBox::Show("La data d'acabament ha de ser mes tard que la de inici");
 			return;
 		}
 
@@ -363,19 +365,19 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 			MessageBox::Show(ex->Message);
 		}
 	}
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
-// Comprovo que la data fi >= data inici
-{
-	DateTime startDateTime = this->dateTimePicker1->Value;
-	DateTime endDateTime = this->dateTimePicker2->Value;
-
-	// Validation logic
-	if (startDateTime >= endDateTime)
+	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e)
+		// Comprovo que la data fi >= data inici
 	{
-		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
-		return;
+		DateTime startDateTime = this->dateTimePicker1->Value;
+		DateTime endDateTime = this->dateTimePicker2->Value;
+
+		// Validation logic
+		if (startDateTime >= endDateTime)
+		{
+			//MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+			return;
+		}
 	}
-}
 private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 // Comprovo que la data fi >= data inici
 {
@@ -385,7 +387,7 @@ private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, Syste
 	// Validation logic
 	if (startDateTime >= endDateTime)
 	{
-		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+		//MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 		return;
 	}
 
