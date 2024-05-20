@@ -64,6 +64,22 @@ namespace application {
 				}
 			}
 		}
+		void CheckQuantitat(int quantitat) {
+			Sessio^ s = Sessio::getInstance();
+			TxPuntsCiutada pc(s->obteUsuari()->obteCorreuElectronic());
+			try {
+				pc.executar();
+			}
+			catch (MySqlException^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+			int maxpunts = pc.obteResultat();
+			System::String^ preuCompra = this->preu->Text;
+			System::Decimal preuc = System::Decimal::Parse(preuCompra);
+			preuc = preuc.Ceiling(preuc);
+			preuc = preuc * quantitat;
+			DescompteNumeric->Maximum = __min(maxpunts, preuc);
+		}
 
 	protected:
 		/// <summary>
@@ -432,6 +448,7 @@ namespace application {
 			this->QuantitatNumeric->Size = System::Drawing::Size(30, 20);
 			this->QuantitatNumeric->TabIndex = 24;
 			this->QuantitatNumeric->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->QuantitatNumeric->ValueChanged += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::QuantitatNumeric_ValueChanged);
 			// 
 			// DescompteNumeric
 			// 
@@ -590,19 +607,7 @@ namespace application {
 			eDisp->Visible = false;
 		}
 		if (DescompteNumeric->Visible == true) {
-			Sessio^ s = Sessio::getInstance();
-			TxPuntsCiutada pc(s->obteUsuari()->obteCorreuElectronic());
-			try {
-				pc.executar();
-			}
-			catch (MySqlException^ ex) {
-				MessageBox::Show(ex->Message);
-			}
-			int maxpunts = pc.obteResultat();
-			System::String^ preuCompra = this->preu->Text;
-			System::Decimal preuc = System::Decimal::Parse(preuCompra);
-			preuc = preuc.Ceiling(preuc);
-			DescompteNumeric->Maximum = __min(maxpunts, preuc);
+			CheckQuantitat(QuantitatNumeric->Value.ToInt32(QuantitatNumeric->Value));
 		}
 	
 	}
@@ -650,6 +655,9 @@ private: System::Void VeureCompraButton_Click(System::Object^ sender, System::Ev
 	application::ConsultaCompraForm^ Consulta_Compra = gcnew application::ConsultaCompraForm(nom, inici, fi);
 	Consulta_Compra->ShowDialog();
 	this->Close();
+}
+private: System::Void QuantitatNumeric_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	CheckQuantitat(QuantitatNumeric->Value.ToInt32(QuantitatNumeric->Value));
 }
 };
 }
