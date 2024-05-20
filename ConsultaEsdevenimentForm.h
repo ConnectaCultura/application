@@ -588,6 +588,7 @@ namespace application {
 			else this->preu->Text = ve[3];
 			afMax->Text = ve[4];
 			eDisp->Text = ve[5];
+			QuantitatNumeric->Maximum = int::Parse(ve[5]);
 			if (eDisp->Text == "0") {
 				ComprarButton->Visible = false;
 				quant->Visible = false;

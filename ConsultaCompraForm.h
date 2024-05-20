@@ -259,6 +259,9 @@ namespace application {
 	}
 private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
+	if (s->obteUsuari()->obteTipus() != "ciutada") {
+		CancelaCompraButton->Visible = false;
+	}
 	TxConsultaCompra cc(s->obteUsuari()->obteCorreuElectronic(), _nomEsdev, _dataInici, _dataFi);
 
 	try {
@@ -273,6 +276,7 @@ private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::Ev
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+	
 
 }
 
