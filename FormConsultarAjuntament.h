@@ -94,32 +94,32 @@ namespace application {
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
-			this->CorreuLabel->Location = System::Drawing::Point(39, 81);
+			this->CorreuLabel->Location = System::Drawing::Point(26, 81);
 			this->CorreuLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->CorreuLabel->Name = L"CorreuLabel";
-			this->CorreuLabel->Size = System::Drawing::Size(109, 16);
+			this->CorreuLabel->Size = System::Drawing::Size(112, 16);
 			this->CorreuLabel->TabIndex = 4;
-			this->CorreuLabel->Text = L"CorreuElectronic:";
+			this->CorreuLabel->Text = L"Correu Electronic:";
 			// 
 			// NumeroPostalLabel
 			// 
 			this->NumeroPostalLabel->AutoSize = true;
-			this->NumeroPostalLabel->Location = System::Drawing::Point(39, 123);
+			this->NumeroPostalLabel->Location = System::Drawing::Point(26, 123);
 			this->NumeroPostalLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->NumeroPostalLabel->Name = L"NumeroPostalLabel";
-			this->NumeroPostalLabel->Size = System::Drawing::Size(96, 16);
+			this->NumeroPostalLabel->Size = System::Drawing::Size(99, 16);
 			this->NumeroPostalLabel->TabIndex = 5;
-			this->NumeroPostalLabel->Text = L"NumeroPostal:";
+			this->NumeroPostalLabel->Text = L"Numero Postal:";
 			// 
 			// TelefonLabel
 			// 
 			this->TelefonLabel->AutoSize = true;
-			this->TelefonLabel->Location = System::Drawing::Point(39, 165);
+			this->TelefonLabel->Location = System::Drawing::Point(26, 165);
 			this->TelefonLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->TelefonLabel->Name = L"TelefonLabel";
-			this->TelefonLabel->Size = System::Drawing::Size(109, 16);
+			this->TelefonLabel->Size = System::Drawing::Size(112, 16);
 			this->TelefonLabel->TabIndex = 6;
-			this->TelefonLabel->Text = L"TelefonContacte:";
+			this->TelefonLabel->Text = L"Telefon Contacte:";
 			// 
 			// NomLabel
 			// 
@@ -188,7 +188,7 @@ namespace application {
 			this->Controls->Add(this->TelefonLabel);
 			this->Controls->Add(this->NumeroPostalLabel);
 			this->Controls->Add(this->CorreuLabel);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"FormConsultarAjuntament";
 			this->Text = L"FormConsultarAjuntament";
 			this->Load += gcnew System::EventHandler(this, &FormConsultarAjuntament::FormConsultarAjuntament_Load);

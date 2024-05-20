@@ -93,13 +93,17 @@ namespace application {
 			// 
 			// ConfirmarButton
 			// 
-			this->ConfirmarButton->Location = System::Drawing::Point(287, 180);
-			this->ConfirmarButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ConfirmarButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->ConfirmarButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ConfirmarButton->ForeColor = System::Drawing::Color::Transparent;
+			this->ConfirmarButton->Location = System::Drawing::Point(565, 227);
+			this->ConfirmarButton->Margin = System::Windows::Forms::Padding(4);
 			this->ConfirmarButton->Name = L"ConfirmarButton";
-			this->ConfirmarButton->Size = System::Drawing::Size(100, 28);
+			this->ConfirmarButton->Size = System::Drawing::Size(107, 28);
 			this->ConfirmarButton->TabIndex = 1;
 			this->ConfirmarButton->Text = L"Confirmar";
-			this->ConfirmarButton->UseVisualStyleBackColor = true;
+			this->ConfirmarButton->UseVisualStyleBackColor = false;
 			this->ConfirmarButton->Click += gcnew System::EventHandler(this, &CancelaCompraForm::ConfirmarButton_Click);
 			// 
 			// InfoLabel2
@@ -117,12 +121,12 @@ namespace application {
 			// ContrasenyaBox
 			// 
 			this->ContrasenyaBox->Location = System::Drawing::Point(269, 116);
-			this->ContrasenyaBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ContrasenyaBox->Margin = System::Windows::Forms::Padding(4);
 			this->ContrasenyaBox->Name = L"ContrasenyaBox";
+			this->ContrasenyaBox->PasswordChar = '*';
 			this->ContrasenyaBox->Size = System::Drawing::Size(132, 22);
 			this->ContrasenyaBox->TabIndex = 3;
 			this->ContrasenyaBox->TextChanged += gcnew System::EventHandler(this, &CancelaCompraForm::ContrasenyaBox_TextChanged);
-			this->ContrasenyaBox->PasswordChar = '*';
 			// 
 			// Ciutada
 			// 
@@ -175,7 +179,7 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(566, 180);
+			this->buttonTorna->Location = System::Drawing::Point(12, 226);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
 			this->buttonTorna->Size = System::Drawing::Size(107, 29);
@@ -188,7 +192,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(685, 223);
+			this->ClientSize = System::Drawing::Size(685, 266);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->Ciutada);
 			this->Controls->Add(this->esdeveniment);
@@ -199,7 +203,7 @@ namespace application {
 			this->Controls->Add(this->InfoLabel2);
 			this->Controls->Add(this->ConfirmarButton);
 			this->Controls->Add(this->InfoLabel);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"CancelaCompraForm";
 			this->Text = L"CancelaCompraForm";
 			this->Load += gcnew System::EventHandler(this, &CancelaCompraForm::CancelaCompraForm_Load);

@@ -90,9 +90,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(44, 46);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(38, 17);
+			this->label1->Size = System::Drawing::Size(40, 17);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"nom";
+			this->label1->Text = L"Nom";
 			// 
 			// label2
 			// 
@@ -101,9 +101,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(44, 94);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(82, 17);
+			this->label2->Size = System::Drawing::Size(84, 17);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"descripció";
+			this->label2->Text = L"Descripció";
 			// 
 			// label3
 			// 
@@ -114,7 +114,7 @@ namespace application {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(74, 17);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"modalitat";
+			this->label3->Text = L"Modalitat";
 			// 
 			// label4
 			// 
@@ -123,9 +123,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(44, 194);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(131, 17);
+			this->label4->Size = System::Drawing::Size(133, 17);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"correu electrònic";
+			this->label4->Text = L"Correu electrònic";
 			// 
 			// label5
 			// 
@@ -134,9 +134,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(44, 243);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(97, 17);
+			this->label5->Size = System::Drawing::Size(99, 17);
 			this->label5->TabIndex = 4;
-			this->label5->Text = L"contrasenya";
+			this->label5->Text = L"Contrasenya";
 			// 
 			// textBox1
 			// 
@@ -167,9 +167,9 @@ namespace application {
 			this->textBox5->Location = System::Drawing::Point(231, 238);
 			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox5->Name = L"textBox5";
+			this->textBox5->PasswordChar = '*';
 			this->textBox5->Size = System::Drawing::Size(198, 22);
 			this->textBox5->TabIndex = 9;
-			this->textBox5->PasswordChar = '*';
 			// 
 			// button1
 			// 

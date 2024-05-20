@@ -105,7 +105,7 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(145, 75);
+			this->EsdevDataGrid->Location = System::Drawing::Point(125, 67);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
@@ -178,7 +178,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1132, 333);
+			this->ClientSize = System::Drawing::Size(964, 333);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);

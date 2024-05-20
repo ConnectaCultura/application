@@ -82,18 +82,18 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(11, 90);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(100, 18);
+			this->label2->Size = System::Drawing::Size(108, 18);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"contrasenya";
+			this->label2->Text = L"Contrasenya:";
 			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(145, 90);
 			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
+			this->textBox1->PasswordChar = '*';
 			this->textBox1->Size = System::Drawing::Size(193, 22);
 			this->textBox1->TabIndex = 2;
-			this->textBox1->PasswordChar = '*';
 			// 
 			// button1
 			// 
@@ -101,12 +101,12 @@ namespace application {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(244, 138);
+			this->button1->Location = System::Drawing::Point(245, 138);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(93, 31);
 			this->button1->TabIndex = 3;
-			this->button1->Text = L"esborrar";
+			this->button1->Text = L"Esborrar";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &BaixaEntitatForm::button1_Click);
 			// 

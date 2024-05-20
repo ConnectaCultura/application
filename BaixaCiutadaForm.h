@@ -74,7 +74,7 @@ namespace application {
 			this->labelbaixaciutada1->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->labelbaixaciutada1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelbaixaciutada1->Location = System::Drawing::Point(11, 35);
+			this->labelbaixaciutada1->Location = System::Drawing::Point(21, 25);
 			this->labelbaixaciutada1->Name = L"labelbaixaciutada1";
 			this->labelbaixaciutada1->Size = System::Drawing::Size(302, 17);
 			this->labelbaixaciutada1->TabIndex = 0;
@@ -88,15 +88,16 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelbaixaciutada2->Location = System::Drawing::Point(11, 90);
 			this->labelbaixaciutada2->Name = L"labelbaixaciutada2";
-			this->labelbaixaciutada2->Size = System::Drawing::Size(100, 18);
+			this->labelbaixaciutada2->Size = System::Drawing::Size(108, 18);
 			this->labelbaixaciutada2->TabIndex = 1;
-			this->labelbaixaciutada2->Text = L"contrasenya";
+			this->labelbaixaciutada2->Text = L"Contrasenya:";
 			// 
 			// textBoxbaixaciutada
 			// 
 			this->textBoxbaixaciutada->Location = System::Drawing::Point(145, 90);
 			this->textBoxbaixaciutada->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxbaixaciutada->Name = L"textBoxbaixaciutada";
+			this->textBoxbaixaciutada->PasswordChar = '*';
 			this->textBoxbaixaciutada->Size = System::Drawing::Size(169, 22);
 			this->textBoxbaixaciutada->TabIndex = 2;
 			// 
@@ -106,15 +107,14 @@ namespace application {
 			this->buttonbaixaciutada->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonbaixaciutada->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->buttonbaixaciutada->Location = System::Drawing::Point(220, 138);
+			this->buttonbaixaciutada->Location = System::Drawing::Point(239, 138);
 			this->buttonbaixaciutada->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonbaixaciutada->Name = L"buttonbaixaciutada";
 			this->buttonbaixaciutada->Size = System::Drawing::Size(93, 31);
 			this->buttonbaixaciutada->TabIndex = 3;
-			this->buttonbaixaciutada->Text = L"confirmar";
+			this->buttonbaixaciutada->Text = L"Confirmar";
 			this->buttonbaixaciutada->UseVisualStyleBackColor = false;
 			this->buttonbaixaciutada->Click += gcnew System::EventHandler(this, &BaixaCiutadaForm::button1_Click);
-			this->textBoxbaixaciutada->PasswordChar = '*';
 			// 
 			// buttonTorna
 			// 
@@ -135,7 +135,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(340, 194);
+			this->ClientSize = System::Drawing::Size(344, 183);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->buttonbaixaciutada);
 			this->Controls->Add(this->textBoxbaixaciutada);

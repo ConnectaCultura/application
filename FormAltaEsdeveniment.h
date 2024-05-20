@@ -101,25 +101,25 @@ namespace application {
 			// 
 			this->textBox2->Location = System::Drawing::Point(174, 28);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->Size = System::Drawing::Size(256, 22);
 			this->textBox2->TabIndex = 1;
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(174, 181);
+			this->numericUpDown1->Location = System::Drawing::Point(174, 140);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown1->Size = System::Drawing::Size(91, 22);
 			this->numericUpDown1->TabIndex = 5;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::numericUpDown1_ValueChanged);
 			// 
 			// numericUpDown2
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
-			this->numericUpDown2->Location = System::Drawing::Point(174, 218);
+			this->numericUpDown2->Location = System::Drawing::Point(175, 177);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown2->Size = System::Drawing::Size(90, 22);
 			this->numericUpDown2->TabIndex = 6;
 			// 
 			// label1
@@ -127,102 +127,106 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(26, 28);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(36, 16);
+			this->label1->Size = System::Drawing::Size(39, 16);
 			this->label1->TabIndex = 8;
-			this->label1->Text = L"Nom";
+			this->label1->Text = L"Nom:";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(26, 68);
+			this->label2->Location = System::Drawing::Point(26, 253);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(72, 16);
+			this->label2->Size = System::Drawing::Size(75, 16);
 			this->label2->TabIndex = 9;
-			this->label2->Text = L"Descripció";
+			this->label2->Text = L"Descripcio:";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(26, 112);
+			this->label3->Location = System::Drawing::Point(25, 68);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(73, 16);
+			this->label3->Size = System::Drawing::Size(76, 16);
 			this->label3->TabIndex = 10;
-			this->label3->Text = L"Data d\'inici";
+			this->label3->Text = L"Data d\'inici:";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(26, 149);
+			this->label4->Location = System::Drawing::Point(25, 106);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(118, 16);
+			this->label4->Size = System::Drawing::Size(121, 16);
 			this->label4->TabIndex = 11;
-			this->label4->Text = L"Data d\'acabament";
+			this->label4->Text = L"Data d\'acabament:";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(26, 187);
+			this->label5->Location = System::Drawing::Point(26, 140);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(68, 16);
+			this->label5->Size = System::Drawing::Size(71, 16);
 			this->label5->TabIndex = 12;
-			this->label5->Text = L"Aforament";
+			this->label5->Text = L"Aforament:";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(26, 224);
+			this->label6->Location = System::Drawing::Point(27, 177);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(35, 16);
+			this->label6->Size = System::Drawing::Size(38, 16);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"Preu";
+			this->label6->Text = L"Preu:";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(26, 268);
+			this->label7->Location = System::Drawing::Point(27, 215);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(62, 16);
+			this->label7->Size = System::Drawing::Size(65, 16);
 			this->label7->TabIndex = 14;
-			this->label7->Text = L"Modalitat";
+			this->label7->Text = L"Modalitat:";
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(174, 65);
+			this->richTextBox1->Location = System::Drawing::Point(175, 250);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(100, 32);
+			this->richTextBox1->Size = System::Drawing::Size(255, 88);
 			this->richTextBox1->TabIndex = 15;
 			this->richTextBox1->Text = L"";
 			// 
 			// Crea
 			// 
-			this->Crea->Location = System::Drawing::Point(305, 305);
+			this->Crea->BackColor = System::Drawing::Color::OrangeRed;
+			this->Crea->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Crea->ForeColor = System::Drawing::Color::Transparent;
+			this->Crea->Location = System::Drawing::Point(336, 362);
 			this->Crea->Name = L"Crea";
-			this->Crea->Size = System::Drawing::Size(66, 23);
+			this->Crea->Size = System::Drawing::Size(107, 29);
 			this->Crea->TabIndex = 16;
 			this->Crea->Text = L"Crea";
-			this->Crea->UseVisualStyleBackColor = true;
+			this->Crea->UseVisualStyleBackColor = false;
 			this->Crea->Click += gcnew System::EventHandler(this, &FormAltaEsdeveniment::Crea_Click);
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(174, 268);
+			this->comboBox1->Location = System::Drawing::Point(175, 215);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 24);
+			this->comboBox1->Size = System::Drawing::Size(255, 24);
 			this->comboBox1->TabIndex = 17;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(174, 143);
+			this->textBox5->Location = System::Drawing::Point(174, 106);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 22);
+			this->textBox5->Size = System::Drawing::Size(256, 22);
 			this->textBox5->TabIndex = 4;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(174, 109);
+			this->textBox4->Location = System::Drawing::Point(174, 65);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 22);
+			this->textBox4->Size = System::Drawing::Size(256, 22);
 			this->textBox4->TabIndex = 3;
 			// 
 			// buttonTorna
@@ -231,7 +235,7 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(12, 300);
+			this->buttonTorna->Location = System::Drawing::Point(12, 362);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
 			this->buttonTorna->Size = System::Drawing::Size(107, 29);
@@ -244,7 +248,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(383, 340);
+			this->ClientSize = System::Drawing::Size(455, 400);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->Crea);

@@ -76,9 +76,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(37, 70);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(38, 17);
+			this->label1->Size = System::Drawing::Size(40, 17);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"nom";
+			this->label1->Text = L"Nom";
 			// 
 			// label2
 			// 
@@ -87,9 +87,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(37, 102);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(131, 17);
+			this->label2->Size = System::Drawing::Size(133, 17);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"correu electrònic";
+			this->label2->Text = L"Correu electronic";
 			// 
 			// label3
 			// 
@@ -98,9 +98,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(37, 133);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(97, 17);
+			this->label3->Size = System::Drawing::Size(99, 17);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"contrasenya";
+			this->label3->Text = L"Contrasenya";
 			// 
 			// textBox1
 			// 
@@ -123,9 +123,9 @@ namespace application {
 			this->textBox3->Location = System::Drawing::Point(199, 133);
 			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox3->Name = L"textBox3";
+			this->textBox3->PasswordChar = '*';
 			this->textBox3->Size = System::Drawing::Size(164, 22);
 			this->textBox3->TabIndex = 5;
-			this->textBox3->PasswordChar = '*';
 			// 
 			// registre
 			// 

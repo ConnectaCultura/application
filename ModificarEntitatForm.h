@@ -110,7 +110,7 @@ namespace application {
 			this->DescripcioLabel->Name = L"DescripcioLabel";
 			this->DescripcioLabel->Size = System::Drawing::Size(75, 16);
 			this->DescripcioLabel->TabIndex = 2;
-			this->DescripcioLabel->Text = L"Descripció:";
+			this->DescripcioLabel->Text = L"Descripcio:";
 			// 
 			// NomBox
 			// 
@@ -132,20 +132,24 @@ namespace application {
 			// 
 			// ModificaButton
 			// 
-			this->ModificaButton->Location = System::Drawing::Point(264, 180);
+			this->ModificaButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->ModificaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ModificaButton->ForeColor = System::Drawing::Color::Transparent;
+			this->ModificaButton->Location = System::Drawing::Point(232, 174);
 			this->ModificaButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ModificaButton->Name = L"ModificaButton";
-			this->ModificaButton->Size = System::Drawing::Size(75, 23);
+			this->ModificaButton->Size = System::Drawing::Size(107, 29);
 			this->ModificaButton->TabIndex = 6;
 			this->ModificaButton->Text = L"Modifica";
-			this->ModificaButton->UseVisualStyleBackColor = true;
+			this->ModificaButton->UseVisualStyleBackColor = false;
 			this->ModificaButton->Click += gcnew System::EventHandler(this, &ModificarEntitatForm::ModificaButton_Click);
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(121, 66);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(160, 24);
 			this->comboBox1->TabIndex = 7;

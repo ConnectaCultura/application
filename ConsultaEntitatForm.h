@@ -192,13 +192,13 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(31, 155);
+			this->EsdevDataGrid->Location = System::Drawing::Point(61, 140);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(757, 212);
+			this->EsdevDataGrid->Size = System::Drawing::Size(792, 232);
 			this->EsdevDataGrid->TabIndex = 13;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitatForm::EsdevDataGrid_CellContentClick);
 			// 
@@ -241,7 +241,7 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(826, 338);
+			this->buttonTorna->Location = System::Drawing::Point(12, 389);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
 			this->buttonTorna->Size = System::Drawing::Size(107, 29);
@@ -255,7 +255,7 @@ namespace application {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(961, 380);
+			this->ClientSize = System::Drawing::Size(926, 429);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->Controls->Add(this->CorreuLabelEdit);
