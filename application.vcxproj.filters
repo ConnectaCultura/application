@@ -59,6 +59,11 @@
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
+    <ClCompile Include="PassarelaFavorita.cpp" />
+    <ClCompile Include="CercadoraFavorita.cpp" />
+    <ClCompile Include="TxConsultaFavorita.cpp" />
+    <ClCompile Include="TxAfegirFavorita.cpp" />
+    <ClCompile Include="TxEsborrarFavorita.cpp" />
     <ClCompile Include="TxConsultaEntEsde.cpp" />
     <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
@@ -123,6 +128,11 @@
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="VeurePerfilForm.h" />
+    <ClInclude Include="PassarelaFavorita.h" />
+    <ClInclude Include="CercadoraFavorita.h" />
+    <ClInclude Include="TxConsultaFavorita.h" />
+    <ClInclude Include="TxAfegirFavorita.h" />
+    <ClInclude Include="TxEsborrarFavorita.h" />
     <ClInclude Include="TxConsultaEntEsde.h" />
     <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="ConsultaCompraForm.h" />
