@@ -49,7 +49,22 @@ namespace application {
 
 	protected:
 
+		void actualitzarForm() {
+			dataGridViewEntitats->Rows->Clear();
+			TxConsultaEntitats en(this->textBox1->Text->ToString(), this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
+			try {
+				en.executar();
+			}
+			catch (MySqlException^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+			List<List<System::String^>^>^ ve = en.ObteResultat();
+			for each (List<System::String^> ^ e in ve)
+			{
+				dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
+			}
 
+		}
 
 
 
@@ -68,6 +83,8 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Correu_Electronic;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ajutament;
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -86,6 +103,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConsultaEntitats::typeid));
 			this->dataGridViewEntitats = (gcnew System::Windows::Forms::DataGridView());
 			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Descripcio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -98,7 +116,10 @@ namespace application {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->AjuntamentComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridViewEntitats
@@ -112,11 +133,13 @@ namespace application {
 				this->Nom,
 					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
 			});
-			this->dataGridViewEntitats->Location = System::Drawing::Point(12, 59);
+			this->dataGridViewEntitats->Location = System::Drawing::Point(32, 131);
+			this->dataGridViewEntitats->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridViewEntitats->Name = L"dataGridViewEntitats";
 			this->dataGridViewEntitats->ReadOnly = true;
+			this->dataGridViewEntitats->RowHeadersVisible = false;
 			this->dataGridViewEntitats->RowHeadersWidth = 51;
-			this->dataGridViewEntitats->Size = System::Drawing::Size(800, 352);
+			this->dataGridViewEntitats->Size = System::Drawing::Size(1200, 542);
 			this->dataGridViewEntitats->TabIndex = 0;
 			this->dataGridViewEntitats->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitats::dataGridViewEntitats_CellContentClick);
 			// 
@@ -156,6 +179,7 @@ namespace application {
 			// Ajutament
 			// 
 			this->Ajutament->HeaderText = L"Ajuntament";
+			this->Ajutament->MinimumWidth = 8;
 			this->Ajutament->Name = L"Ajutament";
 			this->Ajutament->ReadOnly = true;
 			this->Ajutament->Width = 200;
@@ -165,9 +189,10 @@ namespace application {
 			this->EntitatsLabel->AutoSize = true;
 			this->EntitatsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->EntitatsLabel->Location = System::Drawing::Point(36, 13);
+			this->EntitatsLabel->Location = System::Drawing::Point(25, 19);
+			this->EntitatsLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->EntitatsLabel->Name = L"EntitatsLabel";
-			this->EntitatsLabel->Size = System::Drawing::Size(91, 29);
+			this->EntitatsLabel->Size = System::Drawing::Size(137, 40);
 			this->EntitatsLabel->TabIndex = 1;
 			this->EntitatsLabel->Text = L"Entitats";
 			this->EntitatsLabel->Click += gcnew System::EventHandler(this, &ConsultaEntitats::EntitatsLabel_Click);
@@ -175,9 +200,10 @@ namespace application {
 			// TipusComboBox
 			// 
 			this->TipusComboBox->FormattingEnabled = true;
-			this->TipusComboBox->Location = System::Drawing::Point(672, 21);
+			this->TipusComboBox->Location = System::Drawing::Point(1039, 75);
+			this->TipusComboBox->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->TipusComboBox->Name = L"TipusComboBox";
-			this->TipusComboBox->Size = System::Drawing::Size(121, 21);
+			this->TipusComboBox->Size = System::Drawing::Size(180, 28);
 			this->TipusComboBox->TabIndex = 6;
 			this->TipusComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &ConsultaEntitats::TipusComboBox_SelectedIndexChanged);
 			// 
@@ -186,10 +212,9 @@ namespace application {
 			this->TipusLabel->AutoSize = true;
 			this->TipusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TipusLabel->Location = System::Drawing::Point(451, 19);
-			this->TipusLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->TipusLabel->Location = System::Drawing::Point(905, 78);
 			this->TipusLabel->Name = L"TipusLabel";
-			this->TipusLabel->Size = System::Drawing::Size(65, 16);
+			this->TipusLabel->Size = System::Drawing::Size(97, 25);
 			this->TipusLabel->TabIndex = 8;
 			this->TipusLabel->Text = L"Modalitat:";
 			this->TipusLabel->Click += gcnew System::EventHandler(this, &ConsultaEntitats::TipusLabel_Click);
@@ -199,20 +224,18 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(229, 19);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(604, 79);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(76, 16);
+			this->label1->Size = System::Drawing::Size(117, 25);
 			this->label1->TabIndex = 10;
 			this->label1->Text = L"Ajuntament:";
 			// 
 			// AjuntamentComboBox
 			// 
 			this->AjuntamentComboBox->FormattingEnabled = true;
-			this->AjuntamentComboBox->Location = System::Drawing::Point(316, 17);
-			this->AjuntamentComboBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AjuntamentComboBox->Location = System::Drawing::Point(742, 79);
 			this->AjuntamentComboBox->Name = L"AjuntamentComboBox";
-			this->AjuntamentComboBox->Size = System::Drawing::Size(92, 21);
+			this->AjuntamentComboBox->Size = System::Drawing::Size(136, 28);
 			this->AjuntamentComboBox->TabIndex = 9;
 			this->AjuntamentComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &ConsultaEntitats::AjuntamentcomboBox_SelectedIndexChanged);
 			// 
@@ -231,41 +254,52 @@ namespace application {
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultaEntitats::buttonTorna_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(32, 81);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(356, 26);
+			this->textBox1->TabIndex = 23;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
+			this->pictureBox1->Location = System::Drawing::Point(414, 81);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(25, 26);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 24;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultaEntitats::pictureBox1_Click);
+			// 
 			// ConsultaEntitats
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(903, 424);
+			this->ClientSize = System::Drawing::Size(1354, 652);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->AjuntamentComboBox);
 			this->Controls->Add(this->TipusLabel);
 			this->Controls->Add(this->TipusComboBox);
 			this->Controls->Add(this->EntitatsLabel);
 			this->Controls->Add(this->dataGridViewEntitats);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"ConsultaEntitats";
 			this->Text = L"ConsultaEntitats";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEntitats::ConsultaEntitats_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void ConsultaEntitats_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultaEntitats ent("Totes", "Tots");
-		try {
-			ent.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<List<System::String^>^>^ ve = ent.ObteResultat();
-		for each (List<System::String^>^ e in ve)
-		{
-			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
-		}
-
 		TxConsultaTipus tip;
 		try {
 			tip.executar();
@@ -287,57 +321,39 @@ namespace application {
 		List<String^>^ ajuntaments = ca.ObteResultat();
 		ajuntaments->Insert(0, "Tots");
 		AjuntamentComboBox->DataSource = ajuntaments;
-	}
-	private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
-			String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[3]->Value->ToString();
-			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
-			Consulta_Entitat->ShowDialog();
+		actualitzarForm();
 
-		}
 	}
+private: System::Void dataGridViewEntitats_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+		String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[3]->Value->ToString();
+		application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
+		Consulta_Entitat->ShowDialog();
+
+	}
+}
 
 private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	dataGridViewEntitats->Rows->Clear();
-	TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
-	try {
-		en.executar();
-	}
-	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
-	}
-	List<List<System::String^>^>^ ve = en.ObteResultat();
-	for each (List<System::String^> ^ e in ve)
-	{
-		dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
-	}
+	actualitzarForm();
 
 }
 private: System::Void TipusLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void EntitatsLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
 }
 
-	private: System::Void AjuntamentcomboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		dataGridViewEntitats->Rows->Clear();
-		TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
-		try {
-			en.executar();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		List<List<System::String^>^>^ ve = en.ObteResultat();
-		for each (List<System::String^> ^ e in ve)
-		{
-			dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
-		}
-
-	}
+private: System::Void AjuntamentcomboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
+}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	actualitzarForm();
 }
 };
 }

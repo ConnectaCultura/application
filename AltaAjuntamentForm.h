@@ -257,8 +257,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		this->Close();
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::
-			("Error en la crecio d'usuai");
+		MessageBox::Show("Error en la crecio d'usuari");
 	}
 	catch (std::runtime_error e) {
 		MessageBox::Show(gcnew System::String(e.what()));
