@@ -158,6 +158,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connexio.h" />
+    <ClInclude Include="ConsultaCompraForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ConsultaCompresForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ConsultaEntitatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -213,6 +219,9 @@
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxComprobacontrasenya.h" />
     <ClInclude Include="TxConsultaAjuntament.h" />
+    <ClInclude Include="TxConsultaEntEsde.h" />
+    <ClInclude Include="TxConsultaCompra.h" />
+    <ClInclude Include="TxConsultaCompres.h" />
     <ClInclude Include="TxConsultaEntitat.h" />
     <ClInclude Include="TxConsultaEntitatsAjuntament.h" />
     <ClInclude Include="TxConsultaEntitatsNom.h" />
@@ -221,8 +230,10 @@
     <ClInclude Include="TxConsultaFavorita.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
     <ClInclude Include="TxEsborrarFavorita.h" />
+    <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaEntitat.h" />
+    <ClInclude Include="TxPuntsCiutada.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
@@ -240,6 +251,8 @@
     <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
     <ClCompile Include="CercadoraFavorita.cpp" />
+    <ClCompile Include="ConsultaCompraForm.cpp" />
+    <ClCompile Include="ConsultaCompresForm.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
@@ -285,6 +298,9 @@
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxComprobacontrasenya.cpp" />
     <ClCompile Include="TxConsultaAjuntament.cpp" />
+    <ClCompile Include="TxConsultaEntEsde.cpp" />
+    <ClCompile Include="TxConsultaCompra.cpp" />
+    <ClCompile Include="TxConsultaCompres.cpp" />
     <ClCompile Include="TxConsultaEntitat.cpp" />
     <ClCompile Include="TxConsultaEntitatsAjuntament.cpp" />
     <ClCompile Include="TxConsultaEntitatsNom.cpp" />
@@ -293,8 +309,10 @@
     <ClCompile Include="TxConsultaFavorita.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
     <ClCompile Include="TxEsborrarFavorita.cpp" />
+    <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
+    <ClCompile Include="TxPuntsCiutada.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
@@ -302,7 +320,9 @@
     <ClCompile Include="VeurePerfilForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\Downloads\logo.ico" />
     <Image Include="app.ico" />
+    <Image Include="lupa.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
@@ -318,12 +338,19 @@
   <ItemGroup>
     <EmbeddedResource Include="AltaAjuntamentForm.resx">
       <DependentUpon>AltaAjuntamentForm.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaixaCiutadaForm.resx">
       <DependentUpon>BaixaCiutadaForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CancelarEsdevenimentForm.resx">
       <DependentUpon>CancelarEsdevenimentForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompraForm.resx">
+      <DependentUpon>ConsultaCompraForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompresForm.resx">
+      <DependentUpon>ConsultaCompresForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEsdevenimentForm.resx">
       <DependentUpon>ConsultaEsdevenimentForm.h</DependentUpon>

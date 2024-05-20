@@ -20,6 +20,7 @@ namespace application {
 		CancelarEsdevenimentForm(String^ nom_esdev, String^ data_ini, String^ data_fi)
 		{
 			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -87,6 +88,7 @@ namespace application {
 			this->Contrasenya_box->Name = L"Contrasenya_box";
 			this->Contrasenya_box->Size = System::Drawing::Size(127, 22);
 			this->Contrasenya_box->TabIndex = 2;
+			this->Contrasenya_box->PasswordChar = '*';
 			// 
 			// CancelarEsdevenimentForm
 			// 
@@ -109,9 +111,23 @@ namespace application {
 
 	private: System::Void Acceptar_button_Click(System::Object^ sender, System::EventArgs^ e) {
 		TxComprobacontrasenya cc(Contrasenya_box->Text);
-		cc.executar();
+		try {
+			cc.executar();
+		}
+		catch (std::runtime_error e) {
+			MessageBox::Show("La contrasenya no es correcta no s'ha cancelat l'esdeveniment");
+		}
+		DateTime iniciDateTime = DateTime::Parse(data_ini);
+		System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 		TxCancelaEsdeveniment tx_Ce(nom_esdev, data_ini, data_fi);
-		tx_Ce.executar();
+		try {
+			tx_Ce.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+		this->Close();
+
 	}
 };
 }
