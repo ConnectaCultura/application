@@ -384,7 +384,7 @@ namespace application {
 		}
 
 		Sessio^ s = Sessio::getInstance();
-		if (s->obteUsuari() != nullptr) {
+		if (s->obteUsuari() != nullptr && s->obteUsuari()->obteTipus() == "ciutada") {
 			TxConsultaFavorita txCF(correu);
 			try {
 				txCF.executar();
