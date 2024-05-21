@@ -127,6 +127,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConsultarEsdevenimentsForm::typeid));
 			this->EsdevDataGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -148,18 +149,27 @@ namespace application {
 			// 
 			this->EsdevDataGrid->AllowUserToAddRows = false;
 			this->EsdevDataGrid->AllowUserToDeleteRows = false;
+			this->EsdevDataGrid->BackgroundColor = System::Drawing::SystemColors::Control;
+			this->EsdevDataGrid->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->EsdevDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->EsdevDataGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(51, 160);
+			this->EsdevDataGrid->GridColor = System::Drawing::SystemColors::Control;
+			this->EsdevDataGrid->Location = System::Drawing::Point(51, 204);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
+			this->EsdevDataGrid->RowHeadersVisible = false;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::Fuchsia;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::Purple;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
+			this->EsdevDataGrid->RowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(852, 265);
+			this->EsdevDataGrid->Size = System::Drawing::Size(890, 682);
 			this->EsdevDataGrid->TabIndex = 0;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
 			// 
@@ -213,7 +223,7 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(12, 471);
+			this->buttonTorna->Location = System::Drawing::Point(51, 902);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
 			this->buttonTorna->Size = System::Drawing::Size(120, 36);
@@ -225,7 +235,7 @@ namespace application {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(543, 55);
+			this->checkBox1->Location = System::Drawing::Point(531, 78);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(360, 24);
 			this->checkBox1->TabIndex = 19;
@@ -236,7 +246,7 @@ namespace application {
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(543, 85);
+			this->checkBox2->Location = System::Drawing::Point(531, 108);
 			this->checkBox2->Name = L"checkBox2";
 			this->checkBox2->Size = System::Drawing::Size(92, 24);
 			this->checkBox2->TabIndex = 20;
@@ -247,7 +257,7 @@ namespace application {
 			// checkBox3
 			// 
 			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(543, 116);
+			this->checkBox3->Location = System::Drawing::Point(531, 139);
 			this->checkBox3->Name = L"checkBox3";
 			this->checkBox3->Size = System::Drawing::Size(140, 24);
 			this->checkBox3->TabIndex = 21;
@@ -257,7 +267,7 @@ namespace application {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(51, 94);
+			this->textBox1->Location = System::Drawing::Point(83, 106);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(356, 26);
 			this->textBox1->TabIndex = 22;
@@ -266,7 +276,7 @@ namespace application {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(413, 94);
+			this->pictureBox1->Location = System::Drawing::Point(446, 106);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(25, 26);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -278,7 +288,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1274, 561);
+			this->ClientSize = System::Drawing::Size(1198, 949);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->checkBox3);
@@ -287,6 +297,7 @@ namespace application {
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultarEsdevenimentsForm";
 			this->Text = L"Esdeveniments";
