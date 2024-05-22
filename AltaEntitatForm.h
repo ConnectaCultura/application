@@ -264,15 +264,20 @@ namespace application {
 		Sessio^ s = Sessio::getInstance();
 		System::String^ ajuntament = s->obteUsuari()->obteCorreuElectronic();
 		TxAltaEntitat txAE(nom, descripcio, tipus, correuElectronic, contrasenya, ajuntament);
-		try {
-			txAE.executar();
-			this->Close();
+		if (textBox1->Text == System::String::Empty || textBox2->Text == System::String::Empty || textBox4->Text == System::String::Empty || textBox5->Text == System::String::Empty) {
+			MessageBox::Show("Falten camps per omplir.");
 		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-		}
-		catch (std::runtime_error e) {
-			MessageBox::Show(gcnew System::String(e.what()));
+		else {
+			try {
+				txAE.executar();
+				this->Close();
+			}
+			catch (MySqlException^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+			catch (std::runtime_error e) {
+				MessageBox::Show(gcnew System::String(e.what()));
+			}
 		}
 	
 	}
