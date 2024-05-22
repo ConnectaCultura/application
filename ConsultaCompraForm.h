@@ -69,6 +69,7 @@ namespace application {
 	private: System::Windows::Forms::Button^ TornaButton;
 	private: System::Windows::Forms::Button^ CancelaCompraButton;
 
+
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
@@ -260,7 +261,6 @@ namespace application {
 private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
 	TxConsultaCompra cc(s->obteUsuari()->obteCorreuElectronic(), _nomEsdev, _dataInici, _dataFi);
-
 	try {
 		cc.executar();
 		List<System::String^>^ e = cc.obteResultat();
@@ -284,6 +284,8 @@ private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::
 	application::CancelaCompraForm^ Cancela_Compra = gcnew application::CancelaCompraForm(s->obteUsuari()->obteCorreuElectronic(), esdevenimentLabel->Text, DataIniciLabel->Text, DataFiLabel->Text);
 	Cancela_Compra->ShowDialog();
 	this->Close();
+}
+private: System::Void ValoraEsdevenimentButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

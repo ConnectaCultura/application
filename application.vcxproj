@@ -154,6 +154,7 @@
     <ClInclude Include="CercadoraEsdeveniment.h" />
     <ClInclude Include="CercadoraFavorita.h" />
     <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="CercadoraValoracio.h" />
     <ClInclude Include="ComprarEntradaForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -202,6 +203,7 @@
     <ClInclude Include="PassarelaEsdeveniment.h" />
     <ClInclude Include="PassarelaFavorita.h" />
     <ClInclude Include="PassarelaUsuari.h" />
+    <ClInclude Include="PassarelaValoracio.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RegistreCiutadaForm.h">
       <FileType>CppForm</FileType>
@@ -251,6 +253,7 @@
     <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
     <ClCompile Include="CercadoraFavorita.cpp" />
+    <ClCompile Include="CercadoraValoracio.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="ConsultaCompresForm.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
@@ -279,6 +282,7 @@
     <ClCompile Include="PassarelaUsuari.cpp" />
     <ClCompile Include="CercadoraTipus.cpp" />
     <ClCompile Include="ConsultaEntitats.cpp" />
+    <ClCompile Include="PassarelaValoracio.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
