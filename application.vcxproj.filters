@@ -66,9 +66,7 @@
     <ClCompile Include="ConsultaCompresForm.cpp" />
     <ClCompile Include="TxConsultaCompres.cpp" />
     <ClCompile Include="TxPuntsCiutada.cpp" />
-    <ClCompile Include="ModificarCiutadaForm.cpp" />
     <ClCompile Include="TxModificaCiutada.cpp" />
-    <ClCompile Include="TxConsultaCiutada.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -136,9 +134,7 @@
     <ClInclude Include="ConsultaCompresForm.h" />
     <ClInclude Include="TxConsultaCompres.h" />
     <ClInclude Include="TxPuntsCiutada.h" />
-    <ClInclude Include="ModificarCiutadaForm.h" />
     <ClInclude Include="TxModificaCiutada.h" />
-    <ClInclude Include="TxConsultaCiutada.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

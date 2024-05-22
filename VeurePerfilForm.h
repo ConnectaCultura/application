@@ -2,7 +2,9 @@
 #include "Sessio.h"
 #include "TxConsultaPerfil.h"
 #include "ConsultaCompresForm.h"
-#include "ModificarCiutadaForm.h"
+#include "TxModificaCiutada.h"
+#include "CercadoraCiutada.h"
+#include "PassarelaCiutada.h"
 namespace application {
 
 	using namespace System;
@@ -57,6 +59,11 @@ namespace application {
 	private: System::Windows::Forms::Button^ buttonTorna;
 	private: System::Windows::Forms::Button^ MostraCompresButton;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::TextBox^ nomBox;
+
+	private: System::Windows::Forms::Button^ button2;
+
+
 
 
 
@@ -84,6 +91,8 @@ namespace application {
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->MostraCompresButton = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->nomBox = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// TipusText
@@ -189,11 +198,31 @@ namespace application {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &VeurePerfilForm::button1_Click);
 			// 
+			// nomBox
+			// 
+			this->nomBox->Location = System::Drawing::Point(185, 35);
+			this->nomBox->Name = L"nomBox";
+			this->nomBox->Size = System::Drawing::Size(224, 22);
+			this->nomBox->TabIndex = 21;
+			this->nomBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::nomBox_TextChanged_1);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(415, 35);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(27, 23);
+			this->button2->TabIndex = 22;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &VeurePerfilForm::button2_Click);
+			// 
 			// VeurePerfilForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(464, 244);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->nomBox);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->MostraCompresButton);
 			this->Controls->Add(this->buttonTorna);
@@ -214,6 +243,7 @@ namespace application {
 #pragma endregion
 		private: System::Void VeurePerfilForm_Load(System::Object^ sender, System::EventArgs^ e) {
 			// Para hacer un consultaPerfil generico
+			nomBox->Visible = false;
 			TxConsultaPerfil txCP;
 			try {
 				txCP.executar();
@@ -255,8 +285,32 @@ private: System::Void MostraCompresButton_Click(System::Object^ sender, System::
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
-	application::ModificarCiutadaForm^ MCiutada = gcnew application::ModificarCiutadaForm();
-	MCiutada->ShowDialog();
+	PassarelaUsuari^ u = s->obteUsuari();
+	TxModificaCiutada Mod(nomBox->Text, u);
+	if (nomBox->Text == System::String::Empty) {
+		MessageBox::Show("El camp de modificar esta buit.");
+	}
+	else {
+		try {
+			Mod.executar();
+			this->Close();
+			s->modificaUsuari(nomBox->Text);
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show("No s'ha pogut modificar.");
+		}
+	}
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (nomBox->Visible == false) {
+		nomBox->Visible = true;
+	}
+	else {
+		nomBox->Visible = false;
+	}
+}
+private: System::Void nomBox_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	label1->Text = nomBox->Text;
 }
 };
 }
