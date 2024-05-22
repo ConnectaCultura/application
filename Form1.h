@@ -135,7 +135,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ panel_contenedor;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
+
 
 
 
@@ -164,7 +166,6 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->logIn = (gcnew System::Windows::Forms::Button());
 			this->logOut = (gcnew System::Windows::Forms::Button());
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
@@ -184,13 +185,10 @@ namespace CppCLRWinFormsProject {
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->margen = (gcnew System::Windows::Forms::Panel());
 			this->panel_contenedor = (gcnew System::Windows::Forms::Panel());
 			this->panel_lateral->SuspendLayout();
 			this->panel4->SuspendLayout();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->margen->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -473,24 +471,11 @@ namespace CppCLRWinFormsProject {
 			// 
 			// panel2
 			// 
-			this->panel2->Controls->Add(this->pictureBox1);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 101);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(391, 184);
 			this->panel2->TabIndex = 9;
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(391, 184);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
 			// 
 			// margen
 			// 
@@ -526,8 +511,6 @@ namespace CppCLRWinFormsProject {
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel_lateral->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->margen->ResumeLayout(false);
 			this->ResumeLayout(false);
 
