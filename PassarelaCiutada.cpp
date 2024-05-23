@@ -27,3 +27,4 @@ void PassarelaCiutada::modificaPunts() {
 void PassarelaCiutada::setPunts(int punts) {
 	_punts = punts;
 }
+

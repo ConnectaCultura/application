@@ -16,5 +16,6 @@ public:
 	int obtePunts();
 	void modificaPunts();
 	void setPunts(int punts);
+
 };
 

@@ -144,9 +144,9 @@ namespace application {
 			this->textBoxContra->Location = System::Drawing::Point(213, 142);
 			this->textBoxContra->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxContra->Name = L"textBoxContra";
+			this->textBoxContra->PasswordChar = '*';
 			this->textBoxContra->Size = System::Drawing::Size(183, 22);
 			this->textBoxContra->TabIndex = 10;
-			this->textBoxContra->PasswordChar = '*';
 			// 
 			// button1
 			// 
@@ -189,17 +189,21 @@ namespace application {
 			// 
 			this->numericUpDownPostal->Location = System::Drawing::Point(213, 191);
 			this->numericUpDownPostal->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99999, 0, 0, 0 });
+			this->numericUpDownPostal->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDownPostal->Name = L"numericUpDownPostal";
 			this->numericUpDownPostal->Size = System::Drawing::Size(183, 22);
 			this->numericUpDownPostal->TabIndex = 14;
+			this->numericUpDownPostal->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// numericUpDownTelefon
 			// 
 			this->numericUpDownTelefon->Location = System::Drawing::Point(213, 249);
 			this->numericUpDownTelefon->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 999999999, 0, 0, 0 });
+			this->numericUpDownTelefon->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->numericUpDownTelefon->Name = L"numericUpDownTelefon";
 			this->numericUpDownTelefon->Size = System::Drawing::Size(183, 22);
 			this->numericUpDownTelefon->TabIndex = 15;
+			this->numericUpDownTelefon->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			// 
 			// buttonTorna
 			// 
@@ -252,15 +256,20 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	int telefon = System::Convert::ToInt32(this->numericUpDownTelefon->Value);
 	
 	TxAltaAjuntament txAA(nom, correuElectronic, contrasenya, codiPostal, telefon); 
-	try {
-		txAA.executar();
-		this->Close();
+	if (textBoxNom->Text == System::String::Empty || textBoxCorreu->Text == System::String::Empty || textBoxContra->Text == System::String::Empty) {
+		MessageBox::Show("Falten camps per omplir.");
 	}
-	catch (MySqlException^ ex) {
-		MessageBox::Show("Error en la crecio d'usuari");
-	}
-	catch (std::runtime_error e) {
-		MessageBox::Show(gcnew System::String(e.what()));
+	else {
+		try {
+			txAA.executar();
+			this->Close();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show("Error en la crecio d'ajuntament");
+		}
+		catch (std::runtime_error e) {
+			MessageBox::Show(gcnew System::String(e.what()));
+		}
 	}
 
 }
