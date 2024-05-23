@@ -105,6 +105,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ NomEsdevLabel;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ EntradesDispLabel;
+	private: System::Windows::Forms::Button^ TornaButton;
 
 
 
@@ -149,15 +150,16 @@ namespace application {
 			this->NomEsdevLabel = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->EntradesDispLabel = (gcnew System::Windows::Forms::Label());
+			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DescompteNumeric))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuantitatNumeric))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// DescompteNumeric
 			// 
-			this->DescompteNumeric->Location = System::Drawing::Point(210, 153);
+			this->DescompteNumeric->Location = System::Drawing::Point(148, 151);
 			this->DescompteNumeric->Name = L"DescompteNumeric";
-			this->DescompteNumeric->Size = System::Drawing::Size(30, 20);
+			this->DescompteNumeric->Size = System::Drawing::Size(37, 20);
 			this->DescompteNumeric->TabIndex = 34;
 			this->DescompteNumeric->ValueChanged += gcnew System::EventHandler(this, &ComprarEntradaForm::DescompteNumeric_ValueChanged);
 			// 
@@ -166,7 +168,7 @@ namespace application {
 			this->DescompteLabel->AutoSize = true;
 			this->DescompteLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DescompteLabel->Location = System::Drawing::Point(112, 153);
+			this->DescompteLabel->Location = System::Drawing::Point(50, 151);
 			this->DescompteLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescompteLabel->Name = L"DescompteLabel";
 			this->DescompteLabel->Size = System::Drawing::Size(80, 16);
@@ -175,10 +177,10 @@ namespace application {
 			// 
 			// QuantitatNumeric
 			// 
-			this->QuantitatNumeric->Location = System::Drawing::Point(210, 114);
+			this->QuantitatNumeric->Location = System::Drawing::Point(148, 112);
 			this->QuantitatNumeric->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->QuantitatNumeric->Name = L"QuantitatNumeric";
-			this->QuantitatNumeric->Size = System::Drawing::Size(30, 20);
+			this->QuantitatNumeric->Size = System::Drawing::Size(37, 20);
 			this->QuantitatNumeric->TabIndex = 32;
 			this->QuantitatNumeric->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->QuantitatNumeric->ValueChanged += gcnew System::EventHandler(this, &ComprarEntradaForm::QuantitatNumeric_ValueChanged);
@@ -188,7 +190,7 @@ namespace application {
 			this->quant->AutoSize = true;
 			this->quant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->quant->Location = System::Drawing::Point(112, 114);
+			this->quant->Location = System::Drawing::Point(50, 112);
 			this->quant->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->quant->Name = L"quant";
 			this->quant->Size = System::Drawing::Size(62, 16);
@@ -197,13 +199,17 @@ namespace application {
 			// 
 			// ComprarButton
 			// 
-			this->ComprarButton->Location = System::Drawing::Point(115, 273);
+			this->ComprarButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->ComprarButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ComprarButton->ForeColor = System::Drawing::Color::Transparent;
+			this->ComprarButton->Location = System::Drawing::Point(262, 270);
 			this->ComprarButton->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
 			this->ComprarButton->Name = L"ComprarButton";
 			this->ComprarButton->Size = System::Drawing::Size(122, 25);
 			this->ComprarButton->TabIndex = 28;
 			this->ComprarButton->Text = L"Comprar Entrada";
-			this->ComprarButton->UseVisualStyleBackColor = true;
+			this->ComprarButton->UseVisualStyleBackColor = false;
 			this->ComprarButton->Click += gcnew System::EventHandler(this, &ComprarEntradaForm::ComprarButton_Click);
 			// 
 			// label1
@@ -234,19 +240,19 @@ namespace application {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(112, 74);
+			this->label2->Location = System::Drawing::Point(50, 72);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(76, 16);
+			this->label2->Size = System::Drawing::Size(79, 16);
 			this->label2->TabIndex = 37;
-			this->label2->Text = L"PreuUnitari:";
+			this->label2->Text = L"Preu Unitari:";
 			// 
 			// PreuEntradaLabel
 			// 
 			this->PreuEntradaLabel->AutoSize = true;
 			this->PreuEntradaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->PreuEntradaLabel->Location = System::Drawing::Point(207, 74);
+			this->PreuEntradaLabel->Location = System::Drawing::Point(145, 72);
 			this->PreuEntradaLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->PreuEntradaLabel->Name = L"PreuEntradaLabel";
 			this->PreuEntradaLabel->Size = System::Drawing::Size(0, 16);
@@ -257,7 +263,7 @@ namespace application {
 			this->NomEsdevLabel->AutoSize = true;
 			this->NomEsdevLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NomEsdevLabel->Location = System::Drawing::Point(22, 31);
+			this->NomEsdevLabel->Location = System::Drawing::Point(22, 18);
 			this->NomEsdevLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomEsdevLabel->Name = L"NomEsdevLabel";
 			this->NomEsdevLabel->Size = System::Drawing::Size(0, 25);
@@ -268,29 +274,44 @@ namespace application {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(248, 86);
+			this->label3->Location = System::Drawing::Point(245, 139);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(136, 16);
+			this->label3->Size = System::Drawing::Size(139, 16);
 			this->label3->TabIndex = 40;
-			this->label3->Text = L"EntradesDisponibles:";
+			this->label3->Text = L"Entrades Disponibles:";
 			// 
 			// EntradesDispLabel
 			// 
 			this->EntradesDispLabel->AutoSize = true;
 			this->EntradesDispLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->EntradesDispLabel->Location = System::Drawing::Point(306, 111);
+			this->EntradesDispLabel->Location = System::Drawing::Point(303, 155);
 			this->EntradesDispLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->EntradesDispLabel->Name = L"EntradesDispLabel";
 			this->EntradesDispLabel->Size = System::Drawing::Size(0, 16);
 			this->EntradesDispLabel->TabIndex = 41;
+			// 
+			// TornaButton
+			// 
+			this->TornaButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->TornaButton->Location = System::Drawing::Point(12, 272);
+			this->TornaButton->Name = L"TornaButton";
+			this->TornaButton->Size = System::Drawing::Size(75, 23);
+			this->TornaButton->TabIndex = 42;
+			this->TornaButton->Text = L"Torna";
+			this->TornaButton->UseVisualStyleBackColor = false;
+			this->TornaButton->Click += gcnew System::EventHandler(this, &ComprarEntradaForm::TornaButton_Click);
 			// 
 			// ComprarEntradaForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(395, 305);
+			this->Controls->Add(this->TornaButton);
 			this->Controls->Add(this->EntradesDispLabel);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->NomEsdevLabel);
@@ -365,6 +386,9 @@ private: System::Void QuantitatNumeric_ValueChanged(System::Object^ sender, Syst
 private: System::Void DescompteNumeric_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	System::String^ preuCompra = ActualitzaPreuTotal();
 	PreuTotalLabel->Text = preuCompra;
+}
+private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

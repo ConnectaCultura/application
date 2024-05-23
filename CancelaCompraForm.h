@@ -171,10 +171,24 @@ namespace application {
 	}
 	private: System::Void ConfirmarButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		TxComprobacontrasenya co(ContrasenyaBox->Text);
-		co.executar();
+		try {
+			co.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 		TxCancelaCompra cancelacompra(_correuCiutada, _nomEsdev, _dataInici, _dataFi);
-		cancelacompra.executar();
-		MessageBox::Show("Se t'han restat els punts de la compra i retornat els diners");
+		try {
+			cancelacompra.executar();
+			MessageBox::Show("Se t'han restat els punts de la compra i retornat els diners");
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+		catch (std::runtime_error e) {
+			MessageBox::Show(gcnew System::String(e.what()));
+		}
+
 		this->Close();
 	}
 

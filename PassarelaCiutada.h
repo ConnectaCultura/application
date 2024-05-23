@@ -1,5 +1,7 @@
 #pragma once
 #include "Connexio.h"
+#include "Sessio.h"
+#include <stdexcept>
 
 ref class PassarelaCiutada
 {
