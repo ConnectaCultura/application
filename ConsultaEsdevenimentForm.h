@@ -1,11 +1,11 @@
 #pragma once
 #include "TxConsultaEsdeveniment.h"
-#include "TxCompraEntrada.h"
+#include "ComprarEntradaForm.h"
 #include "TxConsultaEntEsde.h"
 #include "TxExisteixCompra.h"
 #include "CancelarEsdevenimentForm.h"
 #include "ConsultaCompraForm.h"
-#include "TxPuntsCiutada.h"
+
 
 namespace application {
 
@@ -64,24 +64,8 @@ namespace application {
 				}
 			}
 		}
-		void CheckQuantitat(int quantitat) {
-			Sessio^ s = Sessio::getInstance();
-			TxPuntsCiutada pc(s->obteUsuari()->obteCorreuElectronic());
-			try {
-				pc.executar();
-			}
-			catch (MySqlException^ ex) {
-				MessageBox::Show(ex->Message);
-			}
-			int maxpunts = pc.obteResultat();
-			System::String^ preuCompra = this->preu->Text;
-			System::Decimal preuc;
-			if (preuCompra == "Gratuit") preuc = 0;
-			else preuc = System::Decimal::Parse(preuCompra);
-			preuc = preuc.Ceiling(preuc);
-			preuc = preuc * quantitat;
-			DescompteNumeric->Maximum = __min(maxpunts, preuc);
-		}
+
+		
 
 	protected:
 		/// <summary>
@@ -134,11 +118,11 @@ namespace application {
 
 
 	private: System::Windows::Forms::Button^ ModificarButton;
-	private: System::Windows::Forms::Label^ quant;
 
-	private: System::Windows::Forms::NumericUpDown^ QuantitatNumeric;
-	private: System::Windows::Forms::NumericUpDown^ DescompteNumeric;
-	private: System::Windows::Forms::Label^ DescompteLabel;
+
+
+
+
 
 
 		   /// <summary>
@@ -177,12 +161,6 @@ namespace application {
 			this->fi = (gcnew System::Windows::Forms::Label());
 			this->VeureCompraButton = (gcnew System::Windows::Forms::Button());
 			this->ModificarButton = (gcnew System::Windows::Forms::Button());
-			this->quant = (gcnew System::Windows::Forms::Label());
-			this->QuantitatNumeric = (gcnew System::Windows::Forms::NumericUpDown());
-			this->DescompteNumeric = (gcnew System::Windows::Forms::NumericUpDown());
-			this->DescompteLabel = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuantitatNumeric))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DescompteNumeric))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -432,52 +410,11 @@ namespace application {
 			this->ModificarButton->Text = L"Modificar";
 			this->ModificarButton->UseVisualStyleBackColor = true;
 			// 
-			// quant
-			// 
-			this->quant->AutoSize = true;
-			this->quant->Location = System::Drawing::Point(285, 259);
-			this->quant->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->quant->Name = L"quant";
-			this->quant->Size = System::Drawing::Size(53, 13);
-			this->quant->TabIndex = 23;
-			this->quant->Text = L"Quantitat:";
-			// 
-			// QuantitatNumeric
-			// 
-			this->QuantitatNumeric->Location = System::Drawing::Point(380, 257);
-			this->QuantitatNumeric->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->QuantitatNumeric->Name = L"QuantitatNumeric";
-			this->QuantitatNumeric->Size = System::Drawing::Size(30, 20);
-			this->QuantitatNumeric->TabIndex = 24;
-			this->QuantitatNumeric->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->QuantitatNumeric->ValueChanged += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::QuantitatNumeric_ValueChanged);
-			// 
-			// DescompteNumeric
-			// 
-			this->DescompteNumeric->Location = System::Drawing::Point(380, 296);
-			this->DescompteNumeric->Name = L"DescompteNumeric";
-			this->DescompteNumeric->Size = System::Drawing::Size(30, 20);
-			this->DescompteNumeric->TabIndex = 27;
-			// 
-			// DescompteLabel
-			// 
-			this->DescompteLabel->AutoSize = true;
-			this->DescompteLabel->Location = System::Drawing::Point(285, 298);
-			this->DescompteLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->DescompteLabel->Name = L"DescompteLabel";
-			this->DescompteLabel->Size = System::Drawing::Size(64, 13);
-			this->DescompteLabel->TabIndex = 26;
-			this->DescompteLabel->Text = L"Descompte:";
-			// 
 			// ConsultaEsdevenimentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(425, 368);
-			this->Controls->Add(this->DescompteNumeric);
-			this->Controls->Add(this->DescompteLabel);
-			this->Controls->Add(this->QuantitatNumeric);
-			this->Controls->Add(this->quant);
 			this->Controls->Add(this->ModificarButton);
 			this->Controls->Add(this->VeureCompraButton);
 			this->Controls->Add(this->fi);
@@ -506,8 +443,6 @@ namespace application {
 			this->Name = L"ConsultaEsdevenimentForm";
 			this->Text = L"ConsultaEsdevenimentForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ConsultaEsdevenimentForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuantitatNumeric))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DescompteNumeric))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -519,38 +454,22 @@ namespace application {
 			VeureCompraButton->Visible = false;
 			ModificarButton->Visible = false;
 			ComprarButton->Visible = false;
-			quant->Visible = false;
-			QuantitatNumeric->Visible = false;
-			DescompteLabel->Visible = false;
-			DescompteNumeric->Visible = false;
 			Cancel_button->Visible = false;
 
 		} else if (_usuari == 1) {
 			ComprarButton->Visible = true;
-			quant->Visible = true;
-			QuantitatNumeric->Visible = true;
-			DescompteLabel->Visible = true;
-			DescompteNumeric->Visible = true;
 			Cancel_button->Visible = false;
 			ModificarButton->Visible = false;
 			VeureCompraButton->Visible = false;
 		}
 		else if (_usuari == 2) {
 			ComprarButton->Visible = false;
-			quant->Visible = false;
-			QuantitatNumeric->Visible = false;
-			DescompteLabel->Visible = false;
-			DescompteNumeric->Visible = false;
 			Cancel_button->Visible = false;
 			ModificarButton->Visible = false;
 			VeureCompraButton->Visible = true;
 		}
 		else if (_usuari == 3) {
 			ComprarButton->Visible = false;
-			quant->Visible = false;
-			QuantitatNumeric->Visible = false;
-			DescompteLabel->Visible = false;
-			DescompteNumeric->Visible = false;
 			Cancel_button->Visible = true;
 			ModificarButton->Visible = true;
 			VeureCompraButton->Visible = false;
@@ -567,10 +486,6 @@ namespace application {
 		}
 		if (DateTime::Parse(_fi) < now){
 			ComprarButton->Visible = false;
-			quant->Visible = false;
-			QuantitatNumeric->Visible = false;
-			DescompteLabel->Visible = false;
-			DescompteNumeric->Visible = false;
 		}
 		TxConsultaEsdeveniment txCE(_nom, _inici, _fi);
 		try {
@@ -590,54 +505,20 @@ namespace application {
 			eDisp->Text = ve[5];
 			if (eDisp->Text == "0") {
 				ComprarButton->Visible = false;
-				quant->Visible = false;
-				QuantitatNumeric->Visible = false;
-				DescompteLabel->Visible = false;
-				DescompteNumeric->Visible = false;
 			}
 		}
 		else{
 			this->preu->Text = "Sense entrada";
 			ComprarButton->Visible = false;
-			quant->Visible = false;
-			QuantitatNumeric->Visible = false;
-			DescompteLabel->Visible = false;
-			DescompteNumeric->Visible = false;
 			label5->Visible = false;
 			afMax->Visible = false;
 			label6->Visible = false;
 			eDisp->Visible = false;
 		}
-		if (DescompteNumeric->Visible == true) {
-			CheckQuantitat(QuantitatNumeric->Value.ToInt32(QuantitatNumeric->Value));
-		}
-	
 	}
 private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ preuCompra;
-	System::Decimal preuc;
-	if (preu->Text == "Gratuit") {
-		preuCompra = "0";
-	}
-	else {
-		preuCompra = this->preu->Text;
-		preuc = System::Decimal::Parse(preuCompra);
-		preuc = preuc * QuantitatNumeric->Value;
-		preuc = preuc.Subtract(preuc, DescompteNumeric->Value);
-		if (preuc < 0) {
-			preuc = 0;
-		}
-		preuCompra = preuc.ToString();
-	}
-	System::String^ preuDef = preuCompra->Replace(',', '.');
-	System::String^ quantitat = QuantitatNumeric->Value.ToString();
-	TxCompraEntrada entrada(_nom, _inici, _fi, preuDef, quantitat);
-	try {
-		entrada.executar();
-	}
-	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
-	}
+	application::ComprarEntradaForm^ Comprar_Entrada = gcnew application::ComprarEntradaForm(_nom, _inici, _fi);
+	Comprar_Entrada->ShowDialog();
 	this->Close();
 }
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -659,7 +540,6 @@ private: System::Void VeureCompraButton_Click(System::Object^ sender, System::Ev
 	this->Close();
 }
 private: System::Void QuantitatNumeric_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	CheckQuantitat(QuantitatNumeric->Value.ToInt32(QuantitatNumeric->Value));
 }
 };
 }

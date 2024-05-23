@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "TxCompraEntrada.h"
 
-TxCompraEntrada::TxCompraEntrada(System::String^ nomEsdev, System::String^ data_inici, System::String^ data_fi, System::String^ preuEntrada, System::String^ quantitat){
+TxCompraEntrada::TxCompraEntrada(System::String^ nomEsdev, System::String^ data_inici, System::String^ data_fi, System::String^ preuEntrada, System::String^ quantitat, int puntsGastats){
 	Sessio^ s = Sessio::getInstance();
 	PassarelaUsuari^ u = s->obteUsuari();
 	_correuCiutada = u->obteCorreuElectronic();
@@ -10,6 +10,7 @@ TxCompraEntrada::TxCompraEntrada(System::String^ nomEsdev, System::String^ data_
 	_dataFi = data_fi;
 	_preuEntrada = preuEntrada;
 	_quantitat = quantitat;
+	_puntsGastats = puntsGastats;
 }
 
 void TxCompraEntrada::executar() {
@@ -18,7 +19,7 @@ void TxCompraEntrada::executar() {
 	int punts = puntsCompra();
 	CercadoraCiutada ciu;
 	PassarelaCiutada^ pas = ciu.cercaCiutada(_correuCiutada);
-	pas->setPunts(punts);
+	pas->setPunts(punts-_puntsGastats);
 	pas->modificaPunts();
 }
 

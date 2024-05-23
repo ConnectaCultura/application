@@ -19,6 +19,9 @@ void TxCancelaCompra::executar()
 	double preuEntradaNumero = Convert::ToDouble(com->obtePreu());
 	double resultadoDivision = preuEntradaNumero / 10.0;
 	int resultadoFinal = Convert::ToInt32(resultadoDivision);
+	int punts= ciu->obtePunts()-resultadoFinal;
+	Sessio^ s = Sessio::getInstance();
+	if(punts<0 && s->obteUsuari()->obteTipus() != "entitat") throw std::runtime_error("No es pot cancelar aquesta compra.");
 	ciu->setPunts(-resultadoFinal);
 	ciu->modificaPunts();
 	com->esborra();
