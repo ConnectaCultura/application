@@ -232,6 +232,7 @@
     <ClInclude Include="TxEsborrarFavorita.h" />
     <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="TxLogIn.h" />
+    <ClInclude Include="TxModificaCiutada.h" />
     <ClInclude Include="TxModificaEntitat.h" />
     <ClInclude Include="TxPuntsCiutada.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
@@ -311,6 +312,7 @@
     <ClCompile Include="TxEsborrarFavorita.cpp" />
     <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
+    <ClCompile Include="TxModificaCiutada.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
     <ClCompile Include="TxPuntsCiutada.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />

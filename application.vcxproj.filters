@@ -68,6 +68,10 @@
     <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="TxConsultaCompra.cpp" />
+    <ClCompile Include="ConsultaCompresForm.cpp" />
+    <ClCompile Include="TxConsultaCompres.cpp" />
+    <ClCompile Include="TxPuntsCiutada.cpp" />
+    <ClCompile Include="TxModificaCiutada.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -137,6 +141,10 @@
     <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="ConsultaCompraForm.h" />
     <ClInclude Include="TxConsultaCompra.h" />
+    <ClInclude Include="ConsultaCompresForm.h" />
+    <ClInclude Include="TxConsultaCompres.h" />
+    <ClInclude Include="TxPuntsCiutada.h" />
+    <ClInclude Include="TxModificaCiutada.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
