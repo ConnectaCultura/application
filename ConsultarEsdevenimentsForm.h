@@ -51,23 +51,8 @@ namespace application {
 				else if (e[3] == "0") EsdevDataGrid->Rows->Add(e[0], e[1], e[2], "Gratuit");
 				else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
 			}
-			ajustarAlcadaDataGrid();
 		}
-		void ajustarAlcadaDataGrid() {
-			int minHeight = 20;  // Altura mínima 
-			int maxHeight = 200;  // Altura máxima
-			int rowHeight = 30;
-			int rowCount = EsdevDataGrid->RowCount;
-			int totalHeight = (rowHeight) * (rowCount+1);
 
-			// Ajustar alçada dins dels limits desitjats
-			if (totalHeight < minHeight) 
-				EsdevDataGrid->Height = minHeight;
-			else if (totalHeight > maxHeight)
-				EsdevDataGrid->Height = maxHeight;
-			else
-				EsdevDataGrid->Height = totalHeight;
-		}
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -148,6 +133,8 @@ namespace application {
 			// 
 			this->EsdevDataGrid->AllowUserToAddRows = false;
 			this->EsdevDataGrid->AllowUserToDeleteRows = false;
+			this->EsdevDataGrid->BackgroundColor = System::Drawing::SystemColors::Control;
+			this->EsdevDataGrid->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->EsdevDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->EsdevDataGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->Nom, this->Inici,
@@ -157,6 +144,7 @@ namespace application {
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
+			this->EsdevDataGrid->RowHeadersVisible = false;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
 			this->EsdevDataGrid->Size = System::Drawing::Size(852, 265);

@@ -36,14 +36,8 @@ void PassarelaCompra::insereix() {
 	System::DateTime fiDateTime = System::DateTime::Parse(_dataFi);
 	System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-	if (_preuEntrada == "0") {
-		sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" +
-			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "', NULL, '" + _quantitat + "')";
-	}
-	else {
-		sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" +
+	sql = "INSERT INTO Compra VALUES ('" + _correuCiutada + "' , '" +
 			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "','" + _preuEntrada + "', '" + _quantitat + "')";
-	}
 	Connexio^ con = Connexio::getInstance();
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();

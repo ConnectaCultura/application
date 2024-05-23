@@ -75,7 +75,9 @@ namespace application {
 			}
 			int maxpunts = pc.obteResultat();
 			System::String^ preuCompra = this->preu->Text;
-			System::Decimal preuc = System::Decimal::Parse(preuCompra);
+			System::Decimal preuc;
+			if (preuCompra == "Gratuit") preuc = 0;
+			else preuc = System::Decimal::Parse(preuCompra);
 			preuc = preuc.Ceiling(preuc);
 			preuc = preuc * quantitat;
 			DescompteNumeric->Maximum = __min(maxpunts, preuc);
