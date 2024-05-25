@@ -290,6 +290,7 @@ private: System::Void MostraCompresButton_Click(System::Object^ sender, System::
 	Sessio^ s = Sessio::getInstance();
 	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic());
 	CCompres->ShowDialog();
+	this->Close();
 	//Form1::ActualitzarForm1();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

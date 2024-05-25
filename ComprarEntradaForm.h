@@ -69,12 +69,9 @@ namespace application {
 		}
 
 		System::String^ ActualitzaPreuTotal(void) {
-			System::String^ preuCompra;
+			System::String^ preuCompra= PreuEntradaLabel->Text;
 			System::Decimal preuc;
-			if (PreuEntradaLabel->Text == "Gratuit") {
-				preuCompra = "0";
-			}
-			else {
+			if (PreuEntradaLabel->Text != "Gratuit") {
 				preuCompra = this->PreuEntradaLabel->Text;
 				preuc = System::Decimal::Parse(preuCompra);
 				preuc = preuc * QuantitatNumeric->Value;

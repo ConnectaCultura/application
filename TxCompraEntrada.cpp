@@ -19,12 +19,15 @@ void TxCompraEntrada::executar() {
 	int punts = puntsCompra();
 	CercadoraCiutada ciu;
 	PassarelaCiutada^ pas = ciu.cercaCiutada(_correuCiutada);
-	pas->setPunts(punts-_puntsGastats);
+
+	pas->setPunts(pas->obtePunts() + punts-_puntsGastats);
+	
 	pas->modificaPunts();
 }
 
 int TxCompraEntrada::puntsCompra() {
-	double preuEntradaNumero = Convert::ToDouble(_preuEntrada);
+	System::String^ preuDef = _preuEntrada->Replace('.', ',');
+	double preuEntradaNumero = Convert::ToDouble(preuDef);
 	int resultadoFinal = static_cast<int>(preuEntradaNumero / 10);
 	return resultadoFinal;
 }
