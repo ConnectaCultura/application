@@ -362,6 +362,7 @@ private: System::Void ComprarEntradaForm_Load(System::Object^ sender, System::Ev
 }
 private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	System::String^ preuCompra = ActualitzaPreuTotal();
+	if (preuCompra == "Gratuit") preuCompra = "0";
 	System::String^ preuDef = preuCompra->Replace(',', '.');
 	System::String^ quantitat = QuantitatNumeric->Value.ToString();
 	int puntsgastats = DescompteNumeric->Value.ToInt32(DescompteNumeric->Value);

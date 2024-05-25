@@ -414,6 +414,7 @@ namespace application {
 
 			application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
 			Consulta_Esdeveniment->ShowDialog();
+			this->Close();
 		}
 	}
 
