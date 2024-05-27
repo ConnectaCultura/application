@@ -287,6 +287,9 @@ namespace application {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	if (DateTime::Parse(_dataFi) < System::DateTime::Now) {
+		CancelaCompraButton->Visible = false;
+	}
 	Sessio^ s = Sessio::getInstance();
 	TxConsultaCompra cc(s->obteUsuari()->obteCorreuElectronic(), _nomEsdev, _dataInici, _dataFi);
 	try {

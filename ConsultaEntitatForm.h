@@ -263,7 +263,7 @@ namespace application {
 			this->AjuntamentLabelEdit->Location = System::Drawing::Point(72, 91);
 			this->AjuntamentLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->AjuntamentLabelEdit->Name = L"AjuntamentLabelEdit";
-			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 13);
+			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->AjuntamentLabelEdit->TabIndex = 15;
 			this->AjuntamentLabelEdit->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label1_Click_1);
 			// 
@@ -273,7 +273,7 @@ namespace application {
 			this->label2->Location = System::Drawing::Point(22, 107);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(63, 13);
+			this->label2->Size = System::Drawing::Size(95, 20);
 			this->label2->TabIndex = 14;
 			this->label2->Text = L"Ajuntament:";
 			this->label2->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label2_Click);
@@ -336,6 +336,7 @@ namespace application {
 			this->Controls->Add(this->TipusText);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Location = System::Drawing::Point(16, 22);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultaEntitatForm";
@@ -414,6 +415,7 @@ namespace application {
 
 			application::ConsultaEsdevenimentForm^ Consulta_Esdeveniment = gcnew application::ConsultaEsdevenimentForm(nom, inici, fi);
 			Consulta_Esdeveniment->ShowDialog();
+			this->Close();
 		}
 	}
 

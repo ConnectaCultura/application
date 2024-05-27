@@ -12,5 +12,6 @@ ref class CercadoraCiutada
 public:
 	CercadoraCiutada() {};
 	PassarelaCiutada^ cercaCiutada(String^ correu);
+
 };
 //

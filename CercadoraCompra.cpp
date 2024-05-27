@@ -44,6 +44,9 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerCiutada(System::String^ ciutada
 PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::String^ esdeveniment, System::String^ inici, System::String^ fi) {
 	DateTime iniciDateTime = DateTime::Parse(inici);
 	DateTime fiDateTime = DateTime::Parse(fi);
+	if (fiDateTime >= System::DateTime::Now) {
+		
+	}
 
 	System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
