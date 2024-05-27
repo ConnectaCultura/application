@@ -82,12 +82,12 @@ namespace application {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			this->EsdevenimentColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->DataIniciColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->DataFiColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PreuColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Quantitat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -107,6 +107,8 @@ namespace application {
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Control;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->EsdevenimentColumn,
@@ -116,25 +118,12 @@ namespace application {
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
+			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(765, 209);
+			this->dataGridView1->Size = System::Drawing::Size(701, 209);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaCompresForm::dataGridView1_CellContentClick);
-			// 
-			// TornaButton
-			// 
-			this->TornaButton->BackColor = System::Drawing::Color::OrangeRed;
-			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TornaButton->Location = System::Drawing::Point(12, 323);
-			this->TornaButton->Name = L"TornaButton";
-			this->TornaButton->Size = System::Drawing::Size(75, 23);
-			this->TornaButton->TabIndex = 11;
-			this->TornaButton->Text = L"Torna";
-			this->TornaButton->UseVisualStyleBackColor = false;
-			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompresForm::TornaButton_Click);
 			// 
 			// EsdevenimentColumn
 			// 
@@ -173,6 +162,20 @@ namespace application {
 			this->Quantitat->HeaderText = L"Quantitat";
 			this->Quantitat->Name = L"Quantitat";
 			this->Quantitat->ReadOnly = true;
+			// 
+			// TornaButton
+			// 
+			this->TornaButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->TornaButton->Location = System::Drawing::Point(12, 323);
+			this->TornaButton->Name = L"TornaButton";
+			this->TornaButton->Size = System::Drawing::Size(75, 23);
+			this->TornaButton->TabIndex = 11;
+			this->TornaButton->Text = L"Torna";
+			this->TornaButton->UseVisualStyleBackColor = false;
+			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompresForm::TornaButton_Click);
 			// 
 			// ConsultaCompresForm
 			// 

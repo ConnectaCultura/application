@@ -59,10 +59,19 @@
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
+    <ClCompile Include="PassarelaFavorita.cpp" />
+    <ClCompile Include="CercadoraFavorita.cpp" />
+    <ClCompile Include="TxConsultaFavorita.cpp" />
+    <ClCompile Include="TxAfegirFavorita.cpp" />
+    <ClCompile Include="TxEsborrarFavorita.cpp" />
     <ClCompile Include="TxConsultaEntEsde.cpp" />
     <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="TxConsultaCompra.cpp" />
+    <ClCompile Include="ConsultaCompresForm.cpp" />
+    <ClCompile Include="TxConsultaCompres.cpp" />
+    <ClCompile Include="TxPuntsCiutada.cpp" />
+    <ClCompile Include="TxModificaCiutada.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -123,10 +132,19 @@
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
     <ClInclude Include="VeurePerfilForm.h" />
+    <ClInclude Include="PassarelaFavorita.h" />
+    <ClInclude Include="CercadoraFavorita.h" />
+    <ClInclude Include="TxConsultaFavorita.h" />
+    <ClInclude Include="TxAfegirFavorita.h" />
+    <ClInclude Include="TxEsborrarFavorita.h" />
     <ClInclude Include="TxConsultaEntEsde.h" />
     <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="ConsultaCompraForm.h" />
     <ClInclude Include="TxConsultaCompra.h" />
+    <ClInclude Include="ConsultaCompresForm.h" />
+    <ClInclude Include="TxConsultaCompres.h" />
+    <ClInclude Include="TxPuntsCiutada.h" />
+    <ClInclude Include="TxModificaCiutada.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

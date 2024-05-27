@@ -255,6 +255,7 @@ namespace application {
 			this->dateTimePicker1->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker1->TabIndex = 20;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker1_ValueChanged);
+			this->dateTimePicker1->MinDate = DateTime::Now;
 			// 
 			// dateTimePicker2
 			// 
@@ -265,6 +266,7 @@ namespace application {
 			this->dateTimePicker2->Size = System::Drawing::Size(215, 26);
 			this->dateTimePicker2->TabIndex = 21;
 			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker2_ValueChanged);
+			this->dateTimePicker1->MinDate = DateTime::Now;
 			// 
 			// checkBox1
 			// 
@@ -325,57 +327,62 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 	comboBox1->DataSource = tip.ObteResultat();
 }
 	private: System::Void Crea_Click(System::Object^ sender, System::EventArgs^ e) {
-		// Comprovo que la data fi >= data inici
-		DateTime data_inici = this->dateTimePicker1->Value;
-		DateTime data_fi = this->dateTimePicker2->Value;
-		if (data_inici >= data_fi)
-		{
-			MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
-			return;
-		}
-
-		System::String^ nom = this->textBox2->Text;
-		if (nom == "") {
-			MessageBox::Show("El nom no pot ser buit");
-			return;
-		}
-		System::String^ descripcio = this->richTextBox1->Text;
-		int^ aforament;
-		System::String^ preu;
-		if (!checkBox1->Checked) {
-			aforament = nullptr;
-			preu = nullptr;
+		if (richTextBox1->Text == System::String::Empty || textBox2->Text == System::String::Empty) {
+			MessageBox::Show("Falten camps per omplir.");
 		}
 		else {
-			aforament = Convert::ToInt32(this->numericUpDown1->Value);
-			System::String^ valorStr = this->numericUpDown2->Value.ToString();
-			//MessageBox::Show(valorStr);
-			preu = valorStr->Replace(',', '.');
-		}
-		System::String^ tipus = this->comboBox1->Text;
-		TxAltaEsdeveniment tx_ae(nom, descripcio, data_inici, data_fi, aforament, preu, tipus);
-		try{
-			tx_ae.executar();
-			this->Close();
-		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show("Aquest esdeveniment ja existeix, canvia el nom");
-			MessageBox::Show(ex->Message);
-		}
-	}
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
-// Comprovo que la data fi >= data inici
-{
-	DateTime startDateTime = this->dateTimePicker1->Value;
-	DateTime endDateTime = this->dateTimePicker2->Value;
+			// Comprovo que la data fi >= data inici
+			DateTime data_inici = this->dateTimePicker1->Value;
+			DateTime data_fi = this->dateTimePicker2->Value;
+			if (data_inici >= data_fi)
+			{
+				MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+				return;
+			}
 
-	// Validation logic
-	if (startDateTime >= endDateTime)
-	{
-		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
-		return;
+			System::String^ nom = this->textBox2->Text;
+			if (nom == "") {
+				MessageBox::Show("El nom no pot ser buit");
+				return;
+			}
+			System::String^ descripcio = this->richTextBox1->Text;
+			int^ aforament;
+			System::String^ preu;
+			if (!checkBox1->Checked) {
+				aforament = nullptr;
+				preu = nullptr;
+			}
+			else {
+				aforament = Convert::ToInt32(this->numericUpDown1->Value);
+				System::String^ valorStr = this->numericUpDown2->Value.ToString();
+				//MessageBox::Show(valorStr);
+				preu = valorStr->Replace(',', '.');
+			}
+			System::String^ tipus = this->comboBox1->Text;
+			TxAltaEsdeveniment tx_ae(nom, descripcio, data_inici, data_fi, aforament, preu, tipus);
+			try {
+				tx_ae.executar();
+				this->Close();
+			}
+			catch (MySqlException^ ex) {
+				MessageBox::Show("Aquest esdeveniment ja existeix, canvia el nom");
+				MessageBox::Show(ex->Message);
+			}
+		}
 	}
-}
+	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e)
+		// Comprovo que la data fi >= data inici
+	{
+		DateTime startDateTime = this->dateTimePicker1->Value;
+		DateTime endDateTime = this->dateTimePicker2->Value;
+
+		// Validation logic
+		if (startDateTime >= endDateTime)
+		{
+			//MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+			return;
+		}
+	}
 private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 // Comprovo que la data fi >= data inici
 {
@@ -385,7 +392,7 @@ private: System::Void dateTimePicker2_ValueChanged(System::Object^ sender, Syste
 	// Validation logic
 	if (startDateTime >= endDateTime)
 	{
-		MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+		//MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
 		return;
 	}
 

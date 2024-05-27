@@ -184,15 +184,19 @@ namespace application {
 		System::String^ correuElectronic = this->textBox2->Text;
 		System::String^ contrasenya = this->textBox3->Text;
 		TxRegistreCiutada txRC(nom, correuElectronic, contrasenya);
-		try {
-			txRC.executar();
-			this->Close();
+		if (textBox1->Text == System::String::Empty || textBox2->Text == System::String::Empty || textBox3->Text == System::String::Empty) {
+			MessageBox::Show("Falten camps per omplir.");
 		}
-		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
-			//MessageBox::Show("El correu electrònic ja existeix");
+		else {
+			try {
+				txRC.executar();
+				this->Close();
+			}
+			catch (MySqlException^ ex) {
+				MessageBox::Show(ex->Message);
+				//MessageBox::Show("El correu electrònic ja existeix");
+			}
 		}
-
 	
 	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {

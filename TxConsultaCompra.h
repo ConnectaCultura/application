@@ -18,6 +18,7 @@ ref class TxConsultaCompra
 		System::String^ _nomEsdev;
 		System::String^ _dataIni;
 		System::String^ _dataFi;
+		bool _antic;
 
 		List<System::String^>^ _result;
 };

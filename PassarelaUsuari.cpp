@@ -71,3 +71,7 @@ void PassarelaUsuari::modifica() {
 	MySqlDataReader^ dataReader = con->executar(sql);
 	con->tancarConnexio();
 }
+
+void PassarelaUsuari::modificaCorreu(System::String^ correuElectronic) {
+	this->correuElectronic = correuElectronic;
+}

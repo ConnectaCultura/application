@@ -25,5 +25,6 @@ public:
 	void insereix();
 	void esborra();
 	void modifica();
+	void modificaCorreu(System::String^ correuElectronic);
 };
 
