@@ -86,6 +86,7 @@ namespace application {
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Button^ button1;
 
 
 
@@ -123,6 +124,7 @@ namespace application {
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EsdevDataGrid))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -141,17 +143,18 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(149, 16);
+			this->DescripcioText->Location = System::Drawing::Point(201, 16);
 			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(60, 13);
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
+			this->DescripcioText->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::DescripcioText_Click);
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(20, 84);
+			this->TipusText->Location = System::Drawing::Point(20, 82);
 			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->TipusText->Name = L"TipusText";
 			this->TipusText->Size = System::Drawing::Size(36, 13);
@@ -209,18 +212,20 @@ namespace application {
 			// 
 			this->EsdevDataGrid->AllowUserToAddRows = false;
 			this->EsdevDataGrid->AllowUserToDeleteRows = false;
+			this->EsdevDataGrid->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->EsdevDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->EsdevDataGrid->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
+			this->EsdevDataGrid->GridColor = System::Drawing::SystemColors::Control;
 			this->EsdevDataGrid->Location = System::Drawing::Point(18, 137);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
 			this->EsdevDataGrid->RowHeadersWidth = 62;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(568, 172);
+			this->EsdevDataGrid->Size = System::Drawing::Size(663, 439);
 			this->EsdevDataGrid->TabIndex = 13;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitatForm::EsdevDataGrid_CellContentClick);
 			// 
@@ -263,7 +268,7 @@ namespace application {
 			this->AjuntamentLabelEdit->Location = System::Drawing::Point(72, 91);
 			this->AjuntamentLabelEdit->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->AjuntamentLabelEdit->Name = L"AjuntamentLabelEdit";
-			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 20);
+			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->AjuntamentLabelEdit->TabIndex = 15;
 			this->AjuntamentLabelEdit->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label1_Click_1);
 			// 
@@ -273,7 +278,7 @@ namespace application {
 			this->label2->Location = System::Drawing::Point(22, 107);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(95, 20);
+			this->label2->Size = System::Drawing::Size(63, 13);
 			this->label2->TabIndex = 14;
 			this->label2->Text = L"Ajuntament:";
 			this->label2->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label2_Click);
@@ -317,12 +322,26 @@ namespace application {
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::pictureBox1_Click);
 			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Red;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(606, 596);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 18;
+			this->button1->Text = L"Torna";
+			this->button1->UseVisualStyleBackColor = false;
+			// 
 			// ConsultaEntitatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(688, 339);
+			this->ClientSize = System::Drawing::Size(703, 637);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->AjuntamentLabelEdit);
@@ -459,6 +478,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+private: System::Void DescripcioText_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
