@@ -2,6 +2,7 @@
 #include "TxConsultaCompra.h"
 #include "Sessio.h"
 #include "CancelaCompraForm.h"
+#include "ValorarEsdevenimentForm.h"
 
 namespace application {
 
@@ -68,6 +69,9 @@ namespace application {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Button^ TornaButton;
 	private: System::Windows::Forms::Button^ CancelaCompraButton;
+	private: System::Windows::Forms::Button^ valorarE;
+	private: System::Windows::Forms::Button^ consultarV;
+
 
 
 		/// <summary>
@@ -94,6 +98,8 @@ namespace application {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			this->CancelaCompraButton = (gcnew System::Windows::Forms::Button());
+			this->valorarE = (gcnew System::Windows::Forms::Button());
+			this->consultarV = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -226,11 +232,33 @@ namespace application {
 			this->CancelaCompraButton->UseVisualStyleBackColor = false;
 			this->CancelaCompraButton->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::CancelaCompraButton_Click);
 			// 
+			// valorarE
+			// 
+			this->valorarE->Location = System::Drawing::Point(230, 239);
+			this->valorarE->Name = L"valorarE";
+			this->valorarE->Size = System::Drawing::Size(107, 23);
+			this->valorarE->TabIndex = 12;
+			this->valorarE->Text = L"Valorar Esdeveniment";
+			this->valorarE->UseVisualStyleBackColor = true;
+			this->valorarE->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::button1_Click);
+			// 
+			// consultarV
+			// 
+			this->consultarV->Location = System::Drawing::Point(230, 239);
+			this->consultarV->Name = L"consultarV";
+			this->consultarV->Size = System::Drawing::Size(107, 23);
+			this->consultarV->TabIndex = 13;
+			this->consultarV->Text = L"Consulta Valoració";
+			this->consultarV->UseVisualStyleBackColor = true;
+			this->consultarV->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::consultarV_Click);
+			// 
 			// ConsultaCompraForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(349, 274);
+			this->Controls->Add(this->consultarV);
+			this->Controls->Add(this->valorarE);
 			this->Controls->Add(this->CancelaCompraButton);
 			this->Controls->Add(this->TornaButton);
 			this->Controls->Add(this->QuantitatLabel);
@@ -263,17 +291,38 @@ private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::Ev
 	TxConsultaCompra cc(s->obteUsuari()->obteCorreuElectronic(), _nomEsdev, _dataInici, _dataFi);
 	try {
 		cc.executar();
+		System::DateTime now = System::DateTime::Now;
 		List<System::String^>^ e = cc.obteResultat();
 		esdevenimentLabel->Text = e[1];
 		DataIniciLabel->Text = e[2];
 		DataFiLabel->Text = e[3];
 		PreuLabel->Text = e[4];
 		QuantitatLabel->Text = e[5];
+
+		if (DateTime::Parse(e[3]) < now) {
+			this->CancelaCompraButton->Visible = false;
+			CercadoraValoracio cv;
+			
+			try {
+				PassarelaValoracio^ pv = cv.CercaValoracio(s->obteUsuari()->obteCorreuElectronic(), _nomEsdev, _dataInici, _dataFi);
+				this->valorarE->Visible = false;
+				this->consultarV->Visible = true;
+			}
+			catch (std::runtime_error e) {
+				this->valorarE->Visible = true;
+				this->consultarV->Visible = false;
+			}
+		}
+		else {
+			this->valorarE->Visible = false;
+			this->CancelaCompraButton->Visible = true;
+			this->consultarV->Visible = false;
+
+		}
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
 	}
-
 }
 
 private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -285,7 +334,14 @@ private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::
 	Cancela_Compra->ShowDialog();
 	this->Close();
 }
-private: System::Void ValoraEsdevenimentButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	Sessio^ s = Sessio::getInstance();
+	application::ValorarEsdevenimentForm^ Valorar_Esdeveniment = gcnew application::ValorarEsdevenimentForm(s->obteUsuari()->obteCorreuElectronic(), esdevenimentLabel->Text, DataIniciLabel->Text, DataFiLabel->Text);
+	Valorar_Esdeveniment->ShowDialog();
+	this->Close();
+}
+private: System::Void consultarV_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

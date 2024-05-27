@@ -15,7 +15,7 @@ void PassarelaValoracio::insereix() {
 	System::DateTime fiDateTime = System::DateTime::Parse(_dataFi);
 	System::String^ data_inici_sql = iniciDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 	System::String^ data_fi_sql = fiDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-	if (_opinio == System::String::Empty) {
+	if (_opinio != System::String::Empty) {
 		sql = "INSERT INTO Valoracio VALUES ('" + _correuCiutada + "' , '" +
 			_nomEsdev + "','" + data_inici_sql + "','" + data_fi_sql + "','" + _puntuacio + "', '" + _opinio + "')";
 	}

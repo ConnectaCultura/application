@@ -15,8 +15,8 @@ PassarelaValoracio^ CercadoraValoracio::CercaValoracio(System::String^ Ciutada, 
 	if (dataReader->Read()) {
 		System::String^ correuCiu = dataReader->GetString(0);
 		System::String^ esdeve = dataReader->GetString(1);
-		System::String^ dataini = dataReader->GetString(2);
-		System::String^ datafi = dataReader->GetString(3);
+		System::String^ dataini = dataReader->GetDateTime(2).ToString();
+		System::String^ datafi = dataReader->GetDateTime(3).ToString();
 		int puntuacio = dataReader->GetInt32(4);
 		System::String^ opinio = dataReader->GetString(5);
 		con->tancarConnexio();
@@ -26,6 +26,7 @@ PassarelaValoracio^ CercadoraValoracio::CercaValoracio(System::String^ Ciutada, 
 		throw std::runtime_error("La valoracio no existeix");
 	}
 }
+
 List<PassarelaValoracio^>^ CercadoraValoracio::CercaPerEsdeveniment(System::String^ esdeveniment, System::String^ inici, System::String^ fi) {
 	DateTime iniciDateTime = DateTime::Parse(inici);
 	DateTime fiDateTime = DateTime::Parse(fi);

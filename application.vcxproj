@@ -240,6 +240,10 @@
     <ClInclude Include="TxConsultaEntitats.h" />
     <ClInclude Include="TxConsultaEntitatsTipus.h" />
     <ClInclude Include="TxConsultaTipus.h" />
+    <ClInclude Include="TxValorarEsdeveniment.h" />
+    <ClInclude Include="ValorarEsdevenimentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="VeurePerfilForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -321,6 +325,8 @@
     <ClCompile Include="TxConsultaEntitats.cpp" />
     <ClCompile Include="TxConsultaEntitatsTipus.cpp" />
     <ClCompile Include="TxConsultaTipus.cpp" />
+    <ClCompile Include="TxValorarEsdeveniment.cpp" />
+    <ClCompile Include="ValorarEsdevenimentForm.cpp" />
     <ClCompile Include="VeurePerfilForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -398,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistreCiutadaForm.resx">
       <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValorarEsdevenimentForm.resx">
+      <DependentUpon>ValorarEsdevenimentForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VeurePerfilForm.resx">
       <DependentUpon>VeurePerfilForm.h</DependentUpon>
