@@ -198,7 +198,7 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->Location = System::Drawing::Point(26, 171);
+			this->EsdevDataGrid->Location = System::Drawing::Point(26, 235);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
@@ -254,7 +254,7 @@ namespace application {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(22, 140);
+			this->label2->Location = System::Drawing::Point(30, 186);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(95, 20);
@@ -282,7 +282,7 @@ namespace application {
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(812, 411);
+			this->ClientSize = System::Drawing::Size(909, 575);
 			this->Controls->Add(this->AjuntamentLabelEdit);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->EsdevDataGrid);

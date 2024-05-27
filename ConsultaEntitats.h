@@ -112,12 +112,13 @@ namespace application {
 				this->Nom,
 					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
 			});
-			this->dataGridViewEntitats->Location = System::Drawing::Point(18, 91);
+			this->dataGridViewEntitats->Location = System::Drawing::Point(61, 91);
 			this->dataGridViewEntitats->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridViewEntitats->Name = L"dataGridViewEntitats";
 			this->dataGridViewEntitats->ReadOnly = true;
+			this->dataGridViewEntitats->RowHeadersVisible = false;
 			this->dataGridViewEntitats->RowHeadersWidth = 51;
-			this->dataGridViewEntitats->Size = System::Drawing::Size(825, 542);
+			this->dataGridViewEntitats->Size = System::Drawing::Size(921, 781);
 			this->dataGridViewEntitats->TabIndex = 0;
 			this->dataGridViewEntitats->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaEntitats::dataGridViewEntitats_CellContentClick);
 			// 
@@ -178,7 +179,7 @@ namespace application {
 			// TipusComboBox
 			// 
 			this->TipusComboBox->FormattingEnabled = true;
-			this->TipusComboBox->Location = System::Drawing::Point(1008, 32);
+			this->TipusComboBox->Location = System::Drawing::Point(802, 29);
 			this->TipusComboBox->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->TipusComboBox->Name = L"TipusComboBox";
 			this->TipusComboBox->Size = System::Drawing::Size(180, 28);
@@ -211,7 +212,7 @@ namespace application {
 			// AjuntamentComboBox
 			// 
 			this->AjuntamentComboBox->FormattingEnabled = true;
-			this->AjuntamentComboBox->Location = System::Drawing::Point(474, 26);
+			this->AjuntamentComboBox->Location = System::Drawing::Point(476, 26);
 			this->AjuntamentComboBox->Name = L"AjuntamentComboBox";
 			this->AjuntamentComboBox->Size = System::Drawing::Size(136, 28);
 			this->AjuntamentComboBox->TabIndex = 9;
@@ -237,7 +238,7 @@ namespace application {
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(1354, 652);
+			this->ClientSize = System::Drawing::Size(1055, 992);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->AjuntamentComboBox);
 			this->Controls->Add(this->TipusLabel);

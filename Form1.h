@@ -136,6 +136,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ panel_contenedor;
 private: System::Windows::Forms::Panel^ panel1;
+private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -189,8 +190,10 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->margen = (gcnew System::Windows::Forms::Panel());
 			this->panel_contenedor = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel_lateral->SuspendLayout();
 			this->panel4->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->margen->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -475,6 +478,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->label1);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 101);
 			this->panel2->Name = L"panel2";
@@ -511,6 +515,19 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->panel1->Size = System::Drawing::Size(391, 163);
 			this->panel1->TabIndex = 13;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Asdonuts", 29, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(0, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(391, 68);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Connecta Cultura";
+			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
@@ -527,6 +544,8 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel_lateral->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->margen->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
@@ -576,14 +595,12 @@ private: System::Windows::Forms::Panel^ panel1;
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void ConsultaEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
-		application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm();
-		Consulta_Entitat->ShowDialog();
+		this->ObrirForm(gcnew application::ConsultaEntitatForm);
+
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void ConsultaEntitats_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->ObrirForm(gcnew application::ConsultaEntitats);
-		//application::ConsultaEntitats^ Consulta_Entitats = gcnew application::ConsultaEntitats();
-		//Consulta_Entitats->ShowDialog();
 		Form1::ActualitzarForm1();
 	}
 
@@ -670,5 +687,7 @@ private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Form
 private: System::Void panel1_Paint_1(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 
+private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
