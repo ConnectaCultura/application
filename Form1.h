@@ -135,6 +135,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ panel_contenedor;
+private: System::Windows::Forms::Panel^ panel1;
 
 
 
@@ -187,38 +188,42 @@ namespace CppCLRWinFormsProject {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->margen = (gcnew System::Windows::Forms::Panel());
 			this->panel_contenedor = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel_lateral->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->margen->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// logIn
 			// 
 			this->logIn->BackColor = System::Drawing::Color::OrangeRed;
+			this->logIn->Dock = System::Windows::Forms::DockStyle::Top;
 			this->logIn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->logIn->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->logIn->Location = System::Drawing::Point(67, 876);
+			this->logIn->Location = System::Drawing::Point(0, 120);
 			this->logIn->Margin = System::Windows::Forms::Padding(1);
 			this->logIn->Name = L"logIn";
-			this->logIn->Size = System::Drawing::Size(253, 42);
+			this->logIn->Size = System::Drawing::Size(391, 42);
 			this->logIn->TabIndex = 0;
-			this->logIn->Text = L"iniciar sessi�";
+			this->logIn->Text = L"iniciar sessio";
 			this->logIn->UseVisualStyleBackColor = false;
 			this->logIn->Click += gcnew System::EventHandler(this, &Form1::logIn_Click);
 			// 
 			// logOut
 			// 
 			this->logOut->BackColor = System::Drawing::Color::OrangeRed;
+			this->logOut->Dock = System::Windows::Forms::DockStyle::Top;
 			this->logOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->logOut->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->logOut->Location = System::Drawing::Point(67, 920);
+			this->logOut->Location = System::Drawing::Point(0, 78);
 			this->logOut->Margin = System::Windows::Forms::Padding(1);
 			this->logOut->Name = L"logOut";
-			this->logOut->Size = System::Drawing::Size(253, 42);
+			this->logOut->Size = System::Drawing::Size(391, 42);
 			this->logOut->TabIndex = 1;
-			this->logOut->Text = L"tancar sessi�";
+			this->logOut->Text = L"tancar sessio";
 			this->logOut->UseVisualStyleBackColor = false;
 			this->logOut->Click += gcnew System::EventHandler(this, &Form1::logOut_Click);
 			// 
@@ -257,13 +262,14 @@ namespace CppCLRWinFormsProject {
 			// registreCiutada
 			// 
 			this->registreCiutada->BackColor = System::Drawing::Color::OrangeRed;
+			this->registreCiutada->Dock = System::Windows::Forms::DockStyle::Top;
 			this->registreCiutada->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registreCiutada->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->registreCiutada->Location = System::Drawing::Point(67, 830);
+			this->registreCiutada->Location = System::Drawing::Point(0, 0);
 			this->registreCiutada->Margin = System::Windows::Forms::Padding(1);
 			this->registreCiutada->Name = L"registreCiutada";
-			this->registreCiutada->Size = System::Drawing::Size(253, 42);
+			this->registreCiutada->Size = System::Drawing::Size(391, 42);
 			this->registreCiutada->TabIndex = 4;
 			this->registreCiutada->Text = L"registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
@@ -400,13 +406,14 @@ namespace CppCLRWinFormsProject {
 			// buttonTorna
 			// 
 			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Dock = System::Windows::Forms::DockStyle::Top;
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(67, 791);
+			this->buttonTorna->Location = System::Drawing::Point(0, 42);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(253, 36);
+			this->buttonTorna->Size = System::Drawing::Size(391, 36);
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Surt";
 			this->buttonTorna->UseVisualStyleBackColor = false;
@@ -430,12 +437,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->panel_lateral->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->panel_lateral->Controls->Add(this->buttonTorna);
+			this->panel_lateral->Controls->Add(this->panel1);
 			this->panel_lateral->Controls->Add(this->panel4);
-			this->panel_lateral->Controls->Add(this->logIn);
-			this->panel_lateral->Controls->Add(this->registreCiutada);
 			this->panel_lateral->Controls->Add(this->consultarEsdeveniments);
-			this->panel_lateral->Controls->Add(this->logOut);
 			this->panel_lateral->Controls->Add(this->altaEntitat);
 			this->panel_lateral->Controls->Add(this->ConsultaCompresButton);
 			this->panel_lateral->Controls->Add(this->altaAjuntament);
@@ -495,6 +499,18 @@ namespace CppCLRWinFormsProject {
 			this->panel_contenedor->TabIndex = 20;
 			this->panel_contenedor->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint_1);
 			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->logIn);
+			this->panel1->Controls->Add(this->logOut);
+			this->panel1->Controls->Add(this->buttonTorna);
+			this->panel1->Controls->Add(this->registreCiutada);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 799);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(391, 163);
+			this->panel1->TabIndex = 13;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
@@ -512,6 +528,7 @@ namespace CppCLRWinFormsProject {
 			this->panel_lateral->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->margen->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -652,5 +669,6 @@ private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Form
 }
 private: System::Void panel1_Paint_1(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+
 };
 }
