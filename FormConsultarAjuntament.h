@@ -293,7 +293,7 @@ namespace application {
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
-		TxConsultaEntitats ca("Totes", this->_CorreuAjuntament);
+		TxConsultaEntitats ca("", "Totes", this->_CorreuAjuntament);
 		try {
 			ca.executar();
 		}

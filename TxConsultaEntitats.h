@@ -11,11 +11,12 @@ using namespace System::Collections::Generic;
 ref class TxConsultaEntitats
 {
 	private:
+		System::String^ _nom;
 		System::String^ _tipus;
 		System::String^ _ajuntament;
 		List<List<System::String^>^>^ _llistaEntitats = gcnew List<List<System::String^>^>();
 	public:
-		TxConsultaEntitats(System::String^ tipus, System::String^ ajuntament);
+		TxConsultaEntitats(System::String^ nom, System::String^ tipus, System::String^ ajuntament);
 		void executar();
 		List<List<System::String^>^>^ ObteResultat();
 };

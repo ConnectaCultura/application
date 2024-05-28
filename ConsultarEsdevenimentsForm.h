@@ -21,7 +21,7 @@ namespace application {
 			InitializeComponent();
 			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 			_correuEntitat = System::String::Empty;
 		}
@@ -29,12 +29,17 @@ namespace application {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 			_correuEntitat = correu;
 		}
 
 		void actualitzarForm(void) {
+			if (_correuEntitat != "") {
+				this->ControlBox = false;
+				this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+				buttonTorna->Visible = false;
+			}
 			EsdevDataGrid-> Rows->Clear();
 			System::String^ nomEsd = textBox1->Text;
 			TxConsultaEsdeveniments txEsdev(_correuEntitat, nomEsd, checkBox1->Checked, checkBox2->Checked, checkBox3->Checked);
@@ -52,10 +57,9 @@ namespace application {
 				else EsdevDataGrid->Rows->Add(e[0], e[1], e[2], e[3]);
 			}
 		}
-
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~ConsultarEsdevenimentsForm()
 		{
@@ -94,21 +98,16 @@ namespace application {
 
 
 	protected:
-
-
-
-
-
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -283,6 +282,7 @@ namespace application {
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultarEsdevenimentsForm";
 			this->Text = L"Esdeveniments";
