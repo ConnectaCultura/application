@@ -208,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TermesICondicions.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TxAfegirFavorita.h" />
     <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
@@ -286,6 +289,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TermesICondicions.cpp" />
     <ClCompile Include="TxAfegirFavorita.cpp" />
     <ClCompile Include="TxBaixaCiutada.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
@@ -397,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistreCiutadaForm.resx">
       <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermesICondicions.resx">
+      <DependentUpon>TermesICondicions.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VeurePerfilForm.resx">
       <DependentUpon>VeurePerfilForm.h</DependentUpon>
