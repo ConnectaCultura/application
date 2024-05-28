@@ -20,7 +20,7 @@ PassarelaEsdeveniment^ CercadoraEsdeveniment::CercaEsdeveniment(System::String^ 
 		}
 		System::String^ preu = nullptr;
 		if (!dataReader->IsDBNull(5)) {
-			preu = dataReader->GetString(5);
+			preu = dataReader->GetFloat(5).ToString();
 		}
 		System::String^ tipus = dataReader->GetString(6);
 		System::String^ correu = dataReader->GetString(7);
@@ -48,7 +48,7 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteTots() {
 		}
 		System::String^ preu = nullptr;
 		if (!dataReader->IsDBNull(5)) {
-			preu = dataReader->GetString(5);
+			preu = dataReader->GetFloat(5).ToString();
 		}
 		System::String^ tipus = dataReader->GetString(6);
 		System::String^ correu = dataReader->GetString(7);
@@ -75,7 +75,7 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteEsdevEntitat(System::St
 		}
 		System::String^ preu = nullptr;
 		if (!dataReader->IsDBNull(5)) {
-			preu = dataReader->GetString(5);
+			preu = dataReader->GetFloat(5).ToString();
 		}
 		System::String^ tipus = dataReader->GetString(6);
 		System::String^ correu = dataReader->GetString(7);
@@ -101,7 +101,7 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obtePerNom(System::String^ 
 		}
 		System::String^ preu = nullptr;
 		if (!dataReader->IsDBNull(5)) {
-			preu = dataReader->GetString(5);
+			preu = dataReader->GetFloat(5).ToString();
 		}
 		System::String^ tipus = dataReader->GetString(6);
 		System::String^ correu = dataReader->GetString(7);

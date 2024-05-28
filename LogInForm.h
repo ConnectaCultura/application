@@ -96,7 +96,7 @@ namespace application {
 			this->textBox1->Location = System::Drawing::Point(202, 88);
 			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(228, 26);
+			this->textBox1->Size = System::Drawing::Size(257, 26);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
@@ -105,7 +105,7 @@ namespace application {
 			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(228, 26);
+			this->textBox2->Size = System::Drawing::Size(257, 26);
 			this->textBox2->TabIndex = 3;
 			// 
 			// button1
@@ -117,7 +117,7 @@ namespace application {
 			this->button1->Location = System::Drawing::Point(279, 201);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(152, 39);
+			this->button1->Size = System::Drawing::Size(181, 47);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Iniciar sessio";
 			this->button1->UseVisualStyleBackColor = false;
@@ -132,7 +132,7 @@ namespace application {
 			this->buttonTorna->Location = System::Drawing::Point(38, 201);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(120, 36);
+			this->buttonTorna->Size = System::Drawing::Size(149, 44);
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Torna";
 			this->buttonTorna->UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(474, 266);
+			this->ClientSize = System::Drawing::Size(534, 304);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
