@@ -133,6 +133,7 @@ namespace application {
 				this->Nom,
 					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
 			});
+
 			this->dataGridViewEntitats->Location = System::Drawing::Point(32, 131);
 			this->dataGridViewEntitats->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridViewEntitats->Name = L"dataGridViewEntitats";
@@ -188,7 +189,7 @@ namespace application {
 			// 
 			this->EntitatsLabel->AutoSize = true;
 			this->EntitatsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			static_cast<System::Byte>(0)));
 			this->EntitatsLabel->Location = System::Drawing::Point(25, 19);
 			this->EntitatsLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->EntitatsLabel->Name = L"EntitatsLabel";
@@ -211,8 +212,9 @@ namespace application {
 			// 
 			this->TipusLabel->AutoSize = true;
 			this->TipusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			  static_cast<System::Byte>(0)));
 			this->TipusLabel->Location = System::Drawing::Point(905, 78);
+
 			this->TipusLabel->Name = L"TipusLabel";
 			this->TipusLabel->Size = System::Drawing::Size(97, 25);
 			this->TipusLabel->TabIndex = 8;
@@ -287,6 +289,7 @@ namespace application {
 			this->Controls->Add(this->TipusComboBox);
 			this->Controls->Add(this->EntitatsLabel);
 			this->Controls->Add(this->dataGridViewEntitats);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"ConsultaEntitats";

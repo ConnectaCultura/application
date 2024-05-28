@@ -22,7 +22,11 @@ void TxConsultaEsdeveniment::executar() {
 	if (esdev->obteAforament() != nullptr) {
 		// Entrades disponibles
 		CercadoraCompra cC;
-		int entradesDisp = (cC.CercaPerEsdeveniment(_nom, _inici, _fi))->Count;
+		int entradesDisp = 0;
+		List<PassarelaCompra^>^ eD = cC.CercaPerEsdeveniment(_nom, _inici, _fi);
+		for each (PassarelaCompra ^ c in eD) {
+			entradesDisp = entradesDisp + int::Parse(c->obteQuantitat());
+		}
 		entradesDisp = *(esdev->obteAforament()) - entradesDisp;
 		sol->Add(Convert::ToString(entradesDisp));
 

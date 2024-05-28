@@ -1,9 +1,12 @@
 #pragma once
 #include "TxConsultaEsdeveniment.h"
-#include "TxCompraEntrada.h"
+#include "ComprarEntradaForm.h"
 #include "TxConsultaEntEsde.h"
 #include "TxExisteixCompra.h"
 #include "CancelarEsdevenimentForm.h"
+#include "ConsultaCompraForm.h"
+
+
 namespace application {
 
 	using namespace System;
@@ -62,6 +65,8 @@ namespace application {
 			}
 		}
 
+		
+
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -115,6 +120,11 @@ namespace application {
 	private: System::Windows::Forms::Button^ ModificarButton;
 
 
+
+
+
+
+
 		   /// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
@@ -157,161 +167,178 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(54, 51);
+			this->label1->Location = System::Drawing::Point(36, 33);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(42, 20);
+			this->label1->Size = System::Drawing::Size(29, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nom";
 			// 
 			// nom
 			// 
 			this->nom->AutoSize = true;
-			this->nom->Location = System::Drawing::Point(249, 51);
+			this->nom->Location = System::Drawing::Point(166, 33);
+			this->nom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->nom->Name = L"nom";
-			this->nom->Size = System::Drawing::Size(51, 20);
+			this->nom->Size = System::Drawing::Size(35, 13);
 			this->nom->TabIndex = 1;
 			this->nom->Text = L"label2";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(50, 248);
+			this->label2->Location = System::Drawing::Point(33, 161);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 20);
+			this->label2->Size = System::Drawing::Size(0, 13);
 			this->label2->TabIndex = 2;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(50, 205);
+			this->label3->Location = System::Drawing::Point(33, 133);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(153, 20);
+			this->label3->Size = System::Drawing::Size(101, 13);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"Entitat organizadora";
 			// 
 			// correu
 			// 
 			this->correu->AutoSize = true;
-			this->correu->Location = System::Drawing::Point(249, 205);
+			this->correu->Location = System::Drawing::Point(166, 133);
+			this->correu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->correu->Name = L"correu";
-			this->correu->Size = System::Drawing::Size(51, 20);
+			this->correu->Size = System::Drawing::Size(35, 13);
 			this->correu->TabIndex = 4;
 			this->correu->Text = L"label4";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(50, 248);
+			this->label4->Location = System::Drawing::Point(33, 161);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(37, 20);
+			this->label4->Size = System::Drawing::Size(26, 13);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Inici";
 			// 
 			// inici
 			// 
 			this->inici->AutoSize = true;
-			this->inici->Location = System::Drawing::Point(249, 248);
+			this->inici->Location = System::Drawing::Point(166, 161);
+			this->inici->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->inici->Name = L"inici";
-			this->inici->Size = System::Drawing::Size(51, 20);
+			this->inici->Size = System::Drawing::Size(35, 13);
 			this->inici->TabIndex = 6;
 			this->inici->Text = L"label5";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(50, 408);
+			this->label5->Location = System::Drawing::Point(33, 265);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(133, 20);
+			this->label5->Size = System::Drawing::Size(87, 13);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Aforament maxim";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(50, 449);
+			this->label6->Location = System::Drawing::Point(33, 292);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(157, 20);
+			this->label6->Size = System::Drawing::Size(104, 13);
 			this->label6->TabIndex = 8;
 			this->label6->Text = L"Entrades disponibles";
 			// 
 			// lable7
 			// 
 			this->lable7->AutoSize = true;
-			this->lable7->Location = System::Drawing::Point(50, 374);
+			this->lable7->Location = System::Drawing::Point(33, 243);
+			this->lable7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lable7->Name = L"lable7";
-			this->lable7->Size = System::Drawing::Size(42, 20);
+			this->lable7->Size = System::Drawing::Size(29, 13);
 			this->lable7->TabIndex = 9;
 			this->lable7->Text = L"Preu";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(50, 332);
+			this->label7->Location = System::Drawing::Point(33, 216);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(74, 20);
+			this->label7->Size = System::Drawing::Size(50, 13);
 			this->label7->TabIndex = 10;
 			this->label7->Text = L"Modalitat";
 			// 
 			// modalitat
 			// 
 			this->modalitat->AutoSize = true;
-			this->modalitat->Location = System::Drawing::Point(249, 332);
+			this->modalitat->Location = System::Drawing::Point(166, 216);
+			this->modalitat->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->modalitat->Name = L"modalitat";
-			this->modalitat->Size = System::Drawing::Size(51, 20);
+			this->modalitat->Size = System::Drawing::Size(35, 13);
 			this->modalitat->TabIndex = 11;
 			this->modalitat->Text = L"label8";
 			// 
 			// preu
 			// 
 			this->preu->AutoSize = true;
-			this->preu->Location = System::Drawing::Point(249, 374);
+			this->preu->Location = System::Drawing::Point(166, 243);
+			this->preu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->preu->Name = L"preu";
-			this->preu->Size = System::Drawing::Size(51, 20);
+			this->preu->Size = System::Drawing::Size(35, 13);
 			this->preu->TabIndex = 12;
 			this->preu->Text = L"label8";
 			// 
 			// afMax
 			// 
 			this->afMax->AutoSize = true;
-			this->afMax->Location = System::Drawing::Point(249, 408);
+			this->afMax->Location = System::Drawing::Point(166, 265);
+			this->afMax->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->afMax->Name = L"afMax";
-			this->afMax->Size = System::Drawing::Size(51, 20);
+			this->afMax->Size = System::Drawing::Size(35, 13);
 			this->afMax->TabIndex = 13;
 			this->afMax->Text = L"label8";
 			// 
 			// eDisp
 			// 
 			this->eDisp->AutoSize = true;
-			this->eDisp->Location = System::Drawing::Point(249, 449);
+			this->eDisp->Location = System::Drawing::Point(166, 292);
+			this->eDisp->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->eDisp->Name = L"eDisp";
-			this->eDisp->Size = System::Drawing::Size(51, 20);
+			this->eDisp->Size = System::Drawing::Size(35, 13);
 			this->eDisp->TabIndex = 14;
 			this->eDisp->Text = L"label8";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(54, 95);
+			this->label8->Location = System::Drawing::Point(36, 62);
+			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(83, 20);
+			this->label8->Size = System::Drawing::Size(57, 13);
 			this->label8->TabIndex = 15;
 			this->label8->Text = L"Descripció";
 			// 
 			// descripcio
 			// 
 			this->descripcio->AutoSize = true;
-			this->descripcio->Location = System::Drawing::Point(253, 95);
+			this->descripcio->Location = System::Drawing::Point(169, 62);
+			this->descripcio->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->descripcio->Name = L"descripcio";
-			this->descripcio->Size = System::Drawing::Size(51, 20);
+			this->descripcio->Size = System::Drawing::Size(35, 13);
 			this->descripcio->TabIndex = 16;
 			this->descripcio->Text = L"label9";
 			// 
 			// ComprarButton
 			// 
-			this->ComprarButton->Location = System::Drawing::Point(432, 501);
-			this->ComprarButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->ComprarButton->Location = System::Drawing::Point(288, 326);
+			this->ComprarButton->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
 			this->ComprarButton->Name = L"ComprarButton";
-			this->ComprarButton->Size = System::Drawing::Size(183, 39);
+			this->ComprarButton->Size = System::Drawing::Size(122, 25);
 			this->ComprarButton->TabIndex = 17;
 			this->ComprarButton->Text = L"Comprar Entrada";
 			this->ComprarButton->UseVisualStyleBackColor = true;
@@ -323,10 +350,10 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(54, 501);
-			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Location = System::Drawing::Point(36, 326);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
 			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(120, 36);
+			this->buttonTorna->Size = System::Drawing::Size(80, 23);
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Torna";
 			this->buttonTorna->UseVisualStyleBackColor = false;
@@ -334,10 +361,10 @@ namespace application {
 			// 
 			// Cancel_button
 			// 
-			this->Cancel_button->Location = System::Drawing::Point(432, 449);
-			this->Cancel_button->Margin = System::Windows::Forms::Padding(2);
+			this->Cancel_button->Location = System::Drawing::Point(288, 292);
+			this->Cancel_button->Margin = System::Windows::Forms::Padding(1);
 			this->Cancel_button->Name = L"Cancel_button";
-			this->Cancel_button->Size = System::Drawing::Size(183, 39);
+			this->Cancel_button->Size = System::Drawing::Size(122, 25);
 			this->Cancel_button->TabIndex = 18;
 			this->Cancel_button->Text = L"Cancelar";
 			this->Cancel_button->UseVisualStyleBackColor = true;
@@ -346,46 +373,49 @@ namespace application {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(50, 293);
+			this->label9->Location = System::Drawing::Point(33, 190);
+			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(22, 20);
+			this->label9->Size = System::Drawing::Size(15, 13);
 			this->label9->TabIndex = 19;
 			this->label9->Text = L"Fi";
 			// 
 			// fi
 			// 
 			this->fi->AutoSize = true;
-			this->fi->Location = System::Drawing::Point(249, 293);
+			this->fi->Location = System::Drawing::Point(166, 190);
+			this->fi->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->fi->Name = L"fi";
-			this->fi->Size = System::Drawing::Size(51, 20);
+			this->fi->Size = System::Drawing::Size(35, 13);
 			this->fi->TabIndex = 20;
 			this->fi->Text = L"label5";
 			// 
 			// VeureCompraButton
 			// 
-			this->VeureCompraButton->Location = System::Drawing::Point(432, 389);
-			this->VeureCompraButton->Margin = System::Windows::Forms::Padding(2);
+			this->VeureCompraButton->Location = System::Drawing::Point(288, 253);
+			this->VeureCompraButton->Margin = System::Windows::Forms::Padding(1);
 			this->VeureCompraButton->Name = L"VeureCompraButton";
-			this->VeureCompraButton->Size = System::Drawing::Size(183, 39);
+			this->VeureCompraButton->Size = System::Drawing::Size(122, 25);
 			this->VeureCompraButton->TabIndex = 21;
 			this->VeureCompraButton->Text = L"Veure compra";
 			this->VeureCompraButton->UseVisualStyleBackColor = true;
+			this->VeureCompraButton->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::VeureCompraButton_Click);
 			// 
 			// ModificarButton
 			// 
-			this->ModificarButton->Location = System::Drawing::Point(432, 323);
-			this->ModificarButton->Margin = System::Windows::Forms::Padding(2);
+			this->ModificarButton->Location = System::Drawing::Point(288, 210);
+			this->ModificarButton->Margin = System::Windows::Forms::Padding(1);
 			this->ModificarButton->Name = L"ModificarButton";
-			this->ModificarButton->Size = System::Drawing::Size(183, 39);
+			this->ModificarButton->Size = System::Drawing::Size(122, 25);
 			this->ModificarButton->TabIndex = 22;
 			this->ModificarButton->Text = L"Modificar";
 			this->ModificarButton->UseVisualStyleBackColor = true;
 			// 
 			// ConsultaEsdevenimentForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(638, 566);
+			this->ClientSize = System::Drawing::Size(425, 368);
 			this->Controls->Add(this->ModificarButton);
 			this->Controls->Add(this->VeureCompraButton);
 			this->Controls->Add(this->fi);
@@ -427,6 +457,7 @@ namespace application {
 			ModificarButton->Visible = false;
 			ComprarButton->Visible = false;
 			Cancel_button->Visible = false;
+
 		} else if (_usuari == 1) {
 			ComprarButton->Visible = true;
 			Cancel_button->Visible = false;
@@ -455,8 +486,9 @@ namespace application {
 			Cancel_button->Visible = false;
 			ModificarButton->Visible = false;
 		}
-		if (DateTime::Parse(_fi) < now)
+		if (DateTime::Parse(_fi) < now){
 			ComprarButton->Visible = false;
+		}
 		TxConsultaEsdeveniment txCE(_nom, _inici, _fi);
 		try {
 			txCE.executar();
@@ -473,7 +505,9 @@ namespace application {
 			else this->preu->Text = ve[3];
 			afMax->Text = ve[4];
 			eDisp->Text = ve[5];
-			if(eDisp->Text == "0") ComprarButton->Visible = false;
+			if (eDisp->Text == "0") {
+				ComprarButton->Visible = false;
+			}
 		}
 		else{
 			this->preu->Text = "Sense entrada";
@@ -483,19 +517,10 @@ namespace application {
 			label6->Visible = false;
 			eDisp->Visible = false;
 		}
-	
 	}
 private: System::Void ComprarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ preuCompra;
-	if (preu->Text == "Gratuit") {
-		preuCompra = "0";
-	}
-	else {
-		preuCompra = this->preu->Text;
-	}
-	System::String^ preuDef = preuCompra->Replace(',', '.');
-	TxCompraEntrada entrada(_nom, _inici, _fi, preuDef);
-	entrada.executar();
+	application::ComprarEntradaForm^ Comprar_Entrada = gcnew application::ComprarEntradaForm(_nom, _inici, _fi);
+	Comprar_Entrada->ShowDialog();
 	this->Close();
 }
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -506,6 +531,17 @@ private: System::Void Cancel_button_Click_1(System::Object^ sender, System::Even
 	application::CancelarEsdevenimentForm^ CancelaEsdev = gcnew application::CancelarEsdevenimentForm(_nom, _inici, _fi);
 	CancelaEsdev->ShowDialog();
 	this->Close();
+}
+private: System::Void VeureCompraButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ nom = this->nom->Text;
+	String^ inici = this->inici->Text;
+	String^ fi = this->fi->Text;
+
+	application::ConsultaCompraForm^ Consulta_Compra = gcnew application::ConsultaCompraForm(nom, inici, fi);
+	Consulta_Compra->ShowDialog();
+	this->Close();
+}
+private: System::Void QuantitatNumeric_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -1,7 +1,10 @@
 #pragma once
 #include "Sessio.h"
 #include "TxConsultaPerfil.h"
-
+#include "ConsultaCompresForm.h"
+#include "TxModificaCiutada.h"
+#include "CercadoraCiutada.h"
+#include "PassarelaCiutada.h"
 namespace application {
 
 	using namespace System;
@@ -54,6 +57,20 @@ namespace application {
 
 	private: System::Windows::Forms::Label^ PuntsLabelEdit;
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::Button^ MostraCompresButton;
+
+	private: System::Windows::Forms::TextBox^ nomBox;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+	private: System::Windows::Forms::PictureBox^ guardaBox;
+
+
+
+
+
+
+
+
 
 
 
@@ -70,6 +87,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(VeurePerfilForm::typeid));
 			this->TipusText = (gcnew System::Windows::Forms::Label());
 			this->DescripcioText = (gcnew System::Windows::Forms::Label());
 			this->NomText = (gcnew System::Windows::Forms::Label());
@@ -77,12 +95,18 @@ namespace application {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->MostraCompresButton = (gcnew System::Windows::Forms::Button());
+			this->nomBox = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->guardaBox = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guardaBox))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(29, 73);
+			this->TipusText->Location = System::Drawing::Point(29, 92);
 			this->TipusText->Name = L"TipusText";
 			this->TipusText->Size = System::Drawing::Size(112, 16);
 			this->TipusText->TabIndex = 11;
@@ -92,7 +116,7 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(29, 105);
+			this->DescripcioText->Location = System::Drawing::Point(29, 148);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(43, 16);
 			this->DescripcioText->TabIndex = 8;
@@ -122,7 +146,7 @@ namespace application {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(196, 73);
+			this->label2->Location = System::Drawing::Point(196, 92);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(0, 16);
@@ -131,7 +155,7 @@ namespace application {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(196, 107);
+			this->label3->Location = System::Drawing::Point(196, 150);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(0, 16);
@@ -143,20 +167,69 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(12, 162);
+			this->buttonTorna->Location = System::Drawing::Point(12, 200);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(107, 29);
+			this->buttonTorna->Size = System::Drawing::Size(107, 30);
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Torna";
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &VeurePerfilForm::buttonTorna_Click);
 			// 
+			// MostraCompresButton
+			// 
+			this->MostraCompresButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->MostraCompresButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->MostraCompresButton->ForeColor = System::Drawing::Color::Transparent;
+			this->MostraCompresButton->Location = System::Drawing::Point(294, 200);
+			this->MostraCompresButton->Margin = System::Windows::Forms::Padding(4);
+			this->MostraCompresButton->Name = L"MostraCompresButton";
+			this->MostraCompresButton->Size = System::Drawing::Size(157, 30);
+			this->MostraCompresButton->TabIndex = 19;
+			this->MostraCompresButton->Text = L"Mostra Compres";
+			this->MostraCompresButton->UseVisualStyleBackColor = false;
+			this->MostraCompresButton->Click += gcnew System::EventHandler(this, &VeurePerfilForm::MostraCompresButton_Click);
+			// 
+			// nomBox
+			// 
+			this->nomBox->Location = System::Drawing::Point(185, 35);
+			this->nomBox->Name = L"nomBox";
+			this->nomBox->Size = System::Drawing::Size(224, 22);
+			this->nomBox->TabIndex = 21;
+			this->nomBox->TextChanged += gcnew System::EventHandler(this, &VeurePerfilForm::nomBox_TextChanged_1);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(429, 35);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(23, 22);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 23;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &VeurePerfilForm::pictureBox1_Click);
+			// 
+			// guardaBox
+			// 
+			this->guardaBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guardaBox.Image")));
+			this->guardaBox->Location = System::Drawing::Point(429, 35);
+			this->guardaBox->Name = L"guardaBox";
+			this->guardaBox->Size = System::Drawing::Size(23, 22);
+			this->guardaBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->guardaBox->TabIndex = 24;
+			this->guardaBox->TabStop = false;
+			this->guardaBox->Click += gcnew System::EventHandler(this, &VeurePerfilForm::guardaBox_Click);
+			// 
 			// VeurePerfilForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(385, 202);
+			this->ClientSize = System::Drawing::Size(464, 244);
+			this->Controls->Add(this->guardaBox);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->nomBox);
+			this->Controls->Add(this->MostraCompresButton);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -164,10 +237,13 @@ namespace application {
 			this->Controls->Add(this->TipusText);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"VeurePerfilForm";
 			this->Text = L"VeurePerfilForm";
 			this->Load += gcnew System::EventHandler(this, &VeurePerfilForm::VeurePerfilForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guardaBox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -175,12 +251,14 @@ namespace application {
 #pragma endregion
 		private: System::Void VeurePerfilForm_Load(System::Object^ sender, System::EventArgs^ e) {
 			// Para hacer un consultaPerfil generico
+			nomBox->Visible = false;
+			guardaBox->Visible = false;
 			TxConsultaPerfil txCP;
 			try {
 				txCP.executar();
 				List<String^>^ ciutada = txCP.obteResultat();
-				label1->Text = ciutada[0];
-				label2->Text = ciutada[1];
+				label1->Text = ciutada[1];
+				label2->Text = ciutada[0];
 				label3->Text = ciutada[2];
 			}
 			catch (MySqlException^ ex) {
@@ -207,6 +285,46 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void MostraCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Sessio^ s = Sessio::getInstance();
+	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic());
+	CCompres->ShowDialog();
+	this->Close();
+	//Form1::ActualitzarForm1();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void nomBox_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	label1->Text = nomBox->Text;
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	nomBox->Visible = true;
+	guardaBox->Visible = true;
+	pictureBox1->Visible = false;
+}
+private: System::Void guardaBox_Click(System::Object^ sender, System::EventArgs^ e) {
+	Sessio^ s = Sessio::getInstance();
+	PassarelaUsuari^ u = s->obteUsuari();
+	TxModificaCiutada Mod(nomBox->Text, u);
+	if (nomBox->Text == System::String::Empty) {
+		MessageBox::Show("El camp a modificar esta buit.");
+	}
+	else {
+		try {
+			Mod.executar();
+			s->modificaUsuari(nomBox->Text);
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show("No s'ha pogut modificar.");
+		}
+		guardaBox->Visible = false;
+		pictureBox1->Visible = true;
+		nomBox->Visible = false;
+	}
 }
 };
 }

@@ -34,6 +34,20 @@ void TxConsultaEsdeveniments::executar() {
 			}
 		}
 	}
+
+	else {
+		List<PassarelaEsdeveniment^>^ llistaEsdev = cEsdev.obteEsdevEntitat(_correu);
+		_result = gcnew List<List<System::String^>^>();
+		for (int i = 0; i < llistaEsdev->Count; i++) {
+			List<System::String^>^ laux = gcnew List<System::String^>;
+			laux->Add(llistaEsdev[i]->obteNom());
+			laux->Add(llistaEsdev[i]->obteData_inici().ToString());
+			laux->Add(llistaEsdev[i]->obteData_fi().ToString());
+			laux->Add(Convert::ToString(llistaEsdev[i]->obtePreu()));
+			_result->Add(laux);
+		}
+	
+	}
 }
 
 List<List<System::String^>^>^ TxConsultaEsdeveniments::obteResultat() {

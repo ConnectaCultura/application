@@ -10,17 +10,26 @@ TxCancelaCompra::TxCancelaCompra(System::String^ correuCiutada, System::String^ 
 	_datainici = datainici;
 	_datafi = datafi;
 }
-void TxCancelaCompra::executar() 
+void TxCancelaCompra::executar()
 {
 	CercadoraCiutada cu;
 	PassarelaCiutada^ ciu = cu.cercaCiutada(_correuCiutada);
 	CercadoraCompra cc;
 	PassarelaCompra^ com = cc.CercaCompra(_correuCiutada, _nomesdev, _datainici, _datafi);
-	double preuEntradaNumero = Convert::ToDouble(com->obtePreu());
-	double resultadoDivision = preuEntradaNumero / 10.0;
+	System::Decimal preuEntradaNumero = System::Decimal::Parse(com->obtePreu());
+	System::Decimal resultadoDivision = preuEntradaNumero / 10;
+	resultadoDivision = resultadoDivision.Truncate(resultadoDivision);
 	int resultadoFinal = Convert::ToInt32(resultadoDivision);
-	ciu->setPunts(-resultadoFinal);
-	ciu->modificaPunts();
-	com->esborra();
+	int punts = ciu->obtePunts() - resultadoFinal;
+	Sessio^ s = Sessio::getInstance();
+	if (punts < 0 && s->obteUsuari()->obteTipus() != "entitat") throw std::runtime_error("No es pot cancelar aquesta compra.");
+	if (s->obteUsuari()->obteTipus() == "entitat") {
+		com->esborra();
+	}
+	else {
+		ciu->setPunts(punts);
+		ciu->modificaPunts();
+		com->esborra();
+	}
 }
 

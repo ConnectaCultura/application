@@ -12,7 +12,7 @@ TxAltaEsdeveniment::TxAltaEsdeveniment(System::String^ n, System::String^ des, S
 }
 
 void TxAltaEsdeveniment::executar() {
-	Sessio ^e = Sessio::getInstance();
+	Sessio^ e = Sessio::getInstance();
 	System::String^ cE = e->obteUsuari()->obteCorreuElectronic();
 	PassarelaEsdeveniment esdev(cE, nom, descripcio, data_inici, data_fi, aforament, preu, tipus);
 	esdev.insereix();
