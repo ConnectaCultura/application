@@ -102,7 +102,7 @@ namespace application {
 			// 
 			// textBoxNom
 			// 
-			this->textBoxNom->Location = System::Drawing::Point(213, 34);
+			this->textBoxNom->Location = System::Drawing::Point(213, 87);
 			this->textBoxNom->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNom->Name = L"textBoxNom";
 			this->textBoxNom->Size = System::Drawing::Size(183, 22);
@@ -133,7 +133,7 @@ namespace application {
 			// 
 			// textBoxCorreu
 			// 
-			this->textBoxCorreu->Location = System::Drawing::Point(213, 87);
+			this->textBoxCorreu->Location = System::Drawing::Point(213, 34);
 			this->textBoxCorreu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxCorreu->Name = L"textBoxCorreu";
 			this->textBoxCorreu->Size = System::Drawing::Size(183, 22);
