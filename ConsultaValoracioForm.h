@@ -372,7 +372,7 @@ namespace application {
 		esdevenimentLabel->Text = _nomEsdev;
 		DataIniciLabel->Text = _dataInici;
 		DataFiLabel->Text = _dataFi;
-		/*TxConsultaValoracio txCV;
+		TxConsultaValoracio txCV(_correuCiutada, _nomEsdev, _dataInici, _dataFi);
 		try {
 			txCV.executar();
 			List<System::String^>^ sol = txCV.obteResultat();
@@ -430,7 +430,7 @@ namespace application {
 		}
 		catch (MySqlException^ ex) {
 			MessageBox::Show(ex->Message);
-		}*/
+		}
 	}
 private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();

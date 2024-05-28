@@ -1,27 +1,26 @@
 #include "pch.h"
 #include "TxConsultaValoracio.h"
 
-TxConsultaValoracio::TxConsultaValoracio()
+
+TxConsultaValoracio::TxConsultaValoracio(System::String^ correuCiu, System::String^ nomEsdev, System::String^ dataIni, System::String^ dataFi)
 {
-
-}
-
-TxConsultaValoracio::TxConsultaValoracio(System::String^ correuCiu, System::String^ nomEsdev, System::String^ dataIni, System::String^ dataFi, int puntuacio, System::String^ opinio)
-{
-
+	_correuCiu = correuCiu;
+	_nomEsdev = nomEsdev;
+	_dataIni = dataIni;
+	_dataFi = dataFi;
 }
 
 void TxConsultaValoracio::executar()
 {
-	Sessio^ s = Sessio::getInstance();
 	CercadoraValoracio cv;
-
-	PassarelaValoracio^  = s->obteUsuari();
-	PassarelaCiutada^ c = cC.cercaCiutada(u->obteCorreuElectronic());
-	_resultat = gcnew List<System::String^>();
-	_resultat->Add(u->obteCorreuElectronic());
-	_resultat->Add(u->obteNom());
-	_resultat->Add(c->obtePunts().ToString());
+	PassarelaValoracio^ pv = cv.CercaValoracio(_correuCiu, _nomEsdev, _dataIni, _dataFi);
+	_result = gcnew List<System::String^>();
+	_result->Add(pv->obteCorreuCiutada());
+	_result->Add(pv->obteNomEsdev());
+	_result->Add(pv->obteDataInici());
+	_result->Add(pv->obteDataFi());
+	_result->Add(pv->obtePuntuacio().ToString());
+	_result->Add(pv->obteOpinio());
 }
 
 List<System::String^>^ TxConsultaValoracio::obteResultat()
