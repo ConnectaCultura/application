@@ -70,7 +70,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -80,6 +80,8 @@ namespace application {
 	private: System::Windows::Forms::PictureBox^ pictureBox7;
 	private: System::Windows::Forms::PictureBox^ pictureBox8;
 	private: System::Windows::Forms::PictureBox^ pictureBox9;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+
 
 
 		/// <summary>
@@ -105,7 +107,6 @@ namespace application {
 			this->DataFiLabel = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
@@ -115,6 +116,7 @@ namespace application {
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -232,15 +234,6 @@ namespace application {
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"Opinió";
 			// 
-			// richTextBox1
-			// 
-			this->richTextBox1->Location = System::Drawing::Point(189, 234);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(196, 50);
-			this->richTextBox1->TabIndex = 21;
-			this->richTextBox1->Text = L"";
-			this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::richTextBox1_TextChanged);
-			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
@@ -352,6 +345,15 @@ namespace application {
 			this->pictureBox9->TabIndex = 30;
 			this->pictureBox9->TabStop = false;
 			this->pictureBox9->Click += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::pictureBox9_Click);
+			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(189, 234);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(196, 50);
+			this->richTextBox1->TabIndex = 21;
+			this->richTextBox1->Text = L"";
+			this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::richTextBox1_TextChanged);
 			// 
 			// ValorarEsdevenimentForm
 			// 

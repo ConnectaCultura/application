@@ -3,6 +3,7 @@
 #include "Sessio.h"
 #include "CancelaCompraForm.h"
 #include "ValorarEsdevenimentForm.h"
+#include "ConsultaValoracioForm.h"
 
 namespace application {
 
@@ -345,7 +346,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	this->Close();
 }
 private: System::Void consultarV_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	Sessio^ s = Sessio::getInstance();
+	application::ConsultaValoracioForm^ Consultar_Esdeveniment = gcnew application::ConsultaValoracioForm(s->obteUsuari()->obteCorreuElectronic(), esdevenimentLabel->Text, DataIniciLabel->Text, DataFiLabel->Text);
+	Consultar_Esdeveniment->ShowDialog();
+	this->Close();
 }
 };
 }
