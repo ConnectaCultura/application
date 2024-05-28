@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TxRegistreCiutada.h"
+#include "TermesICondicions.h"
 
 namespace application {
 
@@ -24,6 +25,7 @@ namespace application {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			termes = false;
 		}
 
 	protected:
@@ -46,6 +48,10 @@ namespace application {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Button^ registre;
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::CheckBox^ checkBox;
+	private: System::Windows::Forms::Label^ labelCondicio;
+	bool termes;
+	private: System::Windows::Forms::LinkLabel^ linkLabel;
 
 	private:
 		/// <summary>
@@ -68,6 +74,9 @@ namespace application {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->registre = (gcnew System::Windows::Forms::Button());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->checkBox = (gcnew System::Windows::Forms::CheckBox());
+			this->labelCondicio = (gcnew System::Windows::Forms::Label());
+			this->linkLabel = (gcnew System::Windows::Forms::LinkLabel());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -75,37 +84,37 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(37, 70);
+			this->label1->Location = System::Drawing::Point(34, 38);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(38, 17);
+			this->label1->Size = System::Drawing::Size(40, 17);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"nom";
+			this->label1->Text = L"Nom";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(37, 102);
+			this->label2->Location = System::Drawing::Point(34, 70);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(131, 17);
+			this->label2->Size = System::Drawing::Size(133, 17);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"correu electrònic";
+			this->label2->Text = L"Correu electrònic";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(37, 133);
+			this->label3->Location = System::Drawing::Point(34, 101);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(97, 17);
+			this->label3->Size = System::Drawing::Size(99, 17);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"contrasenya";
+			this->label3->Text = L"Contrasenya";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(199, 70);
+			this->textBox1->Location = System::Drawing::Point(196, 38);
 			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(164, 22);
@@ -113,7 +122,7 @@ namespace application {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(199, 102);
+			this->textBox2->Location = System::Drawing::Point(196, 70);
 			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(164, 22);
@@ -121,12 +130,12 @@ namespace application {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(199, 133);
+			this->textBox3->Location = System::Drawing::Point(196, 101);
 			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox3->Name = L"textBox3";
+			this->textBox3->PasswordChar = '*';
 			this->textBox3->Size = System::Drawing::Size(164, 22);
 			this->textBox3->TabIndex = 5;
-			this->textBox3->PasswordChar = '*';
 			// 
 			// registre
 			// 
@@ -139,7 +148,7 @@ namespace application {
 			this->registre->Name = L"registre";
 			this->registre->Size = System::Drawing::Size(119, 30);
 			this->registre->TabIndex = 6;
-			this->registre->Text = L"registrar-se";
+			this->registre->Text = L"Registrar-se";
 			this->registre->UseVisualStyleBackColor = false;
 			this->registre->Click += gcnew System::EventHandler(this, &RegistreCiutadaForm::registre_Click);
 			// 
@@ -158,11 +167,44 @@ namespace application {
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &RegistreCiutadaForm::buttonTorna_Click);
 			// 
+			// checkBox
+			// 
+			this->checkBox->AutoSize = true;
+			this->checkBox->Location = System::Drawing::Point(47, 146);
+			this->checkBox->Name = L"checkBox";
+			this->checkBox->Size = System::Drawing::Size(18, 17);
+			this->checkBox->TabIndex = 19;
+			this->checkBox->UseVisualStyleBackColor = true;
+			this->checkBox->CheckedChanged += gcnew System::EventHandler(this, &RegistreCiutadaForm::checkBox_CheckedChanged);
+			// 
+			// labelCondicio
+			// 
+			this->labelCondicio->AutoSize = true;
+			this->labelCondicio->Location = System::Drawing::Point(71, 147);
+			this->labelCondicio->Name = L"labelCondicio";
+			this->labelCondicio->Size = System::Drawing::Size(135, 16);
+			this->labelCondicio->TabIndex = 20;
+			this->labelCondicio->Text = L"He llegit i accepto els";
+			// 
+			// linkLabel
+			// 
+			this->linkLabel->AutoSize = true;
+			this->linkLabel->Location = System::Drawing::Point(203, 147);
+			this->linkLabel->Name = L"linkLabel";
+			this->linkLabel->Size = System::Drawing::Size(130, 16);
+			this->linkLabel->TabIndex = 21;
+			this->linkLabel->TabStop = true;
+			this->linkLabel->Text = L"Termes i Condicions";
+			this->linkLabel->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &RegistreCiutadaForm::linkLabel_LinkClicked);
+			// 
 			// RegistreCiutadaForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(412, 222);
+			this->Controls->Add(this->linkLabel);
+			this->Controls->Add(this->labelCondicio);
+			this->Controls->Add(this->checkBox);
 			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->registre);
 			this->Controls->Add(this->textBox3);
@@ -174,6 +216,7 @@ namespace application {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"RegistreCiutadaForm";
 			this->Text = L"RegistreCiutadaForm";
+			this->Load += gcnew System::EventHandler(this, &RegistreCiutadaForm::RegistreCiutadaForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -186,6 +229,9 @@ namespace application {
 		TxRegistreCiutada txRC(nom, correuElectronic, contrasenya);
 		if (textBox1->Text == System::String::Empty || textBox2->Text == System::String::Empty || textBox3->Text == System::String::Empty) {
 			MessageBox::Show("Falten camps per omplir.");
+		}
+		else if (termes == false) {
+			MessageBox::Show("Has d'acceptar els termes i condicions per a poder registrar-te");
 		}
 		else {
 			try {
@@ -201,6 +247,20 @@ namespace application {
 	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void RegistreCiutadaForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (termes == false) {
+		termes = true;
+	}
+	else {
+		termes = false;
+	}
+}
+private: System::Void linkLabel_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	application::TermesICondicions^ Termes_I_Condicions = gcnew application::TermesICondicions();
+	Termes_I_Condicions->ShowDialog();
 }
 };
 }
