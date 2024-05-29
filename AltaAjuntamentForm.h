@@ -254,7 +254,6 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	System::String^ contrasenya = this->textBoxContra->Text;
 	int codiPostal  = System::Convert::ToInt32(this->numericUpDownPostal->Value);
 	int telefon = System::Convert::ToInt32(this->numericUpDownTelefon->Value);
-	
 	TxAltaAjuntament txAA(nom, correuElectronic, contrasenya, codiPostal, telefon); 
 	if (textBoxNom->Text == System::String::Empty || textBoxCorreu->Text == System::String::Empty || textBoxContra->Text == System::String::Empty) {
 		MessageBox::Show("Falten camps per omplir.");
@@ -265,7 +264,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			this->Close();
 		}
 		catch (MySqlException^ ex) {
-			MessageBox::Show("Error en la crecio d'ajuntament");
+			MessageBox::Show("Error en la creacio d'ajuntament");
 		}
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));

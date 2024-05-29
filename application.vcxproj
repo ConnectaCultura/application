@@ -178,6 +178,9 @@
     <ClInclude Include="ConsultarEsdevenimentsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ConsultaValoracioForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -210,6 +213,9 @@
     </ClInclude>
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sessio.h" />
+    <ClInclude Include="TermesICondicions.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TxAfegirFavorita.h" />
     <ClInclude Include="TxAltaAjuntament.h" />
     <ClInclude Include="TxAltaEsdeveniment.h" />
@@ -231,6 +237,7 @@
     <ClInclude Include="TxConsultaEsdeveniments.h" />
     <ClInclude Include="TxConsultaFavorita.h" />
     <ClInclude Include="TxConsultaPerfil.h" />
+    <ClInclude Include="TxConsultaValoracio.h" />
     <ClInclude Include="TxEsborrarFavorita.h" />
     <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="TxLogIn.h" />
@@ -264,6 +271,7 @@
     <ClCompile Include="ConsultaCompresForm.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
     <ClCompile Include="ConsultarEsdevenimentsForm.cpp" />
+    <ClCompile Include="ConsultaValoracioForm.cpp" />
     <ClCompile Include="FormAltaEsdeveniment.cpp" />
     <ClCompile Include="FormConsultarAjuntament.cpp" />
     <ClCompile Include="PassarelaEsdeveniment.cpp" />
@@ -295,6 +303,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TermesICondicions.cpp" />
     <ClCompile Include="TxAfegirFavorita.cpp" />
     <ClCompile Include="TxBaixaCiutada.cpp" />
     <ClCompile Include="TxAltaEsdeveniment.cpp" />
@@ -318,6 +327,7 @@
     <ClCompile Include="TxConsultaEsdeveniments.cpp" />
     <ClCompile Include="TxConsultaFavorita.cpp" />
     <ClCompile Include="TxConsultaPerfil.cpp" />
+    <ClCompile Include="TxConsultaValoracio.cpp" />
     <ClCompile Include="TxEsborrarFavorita.cpp" />
     <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="TxLogIn.cpp" />
@@ -372,6 +382,9 @@
     <EmbeddedResource Include="ConsultarEsdevenimentsForm.resx">
       <DependentUpon>ConsultarEsdevenimentsForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaValoracioForm.resx">
+      <DependentUpon>ConsultaValoracioForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAltaEsdeveniment.resx">
       <DependentUpon>FormAltaEsdeveniment.h</DependentUpon>
     </EmbeddedResource>
@@ -409,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistreCiutadaForm.resx">
       <DependentUpon>RegistreCiutadaForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermesICondicions.resx">
+      <DependentUpon>TermesICondicions.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ValorarEsdevenimentForm.resx">
       <DependentUpon>ValorarEsdevenimentForm.h</DependentUpon>
