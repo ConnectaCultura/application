@@ -134,9 +134,12 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Panel^ panel_contenedor;
+
 private: System::Windows::Forms::Panel^ panel1;
 private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::Panel^ panel_contenedor;
+
+
 
 
 
@@ -184,18 +187,18 @@ private: System::Windows::Forms::Label^ label1;
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->ConsultaCompresButton = (gcnew System::Windows::Forms::Button());
 			this->panel_lateral = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->margen = (gcnew System::Windows::Forms::Panel());
 			this->panel_contenedor = (gcnew System::Windows::Forms::Panel());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel_lateral->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->margen->SuspendLayout();
-			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// logIn
@@ -458,6 +461,18 @@ private: System::Windows::Forms::Label^ label1;
 			this->panel_lateral->Size = System::Drawing::Size(391, 992);
 			this->panel_lateral->TabIndex = 19;
 			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->logIn);
+			this->panel1->Controls->Add(this->logOut);
+			this->panel1->Controls->Add(this->buttonTorna);
+			this->panel1->Controls->Add(this->registreCiutada);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 799);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(391, 163);
+			this->panel1->TabIndex = 13;
+			// 
 			// panel4
 			// 
 			this->panel4->Controls->Add(this->EsborrarEntitat);
@@ -485,6 +500,19 @@ private: System::Windows::Forms::Label^ label1;
 			this->panel2->Size = System::Drawing::Size(391, 184);
 			this->panel2->TabIndex = 9;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 29, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(0, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(477, 67);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Connecta Cultura";
+			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
+			// 
 			// margen
 			// 
 			this->margen->Controls->Add(this->veurePerfil);
@@ -500,33 +528,7 @@ private: System::Windows::Forms::Label^ label1;
 			this->panel_contenedor->Location = System::Drawing::Point(391, 0);
 			this->panel_contenedor->Name = L"panel_contenedor";
 			this->panel_contenedor->Size = System::Drawing::Size(1055, 992);
-			this->panel_contenedor->TabIndex = 20;
-			this->panel_contenedor->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint_1);
-			// 
-			// panel1
-			// 
-			this->panel1->Controls->Add(this->logIn);
-			this->panel1->Controls->Add(this->logOut);
-			this->panel1->Controls->Add(this->buttonTorna);
-			this->panel1->Controls->Add(this->registreCiutada);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 799);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(391, 163);
-			this->panel1->TabIndex = 13;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Asdonuts", 29, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(0, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(391, 68);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Connecta Cultura";
-			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
+			this->panel_contenedor->TabIndex = 23;
 			// 
 			// Form1
 			// 
@@ -543,11 +545,11 @@ private: System::Windows::Forms::Label^ label1;
 			this->Text = L"ConnectaCultura";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel_lateral->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->margen->ResumeLayout(false);
-			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}

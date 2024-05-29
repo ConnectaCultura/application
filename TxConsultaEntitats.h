@@ -13,9 +13,10 @@ ref class TxConsultaEntitats
 	private:
 		System::String^ _tipus;
 		System::String^ _ajuntament;
+		System::String^ _nom;
 		List<List<System::String^>^>^ _llistaEntitats = gcnew List<List<System::String^>^>();
 	public:
-		TxConsultaEntitats(System::String^ tipus, System::String^ ajuntament);
+		TxConsultaEntitats(System::String^ tipus, System::String^ ajuntament, System::String^ nom);
 		void executar();
 		List<List<System::String^>^>^ ObteResultat();
 };

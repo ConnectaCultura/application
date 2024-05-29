@@ -76,6 +76,7 @@
     <ClCompile Include="ValorarEsdevenimentForm.cpp" />
     <ClCompile Include="TxValorarEsdeveniment.cpp" />
     <ClCompile Include="TxModificaCiutada.cpp" />
+    <ClCompile Include="TxModificaEsdeveniment.cpp" />
     <ClCompile Include="TermesICondicions.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="ValorarEsdevenimentForm.h" />
     <ClInclude Include="TxValorarEsdeveniment.h" />
     <ClInclude Include="TxModificaCiutada.h" />
+    <ClInclude Include="TxModificaEsdeveniment.h" />
     <ClInclude Include="TermesICondicions.h" />
   </ItemGroup>
   <ItemGroup>
