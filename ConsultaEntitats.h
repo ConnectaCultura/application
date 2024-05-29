@@ -68,6 +68,8 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Correu_Electronic;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ajutament;
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -86,6 +88,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConsultaEntitats::typeid));
 			this->dataGridViewEntitats = (gcnew System::Windows::Forms::DataGridView());
 			this->Nom = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Descripcio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -98,7 +101,10 @@ namespace application {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->AjuntamentComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridViewEntitats
@@ -112,7 +118,7 @@ namespace application {
 				this->Nom,
 					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
 			});
-			this->dataGridViewEntitats->Location = System::Drawing::Point(61, 91);
+			this->dataGridViewEntitats->Location = System::Drawing::Point(61, 128);
 			this->dataGridViewEntitats->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridViewEntitats->Name = L"dataGridViewEntitats";
 			this->dataGridViewEntitats->ReadOnly = true;
@@ -233,12 +239,33 @@ namespace application {
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultaEntitats::buttonTorna_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(61, 85);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(356, 26);
+			this->textBox1->TabIndex = 23;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
+			this->pictureBox1->Location = System::Drawing::Point(449, 85);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(25, 26);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 24;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultaEntitats::pictureBox1_Click);
+			// 
 			// ConsultaEntitats
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(1055, 992);
+			this->ClientSize = System::Drawing::Size(1091, 992);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->AjuntamentComboBox);
 			this->Controls->Add(this->TipusLabel);
@@ -251,13 +278,14 @@ namespace application {
 			this->Text = L"ConsultaEntitats";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEntitats::ConsultaEntitats_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitats))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void ConsultaEntitats_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultaEntitats ent("Totes", "Tots");
+		TxConsultaEntitats ent("Totes", "Tots", textBox1->Text);
 		try {
 			ent.executar();
 		}
@@ -303,7 +331,7 @@ namespace application {
 
 private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	dataGridViewEntitats->Rows->Clear();
-	TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
+	TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString(), this->textBox1->Text);
 	try {
 		en.executar();
 	}
@@ -326,7 +354,7 @@ private: System::Void EntitatsLabel_Click(System::Object^ sender, System::EventA
 
 	private: System::Void AjuntamentcomboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		dataGridViewEntitats->Rows->Clear();
-		TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString());
+		TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString(), this->textBox1->Text);
 		try {
 			en.executar();
 		}
@@ -342,6 +370,21 @@ private: System::Void EntitatsLabel_Click(System::Object^ sender, System::EventA
 	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	dataGridViewEntitats->Rows->Clear();
+	TxConsultaEntitats en(this->TipusComboBox->SelectedItem->ToString(), this->AjuntamentComboBox->SelectedItem->ToString(), this->textBox1->Text);
+	try {
+		en.executar();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	List<List<System::String^>^>^ ve = en.ObteResultat();
+	for each (List<System::String^> ^ e in ve)
+	{
+		dataGridViewEntitats->Rows->Add(e[0], e[1], e[2], e[3], e[4]);
+	}
 }
 };
 }

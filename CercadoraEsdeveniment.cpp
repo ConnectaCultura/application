@@ -1,5 +1,7 @@
 ﻿#include "pch.h"
 #include "CercadoraEsdeveniment.h"
+#include "stdexcept"
+
 
 PassarelaEsdeveniment^ CercadoraEsdeveniment::CercaEsdeveniment(System::String^ nom, System::String^ inici, System::String^ fi) {
 	DateTime iniciDateTime = DateTime::Parse(inici);
@@ -26,6 +28,9 @@ PassarelaEsdeveniment^ CercadoraEsdeveniment::CercaEsdeveniment(System::String^ 
 		System::String^ correu = dataReader->GetString(7);
 		con->tancarConnexio();
 		return gcnew PassarelaEsdeveniment(correu, nom, descripcio, data_inici, data_fi, aforament, preu, tipus);
+	}
+	else {
+		throw std::runtime_error("No existeix");
 	}
 }
 
@@ -60,7 +65,7 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteTots() {
 
 List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteEsdevEntitat(System::String^ correuEntitat) {
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Esdeveniment WHERE correu_entitat ='" + correuEntitat + "';";
+	System::String^ sql = "SELECT * FROM Esdeveniment WHERE correu_entitat ='" + correuEntitat + "'ORDER BY data_inici ASC";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaEsdeveniment^>^ ve = gcnew List<PassarelaEsdeveniment^>();
 	while (dataReader->Read()) {
@@ -110,6 +115,33 @@ List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obtePerNom(System::String^ 
 	con->tancarConnexio();
 	return ve;
 }
+
+List<PassarelaEsdeveniment^>^ CercadoraEsdeveniment::obteEsdevEntitatNom(System::String^ nom, System::String^ correu) {
+	Connexio^ con = Connexio::getInstance();
+	System::String^ sql = "SELECT * FROM Esdeveniment WHERE nom = '" + nom + " && correu_entitat = '" + correu + "'ORDER BY data_inici ASC";
+	MySqlDataReader^ dataReader = con->executar(sql);
+	List<PassarelaEsdeveniment^>^ ve = gcnew List<PassarelaEsdeveniment^>();
+	while (dataReader->Read()) {
+		System::String^ nom = dataReader->GetString(0);
+		System::String^ descripcio = dataReader->GetString(1);
+		System::DateTime data_inici = dataReader->GetDateTime(2);
+		System::DateTime data_fi = dataReader->GetDateTime(3);
+		int^ aforament = nullptr;
+		if (!dataReader->IsDBNull(4)) {
+			aforament = dataReader->GetInt32(4);
+		}
+		System::String^ preu = nullptr;
+		if (!dataReader->IsDBNull(5)) {
+			preu = dataReader->GetFloat(5).ToString();
+		}
+		System::String^ tipus = dataReader->GetString(6);
+		System::String^ correu = dataReader->GetString(7);
+		ve->Add(gcnew PassarelaEsdeveniment(correu, nom, descripcio, data_inici, data_fi, aforament, preu, tipus));
+	}
+	con->tancarConnexio();
+	return ve;
+}
+
 
 bool CercadoraEsdeveniment::existeix(System::String^ nomEnt, System::String^ nomE, System::String^ inici, System::String^ fi) {
 	Connexio^ con = Connexio::getInstance();

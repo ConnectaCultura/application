@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include "CercadoraEsdeveniment.h"
+#include "CercadoraUsuari.h"
 using namespace System;
 using namespace System::Collections::Generic;
 

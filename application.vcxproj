@@ -236,6 +236,7 @@
     <ClInclude Include="TxLogIn.h" />
     <ClInclude Include="TxModificaCiutada.h" />
     <ClInclude Include="TxModificaEntitat.h" />
+    <ClInclude Include="TxModificaEsdeveniment.h" />
     <ClInclude Include="TxPuntsCiutada.h" />
     <ClInclude Include="TxRegistreCiutada.h" />
     <ClInclude Include="TxConsultaEntitats.h" />
@@ -322,6 +323,7 @@
     <ClCompile Include="TxLogIn.cpp" />
     <ClCompile Include="TxModificaCiutada.cpp" />
     <ClCompile Include="TxModificaEntitat.cpp" />
+    <ClCompile Include="TxModificaEsdeveniment.cpp" />
     <ClCompile Include="TxPuntsCiutada.cpp" />
     <ClCompile Include="TxRegistreCiutada.cpp" />
     <ClCompile Include="TxConsultaEntitats.cpp" />

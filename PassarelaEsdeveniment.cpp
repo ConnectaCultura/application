@@ -67,3 +67,25 @@ System::String^ PassarelaEsdeveniment::obteCorreu() {
 System::String^ PassarelaEsdeveniment::obteTipus() {
 	return tipus;
 }
+
+void PassarelaEsdeveniment::setPreu(System::String^ p) {
+	preu = p;
+}
+void PassarelaEsdeveniment::setDescripcio(System::String^ p) {
+	descripcio = p;
+}
+void PassarelaEsdeveniment::setTipus(System::String^ p) {
+	tipus = p;
+}
+void PassarelaEsdeveniment::modifica() {
+	descripcio = descripcio->Replace("'", "\\'");
+	System::String^ data_inici_sql = data_inici.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ data_fi_sql = data_fi.ToString("yyyy-MM-dd HH:mm:ss");
+	System::String^ sql;
+	if(preu!=nullptr) sql = "UPDATE Esdeveniment SET preu = '" + preu + "', modalitat= '" + tipus + "', descripcio= '" + descripcio + "' WHERE nom = '" + nom + "' AND data_inici = '" + data_inici_sql + "' AND data_fi ='" + data_fi_sql + "';";
+	else sql = "UPDATE Esdeveniment SET preu = NULL, modalitat= '" + tipus + "', descripcio= '" + descripcio + "' WHERE nom = '" + nom + "' AND data_inici = '" + data_inici_sql + "' AND data_fi ='" + data_fi_sql + "';";
+	
+	Connexio^ con = Connexio::getInstance();
+	MySqlDataReader^ dataReader = con->executar(sql);
+	con->tancarConnexio();
+}
