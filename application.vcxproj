@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -158,6 +158,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connexio.h" />
+    <ClInclude Include="ConsultaAjuntamentsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ConsultaCompraForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -252,6 +255,7 @@
     <ClCompile Include="CercadoraAjuntament.cpp" />
     <ClCompile Include="CercadoraEsdeveniment.cpp" />
     <ClCompile Include="CercadoraFavorita.cpp" />
+    <ClCompile Include="ConsultaAjuntamentsForm.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="ConsultaCompresForm.cpp" />
     <ClCompile Include="ConsultaEsdevenimentForm.cpp" />
@@ -299,6 +303,7 @@
     <ClCompile Include="TxCancelaCompra.cpp" />
     <ClCompile Include="TxComprobacontrasenya.cpp" />
     <ClCompile Include="TxConsultaAjuntament.cpp" />
+    <ClCompile Include="TxConsultaAjuntaments.cpp" />
     <ClCompile Include="TxConsultaEntEsde.cpp" />
     <ClCompile Include="TxConsultaCompra.cpp" />
     <ClCompile Include="TxConsultaCompres.cpp" />
@@ -347,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CancelarEsdevenimentForm.resx">
       <DependentUpon>CancelarEsdevenimentForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaAjuntamentsForm.resx">
+      <DependentUpon>ConsultaAjuntamentsForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaCompraForm.resx">
       <DependentUpon>ConsultaCompraForm.h</DependentUpon>
