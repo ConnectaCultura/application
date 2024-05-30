@@ -548,7 +548,7 @@ private: System::Windows::Forms::Label^ label1;
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void ConsultaAjuntamentButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->ObrirForm(gcnew application::FormConsultarAjuntament);
+		this->ObrirForm(gcnew application::FormConsultarAjuntament("aj1"));
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void veurePerfil_Click(System::Object^ sender, System::EventArgs^ e) {
