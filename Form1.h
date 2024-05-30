@@ -557,10 +557,10 @@ private: System::Windows::Forms::Label^ label1;
 			this->ObrirForm(gcnew application::VeurePerfilForm);
 		}
 		else if (s->obteUsuari()->obteTipus() == "entitat") {
-			this->ObrirForm(gcnew application::ConsultaEntitatForm);
+			this->ObrirForm(gcnew application::ConsultaEntitatForm(s->obteUsuari()->obteCorreuElectronic()));
 		}
 		else if (s->obteUsuari()->obteTipus() == "ajuntament") {
-			this->ObrirForm(gcnew application::FormConsultarAjuntament);
+			this->ObrirForm(gcnew application::FormConsultarAjuntament(s->obteUsuari()->obteCorreuElectronic()));
 		}
 		Form1::ActualitzarForm1();
 	}
