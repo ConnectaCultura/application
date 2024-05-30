@@ -138,16 +138,19 @@ namespace application {
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(224, 25);
+			this->DescripcioText->Location = System::Drawing::Point(201, 16);
+			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
 			this->DescripcioText->Size = System::Drawing::Size(87, 20);
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
+			this->DescripcioText->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::DescripcioText_Click);
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(30, 129);
+			this->TipusText->Location = System::Drawing::Point(20, 82);
+			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->TipusText->Name = L"TipusText";
 			this->TipusText->Size = System::Drawing::Size(51, 20);
 			this->TipusText->TabIndex = 5;
@@ -200,7 +203,7 @@ namespace application {
 			this->AjuntamentLabelEdit->AutoSize = true;
 			this->AjuntamentLabelEdit->Location = System::Drawing::Point(108, 140);
 			this->AjuntamentLabelEdit->Name = L"AjuntamentLabelEdit";
-			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 20);
+			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->AjuntamentLabelEdit->TabIndex = 15;
 			this->AjuntamentLabelEdit->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label1_Click_1);
 			// 
@@ -209,7 +212,7 @@ namespace application {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(33, 165);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(95, 20);
+			this->label2->Size = System::Drawing::Size(63, 13);
 			this->label2->TabIndex = 14;
 			this->label2->Text = L"Ajuntament:";
 			this->label2->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label2_Click);
@@ -271,6 +274,7 @@ namespace application {
 			this->button1->Text = L"Torna";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::button1_Click);
+
 			// 
 			// ConsultaEntitatForm
 			// 

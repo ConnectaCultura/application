@@ -325,6 +325,9 @@ namespace application {
 			// 
 			this->descripcio->AutoSize = true;
 			this->descripcio->Location = System::Drawing::Point(254, 95);
+
+			this->descripcio->MaximumSize = System::Drawing::Size(362, 107);
+
 			this->descripcio->Name = L"descripcio";
 			this->descripcio->Size = System::Drawing::Size(51, 20);
 			this->descripcio->TabIndex = 16;
@@ -359,7 +362,9 @@ namespace application {
 			// Cancel_button
 			// 
 			this->Cancel_button->Location = System::Drawing::Point(432, 449);
+
 			this->Cancel_button->Margin = System::Windows::Forms::Padding(2);
+
 			this->Cancel_button->Name = L"Cancel_button";
 			this->Cancel_button->Size = System::Drawing::Size(183, 38);
 			this->Cancel_button->TabIndex = 18;
@@ -388,7 +393,9 @@ namespace application {
 			// VeureCompraButton
 			// 
 			this->VeureCompraButton->Location = System::Drawing::Point(432, 389);
+
 			this->VeureCompraButton->Margin = System::Windows::Forms::Padding(2);
+
 			this->VeureCompraButton->Name = L"VeureCompraButton";
 			this->VeureCompraButton->Size = System::Drawing::Size(183, 38);
 			this->VeureCompraButton->TabIndex = 21;
@@ -396,6 +403,7 @@ namespace application {
 			this->VeureCompraButton->UseVisualStyleBackColor = true;
 			this->VeureCompraButton->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::VeureCompraButton_Click);
 			// 
+
 			// guardaBox
 			// 
 			this->guardaBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guardaBox.Image")));
@@ -443,17 +451,20 @@ namespace application {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 28);
 			this->comboBox1->TabIndex = 29;
+
 			// 
 			// ConsultaEsdevenimentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(638, 566);
+
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->guardaBox);
+
 			this->Controls->Add(this->VeureCompraButton);
 			this->Controls->Add(this->fi);
 			this->Controls->Add(this->label9);
@@ -477,7 +488,9 @@ namespace application {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nom);
 			this->Controls->Add(this->label1);
+
 			this->Margin = System::Windows::Forms::Padding(2);
+
 			this->Name = L"ConsultaEsdevenimentForm";
 			this->Text = L"ConsultaEsdevenimentForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ConsultaEsdevenimentForm_Load);
