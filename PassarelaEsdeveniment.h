@@ -25,6 +25,10 @@ public:
 	System::String^ obteDescripcio();
 	System::String^ obteCorreu();
 	System::String^ obteTipus();
+	void setPreu(System::String^ p);
+	void setDescripcio(System::String^ p);
+	void setTipus(System::String^ p);
+	void modifica();
 
 };
 

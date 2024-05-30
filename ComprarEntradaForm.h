@@ -350,7 +350,7 @@ private: System::Void ComprarEntradaForm_Load(System::Object^ sender, System::Ev
 		MessageBox::Show(ex->Message);
 	}
 	List<System::String^>^ ve = txCE.obteResultat();
-	NomEsdevLabel->Text = ve[1];
+	NomEsdevLabel->Text = _nom;
 	if (ve[3] != nullptr) {
 		if (ve[3] == "0") this->PreuEntradaLabel->Text = "Gratuit";
 		else this->PreuEntradaLabel->Text = ve[3];

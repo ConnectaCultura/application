@@ -14,5 +14,6 @@ public:
 	List<PassarelaEsdeveniment^>^ obtePerNom(System::String^ nom);
 	//List<PassarelaEntitat^>^ CercaTipus(System::String^ t);
 	List<PassarelaEsdeveniment^>^ obteEsdevEntitat(System::String^ correuEntitat);
+	List<PassarelaEsdeveniment^>^ obteEsdevEntitatNom(System::String^ nom, System::String^ correu);
 };
 

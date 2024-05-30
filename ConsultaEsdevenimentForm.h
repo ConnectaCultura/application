@@ -5,6 +5,8 @@
 #include "TxExisteixCompra.h"
 #include "CancelarEsdevenimentForm.h"
 #include "ConsultaCompraForm.h"
+#include "TxConsultaTipus.h"
+#include "TxModificaEsdeveniment.h"
 
 
 namespace application {
@@ -115,9 +117,14 @@ namespace application {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ fi;
 	private: System::Windows::Forms::Button^ VeureCompraButton;
+	private: System::Windows::Forms::PictureBox^ guardaBox;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
 
 
-	private: System::Windows::Forms::Button^ ModificarButton;
+
 
 
 
@@ -137,6 +144,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConsultaEsdevenimentForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->nom = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -160,7 +168,14 @@ namespace application {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->fi = (gcnew System::Windows::Forms::Label());
 			this->VeureCompraButton = (gcnew System::Windows::Forms::Button());
-			this->ModificarButton = (gcnew System::Windows::Forms::Button());
+			this->guardaBox = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guardaBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -310,7 +325,9 @@ namespace application {
 			// 
 			this->descripcio->AutoSize = true;
 			this->descripcio->Location = System::Drawing::Point(254, 95);
+
 			this->descripcio->MaximumSize = System::Drawing::Size(362, 107);
+
 			this->descripcio->Name = L"descripcio";
 			this->descripcio->Size = System::Drawing::Size(51, 20);
 			this->descripcio->TabIndex = 16;
@@ -345,7 +362,9 @@ namespace application {
 			// Cancel_button
 			// 
 			this->Cancel_button->Location = System::Drawing::Point(432, 449);
-			this->Cancel_button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+
+			this->Cancel_button->Margin = System::Windows::Forms::Padding(2);
+
 			this->Cancel_button->Name = L"Cancel_button";
 			this->Cancel_button->Size = System::Drawing::Size(183, 38);
 			this->Cancel_button->TabIndex = 18;
@@ -374,7 +393,9 @@ namespace application {
 			// VeureCompraButton
 			// 
 			this->VeureCompraButton->Location = System::Drawing::Point(432, 389);
-			this->VeureCompraButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+
+			this->VeureCompraButton->Margin = System::Windows::Forms::Padding(2);
+
 			this->VeureCompraButton->Name = L"VeureCompraButton";
 			this->VeureCompraButton->Size = System::Drawing::Size(183, 38);
 			this->VeureCompraButton->TabIndex = 21;
@@ -382,22 +403,68 @@ namespace application {
 			this->VeureCompraButton->UseVisualStyleBackColor = true;
 			this->VeureCompraButton->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::VeureCompraButton_Click);
 			// 
-			// ModificarButton
+
+			// guardaBox
 			// 
-			this->ModificarButton->Location = System::Drawing::Point(432, 323);
-			this->ModificarButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->ModificarButton->Name = L"ModificarButton";
-			this->ModificarButton->Size = System::Drawing::Size(183, 38);
-			this->ModificarButton->TabIndex = 22;
-			this->ModificarButton->Text = L"Modificar";
-			this->ModificarButton->UseVisualStyleBackColor = true;
+			this->guardaBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guardaBox.Image")));
+			this->guardaBox->Location = System::Drawing::Point(532, 43);
+			this->guardaBox->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->guardaBox->Name = L"guardaBox";
+			this->guardaBox->Size = System::Drawing::Size(26, 28);
+			this->guardaBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->guardaBox->TabIndex = 25;
+			this->guardaBox->TabStop = false;
+			this->guardaBox->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::guardaBox_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(564, 43);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(26, 28);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 26;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::pictureBox1_Click);
+			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(252, 95);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(247, 96);
+			this->richTextBox1->TabIndex = 27;
+			this->richTextBox1->Text = L"";
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->DecimalPlaces = 2;
+			this->numericUpDown1->Location = System::Drawing::Point(253, 367);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(120, 26);
+			this->numericUpDown1->TabIndex = 28;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(252, 332);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 28);
+			this->comboBox1->TabIndex = 29;
+
 			// 
 			// ConsultaEsdevenimentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(638, 566);
-			this->Controls->Add(this->ModificarButton);
+
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->numericUpDown1);
+			this->Controls->Add(this->richTextBox1);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->guardaBox);
+
 			this->Controls->Add(this->VeureCompraButton);
 			this->Controls->Add(this->fi);
 			this->Controls->Add(this->label9);
@@ -421,10 +488,15 @@ namespace application {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nom);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+
+			this->Margin = System::Windows::Forms::Padding(2);
+
 			this->Name = L"ConsultaEsdevenimentForm";
 			this->Text = L"ConsultaEsdevenimentForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaEsdevenimentForm::ConsultaEsdevenimentForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guardaBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -432,28 +504,39 @@ namespace application {
 #pragma endregion
 	private: System::Void ConsultaEsdevenimentForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		CheckUsuari();
+		richTextBox1->Visible = false;
+		numericUpDown1->Visible = false;
+		comboBox1->Visible = false;
 		if (_usuari == 0) {
 			VeureCompraButton->Visible = false;
-			ModificarButton->Visible = false;
+			//ModificarButton->Visible = false;
+			pictureBox1->Visible = false;
+			guardaBox->Visible = false;
 			ComprarButton->Visible = false;
 			Cancel_button->Visible = false;
 
 		} else if (_usuari == 1) {
 			ComprarButton->Visible = true;
 			Cancel_button->Visible = false;
-			ModificarButton->Visible = false;
+			//ModificarButton->Visible = false;
+			pictureBox1->Visible = false;
+			guardaBox->Visible = false;
 			VeureCompraButton->Visible = false;
 		}
 		else if (_usuari == 2) {
 			ComprarButton->Visible = false;
 			Cancel_button->Visible = false;
-			ModificarButton->Visible = false;
+			//ModificarButton->Visible = false;
+			pictureBox1->Visible = false;
+			guardaBox->Visible = false;
 			VeureCompraButton->Visible = true;
 		}
 		else if (_usuari == 3) {
 			ComprarButton->Visible = false;
 			Cancel_button->Visible = true;
-			ModificarButton->Visible = true;
+			//ModificarButton->Visible = true;
+			pictureBox1->Visible = true;
+			guardaBox->Visible = false;
 			VeureCompraButton->Visible = false;
 		}
 		this->nom->Text = _nom;
@@ -464,7 +547,9 @@ namespace application {
 		System::DateTime futureTime = now + twentyFourHours;
 		if (DateTime::Parse(_inici) < futureTime) {
 			Cancel_button->Visible = false;
-			ModificarButton->Visible = false;
+			//ModificarButton->Visible = false;
+			pictureBox1->Visible = false;
+			guardaBox->Visible = false;
 		}
 		if (DateTime::Parse(_fi) < now){
 			ComprarButton->Visible = false;
@@ -522,6 +607,51 @@ private: System::Void VeureCompraButton_Click(System::Object^ sender, System::Ev
 	this->Close();
 }
 private: System::Void QuantitatNumeric_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	pictureBox1->Visible = false;
+	Cancel_button->Visible = false;
+	guardaBox->Visible = true;
+	richTextBox1->Visible = true;
+	richTextBox1->Text = descripcio->Text;
+
+	if (afMax->Visible) {
+		numericUpDown1->Visible = true;
+		numericUpDown1->Text = preu->Text;
+	}
+	TxConsultaTipus tip;
+	comboBox1->Visible = true;
+	try {
+		tip.executar();
+	}
+	catch (System::Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	comboBox1->DataSource = tip.ObteResultat();
+	int index = comboBox1->Items->IndexOf(modalitat->Text);
+	comboBox1->SelectedIndex = index;
+}
+
+
+
+
+private: System::Void guardaBox_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::String^ preu = nullptr;
+	if (numericUpDown1->Visible) {
+		System::String^ valorStr = this->numericUpDown1->Value.ToString();
+		preu = valorStr->Replace(',', '.');
+	}
+	System::String^ descripcio = richTextBox1->Text;
+
+	System::String^ tipus = comboBox1->Text;
+	TxModificaEsdeveniment txME(_nom, _inici, _fi, preu, descripcio, tipus);
+	try {
+		txME.executar();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show("S'ha produit un error, intenta-ho mes tard");
+	}
+	ConsultaEsdevenimentForm_Load(sender,e);
 }
 };
 }

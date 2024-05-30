@@ -68,10 +68,16 @@
     <ClCompile Include="TxExisteixCompra.cpp" />
     <ClCompile Include="ConsultaCompraForm.cpp" />
     <ClCompile Include="TxConsultaCompra.cpp" />
+    <ClCompile Include="CercadoraValoracio.cpp" />
     <ClCompile Include="ConsultaCompresForm.cpp" />
+    <ClCompile Include="PassarelaValoracio.cpp" />
     <ClCompile Include="TxConsultaCompres.cpp" />
     <ClCompile Include="TxPuntsCiutada.cpp" />
+    <ClCompile Include="ValorarEsdevenimentForm.cpp" />
+    <ClCompile Include="TxValorarEsdeveniment.cpp" />
     <ClCompile Include="TxModificaCiutada.cpp" />
+    <ClCompile Include="TxModificaEsdeveniment.cpp" />
+    <ClCompile Include="TermesICondicions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -141,10 +147,16 @@
     <ClInclude Include="TxExisteixCompra.h" />
     <ClInclude Include="ConsultaCompraForm.h" />
     <ClInclude Include="TxConsultaCompra.h" />
+    <ClInclude Include="CercadoraValoracio.h" />
     <ClInclude Include="ConsultaCompresForm.h" />
+    <ClInclude Include="PassarelaValoracio.h" />
     <ClInclude Include="TxConsultaCompres.h" />
     <ClInclude Include="TxPuntsCiutada.h" />
+    <ClInclude Include="ValorarEsdevenimentForm.h" />
+    <ClInclude Include="TxValorarEsdeveniment.h" />
     <ClInclude Include="TxModificaCiutada.h" />
+    <ClInclude Include="TxModificaEsdeveniment.h" />
+    <ClInclude Include="TermesICondicions.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

@@ -134,9 +134,12 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Panel^ panel_contenedor;
+
 private: System::Windows::Forms::Panel^ panel1;
 private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::Panel^ panel_contenedor;
+
+
 
 
 
@@ -414,10 +417,12 @@ private: System::Windows::Forms::Label^ label1;
 			this->panel1->Controls->Add(this->buttonTorna);
 			this->panel1->Controls->Add(this->registreCiutada);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+
 			this->panel1->Location = System::Drawing::Point(0, 798);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(392, 163);
 			this->panel1->TabIndex = 13;
+
 			this->panel4->Controls->Add(this->EsborrarEntitat);
 			this->panel4->Controls->Add(this->ModificaEntitatButton);
 			this->panel4->Dock = System::Windows::Forms::DockStyle::Top;
@@ -447,6 +452,7 @@ private: System::Windows::Forms::Label^ label1;
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Connecta Cultura";
 			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
+
 			this->margen->Controls->Add(this->veurePerfil);
 			this->margen->Dock = System::Windows::Forms::DockStyle::Top;
 			this->margen->Location = System::Drawing::Point(0, 0);
@@ -459,6 +465,7 @@ private: System::Windows::Forms::Label^ label1;
 			this->panel_contenedor->Size = System::Drawing::Size(1054, 980);
 			this->panel_contenedor->TabIndex = 20;
 			this->panel_contenedor->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint_1);
+
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;

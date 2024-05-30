@@ -34,6 +34,7 @@ namespace application {
 			_correuEntitat = correu;
 		}
 
+
 		void actualitzarForm(void) {
 			EsdevDataGrid-> Rows->Clear();
 			System::String^ nomEsd = textBox1->Text;
@@ -157,6 +158,7 @@ namespace application {
 			this->EsdevDataGrid->Size = System::Drawing::Size(890, 682);
 			this->EsdevDataGrid->TabIndex = 0;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
+			this->EsdevDataGrid->ScrollBars = System::Windows::Forms::ScrollBars::Both;
 			// 
 			// Nom
 			// 
