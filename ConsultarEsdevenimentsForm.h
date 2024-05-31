@@ -79,7 +79,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Fi;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Preu;
 	private: System::String^ _correuEntitat;
-	private: System::Windows::Forms::Button^ buttonTorna;
+
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::CheckBox^ checkBox2;
 	private: System::Windows::Forms::CheckBox^ checkBox3;
@@ -121,7 +121,6 @@ namespace application {
 			this->Fi = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Preu = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Esdeveniments = (gcnew System::Windows::Forms::Label());
-			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
@@ -142,8 +141,7 @@ namespace application {
 				this->Nom, this->Inici,
 					this->Fi, this->Preu
 			});
-			this->EsdevDataGrid->GridColor = System::Drawing::SystemColors::Control;
-			this->EsdevDataGrid->Location = System::Drawing::Point(51, 204);
+			this->EsdevDataGrid->Location = System::Drawing::Point(45, 163);
 			this->EsdevDataGrid->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->EsdevDataGrid->Name = L"EsdevDataGrid";
 			this->EsdevDataGrid->ReadOnly = true;
@@ -155,10 +153,9 @@ namespace application {
 			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
 			this->EsdevDataGrid->RowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->EsdevDataGrid->RowTemplate->Height = 28;
-			this->EsdevDataGrid->Size = System::Drawing::Size(890, 682);
+			this->EsdevDataGrid->Size = System::Drawing::Size(791, 546);
 			this->EsdevDataGrid->TabIndex = 0;
 			this->EsdevDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultarEsdevenimentsForm::EsdevDataGrid_CellContentClick);
-			this->EsdevDataGrid->ScrollBars = System::Windows::Forms::ScrollBars::Both;
 			// 
 			// Nom
 			// 
@@ -167,7 +164,7 @@ namespace application {
 			this->Nom->MinimumWidth = 8;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
-			this->Nom->Width = 78;
+			this->Nom->Width = 65;
 			// 
 			// Inici
 			// 
@@ -198,33 +195,19 @@ namespace application {
 			this->Esdeveniments->AutoSize = true;
 			this->Esdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Esdeveniments->Location = System::Drawing::Point(19, 25);
+			this->Esdeveniments->Location = System::Drawing::Point(17, 20);
 			this->Esdeveniments->Name = L"Esdeveniments";
-			this->Esdeveniments->Size = System::Drawing::Size(209, 32);
+			this->Esdeveniments->Size = System::Drawing::Size(178, 29);
 			this->Esdeveniments->TabIndex = 1;
 			this->Esdeveniments->Text = L"Esdeveniments";
-			// 
-			// buttonTorna
-			// 
-			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
-			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(51, 902);
-			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(120, 36);
-			this->buttonTorna->TabIndex = 18;
-			this->buttonTorna->Text = L"Torna";
-			this->buttonTorna->UseVisualStyleBackColor = false;
-			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultarEsdevenimentsForm::buttonTorna_Click);
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(531, 78);
+			this->checkBox1->Location = System::Drawing::Point(472, 62);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(360, 24);
+			this->checkBox1->Size = System::Drawing::Size(303, 20);
 			this->checkBox1->TabIndex = 19;
 			this->checkBox1->Text = L"Mostra tots tambe els esdeveniments acabats";
 			this->checkBox1->UseVisualStyleBackColor = true;
@@ -233,9 +216,10 @@ namespace application {
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(531, 108);
+			this->checkBox2->Location = System::Drawing::Point(472, 86);
+			this->checkBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(92, 24);
+			this->checkBox2->Size = System::Drawing::Size(74, 20);
 			this->checkBox2->TabIndex = 20;
 			this->checkBox2->Text = L"Gratuits";
 			this->checkBox2->UseVisualStyleBackColor = true;
@@ -244,9 +228,10 @@ namespace application {
 			// checkBox3
 			// 
 			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(531, 139);
+			this->checkBox3->Location = System::Drawing::Point(472, 111);
+			this->checkBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(140, 24);
+			this->checkBox3->Size = System::Drawing::Size(117, 20);
 			this->checkBox3->TabIndex = 21;
 			this->checkBox3->Text = L"Sense entrada";
 			this->checkBox3->UseVisualStyleBackColor = true;
@@ -254,18 +239,20 @@ namespace application {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(83, 106);
+			this->textBox1->Location = System::Drawing::Point(74, 85);
+			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(356, 26);
+			this->textBox1->Size = System::Drawing::Size(317, 22);
 			this->textBox1->TabIndex = 22;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(446, 106);
+			this->pictureBox1->Location = System::Drawing::Point(396, 85);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(25, 26);
+			this->pictureBox1->Size = System::Drawing::Size(22, 21);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 23;
 			this->pictureBox1->TabStop = false;
@@ -273,15 +260,14 @@ namespace application {
 			// 
 			// ConsultarEsdevenimentsForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1198, 949);
+			this->ClientSize = System::Drawing::Size(1065, 759);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->checkBox3);
 			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->Esdeveniments);
 			this->Controls->Add(this->EsdevDataGrid);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -319,7 +305,6 @@ private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::E
 
 
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
 }
 private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if(checkBox2->Checked) checkBox3->Checked=false;
