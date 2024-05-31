@@ -144,7 +144,6 @@ namespace application {
 			this->DescripcioText->Size = System::Drawing::Size(87, 20);
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
-			this->DescripcioText->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::DescripcioText_Click);
 			// 
 			// TipusText
 			// 
