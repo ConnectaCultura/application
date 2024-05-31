@@ -1,5 +1,7 @@
 #pragma once
 
+#include "TxConsultaAjuntaments.h"
+
 namespace application {
 
 	using namespace System;
@@ -41,6 +43,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::Button^ buttonTorna;
 
 
 
@@ -78,6 +81,7 @@ namespace application {
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -146,11 +150,27 @@ namespace application {
 			this->Column3->Name = L"Column3";
 			this->Column3->Width = 120;
 			// 
+			// buttonTorna
+			// 
+			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
+			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
+			this->buttonTorna->Location = System::Drawing::Point(11, 308);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
+			this->buttonTorna->Name = L"buttonTorna";
+			this->buttonTorna->Size = System::Drawing::Size(80, 23);
+			this->buttonTorna->TabIndex = 26;
+			this->buttonTorna->Text = L"Torna";
+			this->buttonTorna->UseVisualStyleBackColor = false;
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultaAjuntamentsForm::buttonTorna_Click);
+			// 
 			// ConsultaAjuntamentsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(484, 350);
+			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
@@ -166,6 +186,20 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void ConsultaAjuntamentsForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		TxConsultaAjuntaments txCA("Tots");
+		try {
+			txCA.executar();
+		}
+		catch (MySqlException^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+
+		List<List<System::String^>^>^ ve = txCA.ObteResultat();
+		for each (List<System::String^> ^ e in ve)
+		{
+			dataGridView1->Rows->Add(e[0], e[1], e[2]);
+		}
+
 	}
 
 	private: System::Void AjuntamentsLabel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -173,5 +207,8 @@ namespace application {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
 	}
+private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }

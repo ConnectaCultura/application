@@ -222,6 +222,7 @@
     <ClInclude Include="TxCancelaCompra.h" />
     <ClInclude Include="TxComprobacontrasenya.h" />
     <ClInclude Include="TxConsultaAjuntament.h" />
+    <ClInclude Include="TxConsultaAjuntaments.h" />
     <ClInclude Include="TxConsultaEntEsde.h" />
     <ClInclude Include="TxConsultaCompra.h" />
     <ClInclude Include="TxConsultaCompres.h" />
