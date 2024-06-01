@@ -78,6 +78,8 @@
     <ClCompile Include="TxModificaCiutada.cpp" />
     <ClCompile Include="TxModificaEsdeveniment.cpp" />
     <ClCompile Include="TermesICondicions.cpp" />
+    <ClCompile Include="ConsultaValoracioForm.cpp" />
+    <ClCompile Include="TxConsultaValoracio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AltaAjuntamentForm.h" />
@@ -157,6 +159,8 @@
     <ClInclude Include="TxModificaCiutada.h" />
     <ClInclude Include="TxModificaEsdeveniment.h" />
     <ClInclude Include="TermesICondicions.h" />
+    <ClInclude Include="ConsultaValoracioForm.h" />
+    <ClInclude Include="TxConsultaValoracio.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

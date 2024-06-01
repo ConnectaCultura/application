@@ -211,6 +211,7 @@ namespace application {
 			this->Controls->Add(this->DescripcioLabel);
 			this->Controls->Add(this->TipusLabel);
 			this->Controls->Add(this->NomLabel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ModificarEntitatForm";
