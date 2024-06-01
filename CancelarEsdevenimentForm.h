@@ -58,6 +58,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CancelarEsdevenimentForm::typeid));
 			this->Acceptar_button = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->Contrasenya_box = (gcnew System::Windows::Forms::TextBox());
@@ -65,18 +66,22 @@ namespace application {
 			// 
 			// Acceptar_button
 			// 
-			this->Acceptar_button->Location = System::Drawing::Point(383, 276);
+			this->Acceptar_button->BackColor = System::Drawing::Color::OrangeRed;
+			this->Acceptar_button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Acceptar_button->ForeColor = System::Drawing::Color::Transparent;
+			this->Acceptar_button->Location = System::Drawing::Point(272, 151);
 			this->Acceptar_button->Name = L"Acceptar_button";
 			this->Acceptar_button->Size = System::Drawing::Size(95, 28);
 			this->Acceptar_button->TabIndex = 0;
-			this->Acceptar_button->Text = L"Acceptar";
-			this->Acceptar_button->UseVisualStyleBackColor = true;
+			this->Acceptar_button->Text = L"Confirmar";
+			this->Acceptar_button->UseVisualStyleBackColor = false;
 			this->Acceptar_button->Click += gcnew System::EventHandler(this, &CancelarEsdevenimentForm::Acceptar_button_Click);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(102, 141);
+			this->label1->Location = System::Drawing::Point(77, 85);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(86, 16);
 			this->label1->TabIndex = 1;
@@ -84,22 +89,23 @@ namespace application {
 			// 
 			// Contrasenya_box
 			// 
-			this->Contrasenya_box->Location = System::Drawing::Point(195, 134);
+			this->Contrasenya_box->Location = System::Drawing::Point(169, 82);
 			this->Contrasenya_box->Name = L"Contrasenya_box";
+			this->Contrasenya_box->PasswordChar = '*';
 			this->Contrasenya_box->Size = System::Drawing::Size(127, 22);
 			this->Contrasenya_box->TabIndex = 2;
-			this->Contrasenya_box->PasswordChar = '*';
 			// 
 			// CancelarEsdevenimentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(490, 316);
+			this->ClientSize = System::Drawing::Size(376, 195);
 			this->Controls->Add(this->Contrasenya_box);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Acceptar_button);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"CancelarEsdevenimentForm";
-			this->Text = L"CancelarEsdevenimentForm";
+			this->Text = L"Cancelar Esdeveniment";
 			this->Load += gcnew System::EventHandler(this, &CancelarEsdevenimentForm::CancelarEsdevenimentForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

@@ -56,7 +56,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ label3;
 
 	private: System::Windows::Forms::Label^ PuntsLabelEdit;
-	private: System::Windows::Forms::Button^ buttonTorna;
+
 	private: System::Windows::Forms::Button^ MostraCompresButton;
 
 	private: System::Windows::Forms::TextBox^ nomBox;
@@ -94,7 +94,6 @@ namespace application {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			this->MostraCompresButton = (gcnew System::Windows::Forms::Button());
 			this->nomBox = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -110,7 +109,7 @@ namespace application {
 			this->TipusText->Name = L"TipusText";
 			this->TipusText->Size = System::Drawing::Size(112, 16);
 			this->TipusText->TabIndex = 11;
-			this->TipusText->Text = L"Correu Electrònic:";
+			this->TipusText->Text = L"Correu Electronic:";
 			this->TipusText->Click += gcnew System::EventHandler(this, &VeurePerfilForm::TipusText_Click);
 			// 
 			// DescripcioText
@@ -161,21 +160,6 @@ namespace application {
 			this->label3->Size = System::Drawing::Size(0, 16);
 			this->label3->TabIndex = 14;
 			// 
-			// buttonTorna
-			// 
-			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
-			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(12, 200);
-			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(107, 30);
-			this->buttonTorna->TabIndex = 18;
-			this->buttonTorna->Text = L"Torna";
-			this->buttonTorna->UseVisualStyleBackColor = false;
-			this->buttonTorna->Click += gcnew System::EventHandler(this, &VeurePerfilForm::buttonTorna_Click);
-			// 
 			// MostraCompresButton
 			// 
 			this->MostraCompresButton->BackColor = System::Drawing::Color::OrangeRed;
@@ -183,7 +167,7 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->MostraCompresButton->ForeColor = System::Drawing::Color::Transparent;
 			this->MostraCompresButton->Location = System::Drawing::Point(294, 200);
-			this->MostraCompresButton->Margin = System::Windows::Forms::Padding(4);
+			this->MostraCompresButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->MostraCompresButton->Name = L"MostraCompresButton";
 			this->MostraCompresButton->Size = System::Drawing::Size(157, 30);
 			this->MostraCompresButton->TabIndex = 19;
@@ -230,17 +214,17 @@ namespace application {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->nomBox);
 			this->Controls->Add(this->MostraCompresButton);
-			this->Controls->Add(this->buttonTorna);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->TipusText);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"VeurePerfilForm";
-			this->Text = L"VeurePerfilForm";
+			this->Text = L"Perfil";
 			this->Load += gcnew System::EventHandler(this, &VeurePerfilForm::VeurePerfilForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guardaBox))->EndInit();

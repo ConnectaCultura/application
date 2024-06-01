@@ -57,6 +57,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(BaixaEntitatForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -73,7 +74,7 @@ namespace application {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(341, 17);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Estàs segur que vols esborrar la teva entitat\?";
+			this->label1->Text = L"Estas segur que vols esborrar la teva entitat\?";
 			this->label1->Click += gcnew System::EventHandler(this, &BaixaEntitatForm::label1_Click);
 			// 
 			// label2
@@ -83,18 +84,18 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(11, 90);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(100, 18);
+			this->label2->Size = System::Drawing::Size(103, 18);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"contrasenya";
+			this->label2->Text = L"Contrasenya";
 			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(145, 90);
 			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
+			this->textBox1->PasswordChar = '*';
 			this->textBox1->Size = System::Drawing::Size(193, 22);
 			this->textBox1->TabIndex = 2;
-			this->textBox1->PasswordChar = '*';
 			// 
 			// button1
 			// 
@@ -102,12 +103,12 @@ namespace application {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(244, 138);
+			this->button1->Location = System::Drawing::Point(253, 138);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(93, 31);
+			this->button1->Size = System::Drawing::Size(99, 31);
 			this->button1->TabIndex = 3;
-			this->button1->Text = L"esborrar";
+			this->button1->Text = L"Confirmar";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &BaixaEntitatForm::button1_Click);
 			// 
@@ -136,9 +137,10 @@ namespace application {
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BaixaEntitatForm";
-			this->Text = L"BaixaEntitatForm";
+			this->Text = L"Donar-se de Baixa";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

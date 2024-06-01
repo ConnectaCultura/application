@@ -143,7 +143,8 @@ namespace application {
 			this->NomLabel->AutoSize = true;
 			this->NomLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NomLabel->Location = System::Drawing::Point(104, 19);
+			this->NomLabel->Location = System::Drawing::Point(27, 23);
+			this->NomLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->NomLabel->Name = L"NomLabel";
 			this->NomLabel->Size = System::Drawing::Size(56, 24);
 			this->NomLabel->TabIndex = 9;
@@ -184,11 +185,11 @@ namespace application {
 				this->Nom,
 					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
 			});
-			this->dataGridViewEntitatsAjuntament->Location = System::Drawing::Point(24, 156);
-			this->dataGridViewEntitatsAjuntament->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridViewEntitatsAjuntament->Location = System::Drawing::Point(32, 206);
 			this->dataGridViewEntitatsAjuntament->Name = L"dataGridViewEntitatsAjuntament";
 			this->dataGridViewEntitatsAjuntament->ReadOnly = true;
-			this->dataGridViewEntitatsAjuntament->Size = System::Drawing::Size(478, 132);
+			this->dataGridViewEntitatsAjuntament->RowHeadersWidth = 51;
+			this->dataGridViewEntitatsAjuntament->Size = System::Drawing::Size(637, 163);
 			this->dataGridViewEntitatsAjuntament->TabIndex = 13;
 			this->dataGridViewEntitatsAjuntament->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FormConsultarAjuntament::dataGridViewEntitatsAjuntament_CellContentClick);
 			// 
@@ -196,6 +197,7 @@ namespace application {
 			// 
 			this->Nom->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			this->Nom->HeaderText = L"Nom";
+			this->Nom->MinimumWidth = 6;
 			this->Nom->Name = L"Nom";
 			this->Nom->ReadOnly = true;
 			// 
@@ -203,6 +205,7 @@ namespace application {
 			// 
 			this->Descripcio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			this->Descripcio->HeaderText = L"Descripcio";
+			this->Descripcio->MinimumWidth = 6;
 			this->Descripcio->Name = L"Descripcio";
 			this->Descripcio->ReadOnly = true;
 			// 
@@ -210,19 +213,23 @@ namespace application {
 			// 
 			this->Tipus->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			this->Tipus->HeaderText = L"Modalitat";
+			this->Tipus->MinimumWidth = 6;
 			this->Tipus->Name = L"Tipus";
 			this->Tipus->ReadOnly = true;
 			// 
 			// Correu_Electronic
 			// 
 			this->Correu_Electronic->HeaderText = L"Correu_Electronic";
+			this->Correu_Electronic->MinimumWidth = 6;
 			this->Correu_Electronic->Name = L"Correu_Electronic";
 			this->Correu_Electronic->ReadOnly = true;
 			this->Correu_Electronic->Visible = false;
+			this->Correu_Electronic->Width = 125;
 			// 
 			// Ajutament
 			// 
 			this->Ajutament->HeaderText = L"Ajuntament";
+			this->Ajutament->MinimumWidth = 6;
 			this->Ajutament->Name = L"Ajutament";
 			this->Ajutament->ReadOnly = true;
 			this->Ajutament->Width = 150;
@@ -246,7 +253,7 @@ namespace application {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(511, 284);
+			this->ClientSize = System::Drawing::Size(736, 477);
 			this->Controls->Add(this->dataGridViewEntitatsAjuntament);
 			this->Controls->Add(this->TelefonLabelEdit);
 			this->Controls->Add(this->PostalLabelEdit);
@@ -255,6 +262,8 @@ namespace application {
 			this->Controls->Add(this->TelefonLabel);
 			this->Controls->Add(this->NumeroPostalLabel);
 			this->Controls->Add(this->CorreuLabel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"FormConsultarAjuntament";
 			this->Text = L"FormConsultarAjuntament";
 			this->Load += gcnew System::EventHandler(this, &FormConsultarAjuntament::FormConsultarAjuntament_Load);
@@ -281,7 +290,7 @@ namespace application {
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));
 		}
-		TxConsultaEntitats ca("Totes", this->_CorreuAjuntament);
+		TxConsultaEntitats ca("Totes", this->_CorreuAjuntament, "");
 		try {
 			ca.executar();
 		}

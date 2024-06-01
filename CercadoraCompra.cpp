@@ -14,10 +14,10 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 		// Agafarem les columnes per índex, la primera és la 0
 		System::String^ correu = dataReader->GetString(0);
 		System::String^ nom = dataReader->GetString(1);
-		System::String^ dataini = dataReader->GetString(2);
-		System::String^ datafi = dataReader->GetString(3);
-		System::String^ preu = dataReader->GetString(4);
-		System::String^ quantitat = dataReader->GetString(5);
+		System::String^ dataini = dataReader->GetDateTime(2).ToString();
+		System::String^ datafi = dataReader->GetDateTime(3).ToString();
+		System::String^ preu = dataReader->GetFloat(4).ToString();
+		System::String^ quantitat = dataReader->GetInt32(5).ToString();
 		vt->Add(gcnew PassarelaCompra (correu, nom, dataini, datafi, preu, quantitat));
 	}
 	con->tancarConnexio();
@@ -31,10 +31,10 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerCiutada(System::String^ ciutada
 	while (dataReader->Read()) {
 		System::String^ correu = dataReader->GetString(0);
 		System::String^ nom = dataReader->GetString(1);
-		System::String^ dataini = dataReader->GetString(2);
-		System::String^ datafi = dataReader->GetString(3);
-		System::String^ preu = dataReader->GetString(4);
-		System::String^ quantitat = dataReader->GetString(5);
+		System::String^ dataini = dataReader->GetDateTime(2).ToString();
+		System::String^ datafi = dataReader->GetDateTime(3).ToString();
+		System::String^ preu = dataReader->GetFloat(4).ToString();
+		System::String^ quantitat = dataReader->GetInt32(5).ToString();
 		vt->Add(gcnew PassarelaCompra(correu, nom, dataini, datafi, preu, quantitat));
 	}
 	con->tancarConnexio();
@@ -57,12 +57,12 @@ PassarelaCompra^ CercadoraCompra::CercaCompra(System::String^ Ciutada, System::S
 	if (dataReader->Read()) {
 		System::String^ correuCiu = dataReader->GetString(0);
 		System::String^ esdeve = dataReader->GetString(1);
-		System::String^ dataini = dataReader->GetString(2);
-		System::String^ datafi = dataReader->GetString(3);
-		System::String^ quantitat = dataReader->GetString(5);
+		System::String^ dataini = dataReader->GetDateTime(2).ToString();
+		System::String^ datafi = dataReader->GetDateTime(3).ToString();
+		System::String^ quantitat = dataReader->GetInt32(5).ToString();
 		System::String^ preu = "0";
 		if (!dataReader->IsDBNull(4)) {
-			preu = dataReader->GetString(4);
+			preu = dataReader->GetFloat(4).ToString();
 		}
 		con->tancarConnexio();
 		return gcnew PassarelaCompra(correuCiu, esdeve, dataini, datafi, preu, quantitat);

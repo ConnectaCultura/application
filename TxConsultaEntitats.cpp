@@ -1,8 +1,9 @@
 #include "pch.h"
 #include "TxConsultaEntitats.h"
 
-TxConsultaEntitats::TxConsultaEntitats(System::String^ tipus, System::String^ ajuntament)
+TxConsultaEntitats::TxConsultaEntitats(System::String^ tipus, System::String^ ajuntament, System::String^ nom)
 {
+	_nom = nom;
 	_tipus = tipus;
 	_ajuntament = ajuntament;
 }
@@ -16,13 +17,15 @@ void TxConsultaEntitats::executar()
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
 			if (u->obteActiu() == 1) {
-				List<System::String^>^ novaEntitat = gcnew List<System::String^>();
-				novaEntitat->Add(u->obteNom());
-				novaEntitat->Add(e->obteDescripcio());
-				novaEntitat->Add(e->obteTipus());
-				novaEntitat->Add(e->obteCorreuElectronic());
-				novaEntitat->Add(e->obteAjuntament());
-				_llistaEntitats->Add(novaEntitat);
+				if (_nom == "" || _nom == u->obteNom()) {
+					List<System::String^>^ novaEntitat = gcnew List<System::String^>();
+					novaEntitat->Add(u->obteNom());
+					novaEntitat->Add(e->obteDescripcio());
+					novaEntitat->Add(e->obteTipus());
+					novaEntitat->Add(e->obteCorreuElectronic());
+					novaEntitat->Add(e->obteAjuntament());
+					_llistaEntitats->Add(novaEntitat);
+				}
 			}
 		}
 	}
@@ -32,13 +35,15 @@ void TxConsultaEntitats::executar()
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
 			if (u->obteActiu() == 1) {
-				List<System::String^>^ ll = gcnew List<System::String^>();
-				ll->Add(u->obteNom());
-				ll->Add(e->obteDescripcio());
-				ll->Add(e->obteTipus());
-				ll->Add(e->obteCorreuElectronic());
-				ll->Add(e->obteAjuntament());
-				_llistaEntitats->Add(ll);
+				if (_nom == "" || _nom == u->obteNom()) {
+					List<System::String^>^ novaEntitat = gcnew List<System::String^>();
+					novaEntitat->Add(u->obteNom());
+					novaEntitat->Add(e->obteDescripcio());
+					novaEntitat->Add(e->obteTipus());
+					novaEntitat->Add(e->obteCorreuElectronic());
+					novaEntitat->Add(e->obteAjuntament());
+					_llistaEntitats->Add(novaEntitat);
+				}
 			}
 		}
 	}
@@ -49,13 +54,15 @@ void TxConsultaEntitats::executar()
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
 			if (u->obteActiu() == 1) {
-			List<System::String^>^ ll = gcnew List<System::String^>();
-			ll->Add(u->obteNom());
-			ll->Add(e->obteDescripcio());
-			ll->Add(e->obteTipus());
-			ll->Add(e->obteCorreuElectronic());
-			ll->Add(e->obteAjuntament());
-			_llistaEntitats->Add(ll);
+				if (_nom == "" || _nom == u->obteNom()) {
+					List<System::String^>^ novaEntitat = gcnew List<System::String^>();
+					novaEntitat->Add(u->obteNom());
+					novaEntitat->Add(e->obteDescripcio());
+					novaEntitat->Add(e->obteTipus());
+					novaEntitat->Add(e->obteCorreuElectronic());
+					novaEntitat->Add(e->obteAjuntament());
+					_llistaEntitats->Add(novaEntitat);
+				}
 			}
 		}
 	}
@@ -66,13 +73,15 @@ void TxConsultaEntitats::executar()
 		for each (PassarelaEntitat ^ e in lle) {
 			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
 			if (u->obteActiu() == 1) {
-				List<System::String^>^ ll = gcnew List<System::String^>();
-				ll->Add(u->obteNom());
-				ll->Add(e->obteDescripcio());
-				ll->Add(e->obteTipus());
-				ll->Add(e->obteCorreuElectronic());
-				ll->Add(e->obteAjuntament());
-				_llistaEntitats->Add(ll);
+				if (_nom == "" || _nom == u->obteNom()) {
+					List<System::String^>^ novaEntitat = gcnew List<System::String^>();
+					novaEntitat->Add(u->obteNom());
+					novaEntitat->Add(e->obteDescripcio());
+					novaEntitat->Add(e->obteTipus());
+					novaEntitat->Add(e->obteCorreuElectronic());
+					novaEntitat->Add(e->obteAjuntament());
+					_llistaEntitats->Add(novaEntitat);
+				}
 			}
 		}
 	}

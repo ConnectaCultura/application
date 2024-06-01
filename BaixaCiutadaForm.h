@@ -62,6 +62,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(BaixaCiutadaForm::typeid));
 			this->labelbaixaciutada1 = (gcnew System::Windows::Forms::Label());
 			this->labelbaixaciutada2 = (gcnew System::Windows::Forms::Label());
 			this->textBoxbaixaciutada = (gcnew System::Windows::Forms::TextBox());
@@ -75,11 +76,11 @@ namespace application {
 			this->labelbaixaciutada1->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->labelbaixaciutada1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelbaixaciutada1->Location = System::Drawing::Point(11, 35);
+			this->labelbaixaciutada1->Location = System::Drawing::Point(12, 21);
 			this->labelbaixaciutada1->Name = L"labelbaixaciutada1";
 			this->labelbaixaciutada1->Size = System::Drawing::Size(302, 17);
 			this->labelbaixaciutada1->TabIndex = 0;
-			this->labelbaixaciutada1->Text = L"Estàs segur que vols donar-te de baixa\?";
+			this->labelbaixaciutada1->Text = L"Estas segur que vols donar-te de baixa\?";
 			this->labelbaixaciutada1->Click += gcnew System::EventHandler(this, &BaixaCiutadaForm::labelbaixaciutada1_Click);
 			// 
 			// labelbaixaciutada2
@@ -89,15 +90,16 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelbaixaciutada2->Location = System::Drawing::Point(11, 90);
 			this->labelbaixaciutada2->Name = L"labelbaixaciutada2";
-			this->labelbaixaciutada2->Size = System::Drawing::Size(100, 18);
+			this->labelbaixaciutada2->Size = System::Drawing::Size(103, 18);
 			this->labelbaixaciutada2->TabIndex = 1;
-			this->labelbaixaciutada2->Text = L"contrasenya";
+			this->labelbaixaciutada2->Text = L"Contrasenya";
 			// 
 			// textBoxbaixaciutada
 			// 
 			this->textBoxbaixaciutada->Location = System::Drawing::Point(145, 90);
 			this->textBoxbaixaciutada->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxbaixaciutada->Name = L"textBoxbaixaciutada";
+			this->textBoxbaixaciutada->PasswordChar = '*';
 			this->textBoxbaixaciutada->Size = System::Drawing::Size(169, 22);
 			this->textBoxbaixaciutada->TabIndex = 2;
 			// 
@@ -107,15 +109,14 @@ namespace application {
 			this->buttonbaixaciutada->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonbaixaciutada->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->buttonbaixaciutada->Location = System::Drawing::Point(220, 138);
+			this->buttonbaixaciutada->Location = System::Drawing::Point(235, 140);
 			this->buttonbaixaciutada->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonbaixaciutada->Name = L"buttonbaixaciutada";
 			this->buttonbaixaciutada->Size = System::Drawing::Size(93, 31);
 			this->buttonbaixaciutada->TabIndex = 3;
-			this->buttonbaixaciutada->Text = L"confirmar";
+			this->buttonbaixaciutada->Text = L"Confirmar";
 			this->buttonbaixaciutada->UseVisualStyleBackColor = false;
 			this->buttonbaixaciutada->Click += gcnew System::EventHandler(this, &BaixaCiutadaForm::button1_Click);
-			this->textBoxbaixaciutada->PasswordChar = '*';
 			// 
 			// buttonTorna
 			// 
@@ -123,7 +124,7 @@ namespace application {
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(14, 140);
+			this->buttonTorna->Location = System::Drawing::Point(14, 142);
 			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->buttonTorna->Name = L"buttonTorna";
 			this->buttonTorna->Size = System::Drawing::Size(107, 29);
@@ -142,9 +143,10 @@ namespace application {
 			this->Controls->Add(this->textBoxbaixaciutada);
 			this->Controls->Add(this->labelbaixaciutada2);
 			this->Controls->Add(this->labelbaixaciutada1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BaixaCiutadaForm";
-			this->Text = L"BaixaCiutadaForm";
+			this->Text = L"Donar-se de baixa";
 			this->Load += gcnew System::EventHandler(this, &BaixaCiutadaForm::BaixaCiutadaForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
