@@ -341,7 +341,7 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->ModificaEntitatButton->Name = L"ModificaEntitatButton";
 			this->ModificaEntitatButton->Size = System::Drawing::Size(348, 32);
 			this->ModificaEntitatButton->TabIndex = 7;
-			this->ModificaEntitatButton->Text = L"Modifica Entitat";
+			this->ModificaEntitatButton->Text = L"Modifica entitat";
 			this->ModificaEntitatButton->UseVisualStyleBackColor = false;
 			this->ModificaEntitatButton->Click += gcnew System::EventHandler(this, &Form1::ModificaEntitatButton_Click);
 			// 
@@ -357,7 +357,7 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->esborrarUsuari->Name = L"esborrarUsuari";
 			this->esborrarUsuari->Size = System::Drawing::Size(348, 30);
 			this->esborrarUsuari->TabIndex = 9;
-			this->esborrarUsuari->Text = L"Esborrar Usuari";
+			this->esborrarUsuari->Text = L"Esborrar usuari";
 			this->esborrarUsuari->UseVisualStyleBackColor = false;
 			this->esborrarUsuari->Click += gcnew System::EventHandler(this, &Form1::esborrarUsuari_Click);
 			// 
@@ -436,7 +436,7 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->ConsultaCompresButton->Name = L"ConsultaCompresButton";
 			this->ConsultaCompresButton->Size = System::Drawing::Size(348, 36);
 			this->ConsultaCompresButton->TabIndex = 11;
-			this->ConsultaCompresButton->Text = L"Consulta Compres";
+			this->ConsultaCompresButton->Text = L"Consulta compres";
 			this->ConsultaCompresButton->UseVisualStyleBackColor = false;
 			this->ConsultaCompresButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaCompresButton_Click);
 			// 
@@ -596,7 +596,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 
 	}
 	private: System::Void EsborrarEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->ObrirForm(gcnew application::BaixaEntitatForm);
+		application::BaixaEntitatForm^ baixaE = gcnew application::BaixaEntitatForm();
+		baixaE->ShowDialog();
+		Sessio^ s = Sessio::getInstance();
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void registreCiutada_Click(System::Object^ sender, System::EventArgs^ e) {
