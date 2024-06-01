@@ -130,12 +130,17 @@ namespace application {
 			// 
 			// enviar
 			// 
-			this->enviar->Location = System::Drawing::Point(219, 318);
+			this->enviar->BackColor = System::Drawing::Color::OrangeRed;
+			this->enviar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->enviar->ForeColor = System::Drawing::Color::Transparent;
+			this->enviar->Location = System::Drawing::Point(399, 354);
+			this->enviar->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->enviar->Name = L"enviar";
-			this->enviar->Size = System::Drawing::Size(147, 23);
+			this->enviar->Size = System::Drawing::Size(196, 28);
 			this->enviar->TabIndex = 0;
 			this->enviar->Text = L"Enviar Valoració";
-			this->enviar->UseVisualStyleBackColor = true;
+			this->enviar->UseVisualStyleBackColor = false;
 			this->enviar->Click += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::enviar_Click);
 			// 
 			// TornaButton
@@ -144,9 +149,10 @@ namespace application {
 			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TornaButton->Location = System::Drawing::Point(12, 318);
+			this->TornaButton->Location = System::Drawing::Point(16, 354);
+			this->TornaButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TornaButton->Name = L"TornaButton";
-			this->TornaButton->Size = System::Drawing::Size(75, 23);
+			this->TornaButton->Size = System::Drawing::Size(100, 28);
 			this->TornaButton->TabIndex = 11;
 			this->TornaButton->Text = L"Torna";
 			this->TornaButton->UseVisualStyleBackColor = false;
@@ -155,60 +161,54 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(33, 52);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(33, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(99, 13);
+			this->label1->Size = System::Drawing::Size(128, 16);
 			this->label1->TabIndex = 12;
-			this->label1->Text = L"Nom Esdeveniment";
+			this->label1->Text = L"Nom Esdeveniment:";
 			// 
 			// esdevenimentLabel
 			// 
 			this->esdevenimentLabel->AutoSize = true;
-			this->esdevenimentLabel->Location = System::Drawing::Point(186, 52);
-			this->esdevenimentLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->esdevenimentLabel->Location = System::Drawing::Point(237, 30);
 			this->esdevenimentLabel->Name = L"esdevenimentLabel";
-			this->esdevenimentLabel->Size = System::Drawing::Size(74, 13);
+			this->esdevenimentLabel->Size = System::Drawing::Size(93, 16);
 			this->esdevenimentLabel->TabIndex = 13;
 			this->esdevenimentLabel->Text = L"Esdeveniment";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(35, 91);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(36, 78);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(52, 13);
+			this->label2->Size = System::Drawing::Size(65, 16);
 			this->label2->TabIndex = 14;
-			this->label2->Text = L"Data Inici";
+			this->label2->Text = L"Data Inici:";
 			// 
 			// DataIniciLabel
 			// 
 			this->DataIniciLabel->AutoSize = true;
-			this->DataIniciLabel->Location = System::Drawing::Point(186, 91);
-			this->DataIniciLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DataIniciLabel->Location = System::Drawing::Point(237, 78);
 			this->DataIniciLabel->Name = L"DataIniciLabel";
-			this->DataIniciLabel->Size = System::Drawing::Size(49, 13);
+			this->DataIniciLabel->Size = System::Drawing::Size(59, 16);
 			this->DataIniciLabel->TabIndex = 15;
 			this->DataIniciLabel->Text = L"DataInici";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(35, 138);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(36, 136);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(41, 13);
+			this->label3->Size = System::Drawing::Size(53, 16);
 			this->label3->TabIndex = 16;
-			this->label3->Text = L"Data Fi";
+			this->label3->Text = L"Data Fi:";
 			// 
 			// DataFiLabel
 			// 
 			this->DataFiLabel->AutoSize = true;
-			this->DataFiLabel->Location = System::Drawing::Point(186, 138);
-			this->DataFiLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->DataFiLabel->Location = System::Drawing::Point(237, 136);
 			this->DataFiLabel->Name = L"DataFiLabel";
-			this->DataFiLabel->Size = System::Drawing::Size(38, 13);
+			this->DataFiLabel->Size = System::Drawing::Size(47, 16);
 			this->DataFiLabel->TabIndex = 17;
 			this->DataFiLabel->Text = L"DataFi";
 			this->DataFiLabel->Click += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::DataFiLabel_Click);
@@ -216,31 +216,30 @@ namespace application {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(35, 188);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Location = System::Drawing::Point(36, 197);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(55, 13);
+			this->label4->Size = System::Drawing::Size(69, 16);
 			this->label4->TabIndex = 18;
-			this->label4->Text = L"Puntuació";
+			this->label4->Text = L"Puntuació:";
 			this->label4->Click += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::label4_Click);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(35, 234);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Location = System::Drawing::Point(36, 254);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(37, 13);
+			this->label5->Size = System::Drawing::Size(49, 16);
 			this->label5->TabIndex = 19;
-			this->label5->Text = L"Opinió";
+			this->label5->Text = L"Opinio:";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(189, 180);
+			this->pictureBox1->Location = System::Drawing::Point(241, 188);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(35, 35);
+			this->pictureBox1->Size = System::Drawing::Size(47, 43);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
@@ -250,9 +249,10 @@ namespace application {
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
-			this->pictureBox2->Location = System::Drawing::Point(230, 180);
+			this->pictureBox2->Location = System::Drawing::Point(296, 188);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(35, 35);
+			this->pictureBox2->Size = System::Drawing::Size(47, 43);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 23;
 			this->pictureBox2->TabStop = false;
@@ -263,9 +263,10 @@ namespace application {
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.InitialImage")));
-			this->pictureBox3->Location = System::Drawing::Point(271, 180);
+			this->pictureBox3->Location = System::Drawing::Point(350, 188);
+			this->pictureBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(35, 35);
+			this->pictureBox3->Size = System::Drawing::Size(47, 43);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 24;
 			this->pictureBox3->TabStop = false;
@@ -276,9 +277,10 @@ namespace application {
 			// 
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
 			this->pictureBox4->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.InitialImage")));
-			this->pictureBox4->Location = System::Drawing::Point(312, 180);
+			this->pictureBox4->Location = System::Drawing::Point(405, 188);
+			this->pictureBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(35, 35);
+			this->pictureBox4->Size = System::Drawing::Size(47, 43);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox4->TabIndex = 25;
 			this->pictureBox4->TabStop = false;
@@ -289,9 +291,10 @@ namespace application {
 			// 
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
 			this->pictureBox5->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.InitialImage")));
-			this->pictureBox5->Location = System::Drawing::Point(353, 180);
+			this->pictureBox5->Location = System::Drawing::Point(460, 188);
+			this->pictureBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(35, 35);
+			this->pictureBox5->Size = System::Drawing::Size(47, 43);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox5->TabIndex = 26;
 			this->pictureBox5->TabStop = false;
@@ -302,9 +305,10 @@ namespace application {
 			// 
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
 			this->pictureBox6->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.InitialImage")));
-			this->pictureBox6->Location = System::Drawing::Point(230, 180);
+			this->pictureBox6->Location = System::Drawing::Point(296, 188);
+			this->pictureBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(35, 35);
+			this->pictureBox6->Size = System::Drawing::Size(47, 43);
 			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox6->TabIndex = 27;
 			this->pictureBox6->TabStop = false;
@@ -314,9 +318,10 @@ namespace application {
 			// 
 			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
 			this->pictureBox7->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.InitialImage")));
-			this->pictureBox7->Location = System::Drawing::Point(271, 180);
+			this->pictureBox7->Location = System::Drawing::Point(350, 188);
+			this->pictureBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(35, 35);
+			this->pictureBox7->Size = System::Drawing::Size(47, 43);
 			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox7->TabIndex = 28;
 			this->pictureBox7->TabStop = false;
@@ -326,9 +331,10 @@ namespace application {
 			// 
 			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
 			this->pictureBox8->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.InitialImage")));
-			this->pictureBox8->Location = System::Drawing::Point(312, 180);
+			this->pictureBox8->Location = System::Drawing::Point(405, 188);
+			this->pictureBox8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox8->Name = L"pictureBox8";
-			this->pictureBox8->Size = System::Drawing::Size(35, 35);
+			this->pictureBox8->Size = System::Drawing::Size(47, 43);
 			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox8->TabIndex = 29;
 			this->pictureBox8->TabStop = false;
@@ -338,9 +344,10 @@ namespace application {
 			// 
 			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
 			this->pictureBox9->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.InitialImage")));
-			this->pictureBox9->Location = System::Drawing::Point(353, 180);
+			this->pictureBox9->Location = System::Drawing::Point(460, 188);
+			this->pictureBox9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(35, 35);
+			this->pictureBox9->Size = System::Drawing::Size(47, 43);
 			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox9->TabIndex = 30;
 			this->pictureBox9->TabStop = false;
@@ -348,18 +355,19 @@ namespace application {
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(189, 234);
+			this->richTextBox1->Location = System::Drawing::Point(241, 254);
+			this->richTextBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(196, 50);
+			this->richTextBox1->Size = System::Drawing::Size(260, 61);
 			this->richTextBox1->TabIndex = 21;
 			this->richTextBox1->Text = L"";
 			this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::richTextBox1_TextChanged);
 			// 
 			// ValorarEsdevenimentForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(456, 353);
+			this->ClientSize = System::Drawing::Size(608, 399);
 			this->Controls->Add(this->pictureBox9);
 			this->Controls->Add(this->pictureBox8);
 			this->Controls->Add(this->pictureBox7);
@@ -380,8 +388,10 @@ namespace application {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->TornaButton);
 			this->Controls->Add(this->enviar);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ValorarEsdevenimentForm";
-			this->Text = L"ValorarEsdevenimentForm";
+			this->Text = L"Valorar Esdeveniment";
 			this->Load += gcnew System::EventHandler(this, &ValorarEsdevenimentForm::ValorarEsdevenimentForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
