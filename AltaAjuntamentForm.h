@@ -55,7 +55,7 @@ namespace application {
 	private: System::Windows::Forms::Label^ labelTelefon;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownPostal;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownTelefon;
-	private: System::Windows::Forms::Button^ buttonTorna;
+
 
 
 	protected:
@@ -84,7 +84,6 @@ namespace application {
 			this->labelTelefon = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownPostal = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDownTelefon = (gcnew System::Windows::Forms::NumericUpDown());
-			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownPostal))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTelefon))->BeginInit();
 			this->SuspendLayout();
@@ -96,9 +95,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelNom->Location = System::Drawing::Point(36, 34);
 			this->labelNom->Name = L"labelNom";
-			this->labelNom->Size = System::Drawing::Size(40, 17);
+			this->labelNom->Size = System::Drawing::Size(45, 17);
 			this->labelNom->TabIndex = 1;
-			this->labelNom->Text = L"Nom";
+			this->labelNom->Text = L"Nom:";
 			// 
 			// textBoxNom
 			// 
@@ -116,9 +115,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelContrasenya->Location = System::Drawing::Point(36, 142);
 			this->labelContrasenya->Name = L"labelContrasenya";
-			this->labelContrasenya->Size = System::Drawing::Size(99, 17);
+			this->labelContrasenya->Size = System::Drawing::Size(104, 17);
 			this->labelContrasenya->TabIndex = 7;
-			this->labelContrasenya->Text = L"Contrasenya";
+			this->labelContrasenya->Text = L"Contrasenya:";
 			// 
 			// labelCorreu
 			// 
@@ -127,9 +126,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelCorreu->Location = System::Drawing::Point(36, 92);
 			this->labelCorreu->Name = L"labelCorreu";
-			this->labelCorreu->Size = System::Drawing::Size(57, 17);
+			this->labelCorreu->Size = System::Drawing::Size(62, 17);
 			this->labelCorreu->TabIndex = 8;
-			this->labelCorreu->Text = L"Correu";
+			this->labelCorreu->Text = L"Correu:";
 			// 
 			// textBoxCorreu
 			// 
@@ -170,9 +169,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelCodiPostal->Location = System::Drawing::Point(36, 197);
 			this->labelCodiPostal->Name = L"labelCodiPostal";
-			this->labelCodiPostal->Size = System::Drawing::Size(90, 17);
+			this->labelCodiPostal->Size = System::Drawing::Size(95, 17);
 			this->labelCodiPostal->TabIndex = 12;
-			this->labelCodiPostal->Text = L"Codi Postal";
+			this->labelCodiPostal->Text = L"Codi Postal:";
 			// 
 			// labelTelefon
 			// 
@@ -181,9 +180,9 @@ namespace application {
 				static_cast<System::Byte>(0)));
 			this->labelTelefon->Location = System::Drawing::Point(36, 254);
 			this->labelTelefon->Name = L"labelTelefon";
-			this->labelTelefon->Size = System::Drawing::Size(155, 17);
+			this->labelTelefon->Size = System::Drawing::Size(160, 17);
 			this->labelTelefon->TabIndex = 13;
-			this->labelTelefon->Text = L"Telefon de Contacte";
+			this->labelTelefon->Text = L"Telefon de Contacte:";
 			// 
 			// numericUpDownPostal
 			// 
@@ -205,27 +204,11 @@ namespace application {
 			this->numericUpDownTelefon->TabIndex = 15;
 			this->numericUpDownTelefon->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			// 
-			// buttonTorna
-			// 
-			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
-			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(39, 295);
-			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(107, 29);
-			this->buttonTorna->TabIndex = 16;
-			this->buttonTorna->Text = L"Torna";
-			this->buttonTorna->UseVisualStyleBackColor = false;
-			this->buttonTorna->Click += gcnew System::EventHandler(this, &AltaAjuntamentForm::buttonTorna_Click);
-			// 
 			// AltaAjuntamentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(461, 355);
-			this->Controls->Add(this->buttonTorna);
+			this->ClientSize = System::Drawing::Size(500, 376);
 			this->Controls->Add(this->numericUpDownTelefon);
 			this->Controls->Add(this->numericUpDownPostal);
 			this->Controls->Add(this->labelTelefon);
@@ -237,6 +220,7 @@ namespace application {
 			this->Controls->Add(this->labelContrasenya);
 			this->Controls->Add(this->textBoxNom);
 			this->Controls->Add(this->labelNom);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"AltaAjuntamentForm";
 			this->Text = L"AltaAjuntamentForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownPostal))->EndInit();

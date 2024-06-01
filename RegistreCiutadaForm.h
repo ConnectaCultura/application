@@ -66,6 +66,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegistreCiutadaForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -99,7 +100,7 @@ namespace application {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(133, 17);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Correu electrònic";
+			this->label2->Text = L"Correu electronic";
 			// 
 			// label3
 			// 
@@ -213,9 +214,10 @@ namespace application {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"RegistreCiutadaForm";
-			this->Text = L"RegistreCiutadaForm";
+			this->Text = L"Registre";
 			this->Load += gcnew System::EventHandler(this, &RegistreCiutadaForm::RegistreCiutadaForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

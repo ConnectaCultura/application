@@ -60,7 +60,7 @@ namespace application {
 
 
 	private: System::String^ _correuCiu;
-	private: System::Windows::Forms::Button^ TornaButton;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ EsdevenimentColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DataIniciColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DataFiColumn;
@@ -80,6 +80,7 @@ namespace application {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ConsultaCompresForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->EsdevenimentColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -87,7 +88,6 @@ namespace application {
 			this->DataFiColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PreuColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Quantitat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -96,10 +96,9 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(40, 43);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(33, 47);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(180, 24);
+			this->label1->Size = System::Drawing::Size(229, 29);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Les meves compres";
 			// 
@@ -114,14 +113,14 @@ namespace application {
 				this->EsdevenimentColumn,
 					this->DataIniciColumn, this->DataFiColumn, this->PreuColumn, this->Quantitat
 			});
-			this->dataGridView1->Location = System::Drawing::Point(45, 96);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
+			this->dataGridView1->Location = System::Drawing::Point(17, 148);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(701, 209);
+			this->dataGridView1->Size = System::Drawing::Size(750, 257);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaCompresForm::dataGridView1_CellContentClick);
 			// 
@@ -160,34 +159,23 @@ namespace application {
 			// Quantitat
 			// 
 			this->Quantitat->HeaderText = L"Quantitat";
+			this->Quantitat->MinimumWidth = 6;
 			this->Quantitat->Name = L"Quantitat";
 			this->Quantitat->ReadOnly = true;
-			// 
-			// TornaButton
-			// 
-			this->TornaButton->BackColor = System::Drawing::Color::OrangeRed;
-			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TornaButton->Location = System::Drawing::Point(12, 323);
-			this->TornaButton->Name = L"TornaButton";
-			this->TornaButton->Size = System::Drawing::Size(75, 23);
-			this->TornaButton->TabIndex = 11;
-			this->TornaButton->Text = L"Torna";
-			this->TornaButton->UseVisualStyleBackColor = false;
-			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompresForm::TornaButton_Click);
+			this->Quantitat->Width = 125;
 			// 
 			// ConsultaCompresForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(833, 358);
-			this->Controls->Add(this->TornaButton);
+			this->ClientSize = System::Drawing::Size(765, 441);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ConsultaCompresForm";
-			this->Text = L"ConsultaCompresForm";
+			this->Text = L"Consulta Compres";
 			this->Load += gcnew System::EventHandler(this, &ConsultaCompresForm::ConsultaCompresForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
