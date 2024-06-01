@@ -17,6 +17,7 @@
 #include "ComprarEntradaForm.h"
 #include "CancelaCompraForm.h"
 #include "ConsultaCompresForm.h"
+#include "ConsultaAjuntamentsForm.h"
 
 using namespace std;
 
@@ -41,6 +42,8 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized; // Maximiza la ventana
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;   // Elimina los bordes de la ventana
 			logIn->Visible = true;
 			logOut->Visible = false;
 			altaEntitat->Visible = false;
@@ -50,7 +53,7 @@ namespace CppCLRWinFormsProject {
 			ModificaEntitatButton->Visible = false;
 			esborrarUsuari->Visible = false;
 			veurePerfil->Visible = false;
-			ConsultaCompresButton->Visible = false;
+			ConsultaCompresButton->Visible = true;
 		}
 		void ActualitzarForm1() {
 			Sessio^ s = Sessio::getInstance();
@@ -65,13 +68,11 @@ namespace CppCLRWinFormsProject {
 				esborrarUsuari->Visible = false;
 				veurePerfil->Visible = false;
 				CreaEsdeveniment->Visible = false;
-				ConsultaCompresButton->Visible = false;
 			}
 			else {
 				logIn->Visible = false;
 				registreCiutada->Visible = false;
 				logOut->Visible = true;
-				ConsultaCompresButton->Visible = false;
 				if (s->obteUsuari()->obteTipus() == "ajuntament") {
 					altaEntitat->Visible = true;
 					CreaEsdeveniment->Visible = false;
@@ -91,7 +92,6 @@ namespace CppCLRWinFormsProject {
 				else {
 					esborrarUsuari->Visible = true;
 					veurePerfil->Visible = true;
-					ConsultaCompresButton->Visible = true;
 				}
 			}
 		}
@@ -138,6 +138,8 @@ namespace CppCLRWinFormsProject {
 private: System::Windows::Forms::Panel^ panel1;
 private: System::Windows::Forms::Label^ label1;
 private: System::Windows::Forms::Panel^ panel_contenedor;
+
+
 
 
 
@@ -208,10 +210,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->logIn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->logIn->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->logIn->Location = System::Drawing::Point(0, 68);
-			this->logIn->Margin = System::Windows::Forms::Padding(2);
+			this->logIn->Location = System::Drawing::Point(0, 104);
 			this->logIn->Name = L"logIn";
-			this->logIn->Size = System::Drawing::Size(348, 34);
+			this->logIn->Size = System::Drawing::Size(522, 52);
 			this->logIn->TabIndex = 0;
 			this->logIn->Text = L"Iniciar sessio";
 			this->logIn->UseVisualStyleBackColor = false;
@@ -224,10 +225,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->logOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->logOut->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->logOut->Location = System::Drawing::Point(0, 34);
-			this->logOut->Margin = System::Windows::Forms::Padding(2);
+			this->logOut->Location = System::Drawing::Point(0, 52);
 			this->logOut->Name = L"logOut";
-			this->logOut->Size = System::Drawing::Size(348, 34);
+			this->logOut->Size = System::Drawing::Size(522, 52);
 			this->logOut->TabIndex = 1;
 			this->logOut->Text = L"Tancar sessio";
 			this->logOut->UseVisualStyleBackColor = false;
@@ -240,10 +240,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->altaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->altaEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->altaEntitat->Location = System::Drawing::Point(0, 432);
-			this->altaEntitat->Margin = System::Windows::Forms::Padding(4);
+			this->altaEntitat->Location = System::Drawing::Point(0, 664);
+			this->altaEntitat->Margin = System::Windows::Forms::Padding(6);
 			this->altaEntitat->Name = L"altaEntitat";
-			this->altaEntitat->Size = System::Drawing::Size(348, 32);
+			this->altaEntitat->Size = System::Drawing::Size(522, 49);
 			this->altaEntitat->TabIndex = 2;
 			this->altaEntitat->Text = L"Donar d\'alta entitat";
 			this->altaEntitat->UseVisualStyleBackColor = false;
@@ -256,10 +256,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->EsborrarEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EsborrarEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->EsborrarEntitat->Location = System::Drawing::Point(0, 32);
-			this->EsborrarEntitat->Margin = System::Windows::Forms::Padding(4);
+			this->EsborrarEntitat->Location = System::Drawing::Point(0, 49);
+			this->EsborrarEntitat->Margin = System::Windows::Forms::Padding(6);
 			this->EsborrarEntitat->Name = L"EsborrarEntitat";
-			this->EsborrarEntitat->Size = System::Drawing::Size(348, 32);
+			this->EsborrarEntitat->Size = System::Drawing::Size(522, 49);
 			this->EsborrarEntitat->TabIndex = 3;
 			this->EsborrarEntitat->Text = L"Esborrar entitat";
 			this->EsborrarEntitat->UseVisualStyleBackColor = false;
@@ -273,9 +273,8 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 				static_cast<System::Byte>(0)));
 			this->registreCiutada->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->registreCiutada->Location = System::Drawing::Point(0, 0);
-			this->registreCiutada->Margin = System::Windows::Forms::Padding(2);
 			this->registreCiutada->Name = L"registreCiutada";
-			this->registreCiutada->Size = System::Drawing::Size(348, 34);
+			this->registreCiutada->Size = System::Drawing::Size(522, 52);
 			this->registreCiutada->TabIndex = 4;
 			this->registreCiutada->Text = L"Registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
@@ -288,10 +287,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->ConsultaEntitats->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ConsultaEntitats->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ConsultaEntitats->Location = System::Drawing::Point(0, 334);
-			this->ConsultaEntitats->Margin = System::Windows::Forms::Padding(4);
+			this->ConsultaEntitats->Location = System::Drawing::Point(0, 514);
+			this->ConsultaEntitats->Margin = System::Windows::Forms::Padding(6);
 			this->ConsultaEntitats->Name = L"ConsultaEntitats";
-			this->ConsultaEntitats->Size = System::Drawing::Size(348, 32);
+			this->ConsultaEntitats->Size = System::Drawing::Size(522, 49);
 			this->ConsultaEntitats->TabIndex = 6;
 			this->ConsultaEntitats->Text = L"Consultar entitats";
 			this->ConsultaEntitats->UseVisualStyleBackColor = false;
@@ -304,10 +303,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->altaAjuntament->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->altaAjuntament->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->altaAjuntament->Location = System::Drawing::Point(0, 366);
-			this->altaAjuntament->Margin = System::Windows::Forms::Padding(4, 2, 4, 2);
+			this->altaAjuntament->Location = System::Drawing::Point(0, 563);
+			this->altaAjuntament->Margin = System::Windows::Forms::Padding(6, 3, 6, 3);
 			this->altaAjuntament->Name = L"altaAjuntament";
-			this->altaAjuntament->Size = System::Drawing::Size(348, 30);
+			this->altaAjuntament->Size = System::Drawing::Size(522, 46);
 			this->altaAjuntament->TabIndex = 7;
 			this->altaAjuntament->Text = L"Donar d\'alta ajuntament";
 			this->altaAjuntament->UseVisualStyleBackColor = false;
@@ -320,10 +319,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->CreaEsdeveniment->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CreaEsdeveniment->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->CreaEsdeveniment->Location = System::Drawing::Point(0, 272);
-			this->CreaEsdeveniment->Margin = System::Windows::Forms::Padding(4);
+			this->CreaEsdeveniment->Location = System::Drawing::Point(0, 419);
+			this->CreaEsdeveniment->Margin = System::Windows::Forms::Padding(6);
 			this->CreaEsdeveniment->Name = L"CreaEsdeveniment";
-			this->CreaEsdeveniment->Size = System::Drawing::Size(348, 32);
+			this->CreaEsdeveniment->Size = System::Drawing::Size(522, 49);
 			this->CreaEsdeveniment->TabIndex = 7;
 			this->CreaEsdeveniment->Text = L"Crear esdeveniment";
 			this->CreaEsdeveniment->UseVisualStyleBackColor = false;
@@ -337,9 +336,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ModificaEntitatButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ModificaEntitatButton->Location = System::Drawing::Point(0, 0);
-			this->ModificaEntitatButton->Margin = System::Windows::Forms::Padding(4);
+			this->ModificaEntitatButton->Margin = System::Windows::Forms::Padding(6);
 			this->ModificaEntitatButton->Name = L"ModificaEntitatButton";
-			this->ModificaEntitatButton->Size = System::Drawing::Size(348, 32);
+			this->ModificaEntitatButton->Size = System::Drawing::Size(522, 49);
 			this->ModificaEntitatButton->TabIndex = 7;
 			this->ModificaEntitatButton->Text = L"Modifica entitat";
 			this->ModificaEntitatButton->UseVisualStyleBackColor = false;
@@ -352,10 +351,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->esborrarUsuari->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->esborrarUsuari->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->esborrarUsuari->Location = System::Drawing::Point(0, 304);
-			this->esborrarUsuari->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->esborrarUsuari->Location = System::Drawing::Point(0, 468);
+			this->esborrarUsuari->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->esborrarUsuari->Name = L"esborrarUsuari";
-			this->esborrarUsuari->Size = System::Drawing::Size(348, 30);
+			this->esborrarUsuari->Size = System::Drawing::Size(522, 46);
 			this->esborrarUsuari->TabIndex = 9;
 			this->esborrarUsuari->Text = L"Esborrar usuari";
 			this->esborrarUsuari->UseVisualStyleBackColor = false;
@@ -382,10 +381,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->veurePerfil->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->veurePerfil->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->veurePerfil->Location = System::Drawing::Point(9, 7);
-			this->veurePerfil->Margin = System::Windows::Forms::Padding(2);
+			this->veurePerfil->Location = System::Drawing::Point(14, 11);
 			this->veurePerfil->Name = L"veurePerfil";
-			this->veurePerfil->Size = System::Drawing::Size(119, 30);
+			this->veurePerfil->Size = System::Drawing::Size(178, 46);
 			this->veurePerfil->TabIndex = 9;
 			this->veurePerfil->Text = L"Veure perfil";
 			this->veurePerfil->UseVisualStyleBackColor = false;
@@ -398,11 +396,11 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->consultarEsdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->consultarEsdeveniments->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->consultarEsdeveniments->Location = System::Drawing::Point(0, 464);
-			this->consultarEsdeveniments->Margin = System::Windows::Forms::Padding(4);
+			this->consultarEsdeveniments->Location = System::Drawing::Point(0, 713);
+			this->consultarEsdeveniments->Margin = System::Windows::Forms::Padding(6);
 			this->consultarEsdeveniments->Name = L"consultarEsdeveniments";
 			this->consultarEsdeveniments->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->consultarEsdeveniments->Size = System::Drawing::Size(348, 32);
+			this->consultarEsdeveniments->Size = System::Drawing::Size(522, 49);
 			this->consultarEsdeveniments->TabIndex = 10;
 			this->consultarEsdeveniments->Text = L"Consultar esdeveniments";
 			this->consultarEsdeveniments->UseVisualStyleBackColor = false;
@@ -415,10 +413,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(0, 102);
-			this->buttonTorna->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonTorna->Location = System::Drawing::Point(0, 157);
+			this->buttonTorna->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(348, 28);
+			this->buttonTorna->Size = System::Drawing::Size(522, 43);
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Surt";
 			this->buttonTorna->UseVisualStyleBackColor = false;
@@ -431,12 +429,12 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->ConsultaCompresButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ConsultaCompresButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ConsultaCompresButton->Location = System::Drawing::Point(0, 396);
-			this->ConsultaCompresButton->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->ConsultaCompresButton->Location = System::Drawing::Point(0, 609);
+			this->ConsultaCompresButton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
 			this->ConsultaCompresButton->Name = L"ConsultaCompresButton";
-			this->ConsultaCompresButton->Size = System::Drawing::Size(348, 36);
+			this->ConsultaCompresButton->Size = System::Drawing::Size(522, 55);
 			this->ConsultaCompresButton->TabIndex = 11;
-			this->ConsultaCompresButton->Text = L"Consulta compres";
+			this->ConsultaCompresButton->Text = L"Consulta ajuntaments";
 			this->ConsultaCompresButton->UseVisualStyleBackColor = false;
 			this->ConsultaCompresButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaCompresButton_Click);
 			// 
@@ -458,9 +456,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->panel_lateral->Controls->Add(this->margen);
 			this->panel_lateral->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel_lateral->Location = System::Drawing::Point(0, 0);
-			this->panel_lateral->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel_lateral->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->panel_lateral->Name = L"panel_lateral";
-			this->panel_lateral->Size = System::Drawing::Size(348, 784);
+			this->panel_lateral->Size = System::Drawing::Size(522, 1106);
 			this->panel_lateral->TabIndex = 19;
 			// 
 			// panel1
@@ -470,10 +468,10 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->panel1->Controls->Add(this->buttonTorna);
 			this->panel1->Controls->Add(this->registreCiutada);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 638);
-			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel1->Location = System::Drawing::Point(0, 980);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(348, 130);
+			this->panel1->Size = System::Drawing::Size(522, 200);
 			this->panel1->TabIndex = 13;
 			// 
 			// panel4
@@ -481,29 +479,29 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->panel4->Controls->Add(this->EsborrarEntitat);
 			this->panel4->Controls->Add(this->ModificaEntitatButton);
 			this->panel4->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel4->Location = System::Drawing::Point(0, 496);
-			this->panel4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel4->Location = System::Drawing::Point(0, 762);
+			this->panel4->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(348, 142);
+			this->panel4->Size = System::Drawing::Size(522, 218);
 			this->panel4->TabIndex = 12;
 			// 
 			// panel3
 			// 
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel3->Location = System::Drawing::Point(0, 230);
-			this->panel3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel3->Location = System::Drawing::Point(0, 354);
+			this->panel3->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(348, 42);
+			this->panel3->Size = System::Drawing::Size(522, 65);
 			this->panel3->TabIndex = 10;
 			// 
 			// panel2
 			// 
 			this->panel2->Controls->Add(this->label1);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel2->Location = System::Drawing::Point(0, 82);
-			this->panel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel2->Location = System::Drawing::Point(0, 126);
+			this->panel2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(348, 148);
+			this->panel2->Size = System::Drawing::Size(522, 228);
 			this->panel2->TabIndex = 9;
 			// 
 			// label1
@@ -514,8 +512,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(0, 0);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(326, 46);
+			this->label1->Size = System::Drawing::Size(393, 55);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Connecta Cultura";
 			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
@@ -525,31 +524,30 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			this->margen->Controls->Add(this->veurePerfil);
 			this->margen->Dock = System::Windows::Forms::DockStyle::Top;
 			this->margen->Location = System::Drawing::Point(0, 0);
-			this->margen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->margen->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->margen->Name = L"margen";
-			this->margen->Size = System::Drawing::Size(348, 82);
+			this->margen->Size = System::Drawing::Size(522, 126);
 			this->margen->TabIndex = 0;
 			// 
 			// panel_contenedor
 			// 
 			this->panel_contenedor->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panel_contenedor->Location = System::Drawing::Point(348, 0);
-			this->panel_contenedor->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel_contenedor->Location = System::Drawing::Point(522, 0);
+			this->panel_contenedor->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->panel_contenedor->Name = L"panel_contenedor";
-			this->panel_contenedor->Size = System::Drawing::Size(937, 784);
+			this->panel_contenedor->Size = System::Drawing::Size(1406, 1106);
 			this->panel_contenedor->TabIndex = 20;
 			this->panel_contenedor->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint_1);
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
-			this->ClientSize = System::Drawing::Size(1285, 784);
+			this->ClientSize = System::Drawing::Size(1928, 1106);
 			this->Controls->Add(this->panel_contenedor);
 			this->Controls->Add(this->panel_lateral);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ConnectaCultura";
@@ -680,7 +678,7 @@ private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void ConsultaCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
-	this->ObrirForm(gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic()));
+	this->ObrirForm(gcnew application::ConsultaAjuntamentsForm());
 	Form1::ActualitzarForm1();
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {

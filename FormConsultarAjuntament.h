@@ -114,30 +114,30 @@ namespace application {
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
-			this->CorreuLabel->Location = System::Drawing::Point(39, 81);
+			this->CorreuLabel->Location = System::Drawing::Point(44, 102);
 			this->CorreuLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->CorreuLabel->Name = L"CorreuLabel";
-			this->CorreuLabel->Size = System::Drawing::Size(109, 16);
+			this->CorreuLabel->Size = System::Drawing::Size(131, 20);
 			this->CorreuLabel->TabIndex = 4;
 			this->CorreuLabel->Text = L"CorreuElectronic:";
 			// 
 			// NumeroPostalLabel
 			// 
 			this->NumeroPostalLabel->AutoSize = true;
-			this->NumeroPostalLabel->Location = System::Drawing::Point(39, 123);
+			this->NumeroPostalLabel->Location = System::Drawing::Point(44, 154);
 			this->NumeroPostalLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->NumeroPostalLabel->Name = L"NumeroPostalLabel";
-			this->NumeroPostalLabel->Size = System::Drawing::Size(96, 16);
+			this->NumeroPostalLabel->Size = System::Drawing::Size(113, 20);
 			this->NumeroPostalLabel->TabIndex = 5;
 			this->NumeroPostalLabel->Text = L"NumeroPostal:";
 			// 
 			// TelefonLabel
 			// 
 			this->TelefonLabel->AutoSize = true;
-			this->TelefonLabel->Location = System::Drawing::Point(39, 165);
+			this->TelefonLabel->Location = System::Drawing::Point(44, 206);
 			this->TelefonLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->TelefonLabel->Name = L"TelefonLabel";
-			this->TelefonLabel->Size = System::Drawing::Size(109, 16);
+			this->TelefonLabel->Size = System::Drawing::Size(131, 20);
 			this->TelefonLabel->TabIndex = 6;
 			this->TelefonLabel->Text = L"TelefonContacte:";
 			// 
@@ -146,38 +146,38 @@ namespace application {
 			this->NomLabel->AutoSize = true;
 			this->NomLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NomLabel->Location = System::Drawing::Point(27, 23);
-			this->NomLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->NomLabel->Location = System::Drawing::Point(40, 35);
+			this->NomLabel->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->NomLabel->Name = L"NomLabel";
-			this->NomLabel->Size = System::Drawing::Size(71, 29);
+			this->NomLabel->Size = System::Drawing::Size(85, 33);
 			this->NomLabel->TabIndex = 9;
 			this->NomLabel->Text = L"Nom:";
 			// 
 			// TelefonLabelEdit
 			// 
 			this->TelefonLabelEdit->AutoSize = true;
-			this->TelefonLabelEdit->Location = System::Drawing::Point(179, 165);
+			this->TelefonLabelEdit->Location = System::Drawing::Point(201, 206);
 			this->TelefonLabelEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->TelefonLabelEdit->Name = L"TelefonLabelEdit";
-			this->TelefonLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->TelefonLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->TelefonLabelEdit->TabIndex = 12;
 			// 
 			// PostalLabelEdit
 			// 
 			this->PostalLabelEdit->AutoSize = true;
-			this->PostalLabelEdit->Location = System::Drawing::Point(179, 123);
+			this->PostalLabelEdit->Location = System::Drawing::Point(201, 154);
 			this->PostalLabelEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->PostalLabelEdit->Name = L"PostalLabelEdit";
-			this->PostalLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->PostalLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->PostalLabelEdit->TabIndex = 11;
 			// 
 			// CorreuLabelEdit
 			// 
 			this->CorreuLabelEdit->AutoSize = true;
-			this->CorreuLabelEdit->Location = System::Drawing::Point(179, 81);
+			this->CorreuLabelEdit->Location = System::Drawing::Point(201, 102);
 			this->CorreuLabelEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
-			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->CorreuLabelEdit->TabIndex = 10;
 			// 
 			// dataGridViewEntitatsAjuntament
@@ -191,11 +191,14 @@ namespace application {
 				this->Nom,
 					this->Descripcio, this->Tipus, this->Correu_Electronic, this->Ajutament
 			});
-			this->dataGridViewEntitatsAjuntament->Location = System::Drawing::Point(32, 206);
+			this->dataGridViewEntitatsAjuntament->GridColor = System::Drawing::SystemColors::Control;
+			this->dataGridViewEntitatsAjuntament->Location = System::Drawing::Point(48, 317);
+			this->dataGridViewEntitatsAjuntament->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridViewEntitatsAjuntament->Name = L"dataGridViewEntitatsAjuntament";
 			this->dataGridViewEntitatsAjuntament->ReadOnly = true;
+			this->dataGridViewEntitatsAjuntament->RowHeadersVisible = false;
 			this->dataGridViewEntitatsAjuntament->RowHeadersWidth = 51;
-			this->dataGridViewEntitatsAjuntament->Size = System::Drawing::Size(637, 163);
+			this->dataGridViewEntitatsAjuntament->Size = System::Drawing::Size(956, 251);
 			this->dataGridViewEntitatsAjuntament->TabIndex = 13;
 			this->dataGridViewEntitatsAjuntament->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FormConsultarAjuntament::dataGridViewEntitatsAjuntament_CellContentClick);
 			// 
@@ -257,9 +260,9 @@ namespace application {
 			// 
 			// FormConsultarAjuntament
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(736, 477);
+			this->ClientSize = System::Drawing::Size(1104, 734);
 			this->Controls->Add(this->dataGridViewEntitatsAjuntament);
 			this->Controls->Add(this->TelefonLabelEdit);
 			this->Controls->Add(this->PostalLabelEdit);
@@ -269,7 +272,7 @@ namespace application {
 			this->Controls->Add(this->NumeroPostalLabel);
 			this->Controls->Add(this->CorreuLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
 			this->Name = L"FormConsultarAjuntament";
 			this->Text = L"FormConsultarAjuntament";
 			this->Load += gcnew System::EventHandler(this, &FormConsultarAjuntament::FormConsultarAjuntament_Load);
