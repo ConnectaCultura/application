@@ -3,6 +3,7 @@
 
 PassarelaUsuari^ CercadoraUsuari::cercaUsuari(System::String^ correu) {
 	Connexio^ con = Connexio::getInstance();
+	correu = correu->Replace("'", "\\'");
 	System::String^ sql = "SELECT * FROM Usuari WHERE correu_electronic = '" + correu + "'";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	if (dataReader->Read()) {

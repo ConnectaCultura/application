@@ -20,15 +20,17 @@ namespace application {
 	public ref class VeurePerfilForm : public System::Windows::Forms::Form
 	{
 	public:
-		VeurePerfilForm(void)
+		VeurePerfilForm(Panel^ panelContenedor)
 		{
 			InitializeComponent();
 			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			_panelContenedor = panelContenedor;
 		}
-
+	private:
+		Panel^ _panelContenedor;
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -273,9 +275,13 @@ private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArg
 private: System::Void MostraCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
 	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic());
-	CCompres->ShowDialog();
-	this->Close();
-	//Form1::ActualitzarForm1();
+	if (this->_panelContenedor->Controls->Count > 0)
+		this->_panelContenedor->Controls->RemoveAt(0);
+	CCompres->TopLevel = false;
+	CCompres->Dock = DockStyle::Fill;
+	this->_panelContenedor->Controls->Add(CCompres);
+	this->_panelContenedor->Tag = CCompres;
+	CCompres->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -286,6 +292,7 @@ private: System::Void nomBox_TextChanged_1(System::Object^ sender, System::Event
 	label1->Text = nomBox->Text;
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	nomBox->Text = label1->Text;
 	nomBox->Visible = true;
 	guardaBox->Visible = true;
 	pictureBox1->Visible = false;
@@ -301,13 +308,14 @@ private: System::Void guardaBox_Click(System::Object^ sender, System::EventArgs^
 		try {
 			Mod.executar();
 			s->modificaUsuari(nomBox->Text);
+			guardaBox->Visible = false;
+			pictureBox1->Visible = true;
+			nomBox->Visible = false;
 		}
 		catch (MySqlException^ ex) {
 			MessageBox::Show("No s'ha pogut modificar.");
+			guardaBox_Click(sender, e);
 		}
-		guardaBox->Visible = false;
-		pictureBox1->Visible = true;
-		nomBox->Visible = false;
 	}
 }
 };

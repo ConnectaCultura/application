@@ -168,7 +168,7 @@ namespace application {
 			this->Close();
 		}
 		catch (MySqlException^ ex) {
-			MessageBox::Show(ex->Message);
+			MessageBox::Show("Error a l'iniciar sessio");
 		}
 		catch (std::runtime_error e) {
 			MessageBox::Show(gcnew System::String(e.what()));
