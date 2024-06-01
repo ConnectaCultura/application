@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TxConsultaAjuntaments.h"
+#include "FormConsultarAjuntament.h"
 
 namespace application {
 
@@ -43,7 +44,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::Button^ buttonTorna;
+
 
 
 
@@ -66,6 +67,7 @@ namespace application {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
+		List<List<System::String^>^>^ ve;
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -81,7 +83,6 @@ namespace application {
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->buttonTorna = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -90,92 +91,93 @@ namespace application {
 			// 
 			this->AjuntamentsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AjuntamentsLabel->Location = System::Drawing::Point(36, 13);
+			this->AjuntamentsLabel->Location = System::Drawing::Point(60, 61);
+			this->AjuntamentsLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AjuntamentsLabel->Name = L"AjuntamentsLabel";
-			this->AjuntamentsLabel->Size = System::Drawing::Size(152, 29);
+			this->AjuntamentsLabel->Size = System::Drawing::Size(228, 45);
 			this->AjuntamentsLabel->TabIndex = 0;
 			this->AjuntamentsLabel->Text = L"Ajuntaments:";
 			this->AjuntamentsLabel->Click += gcnew System::EventHandler(this, &ConsultaAjuntamentsForm::AjuntamentsLabel_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(246, 22);
+			this->textBox1->Location = System::Drawing::Point(375, 75);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(148, 20);
+			this->textBox1->Size = System::Drawing::Size(220, 26);
 			this->textBox1->TabIndex = 1;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(398, 23);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
+			this->pictureBox1->Location = System::Drawing::Point(603, 76);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(17, 17);
+			this->pictureBox1->Size = System::Drawing::Size(26, 26);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 24;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ConsultaAjuntamentsForm::pictureBox1_Click);
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToOrderColumns = true;
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Control;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				this->Column1,
 					this->Column2, this->Column3
 			});
-			this->dataGridView1->GridColor = System::Drawing::SystemColors::ButtonFace;
-			this->dataGridView1->Location = System::Drawing::Point(41, 64);
+			this->dataGridView1->GridColor = System::Drawing::SystemColors::Control;
+			this->dataGridView1->Location = System::Drawing::Point(68, 139);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(406, 220);
-			this->dataGridView1->TabIndex = 25;
+			this->dataGridView1->ReadOnly = true;
+			this->dataGridView1->RowHeadersVisible = false;
+			this->dataGridView1->RowHeadersWidth = 62;
+			this->dataGridView1->Size = System::Drawing::Size(609, 338);
+			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaAjuntamentsForm::dataGridView1_CellContentClick);
 			// 
 			// Column1
 			// 
 			this->Column1->HeaderText = L"Nom";
+			this->Column1->MinimumWidth = 8;
 			this->Column1->Name = L"Column1";
 			this->Column1->Width = 120;
 			// 
 			// Column2
 			// 
 			this->Column2->HeaderText = L"Codi Postal";
+			this->Column2->MinimumWidth = 8;
 			this->Column2->Name = L"Column2";
 			this->Column2->Width = 120;
 			// 
 			// Column3
 			// 
 			this->Column3->HeaderText = L"Telèfon";
+			this->Column3->MinimumWidth = 8;
 			this->Column3->Name = L"Column3";
 			this->Column3->Width = 120;
 			// 
-			// buttonTorna
-			// 
-			this->buttonTorna->BackColor = System::Drawing::Color::OrangeRed;
-			this->buttonTorna->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonTorna->ForeColor = System::Drawing::Color::Transparent;
-			this->buttonTorna->Location = System::Drawing::Point(11, 308);
-			this->buttonTorna->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
-			this->buttonTorna->Name = L"buttonTorna";
-			this->buttonTorna->Size = System::Drawing::Size(80, 23);
-			this->buttonTorna->TabIndex = 26;
-			this->buttonTorna->Text = L"Torna";
-			this->buttonTorna->UseVisualStyleBackColor = false;
-			this->buttonTorna->Click += gcnew System::EventHandler(this, &ConsultaAjuntamentsForm::buttonTorna_Click);
-			// 
 			// ConsultaAjuntamentsForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(484, 350);
-			this->Controls->Add(this->buttonTorna);
+			this->ClientSize = System::Drawing::Size(990, 579);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->AjuntamentsLabel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"ConsultaAjuntamentsForm";
+			this->ShowIcon = false;
+			this->ShowInTaskbar = false;
 			this->Text = L"ConsultaAjuntamentsForm";
 			this->Load += gcnew System::EventHandler(this, &ConsultaAjuntamentsForm::ConsultaAjuntamentsForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -194,7 +196,7 @@ namespace application {
 			MessageBox::Show(ex->Message);
 		}
 
-		List<List<System::String^>^>^ ve = txCA.ObteResultat();
+		ve = txCA.ObteResultat();
 		for each (List<System::String^> ^ e in ve)
 		{
 			dataGridView1->Rows->Add(e[0], e[1], e[2]);
@@ -205,10 +207,34 @@ namespace application {
 	private: System::Void AjuntamentsLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0 && ve[e->RowIndex]!=nullptr) {
+			List<String^>^ fila = ve[e->RowIndex];
+			application::FormConsultarAjuntament^ Consulta_Ajuntament = gcnew application::FormConsultarAjuntament(fila[3]);
+			Consulta_Ajuntament->ShowDialog();
 
+		}
 	}
+
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->Rows->Clear();
+	System::String^ s= textBox1->Text;
+	if (s == "") s = "Tots";
+	TxConsultaAjuntaments txCA(s);
+	try {
+		txCA.executar();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+
+	ve = txCA.ObteResultat();
+	for each (List<System::String^> ^ e in ve)
+	{
+		dataGridView1->Rows->Add(e[0], e[1], e[2]);
+	}
 }
 };
 }

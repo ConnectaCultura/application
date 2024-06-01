@@ -24,6 +24,21 @@ void TxConsultaAjuntaments::executar()
 			}
 		}
 	}
+	else {
+		List<PassarelaAjuntament^>^ lla = cerAju.ObteTots();
+		CercadoraUsuari cu;
+		for each (PassarelaAjuntament ^ e in lla) {
+			PassarelaUsuari^ u = cu.cercaUsuari(e->obteCorreuElectronic());
+			if (u->obteActiu() == 1 && _ajuntament == u->obteNom()) {
+				List<System::String^>^ nouAjuntament = gcnew List<System::String^>();
+				nouAjuntament->Add(u->obteNom());
+				nouAjuntament->Add(e->obtePostal().ToString());
+				nouAjuntament->Add(e->obteTelefon().ToString());
+				nouAjuntament->Add(e->obteCorreuElectronic());
+				_llistaAjuntaments->Add(nouAjuntament);
+			}
+		}
+	}
 }
 
 List<List<System::String^>^>^ TxConsultaAjuntaments::ObteResultat()
