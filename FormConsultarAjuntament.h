@@ -114,30 +114,27 @@ namespace application {
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
-			this->CorreuLabel->Location = System::Drawing::Point(39, 81);
-			this->CorreuLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->CorreuLabel->Location = System::Drawing::Point(29, 66);
 			this->CorreuLabel->Name = L"CorreuLabel";
-			this->CorreuLabel->Size = System::Drawing::Size(109, 16);
+			this->CorreuLabel->Size = System::Drawing::Size(88, 13);
 			this->CorreuLabel->TabIndex = 4;
 			this->CorreuLabel->Text = L"CorreuElectronic:";
 			// 
 			// NumeroPostalLabel
 			// 
 			this->NumeroPostalLabel->AutoSize = true;
-			this->NumeroPostalLabel->Location = System::Drawing::Point(39, 123);
-			this->NumeroPostalLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->NumeroPostalLabel->Location = System::Drawing::Point(29, 100);
 			this->NumeroPostalLabel->Name = L"NumeroPostalLabel";
-			this->NumeroPostalLabel->Size = System::Drawing::Size(96, 16);
+			this->NumeroPostalLabel->Size = System::Drawing::Size(76, 13);
 			this->NumeroPostalLabel->TabIndex = 5;
 			this->NumeroPostalLabel->Text = L"NumeroPostal:";
 			// 
 			// TelefonLabel
 			// 
 			this->TelefonLabel->AutoSize = true;
-			this->TelefonLabel->Location = System::Drawing::Point(39, 165);
-			this->TelefonLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->TelefonLabel->Location = System::Drawing::Point(29, 134);
 			this->TelefonLabel->Name = L"TelefonLabel";
-			this->TelefonLabel->Size = System::Drawing::Size(109, 16);
+			this->TelefonLabel->Size = System::Drawing::Size(89, 13);
 			this->TelefonLabel->TabIndex = 6;
 			this->TelefonLabel->Text = L"TelefonContacte:";
 			// 
@@ -149,35 +146,32 @@ namespace application {
 			this->NomLabel->Location = System::Drawing::Point(27, 23);
 			this->NomLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->NomLabel->Name = L"NomLabel";
-			this->NomLabel->Size = System::Drawing::Size(71, 29);
+			this->NomLabel->Size = System::Drawing::Size(56, 24);
 			this->NomLabel->TabIndex = 9;
 			this->NomLabel->Text = L"Nom:";
 			// 
 			// TelefonLabelEdit
 			// 
 			this->TelefonLabelEdit->AutoSize = true;
-			this->TelefonLabelEdit->Location = System::Drawing::Point(179, 165);
-			this->TelefonLabelEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->TelefonLabelEdit->Location = System::Drawing::Point(134, 134);
 			this->TelefonLabelEdit->Name = L"TelefonLabelEdit";
-			this->TelefonLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->TelefonLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->TelefonLabelEdit->TabIndex = 12;
 			// 
 			// PostalLabelEdit
 			// 
 			this->PostalLabelEdit->AutoSize = true;
-			this->PostalLabelEdit->Location = System::Drawing::Point(179, 123);
-			this->PostalLabelEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->PostalLabelEdit->Location = System::Drawing::Point(134, 100);
 			this->PostalLabelEdit->Name = L"PostalLabelEdit";
-			this->PostalLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->PostalLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->PostalLabelEdit->TabIndex = 11;
 			// 
 			// CorreuLabelEdit
 			// 
 			this->CorreuLabelEdit->AutoSize = true;
-			this->CorreuLabelEdit->Location = System::Drawing::Point(179, 81);
-			this->CorreuLabelEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->CorreuLabelEdit->Location = System::Drawing::Point(134, 66);
 			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
-			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 13);
 			this->CorreuLabelEdit->TabIndex = 10;
 			// 
 			// dataGridViewEntitatsAjuntament
@@ -257,7 +251,7 @@ namespace application {
 			// 
 			// FormConsultarAjuntament
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(736, 477);
 			this->Controls->Add(this->dataGridViewEntitatsAjuntament);

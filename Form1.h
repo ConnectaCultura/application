@@ -156,6 +156,8 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 
 
 
+
+
 	protected:
 
 	private:
@@ -171,6 +173,7 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->logIn = (gcnew System::Windows::Forms::Button());
 			this->logOut = (gcnew System::Windows::Forms::Button());
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
@@ -542,7 +545,7 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(1285, 784);
