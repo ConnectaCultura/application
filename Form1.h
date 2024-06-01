@@ -600,7 +600,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void registreCiutada_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->ObrirForm(gcnew application::RegistreCiutadaForm);
+		application::RegistreCiutadaForm^ registre = gcnew application::RegistreCiutadaForm();
+		registre->ShowDialog();
+		Sessio^ s = Sessio::getInstance();
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void ConsultaEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -627,7 +629,9 @@ private: System::Windows::Forms::Panel^ panel_contenedor;
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void esborrarUsuari_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->ObrirForm(gcnew application::BaixaCiutadaForm);
+		application::BaixaCiutadaForm^ baixa = gcnew application::BaixaCiutadaForm();
+		baixa->ShowDialog();
+		Sessio^ s = Sessio::getInstance();
 		Form1::ActualitzarForm1();
 	}
 	private: System::Void ConsultaAjuntamentButton_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -266,8 +266,9 @@ namespace application {
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"TermesICondicions";
-			this->Text = L"TermesICondicions";
+			this->Text = L"Termes i Condicions";
 			this->Load += gcnew System::EventHandler(this, &TermesICondicions::TermesICondicions_Load);
 			this->ResumeLayout(false);
 
