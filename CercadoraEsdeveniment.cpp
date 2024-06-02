@@ -154,6 +154,8 @@ bool CercadoraEsdeveniment::existeix(System::String^ nomEnt, System::String^ nom
 	bool sol= false;
 	if (dataReader->Read()) {
 		sol = true;
+
+
 	}
 	con->tancarConnexio();
 	return sol;
