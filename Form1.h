@@ -651,7 +651,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->ObrirForm(gcnew application::VeurePerfilForm(this->panel_contenedor));
 		}
 		else if (s->obteUsuari()->obteTipus() == "entitat") {
-			this->ObrirForm(gcnew application::ConsultaEntitatForm(s->obteUsuari()->obteCorreuElectronic()));
+			this->ObrirForm(gcnew application::ConsultaEntitatForm(s->obteUsuari()->obteCorreuElectronic(), false));
 		}
 		else if (s->obteUsuari()->obteTipus() == "ajuntament") {
 			this->ObrirForm(gcnew application::FormConsultarAjuntament(panel_contenedor,s->obteUsuari()->obteCorreuElectronic(), false));

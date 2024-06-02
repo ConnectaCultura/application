@@ -41,6 +41,19 @@ namespace application {
 			//TODO: agregar código de constructor aquí
 			//
 		}
+		ConsultaEntitatForm(System::String^ ce, bool boto)
+		{
+
+			InitializeComponent();
+			this->Icon = gcnew System::Drawing::Icon("logo.ico");
+			this->_CorreuEntitat = ce;
+			_boto = boto;
+			//
+			//TODO: agregar código de constructor aquí
+			//
+		}
+	private:
+		bool _boto= true;
 
 	protected:
 		/// <summary>
@@ -317,7 +330,7 @@ namespace application {
 
 #pragma endregion
 	private: System::Void ConsultaEntitatForm_Load(System::Object^ sender, System::EventArgs^ e) {
-
+		if (!_boto) button1->Visible = false;
 		CorreuLabelEdit->Text = _CorreuEntitat;
 		System::String^ correu = this->_CorreuEntitat;
 		TxConsultaEntitat txCE(correu);
