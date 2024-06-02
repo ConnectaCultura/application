@@ -224,6 +224,16 @@ namespace application {
 
 		}
 #pragma endregion
+
+	bool caracter_especial(System::String^ n) {
+		bool trobat = false;
+		int i = 0;
+		while (!trobat && i < n->Length) {
+			if (n[i] == '\'' || n[i]=='\\') trobat = true;
+			else i++;
+		}
+		return trobat;
+	}
 	private: System::Void registre_Click(System::Object^ sender, System::EventArgs^ e) {
 		System::String^ nom = this->textBox1->Text;
 		System::String^ correuElectronic = this->textBox2->Text;
@@ -231,6 +241,9 @@ namespace application {
 		TxRegistreCiutada txRC(nom, correuElectronic, contrasenya);
 		if (textBox1->Text == System::String::Empty || textBox2->Text == System::String::Empty || textBox3->Text == System::String::Empty) {
 			MessageBox::Show("Falten camps per omplir.");
+		}
+		else if (caracter_especial(nom) || caracter_especial(correuElectronic) || caracter_especial(contrasenya)) {
+			MessageBox::Show("Caracters no permesos.");
 		}
 		else if (termes == false) {
 			MessageBox::Show("Has d'acceptar els termes i condicions per a poder registrar-te");
@@ -241,8 +254,7 @@ namespace application {
 				this->Close();
 			}
 			catch (MySqlException^ ex) {
-				MessageBox::Show(ex->Message);
-				//MessageBox::Show("El correu electrònic ja existeix");
+				MessageBox::Show("El correu electrònic ja existeix");
 			}
 		}
 	

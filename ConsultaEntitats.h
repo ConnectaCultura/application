@@ -23,13 +23,16 @@ namespace application {
 	public ref class ConsultaEntitats : public System::Windows::Forms::Form
 	{
 	public:
-		ConsultaEntitats(void)
+		ConsultaEntitats(Panel^ panelContenedor)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			_panelContenedor = panelContenedor;
 		}
+	private:
+		Panel^ _panelContenedor;
 
 	protected:
 		/// <summary>
@@ -285,6 +288,7 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void ConsultaEntitats_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataGridViewEntitats->Rows->Clear();
 		TxConsultaEntitats ent("Totes", "Tots", textBox1->Text);
 		try {
 			ent.executar();
@@ -324,10 +328,19 @@ namespace application {
 		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
 			String^ cellText = dataGridViewEntitats->Rows[e->RowIndex]->Cells[3]->Value->ToString();
 			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
-			Consulta_Entitat->ShowDialog();
-
+			Consulta_Entitat->FormClosed += gcnew FormClosedEventHandler(this, &ConsultaEntitats::CE_FormClosed);
+			Consulta_Entitat->TopLevel = false;
+			Consulta_Entitat->Dock = DockStyle::Fill;
+			this->_panelContenedor->Controls->Add(Consulta_Entitat);
+			this->_panelContenedor->Tag = Consulta_Entitat;
+			this->Hide();
+			Consulta_Entitat->Show();
 		}
 	}
+private: System::Void CE_FormClosed(System::Object^ sender, FormClosedEventArgs^ e) {
+	this->Show();
+	ConsultaEntitats_Load(sender, e);
+}
 
 private: System::Void TipusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	dataGridViewEntitats->Rows->Clear();

@@ -18,22 +18,36 @@ namespace application {
 	public ref class FormConsultarAjuntament : public System::Windows::Forms::Form
 	{
 	public:
-		FormConsultarAjuntament(void)
+		FormConsultarAjuntament(Panel^ panelContenedor)
 		{
 			InitializeComponent();
 			this->Icon = gcnew System::Drawing::Icon("logo.ico");
 			//
 			//TODO: Add the constructor code here
-			//
+			_panelContenedor = panelContenedor;
 		}
-		FormConsultarAjuntament(System::String^ ca)
+		FormConsultarAjuntament(Panel^ panelContenedor, System::String^ ca)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 			_CorreuAjuntament = ca;
+			_panelContenedor = panelContenedor;
 		}
+		FormConsultarAjuntament(Panel^ panelContenedor, System::String^ ca, bool boto)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			_CorreuAjuntament = ca;
+			_panelContenedor = panelContenedor;
+			_boto = boto;
+		}
+	private:
+		Panel^ _panelContenedor;
+		bool _boto = true;
 
 	protected:
 		/// <summary>
@@ -75,6 +89,7 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ajutament;
 
 	private: System::Windows::Forms::Button^ buttonTorna;
+	private: System::Windows::Forms::Button^ button1;
 
 
 	protected:
@@ -108,6 +123,7 @@ namespace application {
 			this->Correu_Electronic = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Ajutament = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->buttonTorna = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEntitatsAjuntament))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -258,11 +274,27 @@ namespace application {
 			this->buttonTorna->UseVisualStyleBackColor = false;
 			this->buttonTorna->Click += gcnew System::EventHandler(this, &FormConsultarAjuntament::buttonTorna_Click);
 			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::OrangeRed;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Transparent;
+			this->button1->Location = System::Drawing::Point(46, 680);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(109, 34);
+			this->button1->TabIndex = 14;
+			this->button1->Text = L"Torna";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &FormConsultarAjuntament::button1_Click);
+			// 
 			// FormConsultarAjuntament
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1104, 734);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataGridViewEntitatsAjuntament);
 			this->Controls->Add(this->TelefonLabelEdit);
 			this->Controls->Add(this->PostalLabelEdit);
@@ -272,7 +304,7 @@ namespace application {
 			this->Controls->Add(this->NumeroPostalLabel);
 			this->Controls->Add(this->CorreuLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"FormConsultarAjuntament";
 			this->Text = L"FormConsultarAjuntament";
 			this->Load += gcnew System::EventHandler(this, &FormConsultarAjuntament::FormConsultarAjuntament_Load);
@@ -283,6 +315,8 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void FormConsultarAjuntament_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (!_boto) button1->Visible = false;
+		dataGridViewEntitatsAjuntament->Rows->Clear();
 		CorreuLabelEdit->Text = _CorreuAjuntament;
 		System::String^ correu = this->_CorreuAjuntament;
 		TxConsultaAjuntament txCA(correu);
@@ -320,14 +354,29 @@ namespace application {
 		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
 			String^ cellText = dataGridViewEntitatsAjuntament->Rows[e->RowIndex]->Cells[3]->Value->ToString();
 			application::ConsultaEntitatForm^ Consulta_Entitat = gcnew application::ConsultaEntitatForm(cellText);
-			Consulta_Entitat->ShowDialog();
+			Consulta_Entitat->FormClosed += gcnew FormClosedEventHandler(this, &FormConsultarAjuntament::CE_FormClosed);
+			Consulta_Entitat->TopLevel = false;
+			Consulta_Entitat->Dock = DockStyle::Fill;
+			this->_panelContenedor->Controls->Add(Consulta_Entitat);
+			this->_panelContenedor->Tag = Consulta_Entitat;
+			this->Hide();
+			Consulta_Entitat->Show();
 
 		}
-	} 
+	}
+
+	private: System::Void CE_FormClosed(System::Object^ sender, FormClosedEventArgs^ e) {
+		this->Show();
+		FormConsultarAjuntament_Load(sender, e);
+	}
+
 	private: System::Void buttonTorna_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		this->Close();
 
 	}
 	
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }

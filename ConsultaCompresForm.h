@@ -66,6 +66,8 @@ namespace application {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DataFiColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PreuColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Quantitat;
+	private: System::Windows::Forms::Button^ TornaButton;
+
 
 	private:
 		/// <summary>
@@ -88,6 +90,7 @@ namespace application {
 			this->DataFiColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PreuColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Quantitat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->TornaButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -96,9 +99,9 @@ namespace application {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(33, 47);
+			this->label1->Location = System::Drawing::Point(37, 59);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(229, 29);
+			this->label1->Size = System::Drawing::Size(265, 32);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Les meves compres";
 			// 
@@ -113,15 +116,15 @@ namespace application {
 				this->EsdevenimentColumn,
 					this->DataIniciColumn, this->DataFiColumn, this->PreuColumn, this->Quantitat
 			});
-			this->dataGridView1->Location = System::Drawing::Point(17, 148);
+			this->dataGridView1->Location = System::Drawing::Point(19, 185);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(750, 257);
-			this->dataGridView1->TabIndex = 1;
+			this->dataGridView1->Size = System::Drawing::Size(1099, 321);
+			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaCompresForm::dataGridView1_CellContentClick);
 			// 
 			// EsdevenimentColumn
@@ -164,11 +167,27 @@ namespace application {
 			this->Quantitat->ReadOnly = true;
 			this->Quantitat->Width = 125;
 			// 
+			// TornaButton
+			// 
+			this->TornaButton->BackColor = System::Drawing::Color::OrangeRed;
+			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->TornaButton->Location = System::Drawing::Point(19, 602);
+			this->TornaButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->TornaButton->Name = L"TornaButton";
+			this->TornaButton->Size = System::Drawing::Size(112, 35);
+			this->TornaButton->TabIndex = 50;
+			this->TornaButton->Text = L"Torna";
+			this->TornaButton->UseVisualStyleBackColor = false;
+			this->TornaButton->Click += gcnew System::EventHandler(this, &ConsultaCompresForm::TornaButton_Click_1);
+			// 
 			// ConsultaCompresForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(765, 441);
+			this->ClientSize = System::Drawing::Size(1173, 663);
+			this->Controls->Add(this->TornaButton);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -200,6 +219,9 @@ private: System::Void ConsultaCompresForm_Load(System::Object^ sender, System::E
 	actualitzaForm();
 }
 private: System::Void TornaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void TornaButton_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
 };

@@ -130,89 +130,89 @@ namespace application {
 			// NomText
 			// 
 			this->NomText->AutoSize = true;
-			this->NomText->Location = System::Drawing::Point(39, 25);
+			this->NomText->Location = System::Drawing::Point(44, 31);
 			this->NomText->Name = L"NomText";
-			this->NomText->Size = System::Drawing::Size(39, 16);
+			this->NomText->Size = System::Drawing::Size(46, 20);
 			this->NomText->TabIndex = 0;
 			this->NomText->Text = L"Nom:";
 			// 
 			// DescripcioText
 			// 
 			this->DescripcioText->AutoSize = true;
-			this->DescripcioText->Location = System::Drawing::Point(418, 25);
+			this->DescripcioText->Location = System::Drawing::Point(470, 31);
 			this->DescripcioText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->DescripcioText->Name = L"DescripcioText";
-			this->DescripcioText->Size = System::Drawing::Size(75, 16);
+			this->DescripcioText->Size = System::Drawing::Size(87, 20);
 			this->DescripcioText->TabIndex = 1;
 			this->DescripcioText->Text = L"Descripcio:";
 			// 
 			// TipusText
 			// 
 			this->TipusText->AutoSize = true;
-			this->TipusText->Location = System::Drawing::Point(38, 84);
+			this->TipusText->Location = System::Drawing::Point(43, 105);
 			this->TipusText->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->TipusText->Name = L"TipusText";
-			this->TipusText->Size = System::Drawing::Size(44, 16);
+			this->TipusText->Size = System::Drawing::Size(51, 20);
 			this->TipusText->TabIndex = 5;
 			this->TipusText->Text = L"Tipus:";
 			// 
 			// CorreuLabel
 			// 
 			this->CorreuLabel->AutoSize = true;
-			this->CorreuLabel->Location = System::Drawing::Point(39, 52);
+			this->CorreuLabel->Location = System::Drawing::Point(44, 65);
 			this->CorreuLabel->Name = L"CorreuLabel";
-			this->CorreuLabel->Size = System::Drawing::Size(50, 16);
+			this->CorreuLabel->Size = System::Drawing::Size(61, 20);
 			this->CorreuLabel->TabIndex = 7;
 			this->CorreuLabel->Text = L"Correu:";
 			// 
 			// CorreuLabelEdit
 			// 
 			this->CorreuLabelEdit->AutoSize = true;
-			this->CorreuLabelEdit->Location = System::Drawing::Point(130, 52);
+			this->CorreuLabelEdit->Location = System::Drawing::Point(146, 65);
 			this->CorreuLabelEdit->Name = L"CorreuLabelEdit";
-			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->CorreuLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->CorreuLabelEdit->TabIndex = 11;
 			// 
 			// ModalitatLabelEdit
 			// 
 			this->ModalitatLabelEdit->AutoSize = true;
-			this->ModalitatLabelEdit->Location = System::Drawing::Point(130, 84);
+			this->ModalitatLabelEdit->Location = System::Drawing::Point(146, 105);
 			this->ModalitatLabelEdit->Name = L"ModalitatLabelEdit";
-			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->ModalitatLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->ModalitatLabelEdit->TabIndex = 10;
 			// 
 			// DescripcioLabelEdit
 			// 
 			this->DescripcioLabelEdit->AutoSize = true;
-			this->DescripcioLabelEdit->Location = System::Drawing::Point(498, 25);
-			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(488, 0);
+			this->DescripcioLabelEdit->Location = System::Drawing::Point(560, 31);
+			this->DescripcioLabelEdit->MaximumSize = System::Drawing::Size(549, 0);
 			this->DescripcioLabelEdit->Name = L"DescripcioLabelEdit";
-			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->DescripcioLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->DescripcioLabelEdit->TabIndex = 9;
 			// 
 			// NomLabelEdit
 			// 
 			this->NomLabelEdit->AutoSize = true;
-			this->NomLabelEdit->Location = System::Drawing::Point(130, 25);
+			this->NomLabelEdit->Location = System::Drawing::Point(146, 31);
 			this->NomLabelEdit->Name = L"NomLabelEdit";
-			this->NomLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->NomLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->NomLabelEdit->TabIndex = 8;
 			// 
 			// AjuntamentLabelEdit
 			// 
 			this->AjuntamentLabelEdit->AutoSize = true;
-			this->AjuntamentLabelEdit->Location = System::Drawing::Point(130, 117);
+			this->AjuntamentLabelEdit->Location = System::Drawing::Point(146, 146);
 			this->AjuntamentLabelEdit->Name = L"AjuntamentLabelEdit";
-			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 16);
+			this->AjuntamentLabelEdit->Size = System::Drawing::Size(0, 20);
 			this->AjuntamentLabelEdit->TabIndex = 15;
 			this->AjuntamentLabelEdit->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label1_Click_1);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(38, 117);
+			this->label2->Location = System::Drawing::Point(43, 146);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(76, 16);
+			this->label2->Size = System::Drawing::Size(95, 20);
 			this->label2->TabIndex = 14;
 			this->label2->Text = L"Ajuntament:";
 			this->label2->Click += gcnew System::EventHandler(this, &ConsultaEntitatForm::label2_Click);
@@ -235,10 +235,10 @@ namespace application {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(925, 96);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox2->Location = System::Drawing::Point(1041, 120);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(50, 48);
+			this->pictureBox2->Size = System::Drawing::Size(56, 60);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 17;
 			this->pictureBox2->TabStop = false;
@@ -249,10 +249,10 @@ namespace application {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(925, 96);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox1->Location = System::Drawing::Point(1041, 120);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(50, 48);
+			this->pictureBox1->Size = System::Drawing::Size(56, 60);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 16;
 			this->pictureBox1->TabStop = false;
@@ -260,10 +260,10 @@ namespace application {
 			// 
 			// panel1
 			// 
-			this->panel1->Location = System::Drawing::Point(33, 150);
+			this->panel1->Location = System::Drawing::Point(37, 188);
 			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(865, 415);
+			this->panel1->Size = System::Drawing::Size(973, 519);
 			this->panel1->TabIndex = 18;
 			// 
 			// button1
@@ -272,10 +272,10 @@ namespace application {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Transparent;
-			this->button1->Location = System::Drawing::Point(33, 570);
+			this->button1->Location = System::Drawing::Point(37, 712);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(97, 27);
+			this->button1->Size = System::Drawing::Size(109, 34);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Torna";
 			this->button1->UseVisualStyleBackColor = false;
@@ -283,10 +283,10 @@ namespace application {
 			// 
 			// ConsultaEntitatForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(1001, 618);
+			this->ClientSize = System::Drawing::Size(1126, 772);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pictureBox2);
@@ -301,6 +301,7 @@ namespace application {
 			this->Controls->Add(this->TipusText);
 			this->Controls->Add(this->DescripcioText);
 			this->Controls->Add(this->NomText);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Location = System::Drawing::Point(16, 22);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);

@@ -275,13 +275,20 @@ private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArg
 private: System::Void MostraCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sessio^ s = Sessio::getInstance();
 	application::ConsultaCompresForm^ CCompres = gcnew application::ConsultaCompresForm(s->obteUsuari()->obteCorreuElectronic());
-	if (this->_panelContenedor->Controls->Count > 0)
-		this->_panelContenedor->Controls->RemoveAt(0);
+	CCompres->FormClosed += gcnew FormClosedEventHandler(this, &VeurePerfilForm::CCompres_FormClosed);
 	CCompres->TopLevel = false;
 	CCompres->Dock = DockStyle::Fill;
 	this->_panelContenedor->Controls->Add(CCompres);
 	this->_panelContenedor->Tag = CCompres;
+	this->Hide();
 	CCompres->Show();
+	//VeurePerfilForm_Load(sender, e);
+	
+}
+private: System::Void CCompres_FormClosed(System::Object^ sender, FormClosedEventArgs^ e) {
+	// Reload or refresh the VeurePerfil form
+	this->Show();
+	VeurePerfilForm_Load(sender, e);
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -296,10 +303,13 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 	nomBox->Visible = true;
 	guardaBox->Visible = true;
 	pictureBox1->Visible = false;
+	MostraCompresButton->Enabled = false;
 }
 private: System::Void guardaBox_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	Sessio^ s = Sessio::getInstance();
 	PassarelaUsuari^ u = s->obteUsuari();
+	System::String^ nom = u->obteNom();
 	TxModificaCiutada Mod(nomBox->Text, u);
 	if (nomBox->Text == System::String::Empty) {
 		MessageBox::Show("El camp a modificar esta buit.");
@@ -311,10 +321,11 @@ private: System::Void guardaBox_Click(System::Object^ sender, System::EventArgs^
 			guardaBox->Visible = false;
 			pictureBox1->Visible = true;
 			nomBox->Visible = false;
+			MostraCompresButton->Enabled = true;
 		}
 		catch (MySqlException^ ex) {
+			u->modificaNom(nom);
 			MessageBox::Show("No s'ha pogut modificar.");
-			guardaBox_Click(sender, e);
 		}
 	}
 }

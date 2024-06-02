@@ -18,13 +18,16 @@ namespace application {
 	public ref class ConsultaAjuntamentsForm : public System::Windows::Forms::Form
 	{
 	public:
-		ConsultaAjuntamentsForm(void)
+		ConsultaAjuntamentsForm(Panel^ panelContenedor)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			_panelContenedor = panelContenedor;
 		}
+	private:
+		Panel^ _panelContenedor;
 
 	protected:
 		/// <summary>
@@ -138,7 +141,7 @@ namespace application {
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 62;
-			this->dataGridView1->Size = System::Drawing::Size(609, 338);
+			this->dataGridView1->Size = System::Drawing::Size(609, 467);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ConsultaAjuntamentsForm::dataGridView1_CellContentClick);
 			// 
@@ -147,6 +150,7 @@ namespace application {
 			this->Column1->HeaderText = L"Nom";
 			this->Column1->MinimumWidth = 8;
 			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
 			this->Column1->Width = 120;
 			// 
 			// Column2
@@ -154,6 +158,7 @@ namespace application {
 			this->Column2->HeaderText = L"Codi Postal";
 			this->Column2->MinimumWidth = 8;
 			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
 			this->Column2->Width = 120;
 			// 
 			// Column3
@@ -161,13 +166,14 @@ namespace application {
 			this->Column3->HeaderText = L"Telèfon";
 			this->Column3->MinimumWidth = 8;
 			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
 			this->Column3->Width = 120;
 			// 
 			// ConsultaAjuntamentsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(990, 579);
+			this->ClientSize = System::Drawing::Size(990, 635);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
@@ -188,6 +194,7 @@ namespace application {
 		}
 #pragma endregion
 	private: System::Void ConsultaAjuntamentsForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataGridView1->Rows->Clear();
 		TxConsultaAjuntaments txCA("Tots");
 		try {
 			txCA.executar();
@@ -209,12 +216,22 @@ namespace application {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex >= 0 && e->ColumnIndex >= 0 && ve[e->RowIndex]!=nullptr) {
 			List<String^>^ fila = ve[e->RowIndex];
-			application::FormConsultarAjuntament^ Consulta_Ajuntament = gcnew application::FormConsultarAjuntament(fila[3]);
-			Consulta_Ajuntament->ShowDialog();
+			application::FormConsultarAjuntament^ Consulta_Ajuntament = gcnew application::FormConsultarAjuntament(_panelContenedor, fila[3]);
+			Consulta_Ajuntament->FormClosed += gcnew FormClosedEventHandler(this, &ConsultaAjuntamentsForm::CA_FormClosed);
+			Consulta_Ajuntament->TopLevel = false;
+			Consulta_Ajuntament->Dock = DockStyle::Fill;
+			this->_panelContenedor->Controls->Add(Consulta_Ajuntament);
+			this->_panelContenedor->Tag = Consulta_Ajuntament;
+			this->Hide();
+			Consulta_Ajuntament->Show();
 
 		}
 	}
 
+	private: System::Void CA_FormClosed(System::Object^ sender, FormClosedEventArgs^ e) {
+		this->Show();
+		ConsultaAjuntamentsForm_Load(sender, e);
+	}
 private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
