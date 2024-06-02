@@ -1,6 +1,7 @@
 #pragma once
 #include "PassarelaEntitat.h"
 #include "PassarelaUsuari.h"
+#include "TxConsultaEsdeveniments.h"
 #include "Sessio.h"
 #include <stdexcept>
 

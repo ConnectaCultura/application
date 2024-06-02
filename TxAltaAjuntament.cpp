@@ -11,7 +11,7 @@ TxAltaAjuntament::TxAltaAjuntament(System::String^ nom, System::String^ correuEl
 }
 
 void TxAltaAjuntament::executar() {
-	PassarelaUsuari u(_correuElectronic, _nom, _contrasenya, "ajuntament");
+	PassarelaUsuari u(_nom, _correuElectronic, _contrasenya, "ajuntament", 1);
 	u.insereix();
 	PassarelaAjuntament a(_correuElectronic, _numPostal, _numTelefon);
 	a.insereix();

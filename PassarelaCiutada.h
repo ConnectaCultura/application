@@ -1,5 +1,7 @@
 #pragma once
 #include "Connexio.h"
+#include "Sessio.h"
+#include <stdexcept>
 
 ref class PassarelaCiutada
 {
@@ -14,5 +16,6 @@ public:
 	int obtePunts();
 	void modificaPunts();
 	void setPunts(int punts);
+
 };
 

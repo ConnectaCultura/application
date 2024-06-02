@@ -8,7 +8,7 @@ TxRegistreCiutada::TxRegistreCiutada( System::String^ nom, System::String^ corre
 }
 
 void TxRegistreCiutada::executar() {
-	PassarelaUsuari u(_nom, _correuElectronic, _contrasenya, "ciutada");
+	PassarelaUsuari u(_nom, _correuElectronic, _contrasenya, "ciutada", 1);
 	u.insereix();
 	PassarelaCiutada c(_correuElectronic, 0);
 	c.insereix();

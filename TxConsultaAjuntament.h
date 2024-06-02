@@ -5,6 +5,7 @@
 ref class TxConsultaAjuntament
 {
 public:
+	TxConsultaAjuntament();
 	TxConsultaAjuntament(System::String^ correu);
 	List<System::String^>^ ObteResultat();
 	void executar();
