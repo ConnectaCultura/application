@@ -156,7 +156,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		this->Close();
 	}
 	catch (std::runtime_error e) {
-		MessageBox::Show("Contrasenya incorrecta");
+		MessageBox::Show(gcnew System::String(e.what()));
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);

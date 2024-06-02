@@ -107,9 +107,9 @@ namespace application {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(23, 22);
+			this->label1->Location = System::Drawing::Point(26, 28);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(125, 16);
+			this->label1->Size = System::Drawing::Size(147, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nom Esdeveniment";
 			this->label1->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::label1_Click_1);
@@ -117,36 +117,36 @@ namespace application {
 			// esdevenimentLabel
 			// 
 			this->esdevenimentLabel->AutoSize = true;
-			this->esdevenimentLabel->Location = System::Drawing::Point(185, 22);
+			this->esdevenimentLabel->Location = System::Drawing::Point(208, 28);
 			this->esdevenimentLabel->Name = L"esdevenimentLabel";
-			this->esdevenimentLabel->Size = System::Drawing::Size(93, 16);
+			this->esdevenimentLabel->Size = System::Drawing::Size(110, 20);
 			this->esdevenimentLabel->TabIndex = 1;
 			this->esdevenimentLabel->Text = L"Esdeveniment";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(23, 66);
+			this->label2->Location = System::Drawing::Point(26, 82);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(62, 16);
+			this->label2->Size = System::Drawing::Size(76, 20);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Data Inici";
 			// 
 			// DataIniciLabel
 			// 
 			this->DataIniciLabel->AutoSize = true;
-			this->DataIniciLabel->Location = System::Drawing::Point(185, 66);
+			this->DataIniciLabel->Location = System::Drawing::Point(208, 82);
 			this->DataIniciLabel->Name = L"DataIniciLabel";
-			this->DataIniciLabel->Size = System::Drawing::Size(59, 16);
+			this->DataIniciLabel->Size = System::Drawing::Size(72, 20);
 			this->DataIniciLabel->TabIndex = 3;
 			this->DataIniciLabel->Text = L"DataInici";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(23, 117);
+			this->label3->Location = System::Drawing::Point(26, 146);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(50, 16);
+			this->label3->Size = System::Drawing::Size(61, 20);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Data Fi";
 			this->label3->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::label3_Click);
@@ -154,45 +154,45 @@ namespace application {
 			// DataFiLabel
 			// 
 			this->DataFiLabel->AutoSize = true;
-			this->DataFiLabel->Location = System::Drawing::Point(185, 117);
+			this->DataFiLabel->Location = System::Drawing::Point(208, 146);
 			this->DataFiLabel->Name = L"DataFiLabel";
-			this->DataFiLabel->Size = System::Drawing::Size(47, 16);
+			this->DataFiLabel->Size = System::Drawing::Size(57, 20);
 			this->DataFiLabel->TabIndex = 5;
 			this->DataFiLabel->Text = L"DataFi";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(23, 167);
+			this->label4->Location = System::Drawing::Point(26, 209);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(35, 16);
+			this->label4->Size = System::Drawing::Size(42, 20);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"Preu";
 			// 
 			// PreuLabel
 			// 
 			this->PreuLabel->AutoSize = true;
-			this->PreuLabel->Location = System::Drawing::Point(185, 167);
+			this->PreuLabel->Location = System::Drawing::Point(208, 209);
 			this->PreuLabel->Name = L"PreuLabel";
-			this->PreuLabel->Size = System::Drawing::Size(35, 16);
+			this->PreuLabel->Size = System::Drawing::Size(42, 20);
 			this->PreuLabel->TabIndex = 7;
 			this->PreuLabel->Text = L"Preu";
 			// 
 			// QuantitatLabel
 			// 
 			this->QuantitatLabel->AutoSize = true;
-			this->QuantitatLabel->Location = System::Drawing::Point(185, 208);
+			this->QuantitatLabel->Location = System::Drawing::Point(208, 260);
 			this->QuantitatLabel->Name = L"QuantitatLabel";
-			this->QuantitatLabel->Size = System::Drawing::Size(59, 16);
+			this->QuantitatLabel->Size = System::Drawing::Size(75, 20);
 			this->QuantitatLabel->TabIndex = 9;
 			this->QuantitatLabel->Text = L"Quantitat";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(23, 208);
+			this->label6->Location = System::Drawing::Point(26, 260);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(59, 16);
+			this->label6->Size = System::Drawing::Size(75, 20);
 			this->label6->TabIndex = 8;
 			this->label6->Text = L"Quantitat";
 			// 
@@ -202,10 +202,10 @@ namespace application {
 			this->TornaButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TornaButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TornaButton->Location = System::Drawing::Point(18, 263);
-			this->TornaButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TornaButton->Location = System::Drawing::Point(20, 329);
+			this->TornaButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->TornaButton->Name = L"TornaButton";
-			this->TornaButton->Size = System::Drawing::Size(100, 28);
+			this->TornaButton->Size = System::Drawing::Size(112, 35);
 			this->TornaButton->TabIndex = 10;
 			this->TornaButton->Text = L"Torna";
 			this->TornaButton->UseVisualStyleBackColor = false;
@@ -217,10 +217,10 @@ namespace application {
 			this->CancelaCompraButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->CancelaCompraButton->ForeColor = System::Drawing::Color::Transparent;
-			this->CancelaCompraButton->Location = System::Drawing::Point(396, 263);
-			this->CancelaCompraButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->CancelaCompraButton->Location = System::Drawing::Point(446, 329);
+			this->CancelaCompraButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->CancelaCompraButton->Name = L"CancelaCompraButton";
-			this->CancelaCompraButton->Size = System::Drawing::Size(143, 28);
+			this->CancelaCompraButton->Size = System::Drawing::Size(161, 35);
 			this->CancelaCompraButton->TabIndex = 11;
 			this->CancelaCompraButton->Text = L"CancelaCompra";
 			this->CancelaCompraButton->UseVisualStyleBackColor = false;
@@ -232,10 +232,10 @@ namespace application {
 			this->valorarE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->valorarE->ForeColor = System::Drawing::Color::Transparent;
-			this->valorarE->Location = System::Drawing::Point(396, 263);
-			this->valorarE->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->valorarE->Location = System::Drawing::Point(446, 329);
+			this->valorarE->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->valorarE->Name = L"valorarE";
-			this->valorarE->Size = System::Drawing::Size(143, 28);
+			this->valorarE->Size = System::Drawing::Size(161, 35);
 			this->valorarE->TabIndex = 12;
 			this->valorarE->Text = L"Valorar Esdeveniment";
 			this->valorarE->UseVisualStyleBackColor = false;
@@ -247,20 +247,20 @@ namespace application {
 			this->consultarV->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->consultarV->ForeColor = System::Drawing::Color::Transparent;
-			this->consultarV->Location = System::Drawing::Point(396, 263);
-			this->consultarV->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->consultarV->Location = System::Drawing::Point(395, 329);
+			this->consultarV->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->consultarV->Name = L"consultarV";
-			this->consultarV->Size = System::Drawing::Size(143, 28);
+			this->consultarV->Size = System::Drawing::Size(212, 35);
 			this->consultarV->TabIndex = 13;
-			this->consultarV->Text = L"Consulta Valoració";
+			this->consultarV->Text = L"Consulta Valoracio";
 			this->consultarV->UseVisualStyleBackColor = false;
 			this->consultarV->Click += gcnew System::EventHandler(this, &ConsultaCompraForm::consultarV_Click);
 			// 
 			// ConsultaCompraForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(552, 308);
+			this->ClientSize = System::Drawing::Size(621, 385);
 			this->Controls->Add(this->consultarV);
 			this->Controls->Add(this->valorarE);
 			this->Controls->Add(this->CancelaCompraButton);
@@ -292,9 +292,7 @@ namespace application {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	if (DateTime::Parse(_dataFi) < System::DateTime::Now) {
-		CancelaCompraButton->Visible = false;
-	}
+
 	Sessio^ s = Sessio::getInstance();
 	TxConsultaCompra cc(s->obteUsuari()->obteCorreuElectronic(), _nomEsdev, _dataInici, _dataFi);
 	try {
@@ -321,9 +319,15 @@ private: System::Void ConsultaCompraForm_Load(System::Object^ sender, System::Ev
 				this->consultarV->Visible = false;
 			}
 		}
-		else {
+		else if(DateTime::Parse(e[2]) > now){
 			this->valorarE->Visible = false;
 			this->CancelaCompraButton->Visible = true;
+			this->consultarV->Visible = false;
+
+		}
+		else {
+			this->valorarE->Visible = false;
+			this->CancelaCompraButton->Visible = false;
 			this->consultarV->Visible = false;
 
 		}

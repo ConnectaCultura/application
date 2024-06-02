@@ -25,7 +25,7 @@ List<PassarelaCompra^>^ CercadoraCompra::CercaPerEsdeveniment(System::String^ es
 }
 List<PassarelaCompra^>^ CercadoraCompra::CercaPerCiutada(System::String^ ciutada) {
 	Connexio^ con = Connexio::getInstance();
-	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + ciutada +"'";
+	System::String^ sql = "SELECT * FROM Compra WHERE correuciutada = '" + ciutada +"'  ORDER BY datainici DESC";
 	MySqlDataReader^ dataReader = con->executar(sql);
 	List<PassarelaCompra^>^ vt = gcnew List<PassarelaCompra^>();
 	while (dataReader->Read()) {

@@ -1,6 +1,5 @@
 #pragma once
 #include "PassarelaUsuari.h"
-
 ref class Sessio
 {
 public:

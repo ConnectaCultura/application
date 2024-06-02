@@ -1,5 +1,4 @@
 #pragma once
-
 #include "FormAltaEsdeveniment.h"
 #include "LogInForm.h"
 #include "Sessio.h"
@@ -19,9 +18,8 @@
 #include "ConsultaCompresForm.h"
 #include "ConsultaAjuntamentsForm.h"
 
-using namespace std;
 
-namespace CppCLRWinFormsProject {
+namespace application {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -31,12 +29,12 @@ namespace CppCLRWinFormsProject {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Form1
+	/// Resumen de PantallaPrincipal
 	/// </summary>
-	public ref class Form1 : public System::Windows::Forms::Form
+	public ref class PantallaPrincipal : public System::Windows::Forms::Form
 	{
 	public:
-		Form1(void)
+		PantallaPrincipal(void)
 		{
 			InitializeComponent();
 			//
@@ -55,7 +53,7 @@ namespace CppCLRWinFormsProject {
 			veurePerfil->Visible = false;
 			ConsultaCompresButton->Visible = true;
 		}
-		void ActualitzarForm1() {
+		void ActualitzarPantallaPrincipal() {
 			Sessio^ s = Sessio::getInstance();
 			if (s->obteUsuari() == nullptr) {
 				logIn->Visible = true;
@@ -100,7 +98,7 @@ namespace CppCLRWinFormsProject {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Form1()
+		~PantallaPrincipal()
 		{
 			if (components)
 			{
@@ -115,8 +113,8 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ EsborrarEntitat;
 	private: System::Windows::Forms::Button^ registreCiutada;
 
-
-
+	private: System::Windows::Forms::Button^ ConsultaEntitats;
+	private: System::Windows::Forms::Button^ altaAjuntament;
 
 
 	private: System::Windows::Forms::Button^ CreaEsdeveniment;
@@ -135,12 +133,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
 
-private: System::Windows::Forms::Panel^ panel1;
-private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::Panel^ panel_contenedor;
-private: System::Windows::Forms::Button^ altaAjuntament;
-private: System::Windows::Forms::Button^ ConsultaEntitats;
-
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Panel^ panel_contenedor;
 
 
 
@@ -181,6 +176,8 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->altaEntitat = (gcnew System::Windows::Forms::Button());
 			this->EsborrarEntitat = (gcnew System::Windows::Forms::Button());
 			this->registreCiutada = (gcnew System::Windows::Forms::Button());
+			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
+			this->altaAjuntament = (gcnew System::Windows::Forms::Button());
 			this->CreaEsdeveniment = (gcnew System::Windows::Forms::Button());
 			this->ModificaEntitatButton = (gcnew System::Windows::Forms::Button());
 			this->esborrarUsuari = (gcnew System::Windows::Forms::Button());
@@ -192,8 +189,6 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->panel_lateral = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->altaAjuntament = (gcnew System::Windows::Forms::Button());
-			this->ConsultaEntitats = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -219,7 +214,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->logIn->TabIndex = 0;
 			this->logIn->Text = L"Iniciar sessio";
 			this->logIn->UseVisualStyleBackColor = false;
-			this->logIn->Click += gcnew System::EventHandler(this, &Form1::logIn_Click);
+			this->logIn->Click += gcnew System::EventHandler(this, &PantallaPrincipal::logIn_Click);
 			// 
 			// logOut
 			// 
@@ -234,27 +229,27 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->logOut->TabIndex = 1;
 			this->logOut->Text = L"Tancar sessio";
 			this->logOut->UseVisualStyleBackColor = false;
-			this->logOut->Click += gcnew System::EventHandler(this, &Form1::logOut_Click);
+			this->logOut->Click += gcnew System::EventHandler(this, &PantallaPrincipal::logOut_Click);
 			// 
 			// altaEntitat
 			// 
-			this->altaEntitat->BackColor = System::Drawing::Color::DimGray;
+			this->altaEntitat->BackColor = System::Drawing::Color::DarkGray;
 			this->altaEntitat->Dock = System::Windows::Forms::DockStyle::Top;
 			this->altaEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->altaEntitat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->altaEntitat->Location = System::Drawing::Point(0, 713);
+			this->altaEntitat->Location = System::Drawing::Point(0, 664);
 			this->altaEntitat->Margin = System::Windows::Forms::Padding(6);
 			this->altaEntitat->Name = L"altaEntitat";
 			this->altaEntitat->Size = System::Drawing::Size(522, 49);
 			this->altaEntitat->TabIndex = 2;
 			this->altaEntitat->Text = L"Donar d\'alta entitat";
 			this->altaEntitat->UseVisualStyleBackColor = false;
-			this->altaEntitat->Click += gcnew System::EventHandler(this, &Form1::altaEntitat_Click);
+			this->altaEntitat->Click += gcnew System::EventHandler(this, &PantallaPrincipal::altaEntitat_Click);
 			// 
 			// EsborrarEntitat
 			// 
-			this->EsborrarEntitat->BackColor = System::Drawing::Color::DimGray;
+			this->EsborrarEntitat->BackColor = System::Drawing::Color::DarkGray;
 			this->EsborrarEntitat->Dock = System::Windows::Forms::DockStyle::Top;
 			this->EsborrarEntitat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -266,7 +261,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->EsborrarEntitat->TabIndex = 3;
 			this->EsborrarEntitat->Text = L"Esborrar entitat";
 			this->EsborrarEntitat->UseVisualStyleBackColor = false;
-			this->EsborrarEntitat->Click += gcnew System::EventHandler(this, &Form1::EsborrarEntitat_Click);
+			this->EsborrarEntitat->Click += gcnew System::EventHandler(this, &PantallaPrincipal::EsborrarEntitat_Click);
 			// 
 			// registreCiutada
 			// 
@@ -281,7 +276,39 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->registreCiutada->TabIndex = 4;
 			this->registreCiutada->Text = L"Registrar-se";
 			this->registreCiutada->UseVisualStyleBackColor = false;
-			this->registreCiutada->Click += gcnew System::EventHandler(this, &Form1::registreCiutada_Click);
+			this->registreCiutada->Click += gcnew System::EventHandler(this, &PantallaPrincipal::registreCiutada_Click);
+			// 
+			// ConsultaEntitats
+			// 
+			this->ConsultaEntitats->BackColor = System::Drawing::Color::DarkGray;
+			this->ConsultaEntitats->Dock = System::Windows::Forms::DockStyle::Top;
+			this->ConsultaEntitats->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ConsultaEntitats->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ConsultaEntitats->Location = System::Drawing::Point(0, 514);
+			this->ConsultaEntitats->Margin = System::Windows::Forms::Padding(6);
+			this->ConsultaEntitats->Name = L"ConsultaEntitats";
+			this->ConsultaEntitats->Size = System::Drawing::Size(522, 49);
+			this->ConsultaEntitats->TabIndex = 6;
+			this->ConsultaEntitats->Text = L"Consultar entitats";
+			this->ConsultaEntitats->UseVisualStyleBackColor = false;
+			this->ConsultaEntitats->Click += gcnew System::EventHandler(this, &PantallaPrincipal::ConsultaEntitats_Click);
+			// 
+			// altaAjuntament
+			// 
+			this->altaAjuntament->BackColor = System::Drawing::Color::DarkGray;
+			this->altaAjuntament->Dock = System::Windows::Forms::DockStyle::Top;
+			this->altaAjuntament->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->altaAjuntament->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->altaAjuntament->Location = System::Drawing::Point(0, 563);
+			this->altaAjuntament->Margin = System::Windows::Forms::Padding(6, 3, 6, 3);
+			this->altaAjuntament->Name = L"altaAjuntament";
+			this->altaAjuntament->Size = System::Drawing::Size(522, 46);
+			this->altaAjuntament->TabIndex = 7;
+			this->altaAjuntament->Text = L"Donar d\'alta ajuntament";
+			this->altaAjuntament->UseVisualStyleBackColor = false;
+			this->altaAjuntament->Click += gcnew System::EventHandler(this, &PantallaPrincipal::altaAjuntament_Click);
 			// 
 			// CreaEsdeveniment
 			// 
@@ -290,18 +317,18 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->CreaEsdeveniment->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CreaEsdeveniment->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->CreaEsdeveniment->Location = System::Drawing::Point(0, 572);
+			this->CreaEsdeveniment->Location = System::Drawing::Point(0, 419);
 			this->CreaEsdeveniment->Margin = System::Windows::Forms::Padding(6);
 			this->CreaEsdeveniment->Name = L"CreaEsdeveniment";
 			this->CreaEsdeveniment->Size = System::Drawing::Size(522, 49);
 			this->CreaEsdeveniment->TabIndex = 7;
 			this->CreaEsdeveniment->Text = L"Crear esdeveniment";
 			this->CreaEsdeveniment->UseVisualStyleBackColor = false;
-			this->CreaEsdeveniment->Click += gcnew System::EventHandler(this, &Form1::CreaEsdeveniment_Click);
+			this->CreaEsdeveniment->Click += gcnew System::EventHandler(this, &PantallaPrincipal::CreaEsdeveniment_Click);
 			// 
 			// ModificaEntitatButton
 			// 
-			this->ModificaEntitatButton->BackColor = System::Drawing::Color::DimGray;
+			this->ModificaEntitatButton->BackColor = System::Drawing::Color::DarkGray;
 			this->ModificaEntitatButton->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ModificaEntitatButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -313,23 +340,23 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->ModificaEntitatButton->TabIndex = 7;
 			this->ModificaEntitatButton->Text = L"Modifica entitat";
 			this->ModificaEntitatButton->UseVisualStyleBackColor = false;
-			this->ModificaEntitatButton->Click += gcnew System::EventHandler(this, &Form1::ModificaEntitatButton_Click);
+			this->ModificaEntitatButton->Click += gcnew System::EventHandler(this, &PantallaPrincipal::ModificaEntitatButton_Click);
 			// 
 			// esborrarUsuari
 			// 
-			this->esborrarUsuari->BackColor = System::Drawing::Color::DimGray;
+			this->esborrarUsuari->BackColor = System::Drawing::Color::DarkGray;
 			this->esborrarUsuari->Dock = System::Windows::Forms::DockStyle::Top;
 			this->esborrarUsuari->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->esborrarUsuari->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->esborrarUsuari->Location = System::Drawing::Point(0, 621);
+			this->esborrarUsuari->Location = System::Drawing::Point(0, 468);
 			this->esborrarUsuari->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->esborrarUsuari->Name = L"esborrarUsuari";
 			this->esborrarUsuari->Size = System::Drawing::Size(522, 46);
 			this->esborrarUsuari->TabIndex = 9;
 			this->esborrarUsuari->Text = L"Esborrar usuari";
 			this->esborrarUsuari->UseVisualStyleBackColor = false;
-			this->esborrarUsuari->Click += gcnew System::EventHandler(this, &Form1::esborrarUsuari_Click);
+			this->esborrarUsuari->Click += gcnew System::EventHandler(this, &PantallaPrincipal::esborrarUsuari_Click);
 			// 
 			// ConsultaAjuntamentButton
 			// 
@@ -344,7 +371,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->ConsultaAjuntamentButton->TabIndex = 9;
 			this->ConsultaAjuntamentButton->Text = L"Consulta ajuntament";
 			this->ConsultaAjuntamentButton->UseVisualStyleBackColor = false;
-			this->ConsultaAjuntamentButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaAjuntamentButton_Click);
+			this->ConsultaAjuntamentButton->Click += gcnew System::EventHandler(this, &PantallaPrincipal::ConsultaAjuntamentButton_Click);
 			// 
 			// veurePerfil
 			// 
@@ -358,7 +385,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->veurePerfil->TabIndex = 9;
 			this->veurePerfil->Text = L"Veure perfil";
 			this->veurePerfil->UseVisualStyleBackColor = false;
-			this->veurePerfil->Click += gcnew System::EventHandler(this, &Form1::veurePerfil_Click);
+			this->veurePerfil->Click += gcnew System::EventHandler(this, &PantallaPrincipal::veurePerfil_Click);
 			// 
 			// consultarEsdeveniments
 			// 
@@ -367,7 +394,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->consultarEsdeveniments->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->consultarEsdeveniments->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->consultarEsdeveniments->Location = System::Drawing::Point(0, 523);
+			this->consultarEsdeveniments->Location = System::Drawing::Point(0, 713);
 			this->consultarEsdeveniments->Margin = System::Windows::Forms::Padding(6);
 			this->consultarEsdeveniments->Name = L"consultarEsdeveniments";
 			this->consultarEsdeveniments->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
@@ -375,7 +402,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->consultarEsdeveniments->TabIndex = 10;
 			this->consultarEsdeveniments->Text = L"Consultar esdeveniments";
 			this->consultarEsdeveniments->UseVisualStyleBackColor = false;
-			this->consultarEsdeveniments->Click += gcnew System::EventHandler(this, &Form1::consultarEsdeveniments_Click);
+			this->consultarEsdeveniments->Click += gcnew System::EventHandler(this, &PantallaPrincipal::consultarEsdeveniments_Click);
 			// 
 			// buttonTorna
 			// 
@@ -391,7 +418,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->buttonTorna->TabIndex = 18;
 			this->buttonTorna->Text = L"Surt";
 			this->buttonTorna->UseVisualStyleBackColor = false;
-			this->buttonTorna->Click += gcnew System::EventHandler(this, &Form1::buttonTorna_Click);
+			this->buttonTorna->Click += gcnew System::EventHandler(this, &PantallaPrincipal::buttonTorna_Click);
 			// 
 			// ConsultaCompresButton
 			// 
@@ -400,14 +427,14 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->ConsultaCompresButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ConsultaCompresButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ConsultaCompresButton->Location = System::Drawing::Point(0, 419);
+			this->ConsultaCompresButton->Location = System::Drawing::Point(0, 609);
 			this->ConsultaCompresButton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
 			this->ConsultaCompresButton->Name = L"ConsultaCompresButton";
 			this->ConsultaCompresButton->Size = System::Drawing::Size(522, 55);
 			this->ConsultaCompresButton->TabIndex = 11;
-			this->ConsultaCompresButton->Text = L"Consultar ajuntaments";
+			this->ConsultaCompresButton->Text = L"Consulta ajuntaments";
 			this->ConsultaCompresButton->UseVisualStyleBackColor = false;
-			this->ConsultaCompresButton->Click += gcnew System::EventHandler(this, &Form1::ConsultaCompresButton_Click);
+			this->ConsultaCompresButton->Click += gcnew System::EventHandler(this, &PantallaPrincipal::ConsultaCompresButton_Click);
 			// 
 			// panel_lateral
 			// 
@@ -415,13 +442,13 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 				static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->panel_lateral->Controls->Add(this->panel1);
 			this->panel_lateral->Controls->Add(this->panel4);
+			this->panel_lateral->Controls->Add(this->consultarEsdeveniments);
 			this->panel_lateral->Controls->Add(this->altaEntitat);
+			this->panel_lateral->Controls->Add(this->ConsultaCompresButton);
 			this->panel_lateral->Controls->Add(this->altaAjuntament);
+			this->panel_lateral->Controls->Add(this->ConsultaEntitats);
 			this->panel_lateral->Controls->Add(this->esborrarUsuari);
 			this->panel_lateral->Controls->Add(this->CreaEsdeveniment);
-			this->panel_lateral->Controls->Add(this->consultarEsdeveniments);
-			this->panel_lateral->Controls->Add(this->ConsultaEntitats);
-			this->panel_lateral->Controls->Add(this->ConsultaCompresButton);
 			this->panel_lateral->Controls->Add(this->panel3);
 			this->panel_lateral->Controls->Add(this->panel2);
 			this->panel_lateral->Controls->Add(this->margen);
@@ -456,38 +483,6 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->panel4->Size = System::Drawing::Size(522, 218);
 			this->panel4->TabIndex = 12;
 			// 
-			// altaAjuntament
-			// 
-			this->altaAjuntament->BackColor = System::Drawing::Color::DimGray;
-			this->altaAjuntament->Dock = System::Windows::Forms::DockStyle::Top;
-			this->altaAjuntament->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->altaAjuntament->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->altaAjuntament->Location = System::Drawing::Point(0, 667);
-			this->altaAjuntament->Margin = System::Windows::Forms::Padding(6, 3, 6, 3);
-			this->altaAjuntament->Name = L"altaAjuntament";
-			this->altaAjuntament->Size = System::Drawing::Size(522, 46);
-			this->altaAjuntament->TabIndex = 7;
-			this->altaAjuntament->Text = L"Donar d\'alta ajuntament";
-			this->altaAjuntament->UseVisualStyleBackColor = false;
-			this->altaAjuntament->Click += gcnew System::EventHandler(this, &Form1::altaAjuntament_Click);
-			// 
-			// ConsultaEntitats
-			// 
-			this->ConsultaEntitats->BackColor = System::Drawing::Color::DarkGray;
-			this->ConsultaEntitats->Dock = System::Windows::Forms::DockStyle::Top;
-			this->ConsultaEntitats->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ConsultaEntitats->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ConsultaEntitats->Location = System::Drawing::Point(0, 474);
-			this->ConsultaEntitats->Margin = System::Windows::Forms::Padding(6);
-			this->ConsultaEntitats->Name = L"ConsultaEntitats";
-			this->ConsultaEntitats->Size = System::Drawing::Size(522, 49);
-			this->ConsultaEntitats->TabIndex = 6;
-			this->ConsultaEntitats->Text = L"Consultar entitats";
-			this->ConsultaEntitats->UseVisualStyleBackColor = false;
-			this->ConsultaEntitats->Click += gcnew System::EventHandler(this, &Form1::ConsultaEntitats_Click);
-			// 
 			// panel3
 			// 
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
@@ -510,7 +505,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->label1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Berlin Sans FB", 24.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
@@ -520,7 +515,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->label1->Size = System::Drawing::Size(393, 55);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Connecta Cultura";
-			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
+			this->label1->Click += gcnew System::EventHandler(this, &PantallaPrincipal::label1_Click_1);
 			// 
 			// margen
 			// 
@@ -540,9 +535,9 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->panel_contenedor->Name = L"panel_contenedor";
 			this->panel_contenedor->Size = System::Drawing::Size(1406, 1106);
 			this->panel_contenedor->TabIndex = 20;
-			this->panel_contenedor->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint_1);
+			this->panel_contenedor->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &PantallaPrincipal::panel1_Paint_1);
 			// 
-			// Form1
+			// PantallaPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -551,10 +546,10 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			this->Controls->Add(this->panel_contenedor);
 			this->Controls->Add(this->panel_lateral);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"Form1";
+			this->Name = L"PantallaPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ConnectaCultura";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
+			this->Load += gcnew System::EventHandler(this, &PantallaPrincipal::PantallaPrincipal_Load);
 			this->panel_lateral->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
@@ -565,58 +560,56 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 
 		}
 #pragma endregion
-	template<class T>
-	void ObrirForm(T FormX) {
-		while (this->panel_contenedor->Controls->Count > 0)
-			this->panel_contenedor->Controls->RemoveAt(0);
-		FormX->TopLevel = false;
-		FormX->Dock = DockStyle::Fill;
-		this->panel_contenedor->Controls->Add(FormX);
-		this->panel_contenedor->Tag = FormX;
-		FormX->Show();
-	}
+		template<class T>
+		void ObrirForm(T FormX) {
+			if (this->panel_contenedor->Controls->Count > 0)
+				this->panel_contenedor->Controls->RemoveAt(0);
+			FormX->TopLevel = false;
+			FormX->Dock = DockStyle::Fill;
+			this->panel_contenedor->Controls->Add(FormX);
+			this->panel_contenedor->Tag = FormX;
+			FormX->Show();
+		}
 
 	private: System::Void logIn_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::LogInForm^ login = gcnew application::LogInForm();
 		login->ShowDialog();
 		Sessio^ s = Sessio::getInstance();
-		while (this->panel_contenedor->Controls->Count > 0)
-			this->panel_contenedor->Controls->RemoveAt(0);
-		Form1::ActualitzarForm1();
+		/*if (s->obteUsuari() != nullptr) {
+			logIn->Visible = false;
+			logOut->Visible = true;
+		}*/
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void logOut_Click(System::Object^ sender, System::EventArgs^ e) {
-		while (this->panel_contenedor->Controls->Count > 0)
-			this->panel_contenedor->Controls->RemoveAt(0);
 		Sessio^ s = Sessio::getInstance();
 		s->tancaSessio();
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void altaEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->ObrirForm(gcnew application::AltaEntitatForm);
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 
 	}
 	private: System::Void EsborrarEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::BaixaEntitatForm^ baixaE = gcnew application::BaixaEntitatForm();
 		baixaE->ShowDialog();
-		while (this->panel_contenedor->Controls->Count > 0)
-			this->panel_contenedor->Controls->RemoveAt(0);
 		Sessio^ s = Sessio::getInstance();
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void registreCiutada_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::RegistreCiutadaForm^ registre = gcnew application::RegistreCiutadaForm();
 		registre->ShowDialog();
 		Sessio^ s = Sessio::getInstance();
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void ConsultaEntitat_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->ObrirForm(gcnew application::ConsultaEntitatForm);
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void ConsultaEntitats_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->ObrirForm(gcnew application::ConsultaEntitats(this->panel_contenedor));
-		Form1::ActualitzarForm1();
+		this->ObrirForm(gcnew application::ConsultaEntitats);
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 
 	private: System::Void CreaEsdeveniment_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -625,10 +618,10 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 
 	private: System::Void ModificaEntitatButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->ObrirForm(gcnew application::ModificarEntitatForm);
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 
-	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void PantallaPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -636,64 +629,62 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 	private: System::Void esborrarUsuari_Click(System::Object^ sender, System::EventArgs^ e) {
 		application::BaixaCiutadaForm^ baixa = gcnew application::BaixaCiutadaForm();
 		baixa->ShowDialog();
-		while (this->panel_contenedor->Controls->Count > 0)
-			this->panel_contenedor->Controls->RemoveAt(0);
 		Sessio^ s = Sessio::getInstance();
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void ConsultaAjuntamentButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->ObrirForm(gcnew application::FormConsultarAjuntament(panel_contenedor,"aj1"));
-		Form1::ActualitzarForm1();
+		this->ObrirForm(gcnew application::FormConsultarAjuntament("aj1"));
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 	private: System::Void veurePerfil_Click(System::Object^ sender, System::EventArgs^ e) {
 		Sessio^ s = Sessio::getInstance();
 		if (s->obteUsuari()->obteTipus() == "ciutada") {
-			this->ObrirForm(gcnew application::VeurePerfilForm(this->panel_contenedor));
+			this->ObrirForm(gcnew application::VeurePerfilForm);
 		}
 		else if (s->obteUsuari()->obteTipus() == "entitat") {
-			this->ObrirForm(gcnew application::ConsultaEntitatForm(s->obteUsuari()->obteCorreuElectronic(), false));
+			this->ObrirForm(gcnew application::ConsultaEntitatForm(s->obteUsuari()->obteCorreuElectronic()));
 		}
 		else if (s->obteUsuari()->obteTipus() == "ajuntament") {
-			this->ObrirForm(gcnew application::FormConsultarAjuntament(panel_contenedor,s->obteUsuari()->obteCorreuElectronic(), false));
+			this->ObrirForm(gcnew application::FormConsultarAjuntament(s->obteUsuari()->obteCorreuElectronic()));
 		}
-		Form1::ActualitzarForm1();
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
 	}
 
-//		application::VeurePerfilForm^ Veure_Perfil = gcnew application::VeurePerfilForm();
-//		   Veure_Perfil->ShowDialog();
-private: System::Void consultarEsdeveniments_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->ObrirForm(gcnew application::ConsultarEsdevenimentsForm);
-	Form1::ActualitzarForm1();
-}
+		   //		application::VeurePerfilForm^ Veure_Perfil = gcnew application::VeurePerfilForm();
+		   //		   Veure_Perfil->ShowDialog();
+	private: System::Void consultarEsdeveniments_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->ObrirForm(gcnew application::ConsultarEsdevenimentsForm);
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
+	}
 
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void CompraEntradaButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->ObrirForm(gcnew application::ComprarEntradaForm);
-	Form1::ActualitzarForm1();
-}
-private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->ObrirForm(gcnew application::CancelaCompraForm);
-	Form1::ActualitzarForm1();
-}
-private: System::Void altaAjuntament_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->ObrirForm(gcnew application::AltaAjuntamentForm);
-	Form1::ActualitzarForm1();
-}
-private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void ConsultaCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	Sessio^ s = Sessio::getInstance();
-	this->ObrirForm(gcnew application::ConsultaAjuntamentsForm(this->panel_contenedor));
-	Form1::ActualitzarForm1();
-}
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void panel1_Paint_1(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void CompraEntradaButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->ObrirForm(gcnew application::ComprarEntradaForm);
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
+	}
+	private: System::Void CancelaCompraButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->ObrirForm(gcnew application::CancelaCompraForm);
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
+	}
+	private: System::Void altaAjuntament_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->ObrirForm(gcnew application::AltaAjuntamentForm);
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
+	}
+	private: System::Void buttonTorna_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void ConsultaCompresButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		Sessio^ s = Sessio::getInstance();
+		this->ObrirForm(gcnew application::ConsultaAjuntamentsForm());
+		PantallaPrincipal::ActualitzarPantallaPrincipal();
+	}
+	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	private: System::Void panel1_Paint_1(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
 
-private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
