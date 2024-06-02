@@ -107,14 +107,14 @@ namespace application {
 			this->textBox1->Location = System::Drawing::Point(375, 75);
 			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(220, 26);
+			this->textBox1->Size = System::Drawing::Size(291, 26);
 			this->textBox1->TabIndex = 1;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(603, 76);
+			this->pictureBox1->Location = System::Drawing::Point(673, 75);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(26, 26);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -127,6 +127,7 @@ namespace application {
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCells;
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -151,7 +152,7 @@ namespace application {
 			this->Column1->MinimumWidth = 8;
 			this->Column1->Name = L"Column1";
 			this->Column1->ReadOnly = true;
-			this->Column1->Width = 120;
+			this->Column1->Width = 78;
 			// 
 			// Column2
 			// 
@@ -159,7 +160,7 @@ namespace application {
 			this->Column2->MinimumWidth = 8;
 			this->Column2->Name = L"Column2";
 			this->Column2->ReadOnly = true;
-			this->Column2->Width = 120;
+			this->Column2->Width = 116;
 			// 
 			// Column3
 			// 
@@ -167,7 +168,7 @@ namespace application {
 			this->Column3->MinimumWidth = 8;
 			this->Column3->Name = L"Column3";
 			this->Column3->ReadOnly = true;
-			this->Column3->Width = 120;
+			this->Column3->Width = 98;
 			// 
 			// ConsultaAjuntamentsForm
 			// 

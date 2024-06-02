@@ -69,6 +69,7 @@ namespace application {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::Label^ AjuntamentsLabel;
 
 
 
@@ -103,24 +104,27 @@ namespace application {
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->AjuntamentsLabel = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(174, 28);
+			this->textBox2->Location = System::Drawing::Point(215, 135);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(192, 22);
+			this->textBox2->Size = System::Drawing::Size(216, 26);
 			this->textBox2->TabIndex = 1;
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(174, 255);
+			this->numericUpDown1->Location = System::Drawing::Point(215, 451);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(100, 22);
+			this->numericUpDown1->Size = System::Drawing::Size(112, 26);
 			this->numericUpDown1->TabIndex = 5;
 			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::numericUpDown1_ValueChanged);
@@ -129,80 +133,82 @@ namespace application {
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
 			this->numericUpDown2->ImeMode = System::Windows::Forms::ImeMode::Disable;
-			this->numericUpDown2->Location = System::Drawing::Point(174, 289);
+			this->numericUpDown2->Location = System::Drawing::Point(215, 493);
+			this->numericUpDown2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown2->Size = System::Drawing::Size(135, 26);
 			this->numericUpDown2->TabIndex = 6;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(26, 28);
+			this->label1->Location = System::Drawing::Point(48, 135);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(39, 16);
+			this->label1->Size = System::Drawing::Size(46, 20);
 			this->label1->TabIndex = 8;
 			this->label1->Text = L"Nom:";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(26, 68);
+			this->label2->Location = System::Drawing::Point(48, 185);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(75, 16);
+			this->label2->Size = System::Drawing::Size(87, 20);
 			this->label2->TabIndex = 9;
 			this->label2->Text = L"Descripcio:";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(26, 112);
+			this->label3->Location = System::Drawing::Point(48, 272);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(76, 16);
+			this->label3->Size = System::Drawing::Size(90, 20);
 			this->label3->TabIndex = 10;
 			this->label3->Text = L"Data d\'inici:";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(26, 149);
+			this->label4->Location = System::Drawing::Point(48, 318);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(121, 16);
+			this->label4->Size = System::Drawing::Size(144, 20);
 			this->label4->TabIndex = 11;
 			this->label4->Text = L"Data d\'acabament:";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(26, 257);
+			this->label5->Location = System::Drawing::Point(48, 453);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(71, 16);
+			this->label5->Size = System::Drawing::Size(88, 20);
 			this->label5->TabIndex = 12;
 			this->label5->Text = L"Aforament:";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(27, 290);
+			this->label6->Location = System::Drawing::Point(49, 494);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(38, 16);
+			this->label6->Size = System::Drawing::Size(46, 20);
 			this->label6->TabIndex = 13;
 			this->label6->Text = L"Preu:";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(26, 185);
+			this->label7->Location = System::Drawing::Point(48, 363);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(65, 16);
+			this->label7->Size = System::Drawing::Size(78, 20);
 			this->label7->TabIndex = 14;
 			this->label7->Text = L"Modalitat:";
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(174, 65);
+			this->richTextBox1->Location = System::Drawing::Point(215, 181);
+			this->richTextBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(192, 32);
+			this->richTextBox1->Size = System::Drawing::Size(216, 74);
 			this->richTextBox1->TabIndex = 15;
 			this->richTextBox1->Text = L"";
 			// 
@@ -212,9 +218,10 @@ namespace application {
 			this->Crea->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Crea->ForeColor = System::Drawing::Color::Transparent;
-			this->Crea->Location = System::Drawing::Point(341, 321);
+			this->Crea->Location = System::Drawing::Point(403, 533);
+			this->Crea->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Crea->Name = L"Crea";
-			this->Crea->Size = System::Drawing::Size(105, 27);
+			this->Crea->Size = System::Drawing::Size(118, 34);
 			this->Crea->TabIndex = 16;
 			this->Crea->Text = L"Crea";
 			this->Crea->UseVisualStyleBackColor = false;
@@ -223,19 +230,20 @@ namespace application {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(173, 182);
+			this->comboBox1->Location = System::Drawing::Point(214, 360);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 24);
+			this->comboBox1->Size = System::Drawing::Size(136, 28);
 			this->comboBox1->TabIndex = 17;
 			// 
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy HH:mm:ss";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(174, 112);
+			this->dateTimePicker1->Location = System::Drawing::Point(215, 272);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(192, 22);
+			this->dateTimePicker1->Size = System::Drawing::Size(216, 26);
 			this->dateTimePicker1->TabIndex = 20;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker1_ValueChanged);
 			this->dateTimePicker1->MinDate = DateTime::Now;
@@ -244,31 +252,43 @@ namespace application {
 			// 
 			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy HH:mm:ss";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker2->Location = System::Drawing::Point(174, 149);
+			this->dateTimePicker2->Location = System::Drawing::Point(215, 318);
 			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(192, 22);
+			this->dateTimePicker2->Size = System::Drawing::Size(216, 26);
 			this->dateTimePicker2->TabIndex = 21;
 			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::dateTimePicker2_ValueChanged);
-			this->dateTimePicker1->MinDate = DateTime::Now;
+			this->dateTimePicker2->MinDate = DateTime::Now;
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(29, 215);
+			this->checkBox1->Location = System::Drawing::Point(52, 401);
 			this->checkBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(194, 20);
+			this->checkBox1->Size = System::Drawing::Size(230, 24);
 			this->checkBox1->TabIndex = 22;
 			this->checkBox1->Text = L"Esdeveniment amb entrada";
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &FormAltaEsdeveniment::checkBox1_CheckedChanged);
 			// 
+			// AjuntamentsLabel
+			// 
+			this->AjuntamentsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AjuntamentsLabel->Location = System::Drawing::Point(45, 38);
+			this->AjuntamentsLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->AjuntamentsLabel->Name = L"AjuntamentsLabel";
+			this->AjuntamentsLabel->Size = System::Drawing::Size(476, 45);
+			this->AjuntamentsLabel->TabIndex = 23;
+			this->AjuntamentsLabel->Text = L"Formulari alta esdeveniment";
+			// 
 			// FormAltaEsdeveniment
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(458, 360);
+			this->ClientSize = System::Drawing::Size(649, 580);
+			this->Controls->Add(this->AjuntamentsLabel);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->dateTimePicker1);
@@ -286,6 +306,7 @@ namespace application {
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->textBox2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"FormAltaEsdeveniment";
 			this->Text = L"FormAltaEsdeveniment";
 			this->Load += gcnew System::EventHandler(this, &FormAltaEsdeveniment::FormAltaEsdeveniment_Load);
@@ -320,7 +341,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 			DateTime data_fi = this->dateTimePicker2->Value;
 			if (data_inici >= data_fi)
 			{
-				MessageBox::Show("La data d'acabament ha de ser més tard que la de inici");
+				MessageBox::Show("La data d'acabament ha de ser mes tard que la de inici");
 				return;
 			}
 
@@ -330,6 +351,7 @@ private: System::Void FormAltaEsdeveniment_Load(System::Object^ sender, System::
 				return;
 			}
 			System::String^ descripcio = this->richTextBox1->Text;
+			descripcio = descripcio->Replace("'", "\\'");
 			int^ aforament;
 			System::String^ preu;
 			if (!checkBox1->Checked) {

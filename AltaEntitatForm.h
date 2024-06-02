@@ -48,13 +48,14 @@ namespace application {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ AjuntamentsLabel;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 
 
 
@@ -81,12 +82,12 @@ namespace application {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->AjuntamentsLabel = (gcnew System::Windows::Forms::Label());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -116,7 +117,7 @@ namespace application {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(50, 229);
+			this->label3->Location = System::Drawing::Point(50, 307);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(88, 20);
 			this->label3->TabIndex = 2;
@@ -127,7 +128,7 @@ namespace application {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(50, 291);
+			this->label4->Location = System::Drawing::Point(50, 369);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(151, 20);
 			this->label4->TabIndex = 3;
@@ -138,7 +139,7 @@ namespace application {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(50, 355);
+			this->label5->Location = System::Drawing::Point(50, 433);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(115, 20);
 			this->label5->TabIndex = 4;
@@ -152,17 +153,9 @@ namespace application {
 			this->textBox1->Size = System::Drawing::Size(221, 26);
 			this->textBox1->TabIndex = 5;
 			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(260, 162);
-			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(221, 26);
-			this->textBox2->TabIndex = 6;
-			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(260, 285);
+			this->textBox4->Location = System::Drawing::Point(260, 363);
 			this->textBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(221, 26);
@@ -170,7 +163,7 @@ namespace application {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(260, 349);
+			this->textBox5->Location = System::Drawing::Point(260, 427);
 			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->PasswordChar = '*';
@@ -183,7 +176,7 @@ namespace application {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Transparent;
-			this->button1->Location = System::Drawing::Point(320, 402);
+			this->button1->Location = System::Drawing::Point(320, 480);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(163, 35);
@@ -196,7 +189,7 @@ namespace application {
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(260, 221);
+			this->comboBox1->Location = System::Drawing::Point(260, 299);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(221, 28);
@@ -213,17 +206,25 @@ namespace application {
 			this->AjuntamentsLabel->TabIndex = 17;
 			this->AjuntamentsLabel->Text = L"Formulari alta entitat";
 			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(260, 169);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(223, 111);
+			this->richTextBox1->TabIndex = 18;
+			this->richTextBox1->Text = L"";
+			// 
 			// AltaEntitatForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(543, 485);
+			this->ClientSize = System::Drawing::Size(766, 597);
+			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->AjuntamentsLabel);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
@@ -253,7 +254,7 @@ namespace application {
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		System::String^ nom = this->textBox1->Text;
-		System::String^ descripcio = this->textBox2->Text;
+		System::String^ descripcio = this->richTextBox1->Text;
 		descripcio=descripcio->Replace("'", "\\'");
 		System::String^ tipus = this->comboBox1->Text;
 		System::String^ correuElectronic = this->textBox4->Text;
@@ -261,7 +262,7 @@ namespace application {
 		Sessio^ s = Sessio::getInstance();
 		System::String^ ajuntament = s->obteUsuari()->obteCorreuElectronic();
 		TxAltaEntitat txAE(nom, descripcio, tipus, correuElectronic, contrasenya, ajuntament);
-		if (textBox1->Text == System::String::Empty || textBox2->Text == System::String::Empty || textBox4->Text == System::String::Empty || textBox5->Text == System::String::Empty) {
+		if (textBox1->Text == System::String::Empty || richTextBox1->Text == System::String::Empty || textBox4->Text == System::String::Empty || textBox5->Text == System::String::Empty) {
 			MessageBox::Show("Falten camps per omplir.");
 		}
 		else if (caracter_especial(nom) || caracter_especial(correuElectronic) || caracter_especial(contrasenya)) {

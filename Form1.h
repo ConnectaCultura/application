@@ -285,7 +285,7 @@ private: System::Windows::Forms::Button^ ConsultaEntitats;
 			// 
 			// CreaEsdeveniment
 			// 
-			this->CreaEsdeveniment->BackColor = System::Drawing::Color::DarkGray;
+			this->CreaEsdeveniment->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->CreaEsdeveniment->Dock = System::Windows::Forms::DockStyle::Top;
 			this->CreaEsdeveniment->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
